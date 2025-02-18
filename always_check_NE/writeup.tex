@@ -1,0 +1,233 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{BNE of 1-Round Continuous Kuhn Poker}
+\author{Andrew Spears}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Play proceeds as follows:
+
+\begin{itemize}
+    \item Both players put a \$1 ante into a pot.
+    \item Nature chooses hand strengths $x_b, x_c$ uniformly and independently from $[0, 1]$ and reveals these values to players 1 and 2 respectively. 
+    \item Player 1 (called the \textit{bettor}) chooses between actions check and bet.
+    \item If player 1 checked, then the player with the higher hand strength wins the \$2 pot for net \$1 payoff (call this the showdown).
+    \item If player 1 bet, player 2 (called the \textit{caller}) chooses between actions call and fold.
+    \item If player 2 called, then both players add \$1 to the pot and the player with the higher hand strength wins the \$4 pot for net \$2 payoff.
+    \item If player 2 folded, player 1 wins the \$2 pot for net \$1 payoff.
+\end{itemize}
+
+\section{Expected payoffs for actions of each player}
+
+\subsection{Bettor}
+
+The bettor knows his/her own hand strength $x_1$ and wants to maximize expected value given this hand strength. In hope of finding a BNE, assume that each player knows the strategy (but not type) of the opponent. 
+
+Strategies in this context assign an action to each possible hand strength. A pure strategy for either player is a function from $[0, 1]$ to $\{0, 1\}$, where 0 represents checking/folding and 1 represents betting/calling. A mixed strategy is a function from $[0, 1]$ to $[0, 1]$ that represents the probability of betting/calling at each hand strength. Call the bettor's mixed strategy $b(x)$ (the 'bet function'), and the caller's mixed strategy $c(x)$ (the 'call function').
+
+We can find the bettor's expected payoff of betting or checking as a function of hand strength $x$ and the call function $c$:
+
+\begin{align*}
+	\pi_{bet}(x) & = \mathbb{P}[fold] \cdot 1 + \mathbb{P}[call, x > x_c] \cdot 2 - \mathbb{P}[call, x < x_c] \cdot 2 \\
+    & = \int_{0}^{1} 1 - c(t) dt + 2 \int_{0}^{x} c(t) dt - 2 \int_{x}^{1} c(t) dt \\
+    & = 1 - \int_{0}^{1} c(t) dt + 2 \int_{0}^{x} c(t) dt - 2 \left( \int_{0}^{1} c(t) dt - \int_{0}^{x} c(t) dt \right) \\
+    & = 1 + 4 \int_{0}^{x} c(t) - 3 \int_{0}^{1} c(t) dt
+    & \\
+	\pi_{check}(x) & = \mathbb{P}[x > x_c] \cdot 1 - \mathbb{P}[x < x_c] \cdot 1\\
+    &= x - (1-x) \\ 
+    &= 2x - 1
+\end{align*}
+
+The bettor should bet when the expected payoff of betting is higher than that of checking. We can find the difference between the expected payoffs of betting and checking, called the \textit{bet gain} and denoted $g_{bet}(x)$, and consider when this is positive, negative, or zero:
+
+\begin{align*}
+    g_{bet}(x) &= \pi_{bet}(x) - \pi_{check}(x) \\
+    & = 2 - 2x + 4 \int_{0}^{x} c(t) - 3 \int_{0}^{1} c(t) dt \\
+ \end{align*}
+
+ And the bettor has the following strategy:
+ 
+ \[
+b(x) = \begin{cases}
+    1 \text{ if } g_{bet}(x) > 0 \\
+    b_0(x) \text{ if } g_{bet}(x) = 0 \\
+    0 \text{ if } g_{bet}(x) < 0
+\end{cases}
+\]
+
+Where $b_0(x)$ is any function from $[0, 1]$ to $[0, 1]$ (the bettor is indifferent between betting and checking when $g_{bet}(x)=0$).
+
+\subsection{Caller}
+
+The caller knows his/her own hand strength $x_c$ and wants to maximize expected value given this hand strength. We can find the caller's expected payoff of calling or folding as a function of hand strength $x$ and the bet function $b$:
+
+\begin{align*}
+    \pi_{call}(x) & = \mathbb{P}[bet, x>x_b] \cdot 2 - \mathbb{P}[bet, x<x_b] \cdot 2\\
+    & = \frac{2 \int_{0}^{x} b(t) dt - 2 \int_{x}^{1} b(t) dt}{\int_{0}^{1} b(t)dt} \\
+    & = \frac{2 \int_{0}^{x} b(t) dt - 2\int_{0}^{1} b(t) dt + 2\int_{0}^{x} b(t) dt}{\int_{0}^{1} b(t)dt} \\
+    & = \frac{4 \int_{0}^{x} b(t) dt}{\int_{0}^{1} b(t)dt}  - 2 \\
+    & \\
+    \pi_{fold}(x) & = -1
+\end{align*}
+
+We can similarly define the \textit{call gain} $g_{call}(x)$ as the difference between the expected payoffs of calling and folding:
+
+\begin{align*}
+    g_{call}(x) &= \pi_{call}(x) - \pi_{fold}(x) \\
+    & = \frac{4 \int_{0}^{x} b(t) dt}{\int_{0}^{1} b(t)dt}  - 1
+\end{align*}
+
+The caller's strategy is:
+
+\[
+    c(x) = \begin{cases}
+        1 \text{ if } g_{call}(x) > 0 \\
+        c_0(x) \text{ if } g_{call}(x) = 0 \\
+        0 \text{ if } g_{call}(x) < 0
+    \end{cases}
+\]
+
+Where $c_0(x)$ is any function from $[0, 1]$ to $[0, 1]$ (the caller is indifferent between calling and folding when $g_{call}(x)=0$).
+
+This has a nice interpretation involving pot odds. The caller is indifferent exactly when
+
+\[ \int_{0}^{x} b(t) dt = \frac{1}{4} \int_{0}^{1} b(t)dt \]
+
+Which can be interpreted as saying that our chance of winning the pot is equal to the pot odds of 1/4. Any higher, and we have a hand better than the pot odds, so we call. Any lower, and we have a hand worse than the pot odds, so we fold. 
+
+\section{BNE}
+
+As a first step of finding a BNE, let us consider the set of hand strenghts for which the caller might be indifferent. Call this set $I_c$:
+
+\[ I_c = \{ x \in [0, 1] : g_{call}(x) = 0 \} \]
+
+We can easily show that $I_c$ is a closed, connected interval.
+
+\begin{align*}
+    I_c &= \left\{ x \in [0, 1] : \int_{0}^{x} b(t) dt = \frac{1}{4} \int_{0}^{1} b(t)dt \right\} \\
+\end{align*}
+
+$\int_{0}^{x} b(t) dt$ is continuous and weakly increasing in $x$. Specifically, it is increasing where $b(x) > 0$ and constant where $b(x) = 0$. Let $\alpha$ be the smallest $x$ such that $\int_{0}^{x} b(t) dt = \frac{1}{4} \int_{0}^{1} b(t)dt$. We now get two cases: either $I_c$ contains only $\alpha$, or $\alpha$ coincides with the infimum\footnote{Closed/open intervals are roughly interchangable because measure-zero sets do not have any impact on expected value or strategy.} of an interval on which $b(x)=0$, in which case $I_c$ is this entire interval. Call $\beta$ the supremum of $I_c$ so that $I_c = [\alpha, \beta]$.
+
+This gives us a rough image of what $c(x)$ must look like: 
+
+\begin{itemize}
+    \item $c(x) = 0$ for $x < \alpha$.
+    \item $c(x) = c_0(x)$ for $x \in [\alpha, \beta]$.
+    \item $c(x) = 1$ for $x > \beta$.
+\end{itemize}
+
+We can now consider when the bettor is indifferent. Call this set $I_b$:
+
+\[ I_b = \{ x \in [0, 1] : g_{bet}(x) = 0 \} \]
+
+Consider the intersection of $I_b$ with the three intervals $[0, \alpha]$, $[\alpha, \beta]$, and $[\beta, 1]$.\\
+
+For $x < \alpha$, we know that $c(x) = 0$:
+
+\begin{align*}
+    g_{bet}(x) &= 2 - 2x + 4 \int_{0}^{x} c(t) - 3 \int_{0}^{1} c(t) dt \\
+    &= 2 - 2x + 4 \int_{0}^{x} 0 - 3 \int_{0}^{1} c(t) dt \\
+    &= 2 - 2x - 3 \int_{0}^{1} c(t) dt
+\end{align*}
+
+Which is strictly decreasing in $x$. When this is positive, the bettor should bet, so $b(x)=1$, but when it becomes negative, the bettor should check, so $b(x)$ looks like a step function from 1 down to 0 (or potentially just constant 1 or 0). However, $\alpha$ was defined as the minimum value such that $b(x)=0$ on $[\alpha, \beta]$. This means that $b(x)$ cannot take the value 0 for any part of $[0, \alpha)$, and therefore $I_b \cap [0, \alpha) = \emptyset$ and $b(x) = 1$ on $[0, \alpha)$.\\ 
+
+For $x > \beta$, we know that $c(x) = 1$:
+
+\begin{align*}
+    g_{bet}(x) &= 2 - 2x + 4 \int_{0}^{x} c(t) - 3 \int_{0}^{1} c(t) dt \\
+    &= 2 -  2x + 4\left( \int_{0}^{1}c(t) dt - (1-x) \right) - 3 \int_{0}^{1} c(t) dt\\
+    &= -2 + 2x + \int_{0}^{1}c(t) dt \\
+\end{align*}
+
+This is strictly increasing in $x$. By a similar argument to above, $b(x)$ on $[\beta, 1]$ must look like a step function from 0 up to 1. However, we defined $\beta$ as the largest value such that $b(x) = 0$ on $[\alpha, \beta]$, so $b(x)$ cannot take the value 0 for any part of $(\beta, 1]$, and therefore $I_b \cap (\beta, 1] = \emptyset$ and $b(x) = 1$ on $(\beta, 1]$.\\ 
+
+Combined, this tells us that $I_b$ is a subset of $[\alpha, \beta]$ and that $b(x) = 1$ for $x < \alpha$ or $x > \beta$ (see Figure \ref{bet_function}). Essentially, this means the bettor can never play a mixed strategy\footnote{Except on a measure-zero set of hand strengths.}, since we have already restricted $b(x) = 0$ on $[\alpha, \beta]$.
+
+
+\begin{figure}
+    \begin{center}
+    \includegraphics*[scale=0.4]{../bet_function.png}
+    \caption{A plausible bet function $b(x)$}
+    \label{bet_function}
+    \end{center}
+\end{figure}
+
+The caller can still play a mixed strategy for hand strengths in $[ \alpha, \beta ]$ (see Figure \ref{call_function}). 
+
+\begin{figure}
+    \begin{center}
+    \includegraphics*[scale=0.4]{../call_function.png}
+    \caption{A plausible call function $c(x)$}
+    \label{call_function}
+    \end{center}
+\end{figure}
+
+We now have a rough picture of where each player is indifferent and what $b(x)$ and $c(x)$ must look like at equilibrium, but we still have to ensure that each player is playing a best response on the intervals where they are not indifferent. 
+
+First, now that have vastly restricted $b(x)$, we can rewrite it as 
+
+\[ b(x) = \begin{cases}
+    1 \text{ if } x < \alpha \text{ or } x > \beta \\
+    0 \text{ if } x \in [\alpha, \beta]
+\end{cases} \]
+
+Recall that for the caller to be indifferent on $[\alpha, \beta]$, we required that $\int_{0}^{\alpha} b(t) dt = \frac{1}{4} \int_{0}^{1} b(t) dt$. We can now directly solve for alpha and beta using the restricted structures of $b(x)$ and $c(x)$:
+
+\begin{align*}
+	\int_{0}^{\alpha} b(t) dt &= \frac{1}{4} \int_{0}^{1} b(t) dt\\
+	\alpha &= \frac{1}{4} (\alpha + 1 - \beta)\\
+    \alpha &= \frac{1}{3} - \frac{1}{3} \beta\\
+\end{align*}
+
+Now we use the fact that $b(x)$ transitions between 0 and 1 exactly at $\alpha$ and $\beta$. This implies that $g_{bet}(x)$ transitions from positive to negative (or 0) at $\alpha$ and negative (or 0) to positive at $\beta$. $g_{bet}(x)$ is a continuous function, so it must be zero at $\alpha$ and $\beta$. This actually tells us that the points of bettor indifference we solved for earlier must occur exactly at $\alpha$ and $\beta$. 
+
+\[ 0  = 2 - 2\alpha - 3 \int_{0}^{1} c(t) dt\]
+\[	\alpha =  1- \frac{3}{2} \int_{0}^{1} c(t) dt \]
+
+\[ 0 = -2 + 2\beta + \int_{0}^{1}c(t) dt \]
+\[ \beta = 1 - \frac{1}{2}\int_{0}^{1}c(t) dt \]
+
+Some more manipulation this gives us
+
+\begin{align*}
+    \alpha & = \frac{1}{10} & \beta & = \frac{7}{10} \\
+    \int_{0}^{1} c(t)dt & = \frac{3}{5} & \int_{\alpha}^{\beta} c(t)dt & = \frac{3}{10} \\
+\end{align*}
+
+Which gives us the exact final form of $b(x)$. $c(x)$ is constrained outside $[\alpha, \beta]$, but can be any function with average value $1/2$ on this interval (see Figure \ref{BNE}).
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics*[scale=0.4]{../BNE.png}
+    \caption{A plausible BNE with $c_0(x) = (x-\alpha)/(\beta-\alpha)$. The best responses exactly coincide with the original functions, so this is an equilibrium.}
+    \label{BNE}
+    \end{center}
+\end{figure}
+
+This situation can be interpreted as follows:
+
+The bettor bluffs with very weak hands and bets strong hands in exactly a 1:3 ratio. This gives the caller the perfect pot odds to call or fold with any mediocre hand between 0.1 and 0.7, folding worse hands and calling better hands. If the caller calls exactly half the time with these mediocre hands, then the bettor has exactly the right incentive to bluff with weak hands and bet strong hands. 
+
+However, this is not a stable equilibrium. The caller is indifferent between calling and folding on the interval $[0.1, 0.7]$, so they have no incentive to use any function $c_0(x)$ with average value exactly $1/2$. The caller can choose to always fold or always call these hands, making the bettor's strategy no longer the best response (see Figure \ref{unstable}). If the caller calls any more, the bettor should bluff less, and if the caller folds more, the bettor should bluff more, but the bettor cannot predict what the caller will do because the caller has no incentive either way with a mediocre hand.
+
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics*[scale=0.4]{../unstable.png}
+    \caption{The caller always folds on $[0.1, 0.7]$ (still a best response to the bettor's strategy), but now the bettor is playing an extremely suboptimal strategy.}
+    \label{unstable}
+    \end{center}
+\end{figure}
+
+
+\end{document}
