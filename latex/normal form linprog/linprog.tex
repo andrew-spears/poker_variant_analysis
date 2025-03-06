@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{arydshln} 
+
+\title{Linear Programs Zero Sum Game Formulation}
+\author{Andrew Spears}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Consider a normal-form zero-sum game with payoff matrix \( A \), where player 1 (P1) chooses a mixed strategy represented by the vector \( x \), and player 2 (P2) chooses a mixed strategy \( y \).
+
+The expected utility for player 1 is given by:
+
+\[
+v = x^T A y
+\]
+
+where \( v \) represents the value of the game. It turns out that it makes more sense to frame $v$ as an independent decision variable.
+
+\subsection*{Trivial Constraints}
+
+The strategies \( x \) and \( y \) must satisfy the standard probability constraints:
+
+\[
+\sum_i x_i = 1, \quad 0 \leq x_i \quad \forall i
+\]
+
+\[
+\sum_j y_j = 1, \quad 0 \leq y_j \quad \forall j
+\]
+
+
+
+\subsection*{Equilibrium Constraints}
+
+A necessary condition for Nash equilibrium is that player 2 should be indifferent between all actions they play with positive probability. This is equivalent to requiring that the mixed strategy \( y \) should do at least as well for player 2 as any pure strategy, \underline{against the specific strategy \( x \)} (or rather, that the value $v$ for player 1 cannot be decreased by deviating $y$ to any pure strategy):
+
+\[
+v \leq x^T A e_j, \quad \forall j
+\]
+
+which can be rewritten as:
+
+\[
+v \cdot \mathbf{1} \leq x^T A I = x^T A
+\]
+\[ x^T A \geq v \cdot \mathbf{1} \]
+
+Where $\mathbf{1}$ is a vector of all 1s.
+Notice $y$ and the indices $j$ do not appear in this constraint.
+
+All in all, we get the linear program:
+
+\begin{align*}
+\text{Maximize } & v \\
+\text{Subject to} \\
+& x^TA \geq v \cdot \mathbf{1} \\
+& \sum_i x_i = 1 \\
+& 0 \leq x_i \quad \forall i \\
+\end{align*}
+
+The solution to this linear program will give the value \( v \) of the game and the Nash equilibrium strategy \( x \) for player 1\footnote{Supposedly, Player 2's strategy \( y \) can be found similarly by solving the dual problem}. 
+
+
+\end{document}
