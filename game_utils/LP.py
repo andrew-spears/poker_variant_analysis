@@ -46,13 +46,3 @@ def solve_normal_zero_sum(payoffs, player=0):
         print("ERROR IN LINEAR PROGRAMMING")
         print(res)
         raise ValueError("Linear programming failed to find a solution.")
-
-
-# payoffs = np.array([
-#     [0, -1, 2],
-#     [1, 0, -1],
-#     [-1, 1, 0]
-# ])
-# x, v = solve_normal_zero_sum(payoffs)
-# print("Optimal strategy:", x)
-# print("Game value:", v)

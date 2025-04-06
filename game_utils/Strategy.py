@@ -15,7 +15,7 @@ class MixedStrategy(dict):
         strategy with 0 probability of doing anything at any info set (not actually valid)
         '''
         strat = cls({}, game)
-        infoSets = game.info_sets(player)
+        infoSets = game.all_info_sets(player)
         for I in infoSets:
             actions = game.get_actions_at_info_set(I)
             strat[I] = np.zeros(len(actions))

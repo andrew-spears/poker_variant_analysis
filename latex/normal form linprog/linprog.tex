@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \usepackage{arydshln} 
 
-\title{Linear Programs Zero Sum Game Formulation}
+\title{Zero Sum Game to Linear Program}
 \author{Andrew Spears}
 \date{\today}
 
@@ -56,13 +56,17 @@ Notice $y$ and the indices $j$ do not appear in this constraint.
 
 All in all, we get the linear program:
 
-\begin{align*}
-\text{Maximize } & v \\
-\text{Subject to} \\
-& x^TA \geq v \cdot \mathbf{1} \\
-& \sum_i x_i = 1 \\
-& 0 \leq x_i \quad \forall i \\
-\end{align*}
+\begin{equation}
+\boxed{
+\begin{array}{rl}
+    \text{Maximize } & v \\
+    \text{Subject to} & \\
+    & x^T A \geq v \cdot \mathbf{1} \\
+    & \sum_i x_i = 1 \\
+    & 0 \leq x_i \quad \forall i \\
+\end{array}
+}
+\end{equation}
 
 The solution to this linear program will give the value \( v \) of the game and the Nash equilibrium strategy \( x \) for player 1\footnote{Supposedly, Player 2's strategy \( y \) can be found similarly by solving the dual problem}. 
 

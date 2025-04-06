@@ -5,9 +5,24 @@ from game_utils.utils import normalize
 # import seaborn as sns
 import matplotlib.pyplot as plt
 from game_utils.Strategy import MixedStrategy
+from game_utils.ZeroSumGame import ZeroSumGame
+from game_utils.InfoSet import InfoSet
 
 class CFRSolver:
-    def __init__(self, game_class):
+    """
+    Counterfactual Regret Minimization (CFR) Solver for two-player zero-sum games.
+    CFR is an iterative algorithm used to find approximate Nash equilibria in extensive-form games.
+    It works by iteratively updating regret values for each decision point (information set) and 
+    using these regrets to adjust the strategy towards better responses over time.
+    
+    Example usage:
+
+    solver = CFR.CFRSolver(kuhn.ThreeCard) # initialize the solver for a specific game class
+    solver.train(10000) # train for 10000 iterations
+    combined_strat = solver.get_strategy(0) | solver.get_strategy(1) # combine both players' strategies into one strategy
+    utils.binaryStrategyHeatmap(combined_strat, title="CFR Nash EQ")
+    """
+    def __init__(self, game_class: ZeroSumGame):
         self.game_class = game_class
         self.node_map = {}  # maps info sets to nodes
 
@@ -35,21 +50,21 @@ class CFRSolver:
                """
             return normalize(self.strategy_sum)
 
-    def cfr_update(self, player, state, reach_probs):
+    def _cfr_update(self, player, state: ZeroSumGame, reach_probs):
         """ 
         do one iteration of CFR and update our regrets and strategy. 
         return the value of the state for the current player under the current strategy.
         player is the player who is updating (do nothing to our regrets if not the current player)
         reach_probs: an array of probabilities for each player to play to reach this state.
         """
-        curr_player = state.get_current_player()
+        curr_player = state.current_player()
 
         # Terminal condition - return payoff of the node for the updating player
         if state.is_terminal():
             return state.get_payoff(player)
         
         # Get or create the node for this state
-        info_set = state.get_info_set()
+        info_set = state.current_info_set()
         if info_set not in self.node_map:
             self.node_map[info_set] = self.Node(len(state.get_actions()))
         node = self.node_map[info_set]
@@ -64,7 +79,7 @@ class CFRSolver:
             next_state = state.get_next_state(action)
             reach_probs_next = reach_probs.copy()
             reach_probs_next[curr_player] *= strategy[i] # the curr player would have to take this action to reach the next state
-            action_value = self.cfr_update(player, next_state, reach_probs_next)
+            action_value = self._cfr_update(player, next_state, reach_probs_next)
             action_values[i] = action_value
         strategy_value = np.dot(strategy, action_values)
 
@@ -86,16 +101,11 @@ class CFRSolver:
             for player in [0, 1]:
                 state = self.game_class.random()
                 reach_probs = np.ones(2)
-                self.cfr_update(player, state, reach_probs)
-
-    def print_strategy(self):
-        """ Display the learned strategies """
-        for key, node in sorted(self.node_map.items()):
-            print(f"Info Set {key}: {node.get_average_strategy()}")
+                self._cfr_update(player, state, reach_probs)
 
     def get_strategy(self, player):
-        """ Return the learned strategy for the given player"""
+        """ Return the learned strategy for the given player as a MixedStrategy object."""
         # node_map maps info sets to frequency arrays.
-        infoSets = self.game_class.info_sets(player)
+        infoSets = self.game_class.all_info_sets(player)
         return MixedStrategy({I: self.node_map[I].get_average_strategy() for I in infoSets}, self.game_class)
     

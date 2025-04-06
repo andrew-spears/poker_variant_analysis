@@ -5,69 +5,54 @@ from abc import ABC, abstractmethod
 
 
 class Kuhn(ZeroSumGame, ABC):
-    # def __init_subclass__(cls, **kwargs):
-    #     super().__init_subclass__(**kwargs)
-    #     if not hasattr(cls, 'n'):
-    #         raise ValueError("Subclasses of KuhnState must define a class variable 'n'")
-
-    def __init__(self, p1_type, p2_type, history):
+    def __init__(self, p1_type, p2_type, history, **kwargs):
         n = self.__class__.n
         assert n > p1_type and n > p2_type and p1_type >= 0 and p2_type >= 0
-        self.n = n
-        super().__init__(p1_type, p2_type, history)
+        super().__init__(p1_type=p1_type, p2_type=p2_type, nature_type=kwargs.get('nature_type', None), history=history)
 
     @classmethod
     def nCard(cls, n_cards):
         '''
         Returns a subclass of KuhnState with n_cards as the number of cards in the deck.
         '''
-        class subclass(Kuhn):
+        class ncardSubclass(cls):
             n = n_cards
-            def __init__(self, p1_type, p2_type, history):
-                super().__init__(p1_type, p2_type, history)
-
-            def __str__(self):
-                return f"Kuhn({self.n}), P1 type: {self.p1_type}, P2 type: {self.p2_type}, History: {self.history}"
-        return subclass
+        # print(cls)
+        # print(ncardSubclass)
+        ncardSubclass.__name__ =  f"{cls.__name__}({n_cards})"
+        return ncardSubclass
 
     @classmethod
-    def random(cls):
-        """ Create a random Kuhn poker state """
-        n = cls.n
-        deck = list(range(n))
-        np.random.shuffle(deck)
-        return cls(deck.pop(), deck.pop(), "")
-    
-    @classmethod
-    def types(cls):
+    def type_combos(cls):
         # p1, p2 must have distinct cards
         combos = []
         for i in range(cls.n):
             for j in range(cls.n):
                 if i == j:
                     continue
-                combos.append((i, j))
+                combos.append((i, j, None))
         return combos
         
-    def get_current_player(self):
+    def current_player(self):
         """ Return the current player (0 = P1, 1 = P2) """
         return len(self.history) % 2
 
-    def get_info_set(self):
+    def current_info_set(self):
         # each player can see the whole history
-        player = self.get_current_player()
+        player = self.current_player()
+        assert player in (0, 1) # should never be finding info set for nature
         card = self.p1_type if player == 0 else self.p2_type
         assert self.history is not None
         return InfoSet(card, self.history)
 
     @classmethod
-    def get_actions_at_info_set(self, info_set):
+    def get_actions_at_info_set(cls, info_set):
         if info_set.history == "":
             return ["K", "B"]
         return ["F", "C"] if info_set.history[-1] == "B" else ["K", "B"]
 
     @classmethod
-    def info_sets(cls, player):
+    def all_info_sets(cls, player):
         # each player can see the whole history
         info_sets = []
         if player == 0:
@@ -84,36 +69,26 @@ class Kuhn(ZeroSumGame, ABC):
     
     def get_pot(self):
         """ Return the current pot size, including the ante """
-        if self.history in ['BC', 'KBC']:
-            return 4
-        else:
-            return 2
+        # for each call (and implicit bet), the pot increases by 2
+        # pot starts at 2
+        calls = self.history.count("C")
+        return 2 + 2 * calls
 
     def _do_get_p1_payoff(self):
-        if self.history[-1] == "F":
-            p1_payoff = self.get_pot()//2 if self.get_current_player() == 0 else -self.get_pot()//2
+        if self.history[-1] == "F": # last player to act folded
+            previous_state = self.copy()
+            previous_state.history = previous_state.history[:-1]
+            folder = previous_state.current_player()
+            p1_payoff = self.get_pot()//2 if folder == 1 else -self.get_pot()//2
         else:
             p1_payoff = self.get_pot()//2 if self.p1_type > self.p2_type else -self.get_pot()//2
         return p1_payoff
     
-class KuhnNoCheck(Kuhn):
+class HalfStreetKuhn(Kuhn):
     # Kuhn poker, but if player 1 checks, we go straight to showdown
-    @classmethod
-    def nCard(cls, n_cards):
-        '''
-        Returns a subclass with n_cards as the number of cards in the deck.
-        '''
-        class subclass(KuhnNoCheck):
-            n = n_cards
-            def __init__(self, p1_type, p2_type, history):
-                super().__init__(p1_type, p2_type, history)
-
-            def __str__(self):
-                return f"KuhnNoCheck({self.n}), P1 type: {self.p1_type}, P2 type: {self.p2_type}, History: {self.history}"
-        return subclass
 
     @classmethod
-    def info_sets(cls, player):
+    def all_info_sets(cls, player):
         # each player can see the whole history
         info_sets = []
         if player == 0:
@@ -129,4 +104,4 @@ class KuhnNoCheck(Kuhn):
         return self.history in ['BC', 'K', 'BF']
     
 ThreeCard = Kuhn.nCard(3)
-ThreeCardNoCheck = KuhnNoCheck.nCard(3)
+ThreeCardHalfStreet = HalfStreetKuhn.nCard(3)

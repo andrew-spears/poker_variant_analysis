@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1740675988 "/Users/andrewspears/poker_analysis/vonneumann_writeup/linprog.tex" "linprog.pdf" "linprog" 1740675988 0
-  "/Users/andrewspears/poker_analysis/vonneumann_writeup/linprog.tex" 1740675987 2062 7fe197346651ba3cf48d34048f8f096e ""
+["pdflatex"] 1741376084 "/Users/andrewspears/poker_analysis/latex/normal form linprog/linprog.tex" "linprog.pdf" "linprog" 1741376085 0
+  "/Users/andrewspears/poker_analysis/latex/normal form linprog/linprog.tex" 1741376084 2119 44012229c7f6e7b9514abfad94519e91 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -93,9 +93,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691721674 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691721644 7883453 931beaebd4c2b18a72bbf4631c6fd0a3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "linprog.aux" 1740675988 554 04ae3964aa57b78538b565d0454a3de2 "pdflatex"
-  "linprog.out" 1740675988 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "linprog.tex" 1740675987 2062 7fe197346651ba3cf48d34048f8f096e ""
+  "linprog.aux" 1741376085 554 04ae3964aa57b78538b565d0454a3de2 "pdflatex"
+  "linprog.out" 1741376085 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "linprog.tex" 1741376084 2119 44012229c7f6e7b9514abfad94519e91 ""
   (generated)
   "linprog.aux"
   "linprog.log"

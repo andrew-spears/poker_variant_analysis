@@ -27,10 +27,10 @@ class RPS(ZeroSumGame):
     def copy(self):
         return RPS(self.history)
     
-    def get_current_player(self) -> int:
+    def current_player(self) -> int:
         return len(self.history) % 2
     
-    def get_info_set(self):
+    def current_info_set(self):
         return InfoSet(None, None)
     
     @classmethod
@@ -48,9 +48,9 @@ class RPS(ZeroSumGame):
         return self.PAYOFF_MATRIX[(self.history[0], self.history[1])]
     
     @classmethod
-    def types(cls):
+    def type_combos(cls):
         return [(None, None)]  # No inherent types, just two players
 
     @classmethod
-    def info_sets(cls, player):
+    def all_info_sets(cls, player):
         return [InfoSet(None, None)]  # No info sets, just two players

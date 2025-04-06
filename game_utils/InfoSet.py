@@ -1,4 +1,8 @@
 class InfoSet:
+    @classmethod
+    def empty(cls):
+        return InfoSet(None, None)
+
     def __init__(self, type, history):
         self.type = type
         self.history = history

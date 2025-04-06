@@ -1,8 +1,8 @@
-PWD /Users/andrewspears/poker_analysis/vonneumann_writeup
+PWD /Users/andrewspears/poker_analysis/latex/normal form linprog
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/andrewspears/poker_analysis/vonneumann_writeup/linprog.tex
+INPUT /Users/andrewspears/poker_analysis/latex/normal form linprog/linprog.tex
 OUTPUT linprog.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
