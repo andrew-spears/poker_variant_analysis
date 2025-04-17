@@ -5,4 +5,4 @@ https://www.desmos.com/calculator/palhen19nj
 Borrowing ideas from The Mathematics of Poker, by Bill Chen and Jerrod Ankenman
 
 Limit continuous poker anaylsis:
-[Solving Nash Equilibrium](/notebooks/bounded_continuous_poker)
+[Solving Nash Equilibrium](/notebooks/bounded_continuous_poker/solve_bounded_continuous.ipynb)
