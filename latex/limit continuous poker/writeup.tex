@@ -1,0 +1,260 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref, todonotes, changepage}
+
+
+\title{Limit Continuous Poker: A Bounded Variant of Von Neumann's Poker Game}
+\author{Andrew Spears}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+
+\section{Introduction}
+
+\section{Background}
+
+\subsection{Von Neumann Poker}
+Von Neumann poker (also called Continuous Poker) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
+
+The game works as follows:
+\begin{itemize}
+    \item Two players, referred to as the bettor and the caller, are each dealt a real number uniformly and independently from the interval $[0, 1]$ (their `hand strengths').
+    \item The game consists of a single 'half-street' of betting, where the bettor chooses between checking and betting a fixed amount $s$, but the caller can only call or fold (no raising, and a check by the bettor goes straight to showdown).
+    \item In showdown, the higher hand strength wins.
+\end{itemize}
+
+Von Neumann poker has a solved Nash equilibrium strategy profile, which is discussed in detail \todo{citation}.
+
+\subsection{No-limit Continuous Poker}
+A variant of Von Neumann poker allows the bettor to choose a bet size $s$, where $s$ can be any nonnegative real number. This variant is called No-limit Continuous Poker. The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).
+
+\section{Limit Continuous Poker}
+We now consider a variant where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant is called Limit Continuous Poker.
+
+The rules of Limit Continuous Poker are as follows:
+\begin{itemize}
+    \item Two players: the bettor and the caller (or Player I and Player II).
+    \item Players are each dealt a real number uniformly and independently from the interval $[0, 1]$. Call the bettor's hand strength $x$ and the caller's hand strength $y$.
+    \item A single `half-street' of betting: the bettor chooses between checking and betting a fixed amount $s \in [L, U]$. If a bet is made, the caller either calls or folds.
+    \item In showdown, the higher hand strength wins.
+\end{itemize}
+
+This paper aims to address the following questions:
+\begin{enumerate}
+    \item What is the Nash equilibrium strategy profile for Limit Continuous Poker?
+    \item What is the value of the game, and does the bettor still have the upper hand (as in No-limit Continuous Poker)? If so, is there a simple strategic argument for why the bettor must win in expectation?
+    \item As the bounds $L$ and $U$ change, how does the strategy profile change? Does this reflect observed behavior in real poker games with minimum and maximum bet sizes?
+    \item As the bounds $L$ and $U$ approach $0$ and $\infty$, respectively, does the strategy profile approach the Nash equilibrium of No-limit Continuous Poker?
+    \item As the bounds $L$ and $U$ approach some fixed value $s$ from either side, does the strategy profile approach the Nash equilibrium of Continuous Poker with a fixed bet size $s$?
+\end{enumerate}
+
+\section{Solving Limit Continuous Poker}
+
+
+
+\subsection{Form of the strategy profile}
+
+\todo{address admissability }
+% (A strategy is admissible if no other
+% strategy gives a better expected payoﬀ against one strategy of the opponent without giving
+% a worse expected payoﬀ against another strategy of the opponent.)
+
+As a starting point, we conjecture a strategy profile similar to that of No-limit Continuous Poker, where the bettor partitions the interval $[0, 1]$ into three regions: a value bet region, a check region, and a bluffing region. Similarly, the caller partitions the interval into two regions: a call region and a fold region. All of these will be parametrized by the limits $L$ and $U$. 
+
+Clearly, the caller should always call with better hands and fold with worse hands. \todo{address strictly dominated} We can model this by defining a threshold $c(s)$, which is the minimum hand strength that the caller will call with when the bettor bets $s$. We can guess that $c(s)$ should be non-decreasing in $s$, since a smaller bet gives the caller better pot odds, so they need relatively lower chances of winning to justify a call.
+
+A value bet is defined as a bet aimed at making weaker hands call (although a value bet expects stronger hands to call as well). A bluff is defined as a bet which never expects a weaker hand to call, but hopes to make at least some stronger hands fold. Knowing the form of the caller's strategy, a value bet of size $s$ must be made with a hand that is stronger than $c(s)$, otherwise no weaker hands will call. A bluff must be made with a hand that is weaker than $c(s)$, otherwise the caller will never fold a stronger hand. We can also guess that in Nash Equilibrium, the bettor's value bets should be larger with stronger hands. This is because $c(s)$ is non-decreasing, so a larger bet restricts the calling range to only very strong hands. A value bet gains value from making weaker hands call, so only the strongest hands should be making large value bets. 
+
+Another consideration for the form of the bettor's strategy is how to size bluffs. That is, when the bettor has a hand weak enough to bluff, which hands should bluff big and which should bluff small? We argue that the bettor should bluff big with their weakest hands and small with their relatively stronger bluffing hands.\todo{This is kinda a thesis statement, but its not obvious that everything following is aruging it} In Nash Equilibrium, a bluff never expects to be called by a weaker hand, so the only consideration is the fact that larger bluffs are more likely to make the opponent fold. When the bettor picks a bluffing size, they want to maximize expected value assuming the opponent only calls with stronger hands. If the opponent calls, they lose the bet $s$, but if they fold, the bettor wins the pot of $1$:
+
+\[ \mathbb{E}[\text{bluff } s] = \mathbb{P}[\text{fold}] \cdot 1 -\mathbb{P}[\text{call}] \cdot s \]
+
+We can plug in the probability of calling as $1-c(s)$, since the caller calls with any hand stronger than $c(s)$.
+
+\begin{equation}{\label{eq:bluff}}
+    \mathbb{E}[\text{bluff } s] = c(s) - (1-c(s)) \cdot s
+\end{equation}
+
+Notice that this value has no dependence on the strength of the bettor's hand. This means that either one bluff size is optimal for all hands, or that the bettor is indifferent among a set of bluffing sizes. 
+
+Taking a step back, why should the caller ever call with hands weaker than what the bettor might be value betting with? The answer is that the bettor bluffs with hands which are indistinguishable from value bets. If the bettor is using a certain size for value betting, they must also use that size for bluffing, otherwise the caller can exploit the bettor's strategy by only calling with hands stronger than the bettor's value betting range. Thus, the bettor must be indifferent among all bluffing sizes which are used for value bets.
+
+If the bettor is indifferent among bluffing sizes, then the hands which bluff different sizes are not actually important in a Nash Equilibrium, as long as the bluffs balance out the value bets correctly to give the caller the correct pot odds. However, we can discriminate between 'optimal' betting strategies by bluffing in a way that best responds to suboptimal calling strategies. For example, suppose the caller's deviates in a way that is consistent with $c(s)$ being non-decreasing, so $c(s)$ is shifted either up or down. If it shifts up, then the caller is folding hands which should be calling, but this has no impact on choosing a bluffing size. However, if $c(s)$ shifts down, then the caller is calling with hands which should be folding. In this case, the better can actually win occasionally by bluffing small with their strongest bluffing hands. If they instead bluffed big with their strongest bluffing hands, they would not be able to take advantage of the caller's mistake. An important distinction here is that the bettor is not actually deviating from the Nash Equilibrium to exploit a mistake by the caller. Instead, they are using one of many security strategies which are all Nash Equilibria, but which are not all equally good against suboptimal calling strategies. 
+
+We can use a similar argument to show that the caller's calling threshold $c(s)$ should be a continuous function of $s$, even at the endpoints $L$ and $U$. A skeptic might suggest because the bet size is limited by $U$, a bet of $U$ indicates a much stronger range than a large bet which is less than the maximum. They might then suggest that in Nash Equilibrium, the calling threshold $c(U)$ is not necessarily the limiting value of $c(s)$ as $s$ approaches $U$. We argue that this must be the case because if it were not, the bettor could exploit the caller's strategy. Look again at equation \ref{eq:bluff}; if $c(s)$ had a discontinuity at $U$, then so would the expected value of bluffing. The bettor would then not be indifferent among bluffing sizes, and they could exploit the caller's strategy by either bluffing $U$ or $U-\epsilon$, whichever was more profitable.
+
+Putting this all together, we can formulate the strategy profile as follows:
+
+\begin{itemize}
+    \item The caller has a single calling threshold $c(s)$ as a function of the bet size $s$. They call with hands $y \geq c(s)$ and fold with hands $y < c(s)$. The threshold $c(s)$ is non-decreasing in $s$ and continuous in $s$ even at the endpoints $L$ and $U$.
+    \item The bettor partitions $[0, 1]$ into seven regions with six threshold values $0 \leq x_0\leq x_1\leq x_2\leq x_3 \leq x_4 \leq x_5 \leq 1$. \todo{address 0 probability events and () vs []}
+    \item They bet the maximum amount $U$ with the strongest hands ($x \in (x_5, 1)$), some intermediate amount $L < s < U$ according to a function $x = v(s)$ with the next strongest hands ($x \in (x_4, x_5)$), and the minimum amount $L$ with the next strongest hands ($x \in (x_3, x_4)$). These are the value bet regions.
+    \item The bettor checks with mediocre hands ($x \in (x_2, x_3)$).
+    \item The bettor bluffs the minimum amount $L$ with the next strongest hands ($x \in (x_1, x_2)$), some intermediate amount $L < s < U$ according to a function $x = b(s)$ with the next strongest hands ($x \in (x_0, x_1)$), and the maximum amount $U$ with the weakest hands ($x \in (0, x_0)$). These are the bluffing regions.
+    \todo{continuity of bettor strategy}
+\end{itemize}
+
+
+\todo{diagram of strategy profile}
+
+\todo{flow between paragraphs}
+
+\subsection{Constraints and Indifference Equations}
+
+\subsubsection{Caller Indifference}
+
+By definition, $c(s)$ is the threshold above which the caller calls and below which they fold. This means that in Nash Equilibrium, the caller must be indifferent between calling and folding with a hand strength of $c(s)$:
+
+\begin{align*}
+    \mathbb{E}[\text{call } c(s)] & = \mathbb{E}[\text{fold } c(s)]\\
+    \mathbb{P}[\text{bluff} | s] \cdot (1+s) - \mathbb{P}[\text{value bet} | s]\cdot s & = 0 
+\end{align*}
+
+We now split into cases based on the value of $s$.
+
+
+\todo{formatting}
+\textbf{Case 1: $s = L$}
+
+The hands the bettor value bets $L$ with are $x \in (x_3, x_4)$, and the hands they bluff with are $x \in (x_1, x_2)$. 
+
+\begin{equation}{\label{callindiffmin}}
+    (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0
+\end{equation}
+
+\textbf{Case 2: $s = U$}
+
+The hands the bettor value bets $U$ with are $x \in (x_5, 1)$, and the hands they bluff with are $x \in (0, x_0)$. 
+
+\begin{equation}{\label{callindiffmax}}
+    (1-x_5) \cdot (1+U) - x_0 \cdot U = 0
+\end{equation}
+
+
+\textbf{Case 3: $L \leq s \leq U$}
+
+In this case, the bettor has exactly one value hand and one bluffing hand, but somewhat paradoxically, they are not equally likely. The probability of a value bet given the size $s$ is related to the inverse derivative of the value function $v(s)$ at $s$, and the same goes for a bluff. This gives us the following relation:
+
+\[ \frac{\mathbb{P}[\text{value bet} | s]}{\mathbb{P}[\text{bluff} | s]} = \frac{|b'(s)|}{|v'(s)|}\]
+
+An intuitive interpretation of this is that for any small neighborhood around the bet size $s$, the bettor has more hands which use a bet size in the neighborhood if $v(s)$ does not change rapidly around $s$, that is, if $|v'(s)|$ is small. The same goes for bluffing hands, and as we limit the neighborhood to a single point, the ratio of the two probabilities approaches the ratio of the derivatives. Plugging this into the indifference equation, we get:
+
+\begin{equation}{\label{callindiff}}
+    |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0
+\end{equation}
+
+\subsubsection{Bettor Indifference and Optimality}
+
+When the bettor makes a value bet, they are attempting to maximize the expected value of the bet. We can write the expected value of a value bet as:
+
+\begin{align*}
+    \mathbb{E}[\text{value bet } s | x] & = \mathbb{P}[\text{call with worse}] \cdot (1+s) - \mathbb{P}[\text{call with better}] \cdot s + \mathbb{P}[\text{fold}] \cdot 1 \\
+    & = (x-c(s)) \cdot (1+s) - (1-x) \cdot (s) + c(s)\\
+\end{align*}
+
+To maximize this, we take the derivative with respect to $s$ and set it equal to zero. Crucially, we are treating $c(s)$ as a function of $s$ and using the chain rule, since changing the bet size $s$ will also change the calling threshold $c(s)$. We want this optimality condition to hold for the bettor's Nash equilibrium strategy, so we set $x=v(s)$. This gives us:
+
+\begin{equation}{\label{valueoptimality}}
+    -sc'(s) - c(s) + 2 v(s) - 1 = 0
+\end{equation}
+
+Additionally, when the bettor has the most marginal value betting hand at $x=x_3$, they should be indifferent between a minimum value bet and a check: 
+
+\begin{align}{\label{valueindiff}}
+    \nonumber \mathbb{E}[\text{value bet } L | x=x_3] & = \mathbb{E}[\text{check} | x=x_3]\\ 
+    (x_3-c(L)) \cdot (1+L) - (1-x_3) \cdot (L) + c(L) & = x_3
+\end{align}
+
+Finally, when the bettor has the most marginal bluffing hand at $x=x_2$, they should be indifferent between a minimum bluff and a check. However, as we discussed earlier, the bettor should be indifferent among all bluffing sizes, so the bettor should actually be indifferent between checking and making any bluffing size $s$ at $x=x_2$. This gives us:
+
+\begin{align}{\label{bluffindiff}}
+    \nonumber \mathbb{E}[\text{bluff } s | x=x_2] & = \mathbb{E}[\text{check} | x=x_2]\\ 
+    c(s) - (1-c(s)) \cdot s & = x_2
+\end{align}
+
+
+\subsubsection{Continuity Constraints}
+
+As discussed above, the bettor's strategy is continuous in $s$ and $x$. This means that the endpoints of the functions $v(s)$ and $b(s)$ are constrained as follows:
+
+\begin{equation}{\label{continuityconstraints}}
+	 b(U) = x_0, \;\; b(L) = x_1, \;\; v(U) = x_5, \;\; v(L) = x_4
+\end{equation}
+
+\subsubsection{Solving the system}
+We now have a system of equations which we can solve to find the Nash equilibrium strategy profile. The equations are summarized as follows:
+
+\begin{align*}
+    \text{Caller Indifference:} & \\
+    & (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0\\
+    & (1-x_5) \cdot (1+U) - x_0 \cdot U = 0\\
+    & |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0\\
+    \text{Bettor Indifference:} & \\
+    & -sc'(s) - c(s) + 2 v(s) - 1 = 0\\
+    & c(L) - (1-c(L)) \cdot L = x_3\\
+    & c(s) - (1-c(s)) \cdot s = x_2\\
+    \text{Continuity Constraints:} & \\
+    & b(U) = x_0, b(L) = x_1, v(U) = x_5, v(L) = x_4
+\end{align*}
+
+We begin by solving for $c(s)$ in terms of $x_2$ using \ref{bluffindiff}. 
+
+\[ c(s) = \frac{x_2 + s}{1+s} \]
+
+We then use $c(s)$ and \ref{valueoptimality} to solve for $v(s)$:
+
+\[ v(s) = \frac{1+4s+2s^2+x_2}{2(1+s)^2} \]
+
+Use $v(s)$ and \ref{callindiff} to solve for $b(s)$, up to a constant of integration which we call $b_0$:
+
+\[ b(s) = b_0 - \frac{(1+3s)(x_2-1)}{6(1+s)^3} \]
+
+If we now substitute the functions $b(s), c(s)$ and $v(s)$ into \ref{callindiffmax}, \ref{callindiffmin}, \ref{valueindiff}, and \ref{continuityconstraints} where possible, we get a system of 7 equations in 7 unknowns: $x_0, x_1, x_2, x_3, x_4, x_5, b_0$. 
+
+The system was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The entire solution is given below.
+
+\todo{im fucking stupid, just use xs as the subsexpressions for b c v and use As for the xs}
+% \begin{adjustwidth}{-1in}{0in}
+%     \scriptsize
+\begin{align*}
+    x_0 &= \frac{3 (L+1)^3 U}{A_4}\\
+    x_1 &= \frac{3 A_0 L U+A_0 U-L^3-3 L^2}{A_4}\\
+    x_2 &= \frac{A_5}{A_4}\\
+    x_3 &= \frac{A_2 L^3+3 A_2 L^2+3 L \left(5 U^3+15 U^2+15 U+4\right)+4 U^3+12 U^2+12 U+3}{A_4}\\
+    x_4 &= \frac{3 A_1 L^2+A_2 L^3+3 A_2 L+4 U^3+12 U^2+12 U+3}{A_4}\\
+    x_5 &= \frac{3 A_3 L^2+3 A_3 L+A_3+L^3 \left(6 U^3+18 U^2+15 U+2\right)}{A_4}\\
+    b(s) &= -\frac{(L+1)^3 \left(-3 A_0 s U-A_0 U+s^3+3 s^2\right)}{A_4 (s+1)^3}\\
+    c(s) &= \frac{\frac{A_5}{A_4}+s}{s+1}\\
+    v(s) &= \frac{\frac{A_5}{A_4}+2 s^2+4 s+1}{2 (s+1)^2}
+\end{align*}
+
+
+% \normalsize
+% \end{adjustwidth}
+Where the common subexpressions are:
+
+\begin{align*}
+	A_0 &= U^2+3 U+3 \\
+    A_1 &= 7 U^3+21 U^2+21 U+6 \\
+    A_2 &= 6 U^3+18 U^2+18 U+5 \\
+    A_3 &= 7 U^3+21 U^2+18 U+3 \\
+    A_4 &= 3 A_1 L^2+3 A_1 L+A_1+A_2 L^3 \\
+    A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
+\end{align*}
+
+This solution is more interpretable in graphical form. The following plots show the strategy profile for various values of $L$ and $U$.
+
+\includegraphics{limit_continuous_0.5_1.5.png}[scale=0.2]
+
+
+
+\section{Nash Equilibrium Strategy Profile}
+
+
+
+\end{document}
