@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
-\usepackage{hyperref, todonotes, changepage}
+\usepackage{hyperref, todonotes, changepage, }
 
 
 \title{Limit Continuous Poker: A Bounded Variant of Von Neumann's Poker Game}
@@ -249,7 +249,27 @@ Where the common subexpressions are:
 
 This solution is more interpretable in graphical form. The following plots show the strategy profile for various values of $L$ and $U$.
 
-\includegraphics{limit_continuous_0.5_1.5.png}[scale=0.2]
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{limit_continuous_0.1_2.png}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{limit_continuous_0.1_2.png}
+    \end{minipage}
+    \vspace{0.5cm}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{limit_continous_0.3_1.5.png}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{limit_continuous_0.5_1.png}
+    \end{minipage}
+    \caption{Nash equilibrium strategy profiles for different values of $L$ and $U$. The bet function maps hand strengths to bet sizes, while the call function gives the minimum calling hand strength for a given bet size. The shaded regions represent the hand strengths for which the caller should call a given bet size.}
+\end{figure}
 
 
 

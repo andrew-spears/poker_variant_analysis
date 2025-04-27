@@ -1,8 +1,8 @@
 {
 	"Parameters":{
-		"L":0.5,
-		"U":1.5
+		"L":0,
+		"U":10
 	},
 	"Description":"Metadata for betting and calling functions",
-	"GeneratedOn":"Thu 24 Apr 2025 12:38:37"
+	"GeneratedOn":"Sun 27 Apr 2025 11:24:18"
 }
