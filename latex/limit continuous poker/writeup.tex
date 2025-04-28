@@ -247,29 +247,38 @@ Where the common subexpressions are:
     A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
 \end{align*}
 
-This solution is more interpretable in graphical form. The following plots show the strategy profile for various values of $L$ and $U$.
+This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to no-limit continuous poker, while the more restricted bet size limits model something closer Von Neumann poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \todo{ref} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Von Neumann poker as $L$ and $U$ approach some fixed value $s$ from either side.
 
 \begin{figure}[h!]
-    \centering
-    \begin{minipage}{0.45\textwidth}
+    \begin{adjustwidth}{-1in}{-1in}
         \centering
-        \includegraphics[width=\textwidth]{limit_continuous_0_10.png}
-    \end{minipage}
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{limit_continuous_0.1_2.png}
-    \end{minipage}
-    \vspace{0.5cm}
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{limit_continous_0.3_1.5.png}
-    \end{minipage}
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{limit_continuous_0.5_1.png}
-    \end{minipage}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{limit_continuous_0_10.png}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{limit_continuous_0.1_2.png}
+        \end{minipage}
+        \vspace{0.5cm}\\
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{limit_continuous_0.3_1.5.png}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{limit_continuous_0.5_1.png}
+        \end{minipage}
+    \end{adjustwidth}
     \caption{Nash equilibrium strategy profiles for different values of $L$ and $U$, from very lenient to very restricted bet sizes. The bet function maps hand strengths to bet sizes, while the call function gives the minimum calling hand strength for a given bet size. The shaded regions represent the hand strengths for which the caller should call a given bet size.}
+    \label{fig:strategyprofile}
 \end{figure}
+
+
+
+
 
 
 
