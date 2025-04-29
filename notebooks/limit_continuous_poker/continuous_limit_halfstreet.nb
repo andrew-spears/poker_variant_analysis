@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60841,       1652]
-NotebookOptionsPosition[     57455,       1600]
-NotebookOutlinePosition[     57846,       1616]
-CellTagsIndexPosition[     57803,       1613]
+NotebookDataLength[     63747,       1735]
+NotebookOptionsPosition[     60134,       1679]
+NotebookOutlinePosition[     60525,       1695]
+CellTagsIndexPosition[     60482,       1692]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1106,6 +1106,84 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
+ RowBox[{"TeXForm", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x0", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}], ",", " ", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x1", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x2", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x3", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x4", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Limit", "[", 
+      RowBox[{
+       RowBox[{"Limit", "[", 
+        RowBox[{
+         RowBox[{"x5", "/.", "Xsol"}], ",", " ", 
+         RowBox[{"L", "->", "B"}]}], "]"}], ",", " ", 
+       RowBox[{"U", "->", "B"}]}], "]"}], " ", "//", "Simplify"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.95485948286661*^9, 3.954859533237555*^9}, {
+  3.954859584903575*^9, 3.954859593539652*^9}, {3.9548596358181477`*^9, 
+  3.954859636882935*^9}, {3.9548598361662273`*^9, 3.954859839121086*^9}, {
+  3.9548600379227533`*^9, 3.9548601496617928`*^9}},
+ CellLabel->
+  "In[129]:=",ExpressionUUID->"dfc90a6b-3d7c-459c-a9e0-41f06d7d73ea"],
+
+Cell["\<\
+\\left\\{\\frac{B}{2 B^3+7 B^2+7 B+2},\\frac{B}{2 B^3+7 B^2+7 \
+B+2},\\frac{B}{2 B^2+5 B+2},\\frac{2 B^2+4 B+1}{2 B^2+5 B+2},\\frac{2 B^2+5 \
+B+1}{2 B^2+5 B+2},\\frac{2 B^2+5 B+1}{2 B^2+5
+   B+2}\\right\\}\
+\>", "Output",
+ CellChangeTimes->{3.954860150012285*^9},
+ CellLabel->
+  "Out[129]//TeXForm=",ExpressionUUID->"8a7114c3-28d7-40dc-9410-0aaad881f8a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
    RowBox[{
@@ -1134,11 +1212,12 @@ Cell[BoxData[
    RowBox[{"nbDir", "=", 
     RowBox[{"DirectoryName", "[", 
      RowBox[{"NotebookFileName", "[", "]"}], "]"}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{"(*", 
     RowBox[{
     "Define", " ", "the", " ", "individual", " ", "segments", " ", "of", " ", 
-     "the", " ", "betting", " ", "function"}], "*)"}], "\n", 
+     "the", " ", "betting", " ", "function"}], "*)"}], "\[IndentingNewLine]", 
+   
    RowBox[{
     RowBox[{"betColor", "=", "Red"}], ";"}], "\n", 
    RowBox[{
@@ -1262,11 +1341,11 @@ Cell[BoxData[
             "1"}], "}"}], ",", 
          RowBox[{"PlotStyle", "->", "betColor"}], ",", 
          RowBox[{"PlotRange", "->", "plotRange"}]}], "]"}]}], "}"}]}], ";"}], 
-   "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Extract", " ", "data", " ", "points", " ", "from", " ", "betFunction"}], 
-    "*)"}], "\[IndentingNewLine]", 
+    "*)"}], "\n", 
    RowBox[{
     RowBox[{"betFunctionData", "=", 
      RowBox[{"Table", "[", 
@@ -1282,22 +1361,22 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"i", ",", 
          RowBox[{"Length", "[", "betFunction", "]"}]}], "}"}]}], "]"}]}], 
-    ";"}], "\[IndentingNewLine]", 
+    ";"}], "\n", 
    RowBox[{"(*", 
     RowBox[{
     "Export", " ", "the", " ", "data", " ", "to", " ", "a", " ", "JSON", " ", 
-     "file"}], "*)"}], "\n", 
+     "file"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Export", "[", 
      RowBox[{
       RowBox[{"FileNameJoin", "[", 
        RowBox[{"{", 
         RowBox[{"nbDir", ",", "\"\<betFunction.json\>\""}], "}"}], "]"}], ",",
-       "betFunctionData", ",", "\"\<JSON\>\""}], "]"}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+       "betFunctionData", ",", "\"\<JSON\>\""}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Add", " ", "the", " ", "calling", " ", "function"}], "*)"}], 
-   "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{
     RowBox[{"callColor", "=", "Blue"}], ";"}], "\n", 
    RowBox[{
@@ -1340,8 +1419,8 @@ Cell[BoxData[
       RowBox[{"FileNameJoin", "[", 
        RowBox[{"{", 
         RowBox[{"nbDir", ",", "\"\<callFunction.json\>\""}], "}"}], "]"}], 
-      ",", "callFunctionData", ",", "\"\<JSON\>\""}], "]"}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+      ",", "callFunctionData", ",", "\"\<JSON\>\""}], "]"}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Write", " ", "metadata", " ", "to", " ", "a", " ", "JSON", " ", "file"}],
@@ -1370,16 +1449,16 @@ Cell[BoxData[
       RowBox[{"FileNameJoin", "[", 
        RowBox[{"{", 
         RowBox[{"nbDir", ",", "\"\<metadata.json\>\""}], "}"}], "]"}], ",", 
-      "metadata", ",", "\"\<JSON\>\""}], "]"}], ";"}], "\n", 
-   "\[IndentingNewLine]", 
+      "metadata", ",", "\"\<JSON\>\""}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
    RowBox[{
     RowBox[{"allPlots", "=", 
      RowBox[{"Union", "[", 
       RowBox[{"betFunction", ",", "callFunction"}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
-    RowBox[{"Show", " ", "the", " ", "combined", " ", "plot"}], "*)"}], "\n", 
-   
+    RowBox[{"Show", " ", "the", " ", "combined", " ", "plot"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Show", "[", 
      RowBox[{"allPlots", ",", 
@@ -1639,20 +1718,24 @@ Cell[33420, 978, 1941, 58, 72, "Output",ExpressionUUID->"92b8c913-4b7d-4286-83a8
 Cell[35364, 1038, 2111, 64, 76, "Output",ExpressionUUID->"c2f594ce-c653-4f7b-a82d-ab6a93ac4732"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37512, 1107, 11267, 301, 787, "Input",ExpressionUUID->"55ade019-dbc9-45fd-a02f-6565b3a601d8"],
-Cell[48782, 1410, 493, 7, 34, "Output",ExpressionUUID->"81ffbd8c-a799-4b4d-bb0d-87ca71b42279"],
-Cell[49278, 1419, 810, 15, 28, "Message",ExpressionUUID->"5a47b2bf-90ba-427b-839b-dda57e4bdaee"],
-Cell[50091, 1436, 810, 15, 28, "Message",ExpressionUUID->"a007c326-e2fa-4163-bdb9-62136a0ee88c"],
-Cell[50904, 1453, 608, 12, 28, "Message",ExpressionUUID->"9dcdbfb8-07fa-47dc-9911-b54595318907"],
-Cell[51515, 1467, 481, 10, 28, "Message",ExpressionUUID->"f02e8b9b-a64f-455f-acb5-13bf3b816185"],
-Cell[51999, 1479, 812, 15, 28, "Message",ExpressionUUID->"0249cba8-4219-4616-93f9-94d2c2bb65a6"],
-Cell[52814, 1496, 809, 15, 28, "Message",ExpressionUUID->"23201f9c-0db2-4a37-93c9-e59615a173d8"],
-Cell[53626, 1513, 606, 12, 28, "Message",ExpressionUUID->"24cbbd4e-58ba-4721-a087-fa44871c22ba"],
-Cell[54235, 1527, 481, 10, 28, "Message",ExpressionUUID->"a11bc8c0-a9ae-42d3-8478-d04cbc3fac82"],
-Cell[54719, 1539, 812, 15, 28, "Message",ExpressionUUID->"79255de1-5057-4549-9f14-9cfcbd08ee84"],
-Cell[55534, 1556, 810, 15, 28, "Message",ExpressionUUID->"71d97563-1493-4da7-b924-edc6cefc914a"],
-Cell[56347, 1573, 606, 12, 28, "Message",ExpressionUUID->"ce292c32-4a41-4a4e-ba70-d900db264163"],
-Cell[56956, 1587, 483, 10, 28, "Message",ExpressionUUID->"6be89c9d-4f77-4560-876e-19e6904de172"]
+Cell[37512, 1107, 2270, 63, 136, "Input",ExpressionUUID->"dfc90a6b-3d7c-459c-a9e0-41f06d7d73ea"],
+Cell[39785, 1172, 365, 8, 63, "Output",ExpressionUUID->"8a7114c3-28d7-40dc-9410-0aaad881f8a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40187, 1185, 11271, 302, 787, "Input",ExpressionUUID->"55ade019-dbc9-45fd-a02f-6565b3a601d8"],
+Cell[51461, 1489, 493, 7, 34, "Output",ExpressionUUID->"81ffbd8c-a799-4b4d-bb0d-87ca71b42279"],
+Cell[51957, 1498, 810, 15, 28, "Message",ExpressionUUID->"5a47b2bf-90ba-427b-839b-dda57e4bdaee"],
+Cell[52770, 1515, 810, 15, 28, "Message",ExpressionUUID->"a007c326-e2fa-4163-bdb9-62136a0ee88c"],
+Cell[53583, 1532, 608, 12, 28, "Message",ExpressionUUID->"9dcdbfb8-07fa-47dc-9911-b54595318907"],
+Cell[54194, 1546, 481, 10, 28, "Message",ExpressionUUID->"f02e8b9b-a64f-455f-acb5-13bf3b816185"],
+Cell[54678, 1558, 812, 15, 28, "Message",ExpressionUUID->"0249cba8-4219-4616-93f9-94d2c2bb65a6"],
+Cell[55493, 1575, 809, 15, 28, "Message",ExpressionUUID->"23201f9c-0db2-4a37-93c9-e59615a173d8"],
+Cell[56305, 1592, 606, 12, 28, "Message",ExpressionUUID->"24cbbd4e-58ba-4721-a087-fa44871c22ba"],
+Cell[56914, 1606, 481, 10, 28, "Message",ExpressionUUID->"a11bc8c0-a9ae-42d3-8478-d04cbc3fac82"],
+Cell[57398, 1618, 812, 15, 28, "Message",ExpressionUUID->"79255de1-5057-4549-9f14-9cfcbd08ee84"],
+Cell[58213, 1635, 810, 15, 28, "Message",ExpressionUUID->"71d97563-1493-4da7-b924-edc6cefc914a"],
+Cell[59026, 1652, 606, 12, 28, "Message",ExpressionUUID->"ce292c32-4a41-4a4e-ba70-d900db264163"],
+Cell[59635, 1666, 483, 10, 28, "Message",ExpressionUUID->"6be89c9d-4f77-4560-876e-19e6904de172"]
 }, Open  ]]
 }
 ]

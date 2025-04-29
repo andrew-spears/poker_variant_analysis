@@ -1,10 +1,19 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
-\usepackage{hyperref, todonotes, changepage, }
+\usepackage{hyperref, todonotes, changepage}
 
+% Define custom theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
 
-\title{Limit Continuous Poker: A Bounded Variant of Von Neumann's Poker Game}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% Define custom proof environment
+\newenvironment{customproof}[1][Proof]{\noindent\textbf{#1.} }{\hfill$\square$\vspace{1em}}
+
+\title{Limit Continuous Poker: A Variant of Continuous Poker with Limited Bet Sizes}
 \author{Andrew Spears}
 \date{\today}
 
@@ -13,38 +22,54 @@
 \maketitle
 
 \section{Abstract}
+We introduces and analyze Limit Continuous Poker, a variant of Von Neumann's Continuous Poker with variable but limited bet sizes. This simplified variant of poker captures aspects of information asymmetry, bluffing, balancing, and the impact of bet size limits while still being simple enough to solve analytically. We derive the Nash equilibrium strategy profile for this game, showing how the bettor's and caller's strategies depend on the bet size limits. We demonstrate that as the bet size limits approach extreme values, the strategy profile converges to those of other continuous poker variants. Finally, we connect these results to strategic implications of limited bet sizing in real-world poker.
 
 \section{Introduction}
 
-\section{Background}
+\subsection{Previous Work}
 
-\subsection{Von Neumann Poker}
-Von Neumann poker (also called Continuous Poker) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
+\subsubsection{Continuous Poker}
+Continuous Poker (also called Von Neumann Poker) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
 
-The game works as follows:
-\begin{itemize}
-    \item Two players, referred to as the bettor and the caller, are each dealt a real number uniformly and independently from the interval $[0, 1]$ (their `hand strengths').
-    \item The game consists of a single 'half-street' of betting, where the bettor chooses between checking and betting a fixed amount $s$, but the caller can only call or fold (no raising, and a check by the bettor goes straight to showdown).
-    \item In showdown, the higher hand strength wins.
-\end{itemize}
+The game works as follows: Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes simply scale proportionally.}. They are each dealt a 'hand strength' uniformly and independently from the interval $[0, 1]$ (we refer to these hand strengths as $x$ for bettor and $y$ for caller). After seeing their hand strengths, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet by putting a pre-determined amount $B > 0$ into the pot. The caller can now either call by matching the $B$ units in the pot and letting the higher hand win the pot of $1+2B$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
 
-Von Neumann poker has a solved Nash equilibrium strategy profile, which is discussed in detail \todo{citation}.
+Continuous Poker has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not strictly dominated by any other strategy}. This strategy profile, parametrized by the bet size $B$, is as follows:
 
-\subsection{No-limit Continuous Poker}
-A variant of Von Neumann poker allows the bettor to choose a bet size $s$, where $s$ can be any nonnegative real number. This variant is called No-limit Continuous Poker. The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).
+The bettor bets with hands $x$ such that either 
+
+$$x > \frac{1 + 4s + 2B^2}{(1+2B)(2+B)} \text{ or } x < \frac{B}{(1+2B)(2+B)}$$
+
+We call the higher interval the value betting range and the lower interval the bluffing range. The caller calls with hands $y$ such that
+
+$$ y > \frac{B(3 +2B)}{(1+2B)(2+B)} $$
+
+The non-uniqueness of this Nash Equilibrium is due to the fact that given the bettor's strategy, the caller can achieve the same expected payoff with any calling threshold between the value betting range and the bluffing range. However, any calling strategy other than this one incentivizes the bettor to deviate from the Nash Equilibrium strategy and leads to a lower payoff for the caller. 
+
+The value of Continuous Poker for the bettor is 
+
+$$ V_B = \frac{B}{(1+2B)(2+B)} $$
+
+Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. \todo{value as a function of x and y?}
+
+\subsubsection{No-limit Continuous Poker}
+A variant of Continuous Poker allows the bettor to choose a bet size $s > 0$ after seeing their hand strength. This variant is called No-limit Continuous Poker (or Newman Poker after Donald J. Newman). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph} 
+
+In Nash Equilibrium, the bettor should make large bets with their strongest and weakest hands and smaller bets or checks with their intermediate hands. It turns out that the optimal strategy is most elegantly described by a mapping from bet sizes $s$ to hand strengths $x$ for bluffing and value betting, respectively. The caller simply has a calling threshold $c(s)$ for each possible bet size $s$. The full strategy profile is as follows:
+
+The bettor bets $s$ with hands $x$ such that either
+
+$$ x = \frac{3 s+1}{7 (s+1)^3} \text{ or } x = 1 - \frac{3}{7 (s+1)^2} $$
+
+Where the first condition represents bluffing hands and the second value betting hands. After seeing a bet of size $s$, the caller should call with hands $y$ such that
+
+$$ y > 1 - \frac{6}{7 (s+1)} $$
+
+Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each bet size. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still an optimal strategy. This concept appears again and is explained more thoroughly in section \todo{ref}.
 
 \section{Limit Continuous Poker}
-We now consider a variant where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant is called Limit Continuous Poker.
+We now consider a variant of Continuous poker where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant, called Limit Continuous Poker, retains the same structure: two players, the bettor and the caller, are each dealt a hand strength $x$ and $y$, respectively, uniformly and independently from the interval $[0, 1]$. After seeing their hand strengths, the bettor chooses between checking (equivalently, betting $0$ units) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must decide whether to call or fold. In the event of a showdown, the higher hand strength wins.
 
-The rules of Limit Continuous Poker are as follows:
-\begin{itemize}
-    \item Two players: the bettor and the caller (or Player I and Player II).
-    \item Players are each dealt a real number uniformly and independently from the interval $[0, 1]$. Call the bettor's hand strength $x$ and the caller's hand strength $y$.
-    \item A single `half-street' of betting: the bettor chooses between checking and betting a fixed amount $s \in [L, U]$. If a bet is made, the caller either calls or folds.
-    \item In showdown, the higher hand strength wins.
-\end{itemize}
-
-This paper aims to address the following questions:
+This paper aims to address the following questions:\todo{clean up}
 \begin{enumerate}
     \item What is the Nash equilibrium strategy profile for Limit Continuous Poker?
     \item What is the value of the game, and does the bettor still have the upper hand (as in No-limit Continuous Poker)? If so, is there a simple strategic argument for why the bettor must win in expectation?
@@ -68,7 +93,7 @@ As a starting point, we conjecture a strategy profile similar to that of No-limi
 
 Clearly, the caller should always call with better hands and fold with worse hands. \todo{address strictly dominated} We can model this by defining a threshold $c(s)$, which is the minimum hand strength that the caller will call with when the bettor bets $s$. We can guess that $c(s)$ should be non-decreasing in $s$, since a smaller bet gives the caller better pot odds, so they need relatively lower chances of winning to justify a call.
 
-A value bet is defined as a bet aimed at making weaker hands call (although a value bet expects stronger hands to call as well). A bluff is defined as a bet which never expects a weaker hand to call, but hopes to make at least some stronger hands fold. Knowing the form of the caller's strategy, a value bet of size $s$ must be made with a hand that is stronger than $c(s)$, otherwise no weaker hands will call. A bluff must be made with a hand that is weaker than $c(s)$, otherwise the caller will never fold a stronger hand. We can also guess that in Nash Equilibrium, the bettor's value bets should be larger with stronger hands. This is because $c(s)$ is non-decreasing, so a larger bet restricts the calling range to only very strong hands. A value bet gains value from making weaker hands call, so only the strongest hands should be making large value bets. 
+A value bet is defined as a bet aimed at making weaker hands call (although a value bet expects stronger hands to call as well). A bluff is defined as a bet which never expects a weaker hand to call, but hopes to make at least some stronger hands fold. Knowing the form of the caller's strategy, a value bet of size $s$ must be made with a hand that is stronger than $c(s)$, otherwise no weaker hands will call. A bluff must be made with a hand that is weaker than $c(s)$, otherwise the caller will never fold a stronger hand. We can also guess that in Nash Equilibrium, the bettor's value bets should be larger with stronger hands. This is because $c(s)$ is non-decreasing, so a larger bet restricts the calling range to only very strong hands. A value bet gains value from making weaker hands call, so only the strongest hands should be making large value bets. \todo{what are v and b?}
 
 Another consideration for the form of the bettor's strategy is how to size bluffs. That is, when the bettor has a hand weak enough to bluff, which hands should bluff big and which should bluff small? We argue that the bettor should bluff big with their weakest hands and small with their relatively stronger bluffing hands.\todo{This is kinda a thesis statement, but its not obvious that everything following is aruging it} In Nash Equilibrium, a bluff never expects to be called by a weaker hand, so the only consideration is the fact that larger bluffs are more likely to make the opponent fold. When the bettor picks a bluffing size, they want to maximize expected value assuming the opponent only calls with stronger hands. If the opponent calls, they lose the bet $s$, but if they fold, the bettor wins the pot of $1$:
 
@@ -216,6 +241,8 @@ Use $v(s)$ and \ref{callindiff} to solve for $b(s)$, up to a constant of integra
 
 If we now substitute the functions $b(s), c(s)$ and $v(s)$ into \ref{callindiffmax}, \ref{callindiffmin}, \ref{valueindiff}, and \ref{continuityconstraints} where possible, we get a system of 7 equations in 7 unknowns: $x_0, x_1, x_2, x_3, x_4, x_5, b_0$. 
 
+\subsubsection{Nash Equilibrium Strategy Profile}
+
 The system was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The entire solution is given below.
 
 \todo{im fucking stupid, just use xs as the subsexpressions for b c v and use As for the xs}
@@ -228,9 +255,10 @@ The system was solved symbolically using Mathematica and simplified by finding c
     x_3 &= \frac{A_2 L^3+3 A_2 L^2+3 L \left(5 U^3+15 U^2+15 U+4\right)+4 U^3+12 U^2+12 U+3}{A_4}\\
     x_4 &= \frac{3 A_1 L^2+A_2 L^3+3 A_2 L+4 U^3+12 U^2+12 U+3}{A_4}\\
     x_5 &= \frac{3 A_3 L^2+3 A_3 L+A_3+L^3 \left(6 U^3+18 U^2+15 U+2\right)}{A_4}\\
-    b(s) &= -\frac{(L+1)^3 \left(-3 A_0 s U-A_0 U+s^3+3 s^2\right)}{A_4 (s+1)^3}\\
-    c(s) &= \frac{\frac{A_5}{A_4}+s}{s+1}\\
-    v(s) &= \frac{\frac{A_5}{A_4}+2 s^2+4 s+1}{2 (s+1)^2}
+    b_0 &= -\frac{(L+1)^3}{\text{A4}} \\ 
+    b(s) &= b_0 - \frac{(1+3s)(x_2-1)}{6(1+s)^3}\\
+    c(s) &= \frac{x_2+s}{s+1}\\
+    v(s) &= \frac{x_2+2 s^2+4 s+1}{2 (s+1)^2}
 \end{align*}
 
 
@@ -247,7 +275,7 @@ Where the common subexpressions are:
     A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
 \end{align*}
 
-This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to no-limit continuous poker, while the more restricted bet size limits model something closer Von Neumann poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \todo{ref} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Von Neumann poker as $L$ and $U$ approach some fixed value $s$ from either side.
+This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to No-Limit Continuous Poker, while the more restricted bet size limits model something closer Continuous Poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \todo{ref} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Continuous Poker as $L$ and $U$ approach some fixed value $s$ from either side.
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
@@ -282,8 +310,149 @@ This solution is more interpretable in graphical form. Figure \ref{fig:strategyp
 
 
 
-\section{Nash Equilibrium Strategy Profile}
+\section{Relation to Previous Work}
+
+Both Continuous Poker and No-limit Continuous Poker can be thought of as special cases of Limit Continuous Poker with extreme values of $L$ and $U$. A natural question to ask is whether the Nash equilibrium strategies approach those of these other games as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as ‘bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as ‘call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
+
+\subsection{Notation}
+
+Let $S_B(x)$ denote the bet function for fixed bet size $B$ in Continuous Poker, which maps hand strenths $x$ to bets (either $0$ for a check of $B$ for a bet). Let $C_B(s)$ denote the call function which maps the set of bets (the singleton set $\{B\}$) to calling thresholds. 
+
+\begin{align}
+	S_B(x) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)}\\
+    B & x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)}
+\end{cases} \\
+C_B(s) & = \frac{B(3 +2B)}{(1+2B)(2+B)}
+\end{align}
+
+Let $S(x)$ denote the bet function for No-limit Continuous Poker, which maps hand strengths $x$ to bet sizes $s > 0$. Let $C(s)$ denote the call function which maps the set of bets (the interval $[0, \infty)$) to calling thresholds. $S(x)$ is harder to define explicitly because the bettor strategy for No-limit Continuous Poker is defined by functions $v(s)$ and $b(s)$ which map bet sizes to hand strengths, and $S(x)$ is related to the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. 
+
+Finally, let $S_L^U(x)$ and $C_L^U(s)$ denote the bet and call functions for Limit Continuous Poker, which map hand strengths $x$ to bet sizes $s \in [L, U]$ and bet sizes $s \in [L, U]$ to calling thresholds. Like $S(x)$, $S_L^U(x)$ will be a piecewise function with some parts being defined by the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. We also adapt this notation to the $x_i$'s in the solution so that $x_i|_a^b$ means $x_i$ with $L=a$ and $U=b$.
+
+To compare the three strategy profiles, we want to know whether the bet and call functions for Limit Continuous Poker approach those of Continuous Poker and No-limit Continuous Poker as the limits $L$ and $U$ approach their extreme values.
+
+\subsection{Continuous Poker}
+
+\subsubsection{Bettor Strategy Convergence to Continuous Poker}
+We expect that as $L$ and $U$ approach some fixed value $s$, the bet function $S_L^U(x)$ should converge to the bet function $S_B(x)$ for Continuous Poker with a fixed bet size $B$. 
+
+\begin{theorem}
+	 For any $B > 0$, the bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S_B(x)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} S_L^U(x) = \lim_{U \to B} \lim_{L \to B} S_L^U(x) = S_B(x).
+\]
+\end{theorem}
+
+\begin{customproof}
+We analyze the expressions for the $x_i$'s, each of which is a rational function of $L$ and $U$ (i.e., a ratio of polynomials in $L$ and $U$). Since these functions are well-defined for all positive values of $L$ and $U$, the limit as $L \to s$ and $U \to s$ is well-behaved. By substituting $L = U = B$ for some fixed $B$, we obtain the following:
+
+\begin{align*}
+    x_0|_B^B & = x_1|_B^B = \frac{B}{2 B^3+7 B^2+7 B+2} \\
+    x_2|_B^B & = \frac{B}{(1+2B)(2+B)} \\
+    x_3|_B^B & = \frac{2 B^2+4 B+1}{(1+2B)(2+B)} \\
+    x_4|_B^B & = x_5|_B^B = \frac{2 B^2+5 B+1}{(1+2B)(2+B)} \\
+\end{align*}
+
+$x_0 = x_1$ and $x_4 = x_5$ are expected, since these intervals are where the bettor uses an intermediate bet size, and $L=U=B$ does not allow intermediate bet sizes. This reduces the bet function to 
+
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} S_L^U(x) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}\\
+    B & x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}
+    \end{cases}\\
+    &= S_B(x)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to Continuous Poker}
+
+The calling function is easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C_B(s)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$.
+
+\begin{theorem}
+     For any $B > 0$, the call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C_B(s)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} C_L^U(s) = \lim_{U \to B} \lim_{L \to B} C_L^U(s) = C_B(s).
+\]
+\end{theorem}
+
+\begin{customproof}
+We already have the value of $x_2|_B^B$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} C_L^U(s) & = \lim_{L \to B} \lim_{U \to B} \frac{x_2+B}{1+B} \\
+    & = \frac{\frac{B}{(1+2B)(2+B)} + B}{1+B} \\
+    & = \frac{B(3+2B)}{(1+2B)(2+B)} \\
+    & = C_B(s)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Game Value}
+
+Continuous Poker has an expected value of 
+
+$$ V_B = \frac{B}{(1+2B)(2+B)} $$
+
+for the bettor. Figure \ref{fig:payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{payoff_plot_s_1.png}
+    \caption{Payoffs for Continuous Poker with fixed bet size $B=1$.}
+    \label{fig:payoff}
+\end{figure}
 
 
+\subsection{No-Limit Continuous Poker}
+
+\subsubsection{Bettor Strategy Convergence to No-Limit Continuous Poker}
+
+In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_L^U(x)$ should converge to the bet function $S(x)$ for No-limit Continuous Poker.
+
+\begin{theorem}
+    The bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S(x)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} S_L^U(x) = \lim_{U \to \infty} \lim_{L \to 0} S_L^U(x) = S(x).
+\]
+\end{theorem}
+\begin{customproof}
+We can analyze the expressions for the $x_i$'s as $L$ and $U$ approach $0$ and $\infty$. The limit is well-defined, and we can substitute $L=0$ and $U=\infty$ into the expressions for the $x_i$s.
+\begin{align*}
+    x_0|_0^\infty &= 0 \\
+    x_1|_0^\infty &= x_2|_0^\infty = \frac{1}{7} \\
+    x_3|_0^\infty &= x_4|_0^\infty = \frac{4}{7} \\
+    x_5|_0^\infty &= 1
+\end{align*}
+
+$x_0|_0^\infty = 0$ and $x_5|_0^\infty = 1$ are expected, since these intervals are where the bettor uses a minimum bet size and a maximum bet size, respectively, both of which are impossible. The bettor now bets intermediate values for $x < \frac{1}{7}$ and $x > \frac{4}{7}$, and checks for $\frac{1}{7} < x < \frac{4}{7}$. But how much do they bet? We can take the limits of $v(s)$ and $b(s)$ as $L$ and $U$ approach $0$ and $\infty$:
+
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} b(s) &= \frac{3 s+1}{7 (s+1)^3}\\
+    \lim_{L \to 0} \lim_{U \to \infty} v(s) &= 1 - \frac{3}{7 (s+1)^2}
+\end{align*}
+
+To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function for No-limit Continuous Poker described in section \todo{ref}.
+
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to No-Limit Continuous Poker}
+
+The calling function is again easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C(s)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$.
+\begin{theorem}
+    The call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C(s)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} C_L^U(s) = \lim_{U \to \infty} \lim_{L \to 0} C_L^U(s) = C(s).
+\]
+\end{theorem}
+\begin{customproof}
+Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} C_L^U(s) & = \lim_{L \to 0} \lim_{U \to \infty} \frac{x_2+s}{1+s}\\
+    & = \frac{\frac{1}{7}+s}{1+s}\\
+    & = 1 - \frac{6}{7(1+s)}\\
+    & = C(s)
+\end{align*}
+\end{customproof}
 
 \end{document}
