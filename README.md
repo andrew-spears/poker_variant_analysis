@@ -1,8 +1,10 @@
 Analysis of poker variants and simple hands, using analytical tools and numerical algorithms.
 
-No-limit continuous poker analysis:
-https://www.desmos.com/calculator/palhen19nj
-Borrowing ideas from The Mathematics of Poker, by Bill Chen and Jerrod Ankenman
+Analysis of a limit variant of von neumann poker:
+https://github.com/tirantfox/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_limit_continuous.ipynb
 
-Limit continuous poker anaylsis:
-[Solving Nash Equilibrium](/notebooks/bounded_continuous_poker/solve_bounded_continuous.ipynb)
+No-limit continuous poker desmos widget:
+https://www.desmos.com/calculator/palhen19nj
+
+Limit continuous poker desmos widget:
+https://www.desmos.com/calculator/riicxq0xso
