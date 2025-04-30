@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  29 APR 2025 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  29 APR 2025 23:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -466,7 +466,11 @@ Package: changepage 2009/10/20 v1.0c check page and change page layout
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count312
 \l__pdf_internal_box=\box64
-) (./writeup.aux)
+) (./writeup.aux
+
+LaTeX Warning: Label `fig:payoff' multiply defined.
+
+)
 \openout1 = `writeup.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -822,53 +826,66 @@ Overfull \hbox (7.62749pt too wide) detected at line 262
  []
 
 [9] [10]
-<limit_continuous_0_10.png, id=197, 503.7219pt x 395.3169pt>
+<limit_continuous_0_10.png, id=201, 503.7219pt x 395.3169pt>
 File: limit_continuous_0_10.png Graphic file (type png)
 <use limit_continuous_0_10.png>
 Package pdftex.def Info: limit_continuous_0_10.png  used on input line 285.
 (pdftex.def)             Requested size: 234.00238pt x 183.63948pt.
-<limit_continuous_0.1_2.png, id=199, 507.3354pt x 395.3169pt>
+<limit_continuous_0.1_2.png, id=203, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.1_2.png Graphic file (type png)
 <use limit_continuous_0.1_2.png>
 Package pdftex.def Info: limit_continuous_0.1_2.png  used on input line 290.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.3_1.5.png, id=200, 507.3354pt x 395.3169pt>
+<limit_continuous_0.3_1.5.png, id=204, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.3_1.5.png Graphic file (type png)
 <use limit_continuous_0.3_1.5.png>
 Package pdftex.def Info: limit_continuous_0.3_1.5.png  used on input line 295.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.5_1.png, id=201, 507.3354pt x 395.3169pt>
+<limit_continuous_0.5_1.png, id=205, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.5_1.png Graphic file (type png)
 <use limit_continuous_0.5_1.png>
 Package pdftex.def Info: limit_continuous_0.5_1.png  used on input line 300.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
  [11 <./limit_continuous_0_10.png> <./limit_continuous_0.1_2.png> <./limit_continuous_0.3_1.5.png> <./limit_continuous_0.5_1.png>] [12] [13]
-<payoff_plot_s_1.png, id=226, 370.38374pt x 313.17pt>
-File: payoff_plot_s_1.png Graphic file (type png)
-<use payoff_plot_s_1.png>
-Package pdftex.def Info: payoff_plot_s_1.png  used on input line 401.
-(pdftex.def)             Requested size: 272.99881pt x 230.82945pt.
+<payoff_fixed_bet_heatmap.png, id=230, 505.89pt x 505.89pt>
+File: payoff_fixed_bet_heatmap.png Graphic file (type png)
+<use payoff_fixed_bet_heatmap.png>
+Package pdftex.def Info: payoff_fixed_bet_heatmap.png  used on input line 401.
+(pdftex.def)             Requested size: 272.99881pt x 272.99898pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15 <./payoff_plot_s_1.png (PNG copy)>] [16] (./writeup.aux)
+[14] [15 <./payoff_fixed_bet_heatmap.png>]
+<payoff_heatmap_with_regions_labeled.png, id=245, 505.89pt x 505.89pt>
+File: payoff_heatmap_with_regions_labeled.png Graphic file (type png)
+<use payoff_heatmap_with_regions_labeled.png>
+Package pdftex.def Info: payoff_heatmap_with_regions_labeled.png  used on input line 462.
+(pdftex.def)             Requested size: 272.99881pt x 272.99898pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17 <./payoff_heatmap_with_regions_labeled.png>] (./writeup.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 9857F6B9ADF48F14F49BC28B7A72A820;4580.
+(rerunfilecheck)             Checksum: 4B8CD4DCCEF7BCF017151AE9CD06F099;4701.
  ) 
 Here is how much of TeX's memory you used:
- 20984 strings out of 476025
- 395378 string characters out of 5790017
+ 20995 strings out of 476025
+ 395800 string characters out of 5790017
  1883388 words of memory out of 5000000
- 40997 multiletter control sequences out of 15000+600000
+ 41004 multiletter control sequences out of 15000+600000
  522379 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,94p,1388b,1034s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on writeup.pdf (16 pages, 396319 bytes).
+Output written on writeup.pdf (17 pages, 639006 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 272 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
