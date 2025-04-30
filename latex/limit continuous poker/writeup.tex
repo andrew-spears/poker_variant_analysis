@@ -394,14 +394,15 @@ Continuous Poker has an expected value of
 
 $$ V_B = \frac{B}{(1+2B)(2+B)} $$
 
-for the bettor. Figure \ref{fig:payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium.
+for the bettor. Figure \ref{fig:payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium\footnote{Integrating over the square in this figure gives the expected value $V_B$.}. This gives insight into exactly how the bettor is gaining value from the game. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{payoff_fixed_bet_heatmap.png}
-    \caption{Payoffs for Continuous Poker with fixed bet size $B=1$.}
+    \caption{Nash equilibrium payoffs for Continuous Poker for all possible hand strength combinations, with fixed bet size $B=1$.}
     \label{fig:payoff}
 \end{figure}
+\todo{comparison with Limit Continuous Poker for limits close to eachother}
 
 
 \subsection{No-Limit Continuous Poker}
@@ -457,11 +458,18 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 
 \subsubsection{Game Value}
 
+The expected value of No-limit Continuous Poker is 
+
+$$ V = \frac{1}{7} $$
+
+for the bettor\todo{citation-ferguson}. Figure \ref{fig:no-limit-payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium.
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{payoff_heatmap_with_regions_labeled.png}
-    \caption{Payoffs for Continuous Poker with fixed bet size $B=1$.}
-    \label{fig:payoff}
+    \caption{Nash equilibrium payoffs for No-Limit Continuous Poker for all possible hand strength combinations.}
+    \label{fig:no-limit-payoff}
 \end{figure}
+\todo{comapre with limit continuous poker for lenient limits}
 
 \end{document}
