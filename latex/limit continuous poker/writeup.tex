@@ -28,12 +28,12 @@ We introduces and analyze Limit Continuous Poker, a variant of Von Neumann's Con
 
 \subsection{Previous Work}
 
-\subsubsection{Continuous Poker}
-Continuous Poker (also called Von Neumann Poker) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
+\subsubsection{Fixed-Bet Continuous Poker (FBCP)}
+Continuous Poker (also called Von Neumann Poker, and referred to in this paper as Fixed-Bet Continuous Poker or FBCP) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
 
 The game works as follows: Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes simply scale proportionally.}. They are each dealt a 'hand strength' uniformly and independently from the interval $[0, 1]$ (we refer to these hand strengths as $x$ for bettor and $y$ for caller). After seeing their hand strengths, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet by putting a pre-determined amount $B > 0$ into the pot. The caller can now either call by matching the $B$ units in the pot and letting the higher hand win the pot of $1+2B$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
 
-Continuous Poker has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not strictly dominated by any other strategy}. This strategy profile, parametrized by the bet size $B$, is as follows:
+FBCP has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not strictly dominated by any other strategy}. This strategy profile, parametrized by the bet size $B$, is as follows:
 
 The bettor bets with hands $x$ such that either 
 
@@ -45,14 +45,14 @@ $$ y > \frac{B(3 +2B)}{(1+2B)(2+B)} $$
 
 The non-uniqueness of this Nash Equilibrium is due to the fact that given the bettor's strategy, the caller can achieve the same expected payoff with any calling threshold between the value betting range and the bluffing range. However, any calling strategy other than this one incentivizes the bettor to deviate from the Nash Equilibrium strategy and leads to a lower payoff for the caller. 
 
-The value of Continuous Poker for the bettor is 
+The value of FBCP for the bettor is 
 
 $$ V_B = \frac{B}{(1+2B)(2+B)} $$
 
 Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. \todo{value as a function of x and y?}
 
-\subsubsection{No-limit Continuous Poker}
-A variant of Continuous Poker allows the bettor to choose a bet size $s > 0$ after seeing their hand strength. This variant is called No-limit Continuous Poker (or Newman Poker after Donald J. Newman). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph} 
+\subsubsection{No-limit Continuous Poker (NLCP)}
+Another continuous poker variant allows the bettor to choose a bet size $s > 0$ after seeing their hand strength. This variant is called No-Limit Continuous Poker (or Newman Poker after Donald J. Newman, or NLCP in this paper). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph} 
 
 In Nash Equilibrium, the bettor should make large bets with their strongest and weakest hands and smaller bets or checks with their intermediate hands. It turns out that the optimal strategy is most elegantly described by a mapping from bet sizes $s$ to hand strengths $x$ for bluffing and value betting, respectively. The caller simply has a calling threshold $c(s)$ for each possible bet size $s$. The full strategy profile is as follows:
 
@@ -66,19 +66,19 @@ $$ y > 1 - \frac{6}{7 (s+1)} $$
 
 Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each bet size. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still an optimal strategy. This concept appears again and is explained more thoroughly in section \todo{ref}.
 
-\section{Limit Continuous Poker}
-We now consider a variant of Continuous poker where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant, called Limit Continuous Poker, retains the same structure: two players, the bettor and the caller, are each dealt a hand strength $x$ and $y$, respectively, uniformly and independently from the interval $[0, 1]$. After seeing their hand strengths, the bettor chooses between checking (equivalently, betting $0$ units) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must decide whether to call or fold. In the event of a showdown, the higher hand strength wins.
+\section{Limit Continuous Poker (LCP)}
+We now consider a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant, called Limit Continuous Poker (or LCP), retains the same structure: two players, the bettor and the caller, are each dealt a hand strength $x$ and $y$, respectively, uniformly and independently from the interval $[0, 1]$. After seeing their hand strengths, the bettor chooses between checking (equivalently, betting $0$ units) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must decide whether to call or fold. In the event of a showdown, the higher hand strength wins.
 
-This paper aims to address the following questions:\todo{clean up}
-\begin{enumerate}
-    \item What is the Nash equilibrium strategy profile for Limit Continuous Poker?
-    \item What is the value of the game, and does the bettor still have the upper hand (as in No-limit Continuous Poker)? If so, is there a simple strategic argument for why the bettor must win in expectation?
-    \item As the bounds $L$ and $U$ change, how does the strategy profile change? Does this reflect observed behavior in real poker games with minimum and maximum bet sizes?
-    \item As the bounds $L$ and $U$ approach $0$ and $\infty$, respectively, does the strategy profile approach the Nash equilibrium of No-limit Continuous Poker?
-    \item As the bounds $L$ and $U$ approach some fixed value $s$ from either side, does the strategy profile approach the Nash equilibrium of Continuous Poker with a fixed bet size $s$?
-\end{enumerate}
+% This paper aims to address the following questions:\todo{clean up}
+% \begin{enumerate}
+%     \item What is the Nash equilibrium strategy profile for Limit Continuous Poker?
+%     \item What is the value of the game, and does the bettor still have the upper hand (as in No-limit Continuous Poker)? If so, is there a simple strategic argument for why the bettor must win in expectation?
+%     \item As the bounds $L$ and $U$ change, how does the strategy profile change? Does this reflect observed behavior in real poker games with minimum and maximum bet sizes?
+%     \item As the bounds $L$ and $U$ approach $0$ and $\infty$, respectively, does the strategy profile approach the Nash equilibrium of No-limit FBCP?
+%     \item As the bounds $L$ and $U$ approach some fixed value $s$ from either side, does the strategy profile approach the Nash equilibrium of FBCP with a fixed bet size $s$?
+% \end{enumerate}
 
-\section{Solving Limit Continuous Poker}
+\section{Solving LCP}
 
 
 
@@ -89,7 +89,7 @@ This paper aims to address the following questions:\todo{clean up}
 % strategy gives a better expected payoﬀ against one strategy of the opponent without giving
 % a worse expected payoﬀ against another strategy of the opponent.)
 
-As a starting point, we conjecture a strategy profile similar to that of No-limit Continuous Poker, where the bettor partitions the interval $[0, 1]$ into three regions: a value bet region, a check region, and a bluffing region. Similarly, the caller partitions the interval into two regions: a call region and a fold region. All of these will be parametrized by the limits $L$ and $U$. 
+As a starting point, we conjecture a strategy profile similar to that of NLCP, where the bettor partitions the interval $[0, 1]$ into three regions: a value bet region, a check region, and a bluffing region. Similarly, the caller partitions the interval into two regions: a call region and a fold region. All of these will be parametrized by the limits $L$ and $U$. 
 
 Clearly, the caller should always call with better hands and fold with worse hands. \todo{address strictly dominated} We can model this by defining a threshold $c(s)$, which is the minimum hand strength that the caller will call with when the bettor bets $s$. We can guess that $c(s)$ should be non-decreasing in $s$, since a smaller bet gives the caller better pot odds, so they need relatively lower chances of winning to justify a call.
 
@@ -272,7 +272,7 @@ Where the common subexpressions are:
     A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
 \end{align*}
 
-This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to No-Limit Continuous Poker, while the more restricted bet size limits model something closer Continuous Poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \ref{sec:strategic_convergence} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Continuous Poker as $L$ and $U$ approach some fixed value $s$ from either side.
+This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to NLCP, while the more restricted bet size limits model something closer FBCP with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of NLCP - we will show in section \ref{sec:strategic_convergence} that the strategy profile approaches the Nash equilibrium of NLCP as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of FBCP as $L$ and $U$ approach some fixed value $s$ from either side.
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
@@ -310,9 +310,8 @@ We now consider the game value to the bettor and inspect how it varies with the 
 
 \todo{continue, expected game value as a function of L, U in mathematica}
 
-\section{Relation to Previous Work}
-
-Both Continuous Poker and No-limit Continuous Poker can be thought of as special cases of Limit Continuous Poker with extreme values of $L$ and $U$. A natural question to ask is whether the Nash equilibrium strategies approach those of these other games as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as ‘bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as ‘call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
+\section{Interpretation}
+The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. It is helpful to think in this context when interpreting the strategies and game value. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as ‘bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as ‘call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
 
 \subsection{Notation}
 
@@ -327,11 +326,11 @@ Let $S_B(x)$ denote the bet function for fixed bet size $B$ in Continuous Poker,
 C_B(s) & = \frac{B(3 +2B)}{(1+2B)(2+B)}
 \end{align}
 
-Let $S(x)$ denote the bet function for No-limit Continuous Poker, which maps hand strengths $x$ to bet sizes $s > 0$. Let $C(s)$ denote the call function which maps the set of bets (the interval $[0, \infty)$) to calling thresholds. $S(x)$ is harder to define explicitly because the bettor strategy for No-limit Continuous Poker is defined by functions $v(s)$ and $b(s)$ which map bet sizes to hand strengths, and $S(x)$ is related to the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. 
+Let $S(x)$ denote the bet function for NLCP, which maps hand strengths $x$ to bet sizes $s > 0$. Let $C(s)$ denote the call function which maps the set of bets (the interval $[0, \infty)$) to calling thresholds. $S(x)$ is harder to define explicitly because the bettor strategy for NLCP is defined by functions $v(s)$ and $b(s)$ which map bet sizes to hand strengths, and $S(x)$ is related to the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. 
 
 Finally, let $S_L^U(x)$ and $C_L^U(s)$ denote the bet and call functions for Limit Continuous Poker, which map hand strengths $x$ to bet sizes $s \in [L, U]$ and bet sizes $s \in [L, U]$ to calling thresholds. Like $S(x)$, $S_L^U(x)$ will be a piecewise function with some parts being defined by the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. We also adapt this notation to the $x_i$'s in the solution so that $x_i|_a^b$ means $x_i$ with $L=a$ and $U=b$.
 
-To compare the three strategy profiles, we want to know whether the bet and call functions for Limit Continuous Poker approach those of Continuous Poker and No-limit Continuous Poker as the limits $L$ and $U$ approach their extreme values.
+To compare the three strategy profiles, we want to know whether the bet and call functions for Limit Continuous Poker approach those of Continuous Poker and NLCP as the limits $L$ and $U$ approach their extreme values.
 
 \subsection{Strategic Convergence}
 \label{sec:strategic_convergence}
@@ -389,12 +388,12 @@ We already have the value of $x_2|_B^B$, so we can plug this into the expression
 \end{align*}
 \end{customproof}
 
-\subsubsection{Bettor Strategy Convergence to No-Limit Continuous Poker}
+\subsubsection{Bettor Strategy Convergence to NLCP}
 
-In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_L^U(x)$ should converge to the bet function $S(x)$ for No-limit Continuous Poker.
+In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_L^U(x)$ should converge to the bet function $S(x)$ for NLCP.
 
 \begin{theorem}
-    The bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S(x)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$:
+    The bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S(x)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
 \[
 \lim_{L \to 0} \lim_{U \to \infty} S_L^U(x) = \lim_{U \to \infty} \lim_{L \to 0} S_L^U(x) = S(x).
 \]
@@ -415,15 +414,15 @@ $x_0|_0^\infty = 0$ and $x_5|_0^\infty = 1$ are expected, since these intervals 
     \lim_{L \to 0} \lim_{U \to \infty} v(s) &= 1 - \frac{3}{7 (s+1)^2}
 \end{align*}
 
-To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function for No-limit Continuous Poker described in section \todo{ref}.
+To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function for NLCP described in section \todo{ref}.
 
 \end{customproof}
 
-\subsubsection{Caller Strategy Convergence to No-Limit Continuous Poker}
+\subsubsection{Caller Strategy Convergence to NLCP}
 
-The calling function is again easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C(s)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$.
+The calling function is again easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$.
 \begin{theorem}
-    The call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C(s)$ for No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$:
+    The call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
 \[
 \lim_{L \to 0} \lim_{U \to \infty} C_L^U(s) = \lim_{U \to \infty} \lim_{L \to 0} C_L^U(s) = C(s).
 \]
@@ -441,7 +440,7 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 
 \subsection{Game Value Convergence}
 
-A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Continuous Poker and No-Limit Continuous Poker. The value of the games follows this theme nicely.
+A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Continuous Poker and NLCP. The value of the games follows this theme nicely.
 
 Continuous Poker has an expected value of 
 
@@ -449,14 +448,14 @@ $$ V_B = \frac{B}{2(1+2B)(2+B)} $$
 
 for the bettor\todo{cite}. \todo{restate LCP game value from earlier}
 
-The expected value of No-limit Continuous Poker is 
+The expected value of NLCP is 
 
 $$ V = \frac{1}{14} $$
 
 for the bettor\todo{citation-ferguson}\footnote{Would be 1/7 for an ante of 1, but the value is halved with an ante of 0.5}. 
 
 
-If we consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, we can see visually how the game value shifts from Continuous Poker to No-Limit Continuous Poker (see Figure \ref{fig:payoffs}). Some notable features of the figure are:
+If we consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, we can see visually how the game value shifts from Continuous Poker to NLCP (see Figure \ref{fig:payoffs}). Some notable features of the figure are:
 
 \begin{itemize}
     \item The regions where the bettor wins or loses payoff are generally similar. The bettor wins the most with their strongest hands where the caller has slightly less strong hands, and loses the most with their weakest hands against strong hands or strong hands against slightly stronger hands. 
@@ -519,10 +518,10 @@ If we consider the combinations of hand strengths which result in certain payoff
 % \begin{figure}[h!]
 %     \centering
 %     \includegraphics[width=0.7\textwidth]{payoff_heatmap_with_regions_labeled.png}
-%     \caption{Nash equilibrium payoffs for No-Limit Continuous Poker for all possible hand strength combinations.}
+%     \caption{Nash equilibrium payoffs for NLCP for all possible hand strength combinations.}
 %     \label{fig:no-limit-payoff}
 % \end{figure}
-% \todo{comapre with limit continuous poker for lenient limits}
+% \todo{comapre with limit FBCP for lenient limits}
 
 
 
