@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746107946 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746107949 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746107943 35807 b378a6f11862697e937607a39b2de021 ""
+["pdflatex"] 1746131726 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746131729 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746131726 35659 b58d8f6d33b430924b205257e3b62d00 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -181,9 +181,9 @@
   "limit_continuous_0_10.png" 1745767632 46799 baf42adccf918adbbe64849ae846fd5b ""
   "payoff_fixed_bet_heatmap.png" 1745984260 151327 b980ada8a8943f9d86c277b8c86256ee ""
   "payoff_heatmap_with_regions_labeled.png" 1745984185 169703 6ac038980ee2746580431bd07ae96a06 ""
-  "writeup.aux" 1746107949 10518 8e56e917b15b89d0b0bfb811c3eb152e "pdflatex"
-  "writeup.out" 1746107949 4770 4eb328e1a61278aa3ba804692b11c278 "pdflatex"
-  "writeup.tex" 1746107943 35807 b378a6f11862697e937607a39b2de021 ""
+  "writeup.aux" 1746131729 10480 1185dff292340621b588935f93f35ac5 "pdflatex"
+  "writeup.out" 1746131729 4563 88b6a82a8c75ce2b155486b86b063994 "pdflatex"
+  "writeup.tex" 1746131726 35659 b58d8f6d33b430924b205257e3b62d00 ""
   (generated)
   "writeup.aux"
   "writeup.log"
