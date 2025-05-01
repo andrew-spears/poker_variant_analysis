@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746055329 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746055331 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746055327 32833 88e04398d33649fc6475f055e46e9c6b ""
+["pdflatex"] 1746107946 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746107949 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746107943 35807 b378a6f11862697e937607a39b2de021 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -171,15 +171,19 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691721674 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691721644 7883453 931beaebd4c2b18a72bbf4631c6fd0a3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
+  "LU_payoffs_0.1_5.png" 1746055082 176608 9b38ca2f72a789159ce446acb9ee38f3 ""
+  "LU_payoffs_0.3_2.png" 1746055085 171246 85e372ba979de85a89605e6b58e50dc6 ""
+  "LU_payoffs_0.5_1.5.png" 1746055088 166572 98e924da1ea79bf58b986ed06c7641c2 ""
+  "LU_payoffs_0.9_1.1.png" 1746055089 158039 11113bf88e9d40f3991ff0b54860bd0f ""
   "limit_continuous_0.1_2.png" 1745716887 49952 22dff59979b2d897f426c3f360d813f3 ""
   "limit_continuous_0.3_1.5.png" 1745716931 48504 c72e43ee223f8644e2ba933fb954b5ec ""
   "limit_continuous_0.5_1.png" 1745716963 37854 9f723242eadc3e8df54907d0fbd9303e ""
   "limit_continuous_0_10.png" 1745767632 46799 baf42adccf918adbbe64849ae846fd5b ""
   "payoff_fixed_bet_heatmap.png" 1745984260 151327 b980ada8a8943f9d86c277b8c86256ee ""
   "payoff_heatmap_with_regions_labeled.png" 1745984185 169703 6ac038980ee2746580431bd07ae96a06 ""
-  "writeup.aux" 1746055330 10961 1e839ddfb6395103872d265b6c710727 "pdflatex"
-  "writeup.out" 1746055330 4726 448cb2b8f57db1c23c9a06f3e6310688 "pdflatex"
-  "writeup.tex" 1746055327 32833 88e04398d33649fc6475f055e46e9c6b ""
+  "writeup.aux" 1746107949 10518 8e56e917b15b89d0b0bfb811c3eb152e "pdflatex"
+  "writeup.out" 1746107949 4770 4eb328e1a61278aa3ba804692b11c278 "pdflatex"
+  "writeup.tex" 1746107943 35807 b378a6f11862697e937607a39b2de021 ""
   (generated)
   "writeup.aux"
   "writeup.log"

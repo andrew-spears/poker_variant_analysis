@@ -113,6 +113,9 @@ If the bettor is indifferent among bluffing sizes, then the hands which bluff di
 
 We can use a similar argument to show that the caller's calling threshold $c(s)$ should be a continuous function of $s$, even at the endpoints $L$ and $U$. A skeptic might suggest because the bet size is limited by $U$, a bet of $U$ indicates a much stronger range than a large bet which is less than the maximum. They might then suggest that in Nash Equilibrium, the calling threshold $c(U)$ is not necessarily the limiting value of $c(s)$ as $s$ approaches $U$. We argue that this must be the case because if it were not, the bettor could exploit the caller's strategy. Look again at equation \ref{eq:bluff}; if $c(s)$ had a discontinuity at $U$, then so would the expected value of bluffing. The bettor would then not be indifferent among bluffing sizes, and they could exploit the caller's strategy by either bluffing $U$ or $U-\epsilon$, whichever was more profitable.
 
+\subsubsection{Nash Equilibrium Structure}
+\label{subsec:nash_equilibrium_structure}
+
 Putting this all together, we can formulate the strategy profile as follows:
 
 \begin{itemize}
@@ -243,11 +246,8 @@ If we now substitute the functions $b(s), c(s)$ and $v(s)$ into \ref{callindiffm
 
 \subsubsection{Nash Equilibrium Strategy Profile}
 
-The system was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The entire solution is given below.
+The system was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The entire solution is given below. Refer to section \ref{subsec:nash_equilibrium_structure} for an explanation of how these values fit together to actually form the strategy profile.
 
-\todo{im fucking stupid, just use xs as the subsexpressions for b c v and use As for the xs}
-% \begin{adjustwidth}{-1in}{0in}
-%     \scriptsize
 \begin{align*}
     x_0 &= \frac{3 (L+1)^3 U}{A_4}\\
     x_1 &= \frac{3 A_0 L U+A_0 U-L^3-3 L^2}{A_4}\\
@@ -261,9 +261,6 @@ The system was solved symbolically using Mathematica and simplified by finding c
     v(s) &= \frac{x_2+2 s^2+4 s+1}{2 (s+1)^2}
 \end{align*}
 
-
-% \normalsize
-% \end{adjustwidth}
 Where the common subexpressions are:
 
 \begin{align*}
@@ -275,7 +272,7 @@ Where the common subexpressions are:
     A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
 \end{align*}
 
-This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to No-Limit Continuous Poker, while the more restricted bet size limits model something closer Continuous Poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \todo{ref} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Continuous Poker as $L$ and $U$ approach some fixed value $s$ from either side.
+This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to No-Limit Continuous Poker, while the more restricted bet size limits model something closer Continuous Poker with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of No-limit Continuous Poker - we will show in section \ref{sec:strategic_convergence} that the strategy profile approaches the Nash equilibrium of No-limit Continuous Poker as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of Continuous Poker as $L$ and $U$ approach some fixed value $s$ from either side.
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
@@ -305,10 +302,13 @@ This solution is more interpretable in graphical form. Figure \ref{fig:strategyp
 \end{figure}
 
 
+\section{Game Value}
 
+We now consider the game value to the bettor and inspect how it varies with the limits $L, U$, and with combinations of hand strengths $x, y$. 
 
+\footnote{Integrating over the square in this figure gives the expected value $V_B$.}. This gives insight into exactly how the bettor is gaining value from the game. 
 
-
+\todo{continue, expected game value as a function of L, U in mathematica}
 
 \section{Relation to Previous Work}
 
@@ -334,6 +334,7 @@ Finally, let $S_L^U(x)$ and $C_L^U(s)$ denote the bet and call functions for Lim
 To compare the three strategy profiles, we want to know whether the bet and call functions for Limit Continuous Poker approach those of Continuous Poker and No-limit Continuous Poker as the limits $L$ and $U$ approach their extreme values.
 
 \subsection{Strategic Convergence}
+\label{sec:strategic_convergence}
 
 \subsubsection{Bettor Strategy Convergence to Continuous Poker}
 We expect that as $L$ and $U$ approach some fixed value $s$, the bet function $S_L^U(x)$ should converge to the bet function $S_B(x)$ for Continuous Poker with a fixed bet size $B$. 
@@ -388,25 +389,6 @@ We already have the value of $x_2|_B^B$, so we can plug this into the expression
 \end{align*}
 \end{customproof}
 
-\subsubsection{Game Value}
-
-Continuous Poker has an expected value of 
-
-$$ V_B = \frac{B}{(1+2B)(2+B)} $$
-
-for the bettor. Figure \ref{fig:payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium\footnote{Integrating over the square in this figure gives the expected value $V_B$.}. This gives insight into exactly how the bettor is gaining value from the game. 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{payoff_fixed_bet_heatmap.png}
-    \caption{Nash equilibrium payoffs for Continuous Poker for all possible hand strength combinations, with fixed bet size $B=1$.}
-    \label{fig:payoff}
-\end{figure}
-\todo{comparison with Limit Continuous Poker for limits close to eachother}
-
-
-\subsection{No-Limit Continuous Poker}
-
 \subsubsection{Bettor Strategy Convergence to No-Limit Continuous Poker}
 
 In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_L^U(x)$ should converge to the bet function $S(x)$ for No-limit Continuous Poker.
@@ -456,20 +438,92 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 \end{align*}
 \end{customproof}
 
-\subsubsection{Game Value}
+
+\subsection{Game Value Convergence}
+
+A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Continuous Poker and No-Limit Continuous Poker. The value of the games follows this theme nicely.
+
+Continuous Poker has an expected value of 
+
+$$ V_B = \frac{B}{(1+2B)(2+B)} $$
+
+for the bettor. \todo{restate LCP game value from earlier}
 
 The expected value of No-limit Continuous Poker is 
 
 $$ V = \frac{1}{7} $$
 
-for the bettor\todo{citation-ferguson}. Figure \ref{fig:no-limit-payoff} breaks down the combinations of hand strengths $x, y$ which result in certain payoffs in Nash equilibrium.
+for the bettor\todo{citation-ferguson}. 
+
+
+If we consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, we can see visually how the game value shifts from Continuous Poker to No-Limit Continuous Poker (see Figure \ref{fig:payoffs}). Some notable features of the figure are:
+
+\begin{itemize}
+    \item The regions where the bettor wins or loses payoff are generally similar. The bettor wins the most with their strongest hands where the caller has slightly less strong hands, and loses the most with their weakest hands against strong hands or strong hands against slightly stronger hands. 
+    \item As limits become more lenient, the checking region remains qualitatively the same, but takes up less of the bettors hand strengths because the bettor can make use of small bets for hands that might have otherwise checked.
+    \item As limits become more lenient, the most extreme payoffs become more extreme and come from a smaller proportion of $x, y$ combinations. The Bettors strongest hands become far more profitable but also far riskier as bets get larger.
+\end{itemize}
+
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{payoff_heatmap_with_regions_labeled.png}
-    \caption{Nash equilibrium payoffs for No-Limit Continuous Poker for all possible hand strength combinations.}
-    \label{fig:no-limit-payoff}
+    \begin{adjustwidth}{-1in}{-1in}
+        \vspace{-3cm} % Move the figure up into the top margin
+        \centering
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoff_fixed_bet_heatmap.png}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LU_payoffs_0.9_1.1.png}
+        \end{minipage}
+        \vspace{0.5cm}\\
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LU_payoffs_0.5_1.5.png}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LU_payoffs_0.3_2.png}
+        \end{minipage}
+        \vspace{0.5cm}\\
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{LU_payoffs_0.1_5.png}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoff_heatmap_with_regions_labeled.png}
+        \end{minipage}
+    \end{adjustwidth}
+    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for different values of $L$ and $U$, ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
+    \label{fig:payoffs}
 \end{figure}
-\todo{comapre with limit continuous poker for lenient limits}
+
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{payoff_fixed_bet_heatmap.png}
+%     \caption{Nash equilibrium payoffs for Continuous Poker for all possible hand strength combinations, with fixed bet size $B=1$.}
+%     \label{fig:payoff}
+% \end{figure}
+% \todo{comparison with Limit Continuous Poker for limits close to eachother}
+
+
+
+
+
+
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{payoff_heatmap_with_regions_labeled.png}
+%     \caption{Nash equilibrium payoffs for No-Limit Continuous Poker for all possible hand strength combinations.}
+%     \label{fig:no-limit-payoff}
+% \end{figure}
+% \todo{comapre with limit continuous poker for lenient limits}
+
+
 
 \end{document}
