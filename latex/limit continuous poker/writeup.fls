@@ -870,6 +870,11 @@ INPUT ./limit_continuous_0.5_1.png
 INPUT limit_continuous_0.5_1.png
 INPUT ./limit_continuous_0.5_1.png
 INPUT ./limit_continuous_0.5_1.png
+INPUT ./value_by_LU.png
+INPUT ./value_by_LU.png
+INPUT value_by_LU.png
+INPUT ./value_by_LU.png
+INPUT ./value_by_LU.png
 INPUT ./payoff_fixed_bet_heatmap.png
 INPUT ./payoff_fixed_bet_heatmap.png
 INPUT payoff_fixed_bet_heatmap.png

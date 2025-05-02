@@ -48,7 +48,7 @@ The non-uniqueness of this Nash Equilibrium is due to the fact that given the be
 
 The value of FBCP for the bettor is 
 
-$$ V_B = \frac{B}{(1+2B)(2+B)} $$
+$$ V_{FB}(B) = \frac{B}{2(1+2B)(2+B)} $$
 
 Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. \todo{value as a function of x and y?}
 
@@ -65,7 +65,13 @@ Where the first condition represents bluffing hands and the second value betting
 
 $$ y > 1 - \frac{6}{7 (s+1)} $$
 
-Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each bet size. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still an optimal strategy. This concept appears again and is explained more thoroughly in section \todo{ref}.
+Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each bet size. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still an optimal strategy. This concept appears again and is explained more thoroughly in section \ref{subsec:nash_equilibrium_structure}.
+
+The value of NLCP is
+
+$$ V_{NL} = \frac{1}{14} $$
+
+for the bettor\footnote{Would be 1/7 for an ante of 1, but the value is halved with an ante of 0.5}.
 
 \section{Limit Continuous Poker (LCP)}
 We now consider a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant, called Limit Continuous Poker (or LCP), retains the same structure: two players, the bettor and the caller, are each dealt a hand strength $x$ and $y$, respectively, uniformly and independently from the interval $[0, 1]$. After seeing their hand strengths, the bettor chooses between checking (equivalently, betting $0$ units) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must decide whether to call or fold. In the event of a showdown, the higher hand strength wins.
@@ -83,14 +89,26 @@ We now consider a variant where the bettor may choose a bet size $s$ after seein
 
 
 
-\subsection{Form of the strategy profile}
+\subsection{Nash Equilibrium Structure}
 
-\todo{address admissability }
+\todo{address admissability}
 % (A strategy is admissible if no other
 % strategy gives a better expected payoﬀ against one strategy of the opponent without giving
 % a worse expected payoﬀ against another strategy of the opponent.)
 
-As a starting point, we conjecture a strategy profile similar to that of NLCP, where the bettor partitions the interval $[0, 1]$ into three regions: a value bet region, a check region, and a bluffing region. Similarly, the caller partitions the interval into two regions: a call region and a fold region. All of these will be parametrized by the limits $L$ and $U$. 
+\label{subsec:nash_equilibrium_structure}
+Like FBCB and NLCP, LCP has many Nash equilibria, but a unique one with admissible strategies. This strategy profile turns out to have the following structure:
+
+\begin{itemize}
+    \item The caller has a single calling threshold $c(s)$ as a function of the bet size $s$. They call with hands $y \geq c(s)$ and fold with hands $y < c(s)$. The threshold $c(s)$ is non-decreasing in $s$ and continuous in $s$ even at the endpoints $L$ and $U$.
+    \item The bettor partitions $[0, 1]$ into seven regions with six threshold values $0 \leq x_0\leq x_1\leq x_2\leq x_3 \leq x_4 \leq x_5 \leq 1$. \todo{address 0 probability events and () vs []}
+    \item They bet the maximum amount $U$ with the strongest hands ($x \in (x_5, 1)$), some intermediate amount $L < s < U$ according to a function $x = v(s)$ with the next strongest hands ($x \in (x_4, x_5)$), and the minimum amount $L$ with the next strongest hands ($x \in (x_3, x_4)$). These are the value bet regions.
+    \item The bettor checks with mediocre hands ($x \in (x_2, x_3)$).
+    \item The bettor bluffs the minimum amount $L$ with the next strongest hands ($x \in (x_1, x_2)$), some intermediate amount $L < s < U$ according to a function $x = b(s)$ with the next strongest hands ($x \in (x_0, x_1)$), and the maximum amount $U$ with the weakest hands ($x \in (0, x_0)$). These are the bluffing regions.
+    \todo{continuity of bettor strategy}
+\end{itemize}
+
+Why must this be the case? As a starting point, we conjecture a strategy profile similar to that of NLCP, where the bettor partitions the interval $[0, 1]$ into three regions: a value bet region, a check region, and a bluffing region. Similarly, the caller partitions the interval into two regions: a call region and a fold region. All of these will be parametrized by the limits $L$ and $U$. 
 
 Clearly, the caller should always call with better hands and fold with worse hands. \todo{address strictly dominated} We can model this by defining a threshold $c(s)$, which is the minimum hand strength that the caller will call with when the bettor bets $s$. We can guess that $c(s)$ should be non-decreasing in $s$, since a smaller bet gives the caller better pot odds, so they need relatively lower chances of winning to justify a call.
 
@@ -112,21 +130,10 @@ Taking a step back, why should the caller ever call with hands weaker than what 
 
 If the bettor is indifferent among bluffing sizes, then the hands which bluff different sizes are not actually important in a Nash Equilibrium, as long as the bluffs balance out the value bets correctly to give the caller the correct pot odds. However, we can discriminate between `optimal' betting strategies by bluffing in a way that best responds to suboptimal calling strategies. For example, suppose the caller's deviates in a way that is consistent with $c(s)$ being non-decreasing, so $c(s)$ is shifted either up or down. If it shifts up, then the caller is folding hands which should be calling, but this has no impact on choosing a bluffing size. However, if $c(s)$ shifts down, then the caller is calling with hands which should be folding. In this case, the better can actually win occasionally by bluffing small with their strongest bluffing hands. If they instead bluffed big with their strongest bluffing hands, they would not be able to take advantage of the caller's mistake. An important distinction here is that the bettor is not actually deviating from the Nash Equilibrium to exploit a mistake by the caller. Instead, they are using one of many security strategies which are all Nash Equilibria, but which are not all equally good against suboptimal calling strategies. 
 
-We can use a similar argument to show that the caller's calling threshold $c(s)$ should be a continuous function of $s$, even at the endpoints $L$ and $U$. A skeptic might suggest because the bet size is limited by $U$, a bet of $U$ indicates a much stronger range than a large bet which is less than the maximum. They might then suggest that in Nash Equilibrium, the calling threshold $c(U)$ is not necessarily the limiting value of $c(s)$ as $s$ approaches $U$. We argue that this must be the case because if it were not, the bettor could exploit the caller's strategy. Look again at equation \ref{eq:bluff}; if $c(s)$ had a discontinuity at $U$, then so would the expected value of bluffing. The bettor would then not be indifferent among bluffing sizes, and they could exploit the caller's strategy by either bluffing $U$ or $U-\epsilon$, whichever was more profitable.
+We can use a similar argument to show that the caller's calling threshold $c(s)$ should be a continuous function of $s$, even at the endpoints $L$ and $U$. A skeptic might suggest because the bet size is limited by $U$, a bet of $U$ indicates a much stronger range than a large bet which is less than the maximum. They might then suggest that in Nash Equilibrium, the calling threshold $c(U)$ is not necessarily the limiting value of $c(s)$ as $s$ approaches $U$. We argue that this must be the case because if it were not, the bettor could exploit the caller's strategy. Look again at equation \ref{eq:bluff}; if $c(s)$ had a discontinuity at $U$, then so would the expected value of bluffing. The bettor would then not be indifferent among bluffing sizes, and they could exploit the caller's strategy by either bluffing $U$ or $U-\epsilon$, whichever was more profitable.\\
 
-\subsubsection{Nash Equilibrium Structure}
-\label{subsec:nash_equilibrium_structure}
 
-Putting this all together, we can formulate the strategy profile as follows:
 
-\begin{itemize}
-    \item The caller has a single calling threshold $c(s)$ as a function of the bet size $s$. They call with hands $y \geq c(s)$ and fold with hands $y < c(s)$. The threshold $c(s)$ is non-decreasing in $s$ and continuous in $s$ even at the endpoints $L$ and $U$.
-    \item The bettor partitions $[0, 1]$ into seven regions with six threshold values $0 \leq x_0\leq x_1\leq x_2\leq x_3 \leq x_4 \leq x_5 \leq 1$. \todo{address 0 probability events and () vs []}
-    \item They bet the maximum amount $U$ with the strongest hands ($x \in (x_5, 1)$), some intermediate amount $L < s < U$ according to a function $x = v(s)$ with the next strongest hands ($x \in (x_4, x_5)$), and the minimum amount $L$ with the next strongest hands ($x \in (x_3, x_4)$). These are the value bet regions.
-    \item The bettor checks with mediocre hands ($x \in (x_2, x_3)$).
-    \item The bettor bluffs the minimum amount $L$ with the next strongest hands ($x \in (x_1, x_2)$), some intermediate amount $L < s < U$ according to a function $x = b(s)$ with the next strongest hands ($x \in (x_0, x_1)$), and the maximum amount $U$ with the weakest hands ($x \in (0, x_0)$). These are the bluffing regions.
-    \todo{continuity of bettor strategy}
-\end{itemize}
 
 
 \todo{diagram of strategy profile}
@@ -136,6 +143,7 @@ Putting this all together, we can formulate the strategy profile as follows:
 \subsection{Constraints and Indifference Equations}
 
 \subsubsection{Caller Indifference}
+\label{subsec:caller_indifference}
 
 By definition, $c(s)$ is the threshold above which the caller calls and below which they fold. This means that in Nash Equilibrium, the caller must be indifferent between calling and folding with a hand strength of $c(s)$:
 
@@ -443,20 +451,18 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 
 A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Continuous Poker and NLCP. The value of the games follows this theme nicely.
 
-Continuous Poker has an expected value of 
+To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU}. This is calculated by integrating the payoff in Nash equilibrium over the joint distribution of hand strengths $x$ and $y$ (the square $[0, 1] \times [0, 1]$). 
 
-$$ V_B = \frac{B}{2(1+2B)(2+B)} $$
+As expected, the game value increases for more lenient limits (top left of Figure \ref{fig:payoffs_vs_LU}) and generally decreases for more strict limits (moving down/right). This also aligns with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in Continuous Poker, as seen by the fact that $(1, 1)$ is the highest value on the diagonal. Interestingly, if we zoom out (Figure ), we see that the game value is highly affected by 
 
-for the bettor\todo{cite}. \todo{restate LCP game value from earlier}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{value_by_LU.png}
+    \caption{Game value of Limit Continuous Poker as a function of the limits $L$ and $U$.}
+    \label{fig:payoffs_vs_LU}
+\end{figure}
 
-The expected value of NLCP is 
-
-$$ V = \frac{1}{14} $$
-
-for the bettor\todo{citation-ferguson}\footnote{Would be 1/7 for an ante of 1, but the value is halved with an ante of 0.5}. 
-
-
-If we consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, we can see visually how the game value shifts from Continuous Poker to NLCP (see Figure \ref{fig:payoffs}). Some notable features of the figure are:
+This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, since clearly not all types are equally favorable for each player. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. Some notable features of these plots are:
 
 \begin{itemize}
     \item The regions where the bettor wins or loses payoff are generally similar. The bettor wins the most with their strongest hands where the caller has slightly less strong hands, and loses the most with their weakest hands against strong hands or strong hands against slightly stronger hands. 
@@ -478,7 +484,7 @@ If we consider the combinations of hand strengths which result in certain payoff
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.9_1.1.png}
         \end{minipage}
-        \vspace{0.5cm}\\
+        \vspace{-0.5cm}\\ % Reduced vertical space
         \begin{minipage}{0.55\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.5_1.5.png}
@@ -488,7 +494,7 @@ If we consider the combinations of hand strengths which result in certain payoff
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.3_2.png}
         \end{minipage}
-        \vspace{0.5cm}\\
+        \vspace{-0.5cm}\\ % Reduced vertical space
         \begin{minipage}{0.55\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.1_5.png}
@@ -499,7 +505,7 @@ If we consider the combinations of hand strengths which result in certain payoff
             \includegraphics[width=\textwidth]{payoff_heatmap_with_regions_labeled.png}
         \end{minipage}
     \end{adjustwidth}
-    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for different values of $L$ and $U$, ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
+    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$, for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
     \label{fig:payoffs}
 \end{figure}
 
