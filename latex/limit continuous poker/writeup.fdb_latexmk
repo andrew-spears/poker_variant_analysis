@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746134082 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746134085 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746134082 36786 2b32ded184941fe462d0991377db64ba ""
+["pdflatex"] 1746214555 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746214558 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746214555 39368 82d40bf35e5bfba3f53c2881b794e03e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -129,6 +129,8 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1667332637 2462 8ce5f9a9c63002f2c1af03c262cf29af ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty" 1654720880 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo" 1667332637 8449 c314623021fbddd0180c05345324933c ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/changepage/changepage.sty" 1256071977 4523 a9044e2dc40e764dac60d2acda7ae919 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -181,10 +183,13 @@
   "limit_continuous_0_10.png" 1745767632 46799 baf42adccf918adbbe64849ae846fd5b ""
   "payoff_fixed_bet_heatmap.png" 1745984260 151327 b980ada8a8943f9d86c277b8c86256ee ""
   "payoff_heatmap_with_regions_labeled.png" 1745984185 169703 6ac038980ee2746580431bd07ae96a06 ""
+  "value_LU_log.png" 1746161363 54673 73408c8be694f39cc724b4643f2ea976 ""
+  "value_LU_log_big.png" 1746207825 52520 f0b0dea69273eb875609d9e7100d1c2e ""
+  "value_LU_wide.png" 1746162210 49077 f5866f641eab134e0f57bb4091815d36 ""
   "value_by_LU.png" 1746125988 49980 1b720c7b435b3dbe14c0e0ef8929b9a6 ""
-  "writeup.aux" 1746134085 9807 c89d8fd305201256d215ea903bbe166d "pdflatex"
-  "writeup.out" 1746134085 4343 9d4bd62c10722fef8b293cdf25041608 "pdflatex"
-  "writeup.tex" 1746134082 36786 2b32ded184941fe462d0991377db64ba ""
+  "writeup.aux" 1746214558 10285 d03cd7ba68038ed26e6aab36f6a20e7a "pdflatex"
+  "writeup.out" 1746214558 4280 a7dff97b63a4e7db447b76989d6adf86 "pdflatex"
+  "writeup.tex" 1746214555 39368 82d40bf35e5bfba3f53c2881b794e03e ""
   (generated)
   "writeup.aux"
   "writeup.log"

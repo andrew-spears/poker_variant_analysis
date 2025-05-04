@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
-\usepackage{hyperref, todonotes, changepage}
+\usepackage{hyperref, todonotes, changepage, caption}
 
 % Define custom theorem environments
 \theoremstyle{plain}
@@ -446,61 +446,95 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 \end{align*}
 \end{customproof}
 
+% v(s)=x
+% v_inv(x)=s
+% y > c(v_inv(x))
+% c_inv(y) > v_inv(x)
+% v(c_inv(y)) > x to call
 
-\subsection{Game Value Convergence}
+\subsection{Game Value}
 
-A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Continuous Poker and NLCP. The value of the games follows this theme nicely.
+Recall that FBCP and NLCP have values
 
-To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU}. This is calculated by integrating the payoff in Nash equilibrium over the joint distribution of hand strengths $x$ and $y$ (the square $[0, 1] \times [0, 1]$). 
+\begin{align*}
+    V_{FB}(B) &= \frac{B}{2(1+2B)(2+B)} \\
+    V_{NL} & = \frac{1}{14}
+\end{align*}
 
-As expected, the game value increases for more lenient limits (top left of Figure \ref{fig:payoffs_vs_LU}) and generally decreases for more strict limits (moving down/right). This also aligns with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in Continuous Poker, as seen by the fact that $(1, 1)$ is the highest value on the diagonal. Interestingly, if we zoom out (Figure ), we see that the game value is highly affected by 
+A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Fixed-Bet and No-Limit. The value of the games follows this theme as well.
+
+Due to the form of the Nash
+
+To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU_combined}\footnote{This is calculated by integrating the payoff in Nash equilibrium over the joint distribution of hand strengths $x$ and $y$}. 
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{value_by_LU.png}
-    \caption{Game value of Limit Continuous Poker as a function of the limits $L$ and $U$.}
-    \label{fig:payoffs_vs_LU}
+    \begin{adjustwidth}{-1in}{-1in}
+        \centering
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{value_by_LU.png}
+            \caption*{(a) Linear scale}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{value_LU_wide.png}
+            \caption*{(b) Zoomed out linear scale}
+        \end{minipage}
+        \vspace{0.5cm}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{value_LU_log.png}
+            \caption*{(c) Log-log scale}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{value_LU_log_big.png}
+            \caption*{(d) Zoomed out log-log scale}
+        \end{minipage}
+    \end{adjustwidth}
+    \caption{Game value of Limit Continuous Poker as a function of the limits $L$ and $U$. (a) Linear scale, (b) Zoomed out linear scale, (c) Log-log scale, (d) Zoomed out log-log scale. The restriction $L \leq U$ keeps the plots above the diagonal.}
+    \label{fig:payoffs_vs_LU_combined}
 \end{figure}
 
-This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, since clearly not all types are equally favorable for each player. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. Some notable features of these plots are:
+Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. But what happens to the game value as $U$ and $L$ approach extremes $0$ and $\infty$? Zooming out reveals that as $U$ becomes very large compared to the pot of 1, further increasing $U$ has diminishing returns on the game value (in plot (b), horizontal strips near the top edge become indistinguishable). This remains true even on a log-log plot, indicating that even increasing $U$ exponentially does not increase the game value meaningfully. The same can be said as $L$ approaches $0$.
 
-\begin{itemize}
-    \item The regions where the bettor wins or loses payoff are generally similar. The bettor wins the most with their strongest hands where the caller has slightly less strong hands, and loses the most with their weakest hands against strong hands or strong hands against slightly stronger hands. 
-    \item As limits become more lenient, the checking region remains qualitatively the same, but takes up less of the bettors hand strengths because the bettor can make use of small bets for hands that might have otherwise checked.
-    \item As limits become more lenient, the most extreme payoffs become more extreme and come from a smaller proportion of $x, y$ combinations. The Bettors strongest hands become far more profitable but also far riskier as bets get larger.
-\end{itemize}
+However, this should not be surprising given that NLCP has a finite value. If, as we reasoned above, more options for the bettor monotonically increase the game value, then the game value must be bounded above by the value of NLCP, where the bettor's choice is maximized. Indeed, plot (d) seems to show that the game value approaches a finite supremum ($\approx 0.072\approx 1/14$) even as $L$ and $U$ approach their extremes (top left of the plot).  
+
+This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, since clearly not all types are equally favorable for each player. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. 
 
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
-        \vspace{-3cm} % Move the figure up into the top margin
+        % \vspace{-3cm} % Move the figure up into the top margin
         \centering
-        \begin{minipage}{0.55\textwidth}
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{payoff_fixed_bet_heatmap.png}
         \end{minipage}
-        \hspace{0.05\textwidth}
-        \begin{minipage}{0.55\textwidth}
+        \hspace{0.02\textwidth}
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.9_1.1.png}
         \end{minipage}
-        \vspace{-0.5cm}\\ % Reduced vertical space
-        \begin{minipage}{0.55\textwidth}
+        \hspace{0.02\textwidth}
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.5_1.5.png}
         \end{minipage}
-        \hspace{0.05\textwidth}
-        \begin{minipage}{0.55\textwidth}
+        \vspace{-0.5cm}\\ % Reduced vertical space
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.3_2.png}
         \end{minipage}
-        \vspace{-0.5cm}\\ % Reduced vertical space
-        \begin{minipage}{0.55\textwidth}
+        \hspace{0.02\textwidth}
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{LU_payoffs_0.1_5.png}
         \end{minipage}
-        \hspace{0.05\textwidth}
-        \begin{minipage}{0.55\textwidth}
+        \hspace{0.02\textwidth}
+        \begin{minipage}{0.4\textwidth}
             \centering
             \includegraphics[width=\textwidth]{payoff_heatmap_with_regions_labeled.png}
         \end{minipage}
@@ -508,6 +542,12 @@ This can be broken down further by consider the combinations of hand strengths w
     \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$, for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
     \label{fig:payoffs}
 \end{figure}
+
+In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+
+It is worth noting that the bettors strongest hands (right edge) actually become less likely to make any profit as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, the inability of the caller to raise makes slowplaying obsolete; with extremely strong hands, forcing a bigger pot outweighs the lower likelihood of getting called.
+
+We also observe that as the limits become more lenient, the checking region shrinks. This is because the bettor can make use of small bets for hands that might have otherwise checked. 
 
 % \begin{figure}[h!]
 %     \centering
