@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  2 MAY 2025 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 MAY 2025 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,128 +855,88 @@ File: limit_continuous_0.5_1.png Graphic file (type png)
 Package pdftex.def Info: limit_continuous_0.5_1.png  used on input line 306.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
  [11 <./limit_continuous_0_10.png> <./limit_continuous_0.1_2.png> <./limit_continuous_0.3_1.5.png> <./limit_continuous_0.5_1.png>]
-Overfull \hbox (20.61343pt too wide) in paragraph at lines 320--320
-[][][]\OT1/cmr/m/n/12 continue, 
+<LU_payoffs_0.5_1.5.png, id=208, 578.16pt x 578.16pt>
+File: LU_payoffs_0.5_1.5.png Graphic file (type png)
+<use LU_payoffs_0.5_1.5.png>
+Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 321.
+(pdftex.def)             Requested size: 272.99881pt x 272.99678pt.
+ [12 <./LU_payoffs_0.5_1.5.png>]
+Overfull \hbox (25.59755pt too wide) detected at line 343
+[]
  []
 
-
-Overfull \hbox (7.8844pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 pected 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 game 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (4.94693pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 math- 
- []
-
-
-Overfull \hbox (20.61343pt too wide) in paragraph at lines 320--320
-[][][]\OT1/cmr/m/n/12 continue, 
- []
-
-
-Overfull \hbox (7.8844pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 pected 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 game 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (4.94693pt too wide) in paragraph at lines 320--320
-\OT1/cmr/m/n/12 math- 
- []
-
-[12] [13] [14] [15]
-<value_by_LU.png, id=241, 492.1587pt x 395.3169pt>
+[13] [14] [15] [16] [17]
+<value_by_LU.png, id=249, 492.1587pt x 395.3169pt>
 File: value_by_LU.png Graphic file (type png)
 <use value_by_LU.png>
-Package pdftex.def Info: value_by_LU.png  used on input line 475.
+Package pdftex.def Info: value_by_LU.png  used on input line 499.
 (pdftex.def)             Requested size: 234.00238pt x 187.9524pt.
-<value_LU_wide.png, id=242, 497.9403pt x 395.3169pt>
+<value_LU_wide.png, id=250, 497.9403pt x 395.3169pt>
 File: value_LU_wide.png Graphic file (type png)
 <use value_LU_wide.png>
-Package pdftex.def Info: value_LU_wide.png  used on input line 481.
+Package pdftex.def Info: value_LU_wide.png  used on input line 505.
 (pdftex.def)             Requested size: 234.00238pt x 185.77483pt.
-<value_LU_log.png, id=243, 516.0078pt x 398.9304pt>
+<value_LU_log.png, id=251, 516.0078pt x 398.9304pt>
 File: value_LU_log.png Graphic file (type png)
 <use value_LU_log.png>
-Package pdftex.def Info: value_LU_log.png  used on input line 487.
+Package pdftex.def Info: value_LU_log.png  used on input line 511.
 (pdftex.def)             Requested size: 234.00238pt x 180.91098pt.
-<value_LU_log_big.png, id=244, 509.5035pt x 398.9304pt>
+<value_LU_log_big.png, id=252, 509.5035pt x 398.9304pt>
 File: value_LU_log_big.png Graphic file (type png)
 <use value_LU_log_big.png>
-Package pdftex.def Info: value_LU_log_big.png  used on input line 493.
+Package pdftex.def Info: value_LU_log_big.png  used on input line 517.
 (pdftex.def)             Requested size: 234.00238pt x 183.21802pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16] [17 <./value_by_LU.png> <./value_LU_wide.png> <./value_LU_log.png> <./value_LU_log_big.png>]
-<payoff_fixed_bet_heatmap.png, id=261, 505.89pt x 505.89pt>
+[18] [19 <./value_by_LU.png> <./value_LU_wide.png> <./value_LU_log.png> <./value_LU_log_big.png>]
+<payoff_fixed_bet_heatmap.png, id=271, 505.89pt x 505.89pt>
 File: payoff_fixed_bet_heatmap.png Graphic file (type png)
 <use payoff_fixed_bet_heatmap.png>
-Package pdftex.def Info: payoff_fixed_bet_heatmap.png  used on input line 514.
+Package pdftex.def Info: payoff_fixed_bet_heatmap.png  used on input line 556.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
-<LU_payoffs_0.9_1.1.png, id=262, 578.16pt x 578.16pt>
+<LU_payoffs_0.9_1.1.png, id=272, 578.16pt x 578.16pt>
 File: LU_payoffs_0.9_1.1.png Graphic file (type png)
 <use LU_payoffs_0.9_1.1.png>
-Package pdftex.def Info: LU_payoffs_0.9_1.1.png  used on input line 519.
+Package pdftex.def Info: LU_payoffs_0.9_1.1.png  used on input line 561.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.5_1.5.png, id=263, 578.16pt x 578.16pt>
 File: LU_payoffs_0.5_1.5.png Graphic file (type png)
 <use LU_payoffs_0.5_1.5.png>
-Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 524.
+Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 566.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.3_2.png, id=264, 578.16pt x 578.16pt>
+<LU_payoffs_0.3_2.png, id=273, 578.16pt x 578.16pt>
 File: LU_payoffs_0.3_2.png Graphic file (type png)
 <use LU_payoffs_0.3_2.png>
-Package pdftex.def Info: LU_payoffs_0.3_2.png  used on input line 529.
+Package pdftex.def Info: LU_payoffs_0.3_2.png  used on input line 571.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.1_5.png, id=265, 578.16pt x 578.16pt>
+<LU_payoffs_0.1_5.png, id=274, 578.16pt x 578.16pt>
 File: LU_payoffs_0.1_5.png Graphic file (type png)
 <use LU_payoffs_0.1_5.png>
-Package pdftex.def Info: LU_payoffs_0.1_5.png  used on input line 534.
+Package pdftex.def Info: LU_payoffs_0.1_5.png  used on input line 576.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<payoff_heatmap_with_regions_labeled.png, id=266, 505.89pt x 505.89pt>
+<payoff_heatmap_with_regions_labeled.png, id=275, 505.89pt x 505.89pt>
 File: payoff_heatmap_with_regions_labeled.png Graphic file (type png)
 <use payoff_heatmap_with_regions_labeled.png>
-Package pdftex.def Info: payoff_heatmap_with_regions_labeled.png  used on input line 539.
+Package pdftex.def Info: payoff_heatmap_with_regions_labeled.png  used on input line 581.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
- [18 <./payoff_fixed_bet_heatmap.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.5_1.5.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./payoff_heatmap_with_regions_labeled.png>] [19] (./writeup.aux)
+ [20 <./payoff_fixed_bet_heatmap.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./payoff_heatmap_with_regions_labeled.png>] [21] (./writeup.aux)
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: A7DFF97B63A4E7DB447B76989D6ADF86;4280.
+(rerunfilecheck)             Checksum: 9D4BD62C10722FEF8B293CDF25041608;4343.
  ) 
 Here is how much of TeX's memory you used:
- 22354 strings out of 476025
- 422463 string characters out of 5790017
- 1881388 words of memory out of 5000000
- 42353 multiletter control sequences out of 15000+600000
+ 22358 strings out of 476025
+ 422501 string characters out of 5790017
+ 1877388 words of memory out of 5000000
+ 42354 multiletter control sequences out of 15000+600000
  522379 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,117p,1388b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on writeup.pdf (19 pages, 1403418 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on writeup.pdf (21 pages, 1390475 bytes).
 PDF statistics:
  380 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 294 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 500000)
  267 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746214555 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746214558 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746214555 39368 82d40bf35e5bfba3f53c2881b794e03e ""
+["pdflatex"] 1746562620 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746562623 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746562620 42218 be7bd443e27cd891e6c45f3f3aa3994c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -27,9 +27,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -187,9 +185,9 @@
   "value_LU_log_big.png" 1746207825 52520 f0b0dea69273eb875609d9e7100d1c2e ""
   "value_LU_wide.png" 1746162210 49077 f5866f641eab134e0f57bb4091815d36 ""
   "value_by_LU.png" 1746125988 49980 1b720c7b435b3dbe14c0e0ef8929b9a6 ""
-  "writeup.aux" 1746214558 10285 d03cd7ba68038ed26e6aab36f6a20e7a "pdflatex"
-  "writeup.out" 1746214558 4280 a7dff97b63a4e7db447b76989d6adf86 "pdflatex"
-  "writeup.tex" 1746214555 39368 82d40bf35e5bfba3f53c2881b794e03e ""
+  "writeup.aux" 1746562623 10904 e38b781d8e5d8245ae0a6b0793ed881a "pdflatex"
+  "writeup.out" 1746562623 4343 9d4bd62c10722fef8b293cdf25041608 "pdflatex"
+  "writeup.tex" 1746562620 42218 be7bd443e27cd891e6c45f3f3aa3994c ""
   (generated)
   "writeup.aux"
   "writeup.log"

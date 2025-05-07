@@ -312,15 +312,40 @@ This solution is more interpretable in graphical form. Figure \ref{fig:strategyp
 
 
 \section{Game Value}
+\label{sec:game_value}
 
-We now consider the game value to the bettor and inspect how it varies with the limits $L, U$, and with combinations of hand strengths $x, y$. 
+We now consider the payoff to the bettor for possible hand combinations $x, y$ and the expected game value from a random hand combination. In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can visualize the payoff for all hand combinations as a function defined on the unit square $[0, 1]^2$ (see Figure \ref{fig:gamevalue}).  
 
-\footnote{Integrating over the square in this figure gives the expected value $V_B$.}. This gives insight into exactly how the bettor is gaining value from the game. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{LU_payoffs_0.5_1.5.png}
+    \caption{Payoff to the bettor for all possible hand combinations $(x, y)$ in Limit Continuous Poker for $L=0.5, U=1.5$. The color scale represents the payoff to the bettor.}
+    \label{fig:gamevalue}
+\end{figure}
 
-\todo{continue, expected game value as a function of L, U in mathematica}
+This gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left).  
+
+The expected game value is the average of the payoff function over all possible hand combinations $(x, y)$, which can be computed as an integral of the payoff over the unit square. Because the bet size is only defined implicitly in terms of the hand strength $x$, this is extremely nontrivial and requires breaking the square into regions based on the strategies and bet size. This method is fully specified in the appendix, but the resulting expression is given below in terms of two subexpressions $V_{num}$ and $V_{den}$.
+
+\begin{align*}
+    V_{num}(L, U) =& L^6 \left(72 U^4+270 U^3+378 U^2+234 U+53\right) \\
+        & -6 L^5 \left(3 U^6+42 U^5+87U^4+5 U^3-132 U^2-123 U-33\right)\\
+        & -3 L^4 \left(3 U^6+258 U^5+825 U^4+862 U^3+171U^2-216 U-90\right) \\ 
+        &-2 L^3 \left(-72 U^6+288 U^5+1620 U^4+2321 U^3+1203 U^2+51U-81\right) \\
+        & +3 L^2 \left(97 U^6+102 U^5-465 U^4-1020 U^3-705 U^2-138 U+12\right) \\
+        & +6 LU \left(35 U^5+90 U^4+27 U^3-108 U^2-111 U-30\right) \\ 
+        & +U \left(53 U^5+174 U^4+183U^3+36 U^2-45 U-18\right)\\
+    V_{den}(L, U) =& L^3 \left(6 U^3+18 U^2+18 U+5\right)\\
+        &+3 L^2\left(7 U^3+21 U^2+21 U+6\right)\\
+        &+3 L \left(7 U^3+21 U^2+21 U+6\right)\\
+        &+7 U^3+21U^2+21 U+6 \\
+    V_{LCP}(L, U) =& \frac{-V_{num}(L, U)}{2 V_{den}(L, U)^2}\\
+\end{align*}
+
+This does turn out to be a rational function of $L$ and $U$. Importantly, this makes it easy to compute $V_{LCP}(L, U)$ as $L, U$ approach their extreme values, which we use to relate the game value to that of NLCP and FBCP in section \ref{sec:game_value_convergence}.
 
 \section{Interpretation}
-The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. It is helpful to think in this context when interpreting the strategies and game value. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as ‘bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as ‘call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
+The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. It is helpful to think in this context when interpreting the strategies and game value. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as `bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as `call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
 
 \subsection{Notation}
 
@@ -452,7 +477,8 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 % c_inv(y) > v_inv(x)
 % v(c_inv(y)) > x to call
 
-\subsection{Game Value}
+\subsection{Game Value Convergence}
+\label{sec:game_value_convergence}
 
 Recall that FBCP and NLCP have values
 
@@ -461,11 +487,9 @@ Recall that FBCP and NLCP have values
     V_{NL} & = \frac{1}{14}
 \end{align*}
 
-A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Fixed-Bet and No-Limit. The value of the games follows this theme as well.
+The value of LCP is given in section \ref{sec:game_value}. A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Fixed-Bet and No-Limit. The value of the games follows this theme as well.
 
-Due to the form of the Nash
-
-To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU_combined}\footnote{This is calculated by integrating the payoff in Nash equilibrium over the joint distribution of hand strengths $x$ and $y$}. 
+To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU_combined}.
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
@@ -498,11 +522,29 @@ To see this visually, we can look at the expected value of the game as a functio
     \label{fig:payoffs_vs_LU_combined}
 \end{figure}
 
-Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. But what happens to the game value as $U$ and $L$ approach extremes $0$ and $\infty$? Zooming out reveals that as $U$ becomes very large compared to the pot of 1, further increasing $U$ has diminishing returns on the game value (in plot (b), horizontal strips near the top edge become indistinguishable). This remains true even on a log-log plot, indicating that even increasing $U$ exponentially does not increase the game value meaningfully. The same can be said as $L$ approaches $0$.
+Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
+
+However, it remains to be proven that the value of Limit Continuous Poker actually converges to the value of FBCP as $L$ and $U$ approach some fixed value $B$.
+
+\begin{theorem}
+    For any $B > 0$, the value of Limit Continuous Poker converges to the value of Fixed-Bet Continuous Poker as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} V_{LCP}(L, U) = \lim_{U \to B} \lim_{L \to B} V_{LCP}(L, U) = V_{FB}(B)
+\]
+\end{theorem}
+
+What happens to the game value as $U$ and $L$ approach extremes $0$ and $\infty$? Zooming out reveals that as $U$ becomes very large compared to the pot of 1, further increasing $U$ has diminishing returns on the game value (in plot (b), horizontal strips near the top edge become indistinguishable). This remains true even on a log-log plot, indicating that even increasing $U$ exponentially does not increase the game value meaningfully. The same can be said as $L$ approaches $0$. This observation leads us to the following theorem:
+
+\begin{theorem}
+    The value of Limit Continuous Poker converges to the value of NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} V_{LCP}(L, U) = \lim_{U \to \infty} \lim_{L \to 0} V_{LCP}(L, U) = V_{NL}
+\]
+\end{theorem}
 
 However, this should not be surprising given that NLCP has a finite value. If, as we reasoned above, more options for the bettor monotonically increase the game value, then the game value must be bounded above by the value of NLCP, where the bettor's choice is maximized. Indeed, plot (d) seems to show that the game value approaches a finite supremum ($\approx 0.072\approx 1/14$) even as $L$ and $U$ approach their extremes (top left of the plot).  
 
-This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, since clearly not all types are equally favorable for each player. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. 
+This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, as in section \todo{ref}. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. 
 
 
 \begin{figure}[h!]
@@ -543,7 +585,7 @@ This can be broken down further by consider the combinations of hand strengths w
     \label{fig:payoffs}
 \end{figure}
 
-In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+We saw earlier how the most extreme payoffs occur when the caller has a strong hand and the bettor has either a very strong or very weak hand. As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
 
 It is worth noting that the bettors strongest hands (right edge) actually become less likely to make any profit as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, the inability of the caller to raise makes slowplaying obsolete; with extremely strong hands, forcing a bigger pot outweighs the lower likelihood of getting called.
 

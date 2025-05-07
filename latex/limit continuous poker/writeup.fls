@@ -893,6 +893,11 @@ INPUT ./limit_continuous_0.5_1.png
 INPUT limit_continuous_0.5_1.png
 INPUT ./limit_continuous_0.5_1.png
 INPUT ./limit_continuous_0.5_1.png
+INPUT ./LU_payoffs_0.5_1.5.png
+INPUT ./LU_payoffs_0.5_1.5.png
+INPUT LU_payoffs_0.5_1.5.png
+INPUT ./LU_payoffs_0.5_1.5.png
+INPUT ./LU_payoffs_0.5_1.5.png
 INPUT ./value_by_LU.png
 INPUT ./value_by_LU.png
 INPUT value_by_LU.png
@@ -927,7 +932,6 @@ INPUT ./LU_payoffs_0.5_1.5.png
 INPUT ./LU_payoffs_0.5_1.5.png
 INPUT LU_payoffs_0.5_1.5.png
 INPUT ./LU_payoffs_0.5_1.5.png
-INPUT ./LU_payoffs_0.5_1.5.png
 INPUT ./LU_payoffs_0.3_2.png
 INPUT ./LU_payoffs_0.3_2.png
 INPUT LU_payoffs_0.3_2.png
@@ -948,9 +952,7 @@ INPUT ./writeup.out
 INPUT ./writeup.out
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
