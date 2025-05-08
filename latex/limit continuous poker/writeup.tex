@@ -325,24 +325,21 @@ We now consider the payoff to the bettor for possible hand combinations $x, y$ a
 
 This gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left).  
 
-The expected game value is the average of the payoff function over all possible hand combinations $(x, y)$, which can be computed as an integral of the payoff over the unit square. Because the bet size is only defined implicitly in terms of the hand strength $x$, this is extremely nontrivial and requires breaking the square into regions based on the strategies and bet size. This method is fully specified in the appendix, but the resulting expression is given below in terms of two subexpressions $V_{num}$ and $V_{den}$.
+The expected game value is the average of the payoff function over all possible hand combinations $(x, y)$, which can be computed as an integral of the payoff over the unit square. Because the bet size is only defined implicitly in terms of the hand strength $x$, this is extremely nontrivial and requires breaking the square into regions based on the strategies and bet size. This method is fully specified in the appendix, but the resulting expression is given below.
 
 \begin{align*}
-    V_{num}(L, U) =& L^6 \left(72 U^4+270 U^3+378 U^2+234 U+53\right) \\
-        & -6 L^5 \left(3 U^6+42 U^5+87U^4+5 U^3-132 U^2-123 U-33\right)\\
-        & -3 L^4 \left(3 U^6+258 U^5+825 U^4+862 U^3+171U^2-216 U-90\right) \\ 
-        &-2 L^3 \left(-72 U^6+288 U^5+1620 U^4+2321 U^3+1203 U^2+51U-81\right) \\
-        & +3 L^2 \left(97 U^6+102 U^5-465 U^4-1020 U^3-705 U^2-138 U+12\right) \\
-        & +6 LU \left(35 U^5+90 U^4+27 U^3-108 U^2-111 U-30\right) \\ 
-        & +U \left(53 U^5+174 U^4+183U^3+36 U^2-45 U-18\right)\\
-    V_{den}(L, U) =& L^3 \left(6 U^3+18 U^2+18 U+5\right)\\
-        &+3 L^2\left(7 U^3+21 U^2+21 U+6\right)\\
-        &+3 L \left(7 U^3+21 U^2+21 U+6\right)\\
-        &+7 U^3+21U^2+21 U+6 \\
-    V_{LCP}(L, U) =& \frac{-V_{num}(L, U)}{2 V_{den}(L, U)^2}\\
+    V_{LCP}(L, U) =& \frac{(1 + L)^3(1+U)^3 - ((1+L)^3+L^3(1 + U)^3)}{14(1 + L)^3(1+U)^3 - 2((1+L)^3+L^3(1 + U)^3)}
 \end{align*}
 
-This does turn out to be a rational function of $L$ and $U$. Importantly, this makes it easy to compute $V_{LCP}(L, U)$ as $L, U$ approach their extreme values, which we use to relate the game value to that of NLCP and FBCP in section \ref{sec:game_value_convergence}.
+This is a rational function of $L$ and $U$ with a surprisingly simple form.  Importantly, this makes it easy to compute $V_{LCP}(L, U)$ as $L, U$ approach their extreme values, which we use to relate the game value to that of NLCP and FBCP in section \ref{sec:game_value_convergence}. 
+
+Most importantly, it has the following symmetry:
+
+\begin{align*}
+    V_{LCP}(L, U) = V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)
+\end{align*}
+
+This symmetry is easily checked from the definition of $V_{LCP}(L, U)$, but is not at all obvious from the game setup. The implications are discussed in detail in section \ref{sec:game_value_convergence}.
 
 \section{Interpretation}
 The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. It is helpful to think in this context when interpreting the strategies and game value. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as `bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as `call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
@@ -491,25 +488,25 @@ To see this visually, we can look at the expected value of the game as a functio
         \centering
         \begin{minipage}{0.6\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{value_by_LU.png}
+            \includegraphics[width=\textwidth]{payoffs_by_limits.png}
             \caption*{(a) Linear scale}
         \end{minipage}
         \hspace{0.05\textwidth}
         \begin{minipage}{0.6\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{value_LU_wide.png}
+            \includegraphics[width=\textwidth]{payoffs_by_limits_wide.png}
             \caption*{(b) Zoomed out linear scale}
         \end{minipage}
         \vspace{0.5cm}
         \begin{minipage}{0.6\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{value_LU_log.png}
+            \includegraphics[width=\textwidth]{payoffs_by_limits_log.png}
             \caption*{(c) Log-log scale}
         \end{minipage}
         \hspace{0.05\textwidth}
         \begin{minipage}{0.6\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{value_LU_log_big.png}
+            \includegraphics[width=\textwidth]{payoffs_by_limits_log_wide.png}
             \caption*{(d) Zoomed out log-log scale}
         \end{minipage}
     \end{adjustwidth}
@@ -560,7 +557,7 @@ This can be broken down further by consider the combinations of hand strengths w
         \centering
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{payoff_fixed_bet_heatmap.png}
+            \includegraphics[width=\textwidth]{FixedBet_payoffs.png}
         \end{minipage}
         \hspace{0.02\textwidth}
         \begin{minipage}{0.4\textwidth}
@@ -585,7 +582,7 @@ This can be broken down further by consider the combinations of hand strengths w
         \hspace{0.02\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{payoff_heatmap_with_regions_labeled.png}
+            \includegraphics[width=\textwidth]{NoLimit_payoffs.png}
         \end{minipage}
     \end{adjustwidth}
     \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$, for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
