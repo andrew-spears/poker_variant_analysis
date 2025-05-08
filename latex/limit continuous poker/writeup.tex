@@ -314,7 +314,7 @@ This solution is more interpretable in graphical form. Figure \ref{fig:strategyp
 \section{Game Value}
 \label{sec:game_value}
 
-We now consider the payoff to the bettor for possible hand combinations $x, y$ and the expected game value from a random hand combination. In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can visualize the payoff for all hand combinations as a function defined on the unit square $[0, 1]^2$ (see Figure \ref{fig:gamevalue}).  
+We now consider the payoff to the bettor for possible hand combinations $x, y$ and the expected game value from a uniformly random hand combination. In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can visualize the payoff for all hand combinations as a function defined on the unit square $[0, 1]^2$ (see Figure \ref{fig:gamevalue}).  
 
 \begin{figure}[h!]
     \centering
@@ -471,11 +471,6 @@ Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug thi
 \end{align*}
 \end{customproof}
 
-% v(s)=x
-% v_inv(x)=s
-% y > c(v_inv(x))
-% c_inv(y) > v_inv(x)
-% v(c_inv(y)) > x to call
 
 \subsection{Game Value Convergence}
 \label{sec:game_value_convergence}
@@ -522,7 +517,19 @@ To see this visually, we can look at the expected value of the game as a functio
     \label{fig:payoffs_vs_LU_combined}
 \end{figure}
 
-Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
+Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). In fact, we can easily prove that the game value is monotonically increasing in $U$ and decreasing in $L$:
+
+\begin{theorem}
+    The value of Limit Continuous Poker is monotonically increasing in $U$ and decreasing in $L$:
+\[
+    \frac{\partial V_{LCP}(L, U)}{\partial U} \geq 0, \;\; \frac{\partial V_{LCP}(L, U)}{\partial L} \leq 0
+\]
+\end{theorem}
+\begin{customproof}
+    LCP is a zero sum game, so by the minimax theorem, the value of the game is equal to the maximum expected value of the bettor's strategy. 
+\end{customproof}
+
+These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
 
 However, it remains to be proven that the value of Limit Continuous Poker actually converges to the value of FBCP as $L$ and $U$ approach some fixed value $B$.
 
