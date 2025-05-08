@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746581463 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746581466 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746581463 42534 95c2dac6e6dc554cb56fdef944c62d2b ""
+["pdflatex"] 1746672834 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746672837 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746672831 42672 a3a6fe444168579367c086e1eb9dc8ea ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -185,9 +185,9 @@
   "value_LU_log_big.png" 1746207825 52520 f0b0dea69273eb875609d9e7100d1c2e ""
   "value_LU_wide.png" 1746162210 49077 f5866f641eab134e0f57bb4091815d36 ""
   "value_by_LU.png" 1746125988 49980 1b720c7b435b3dbe14c0e0ef8929b9a6 ""
-  "writeup.aux" 1746581466 10904 217b87f7b18f240896a478fd4ea96120 "pdflatex"
-  "writeup.out" 1746581466 4343 9d4bd62c10722fef8b293cdf25041608 "pdflatex"
-  "writeup.tex" 1746581463 42534 95c2dac6e6dc554cb56fdef944c62d2b ""
+  "writeup.aux" 1746672837 10904 8791b20a0f367231c061d28284bb8836 "pdflatex"
+  "writeup.out" 1746672837 4343 9d4bd62c10722fef8b293cdf25041608 "pdflatex"
+  "writeup.tex" 1746672831 42672 a3a6fe444168579367c086e1eb9dc8ea ""
   (generated)
   "writeup.aux"
   "writeup.log"
