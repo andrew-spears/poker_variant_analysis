@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746730210 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1746730213 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1746730210 42324 ef444c89d9c8a6839d2d7ebf5b1f1e80 ""
+["pdflatex"] 1747669394 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1747669397 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1747669393 47877 010fd4bea222cd10ddb98712a5458d2d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -25,8 +25,11 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -185,9 +188,9 @@
   "payoffs_by_limits_log.png" 1746678079 53048 83a031c805754b2aae146f00ac2d5ae5 ""
   "payoffs_by_limits_log_wide.png" 1746678086 59180 46f9941de85aa0a394665a36b1df0727 ""
   "payoffs_by_limits_wide.png" 1746678072 54388 4209527a72b9e58878d772b44526a5b9 ""
-  "writeup.aux" 1746730213 10904 1ee5b85dcf8367015d06b4f1bf781ed1 "pdflatex"
-  "writeup.out" 1746730213 4343 9d4bd62c10722fef8b293cdf25041608 "pdflatex"
-  "writeup.tex" 1746730210 42324 ef444c89d9c8a6839d2d7ebf5b1f1e80 ""
+  "writeup.aux" 1747669397 12111 9cc73a3b218fe18cb0466c7969bc3c8c "pdflatex"
+  "writeup.out" 1747669397 5355 f1cb880e6f722a7c1ad0c6660857b914 "pdflatex"
+  "writeup.tex" 1747669393 47877 010fd4bea222cd10ddb98712a5458d2d ""
   (generated)
   "writeup.aux"
   "writeup.log"

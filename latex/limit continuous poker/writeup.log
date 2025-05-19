@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  8 MAY 2025 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  19 MAY 2025 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,10 +481,11 @@ Package caption Info: changepage package is loaded.
 Package caption Info: hyperref package is loaded.
 )
 \c@theorem=\count312
-\c@definition=\count313
+\c@lemma=\count313
+\c@definition=\count314
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
+\l__color_backend_stack_int=\count315
 \l__pdf_internal_box=\box64
 ) (./writeup.aux)
 \openout1 = `writeup.aux'.
@@ -509,16 +510,16 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
+\scratchcounter=\count316
 \scratchdimen=\dimen274
 \scratchbox=\box65
-\nofMPsegments=\count316
-\nofMParguments=\count317
+\nofMPsegments=\count317
+\nofMParguments=\count318
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count318
+\MPscratchCnt=\count319
 \MPscratchDim=\dimen275
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
 \everyMPtoPDFconversion=\toks43
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -544,48 +545,88 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 29.
+
+Overfull \hbox (11.14825pt too wide) in paragraph at lines 29--29
+[][][]\OT1/cmr/m/n/12 explain 
+ []
+
+
+Overfull \hbox (5.92609pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 poker, 
+ []
+
+
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 bluff- 
+ []
+
+
+Overfull \hbox (0.70392pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 value 
+ []
+
+
+Overfull \hbox (11.14825pt too wide) in paragraph at lines 29--29
+[][][]\OT1/cmr/m/n/12 explain 
+ []
+
+
+Overfull \hbox (5.92609pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 poker, 
+ []
+
+
+Overfull \hbox (1.35669pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 bluff- 
+ []
+
+
+Overfull \hbox (0.70392pt too wide) in paragraph at lines 29--29
+\OT1/cmr/m/n/12 value 
+ []
+
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 53.
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 53--53
-[][][]\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 53--53
-[][][]\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 56--56
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 60--60
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 56--56
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 60--60
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 56--56
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 60--60
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 56--56
-\OT1/cmr/m/n/12 graph[]  
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 56--56
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 strate- 
+ []
+
+
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 60--60
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 56--56
-\OT1/cmr/m/n/12 graph[]  
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 graph 
+ []
+
+
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 60--60
+\OT1/cmr/m/n/12 strate- 
  []
 
 [2]
@@ -593,341 +634,340 @@ Overfull \hbox (3.64139pt too wide) in paragraph at lines 56--56
 LaTeX Warning: Marginpar on page 3 moved.
 
 
-Overfull \hbox (5.34035pt too wide) in paragraph at lines 58--59
+Overfull \hbox (5.34035pt too wide) in paragraph at lines 62--63
 []\OT1/cmr/m/n/12 In Nash Equi-lib-rium, the bet-tor should make large bets with their strongest
  []
 
 [3]
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 94--94
+Overfull \hbox (12.25797pt too wide) in paragraph at lines 101--101
 [][][]\OT1/cmr/m/n/12 address 
  []
 
 
-Overfull \hbox (0.50809pt too wide) in paragraph at lines 94--94
-\OT1/cmr/m/n/12 miss- 
- []
-
-
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 94--94
-[][][]\OT1/cmr/m/n/12 address 
- []
-
-
-Overfull \hbox (0.50809pt too wide) in paragraph at lines 94--94
-\OT1/cmr/m/n/12 miss- 
- []
-
-
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 104--104
-[][][]\OT1/cmr/m/n/12 address 
- []
-
-
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 104--104
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 101--101
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (5.99136pt too wide) in paragraph at lines 104--104
+Overfull \hbox (5.99136pt too wide) in paragraph at lines 101--101
 \OT1/cmr/m/n/12 events 
  []
 
 
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 104--104
+Overfull \hbox (12.25797pt too wide) in paragraph at lines 101--101
 [][][]\OT1/cmr/m/n/12 address 
  []
 
 
-Overfull \hbox (1.68307pt too wide) in paragraph at lines 104--104
+Overfull \hbox (1.68307pt too wide) in paragraph at lines 101--101
 \OT1/cmr/m/n/12 prob- 
  []
 
 
-Overfull \hbox (5.99136pt too wide) in paragraph at lines 104--104
+Overfull \hbox (5.99136pt too wide) in paragraph at lines 101--101
 \OT1/cmr/m/n/12 events 
  []
 
 
-Overfull \hbox (25.8356pt too wide) in paragraph at lines 108--108
+Overfull \hbox (25.8356pt too wide) in paragraph at lines 105--105
 [][][]\OT1/cmr/m/n/12 continuity 
  []
 
 
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 108--108
+Overfull \hbox (2.40112pt too wide) in paragraph at lines 105--105
 \OT1/cmr/m/n/12 strat- 
  []
 
 
-Overfull \hbox (25.8356pt too wide) in paragraph at lines 108--108
+Overfull \hbox (25.8356pt too wide) in paragraph at lines 105--105
 [][][]\OT1/cmr/m/n/12 continuity 
  []
 
 
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 108--108
+Overfull \hbox (2.40112pt too wide) in paragraph at lines 105--105
 \OT1/cmr/m/n/12 strat- 
- []
-
-
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 113--113
-[][][]\OT1/cmr/m/n/12 address 
- []
-
-
-Overfull \hbox (10.56076pt too wide) in paragraph at lines 113--113
-\OT1/cmr/m/n/12 strictly 
- []
-
-
-Overfull \hbox (2.98862pt too wide) in paragraph at lines 113--113
-\OT1/cmr/m/n/12 nated[]  
- []
-
-
-Overfull \hbox (12.25797pt too wide) in paragraph at lines 113--113
-[][][]\OT1/cmr/m/n/12 address 
- []
-
-
-Overfull \hbox (10.56076pt too wide) in paragraph at lines 113--113
-\OT1/cmr/m/n/12 strictly 
- []
-
-
-Overfull \hbox (2.98862pt too wide) in paragraph at lines 113--113
-\OT1/cmr/m/n/12 nated[]  
  []
 
 [4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (2.66223pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 kinda 
+Overfull \hbox (12.25797pt too wide) in paragraph at lines 110--110
+[][][]\OT1/cmr/m/n/12 address 
  []
 
 
-Overfull \hbox (3.0539pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 state- 
+Overfull \hbox (10.56076pt too wide) in paragraph at lines 110--110
+\OT1/cmr/m/n/12 strictly 
  []
 
 
-Overfull \hbox (3.315pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 ment, 
+Overfull \hbox (2.98862pt too wide) in paragraph at lines 110--110
+\OT1/cmr/m/n/12 nated[]  
  []
 
 
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 thing 
+Overfull \hbox (12.25797pt too wide) in paragraph at lines 110--110
+[][][]\OT1/cmr/m/n/12 address 
  []
 
 
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 arug- 
+Overfull \hbox (10.56076pt too wide) in paragraph at lines 110--110
+\OT1/cmr/m/n/12 strictly 
  []
 
 
-Overfull \hbox (2.66223pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 kinda 
+Overfull \hbox (2.98862pt too wide) in paragraph at lines 110--110
+\OT1/cmr/m/n/12 nated[]  
  []
 
 
-Overfull \hbox (3.0539pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 state- 
+Overfull \hbox (2.33585pt too wide) in paragraph at lines 114--114
+[][][]\OT1/cmr/m/n/12 argue[]  
  []
 
 
-Overfull \hbox (3.315pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 ment, 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 thing 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 117--117
-\OT1/cmr/m/n/12 arug- 
+Overfull \hbox (2.33585pt too wide) in paragraph at lines 114--114
+[][][]\OT1/cmr/m/n/12 argue[]  
  []
 
 
 LaTeX Warning: Marginpar on page 5 moved.
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
 
-Overfull \hbox (16.04404pt too wide) in paragraph at lines 139--139
+Overfull \hbox (16.04404pt too wide) in paragraph at lines 136--136
 [][][]\OT1/cmr/m/n/12 diagram 
  []
 
 
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 139--139
+Overfull \hbox (2.40112pt too wide) in paragraph at lines 136--136
 \OT1/cmr/m/n/12 strat- 
  []
 
 
-Overfull \hbox (16.04404pt too wide) in paragraph at lines 139--139
+Overfull \hbox (16.04404pt too wide) in paragraph at lines 136--136
 [][][]\OT1/cmr/m/n/12 diagram 
  []
 
 
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 139--139
+Overfull \hbox (2.40112pt too wide) in paragraph at lines 136--136
 \OT1/cmr/m/n/12 strat- 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 141--141
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 tween 
  []
 
 
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 141--141
+Overfull \hbox (1.0303pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 para- 
  []
 
 
-Overfull \hbox (8.27606pt too wide) in paragraph at lines 141--141
+Overfull \hbox (8.27606pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 graphs[]  
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 141--141
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 tween 
  []
 
 
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 141--141
+Overfull \hbox (1.0303pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 para- 
  []
 
 
-Overfull \hbox (8.27606pt too wide) in paragraph at lines 141--141
+Overfull \hbox (8.27606pt too wide) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 graphs[]  
  []
 
 
 LaTeX Warning: Marginpar on page 6 moved.
 
-[6]
-Overfull \hbox (28.77307pt too wide) in paragraph at lines 158--158
-[][][]\OT1/cmr/m/n/12 formatting[]  
- []
-
-
-Overfull \hbox (28.77307pt too wide) in paragraph at lines 158--158
-[][][]\OT1/cmr/m/n/12 formatting[]  
- []
-
-
-Overfull \hbox (25.28026pt too wide) detected at line 195
+[6] [7]
+Overfull \hbox (25.28026pt too wide) detected at line 212
 []
  []
 
-[7] [8]
-Overfull \hbox (34.20056pt too wide) in paragraph at lines 254--255
-\OT1/cmr/m/n/12 where pos-si-ble, we get a sys-tem of 7 equa-tions in 7 un-knowns: $\OML/cmm/m/it/12 x[]; x[]; x[]; x[]; x[]; x[]; b[]$\OT1/cmr/m/n/12 . 
- []
-
-
-Overfull \hbox (7.62749pt too wide) detected at line 271
+[8]
+Overfull \hbox (7.62749pt too wide) detected at line 262
 []
  []
 
 [9] [10]
-<limit_continuous_0_10.png, id=194, 503.7219pt x 395.3169pt>
+<limit_continuous_0_10.png, id=206, 503.7219pt x 395.3169pt>
 File: limit_continuous_0_10.png Graphic file (type png)
 <use limit_continuous_0_10.png>
-Package pdftex.def Info: limit_continuous_0_10.png  used on input line 291.
+Package pdftex.def Info: limit_continuous_0_10.png  used on input line 285.
 (pdftex.def)             Requested size: 234.00238pt x 183.63948pt.
-<limit_continuous_0.1_2.png, id=196, 507.3354pt x 395.3169pt>
+<limit_continuous_0.1_2.png, id=208, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.1_2.png Graphic file (type png)
 <use limit_continuous_0.1_2.png>
-Package pdftex.def Info: limit_continuous_0.1_2.png  used on input line 296.
+Package pdftex.def Info: limit_continuous_0.1_2.png  used on input line 290.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.3_1.5.png, id=197, 507.3354pt x 395.3169pt>
+<limit_continuous_0.3_1.5.png, id=209, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.3_1.5.png Graphic file (type png)
 <use limit_continuous_0.3_1.5.png>
-Package pdftex.def Info: limit_continuous_0.3_1.5.png  used on input line 301.
+Package pdftex.def Info: limit_continuous_0.3_1.5.png  used on input line 295.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.5_1.png, id=198, 507.3354pt x 395.3169pt>
+<limit_continuous_0.5_1.png, id=210, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.5_1.png Graphic file (type png)
 <use limit_continuous_0.5_1.png>
-Package pdftex.def Info: limit_continuous_0.5_1.png  used on input line 306.
+Package pdftex.def Info: limit_continuous_0.5_1.png  used on input line 300.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
  [11 <./limit_continuous_0_10.png> <./limit_continuous_0.1_2.png> <./limit_continuous_0.3_1.5.png> <./limit_continuous_0.5_1.png>]
-<LU_payoffs_0.5_1.5.png, id=208, 578.16pt x 578.16pt>
-File: LU_payoffs_0.5_1.5.png Graphic file (type png)
-<use LU_payoffs_0.5_1.5.png>
-Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 321.
-(pdftex.def)             Requested size: 272.99881pt x 272.99678pt.
- [12 <./LU_payoffs_0.5_1.5.png>] [13] [14] [15] [16]
-<payoffs_by_limits.png, id=244, 520.344pt x 395.3169pt>
-File: payoffs_by_limits.png Graphic file (type png)
-<use payoffs_by_limits.png>
-Package pdftex.def Info: payoffs_by_limits.png  used on input line 491.
-(pdftex.def)             Requested size: 234.00238pt x 177.77634pt.
-<payoffs_by_limits_wide.png, id=245, 510.9489pt x 395.3169pt>
-File: payoffs_by_limits_wide.png Graphic file (type png)
-<use payoffs_by_limits_wide.png>
-Package pdftex.def Info: payoffs_by_limits_wide.png  used on input line 497.
-(pdftex.def)             Requested size: 234.00238pt x 181.0457pt.
-<payoffs_by_limits_log.png, id=246, 522.5121pt x 398.9304pt>
-File: payoffs_by_limits_log.png Graphic file (type png)
-<use payoffs_by_limits_log.png>
-Package pdftex.def Info: payoffs_by_limits_log.png  used on input line 503.
-(pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
-<payoffs_by_limits_log_wide.png, id=247, 522.5121pt x 398.9304pt>
-File: payoffs_by_limits_log_wide.png Graphic file (type png)
-<use payoffs_by_limits_log_wide.png>
-Package pdftex.def Info: payoffs_by_limits_log_wide.png  used on input line 509.
-(pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
- [17] [18 <./payoffs_by_limits.png> <./payoffs_by_limits_wide.png> <./payoffs_by_limits_log.png> <./payoffs_by_limits_log_wide.png>]
-<FixedBet_payoffs.png, id=265, 505.89pt x 505.89pt>
+<FixedBet_payoffs.png, id=221, 505.89pt x 505.89pt>
 File: FixedBet_payoffs.png Graphic file (type png)
 <use FixedBet_payoffs.png>
-Package pdftex.def Info: FixedBet_payoffs.png  used on input line 560.
+Package pdftex.def Info: FixedBet_payoffs.png  used on input line 318.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
-<LU_payoffs_0.9_1.1.png, id=266, 578.16pt x 578.16pt>
+<LU_payoffs_0.9_1.1.png, id=222, 578.16pt x 578.16pt>
 File: LU_payoffs_0.9_1.1.png Graphic file (type png)
 <use LU_payoffs_0.9_1.1.png>
-Package pdftex.def Info: LU_payoffs_0.9_1.1.png  used on input line 565.
+Package pdftex.def Info: LU_payoffs_0.9_1.1.png  used on input line 323.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
+<LU_payoffs_0.5_1.5.png, id=223, 578.16pt x 578.16pt>
 File: LU_payoffs_0.5_1.5.png Graphic file (type png)
 <use LU_payoffs_0.5_1.5.png>
-Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 570.
+Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 328.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.3_2.png, id=267, 578.16pt x 578.16pt>
+<LU_payoffs_0.3_2.png, id=224, 578.16pt x 578.16pt>
 File: LU_payoffs_0.3_2.png Graphic file (type png)
 <use LU_payoffs_0.3_2.png>
-Package pdftex.def Info: LU_payoffs_0.3_2.png  used on input line 575.
+Package pdftex.def Info: LU_payoffs_0.3_2.png  used on input line 333.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.1_5.png, id=268, 578.16pt x 578.16pt>
+<LU_payoffs_0.1_5.png, id=225, 578.16pt x 578.16pt>
 File: LU_payoffs_0.1_5.png Graphic file (type png)
 <use LU_payoffs_0.1_5.png>
-Package pdftex.def Info: LU_payoffs_0.1_5.png  used on input line 580.
+Package pdftex.def Info: LU_payoffs_0.1_5.png  used on input line 338.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<NoLimit_payoffs.png, id=269, 505.89pt x 505.89pt>
+<NoLimit_payoffs.png, id=226, 505.89pt x 505.89pt>
 File: NoLimit_payoffs.png Graphic file (type png)
 <use NoLimit_payoffs.png>
-Package pdftex.def Info: NoLimit_payoffs.png  used on input line 585.
+Package pdftex.def Info: NoLimit_payoffs.png  used on input line 343.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
- [19] [20 <./FixedBet_payoffs.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./NoLimit_payoffs.png>] [21] (./writeup.aux)
+ [12 <./FixedBet_payoffs.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.5_1.5.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./NoLimit_payoffs.png>] [13]
+Overfull \hbox (248.3083pt too wide) detected at line 398
+[] \OT1/cmr/m/n/12 = []
+ []
+
+[14]
+Overfull \hbox (20.93982pt too wide) in paragraph at lines 436--436
+[][][]\OT1/cmr/m/n/12 formalize 
+ []
+
+
+Overfull \hbox (20.93982pt too wide) in paragraph at lines 436--436
+[][][]\OT1/cmr/m/n/12 formalize 
+ []
+
+
+Overfull \hbox (9.50383pt too wide) in paragraph at lines 436--436
+[][][]\OT1/cmr/m/n/12 WHY?[]  
+ []
+
+
+Overfull \hbox (9.50383pt too wide) in paragraph at lines 436--436
+[][][]\OT1/cmr/m/n/12 WHY?[]  
+ []
+
+
+Overfull \hbox (2.44783pt too wide) in paragraph at lines 444--444
+[]\OT1/cmr/bx/n/17.28 Strategic Com-par-i-son to Fixed-Bet and No-
+ []
+
+
+Overfull \hbox (0.90984pt too wide) in paragraph at lines 449--450
+\OT1/cmr/m/n/12 To com-pare the strat-egy pro-files across dif-fer-ent vari-ants of Con-tin-u-ous Poker,
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] [16] [17] [18] [19]
+
+LaTeX Warning: Reference `sec:value_computation' on page 20 undefined on input line 623.
+
+[20]
+<payoffs_by_limits.png, id=293, 520.344pt x 395.3169pt>
+File: payoffs_by_limits.png Graphic file (type png)
+<use payoffs_by_limits.png>
+Package pdftex.def Info: payoffs_by_limits.png  used on input line 654.
+(pdftex.def)             Requested size: 234.00238pt x 177.77634pt.
+<payoffs_by_limits_wide.png, id=294, 510.9489pt x 395.3169pt>
+File: payoffs_by_limits_wide.png Graphic file (type png)
+<use payoffs_by_limits_wide.png>
+Package pdftex.def Info: payoffs_by_limits_wide.png  used on input line 660.
+(pdftex.def)             Requested size: 234.00238pt x 181.0457pt.
+<payoffs_by_limits_log.png, id=295, 522.5121pt x 398.9304pt>
+File: payoffs_by_limits_log.png Graphic file (type png)
+<use payoffs_by_limits_log.png>
+Package pdftex.def Info: payoffs_by_limits_log.png  used on input line 666.
+(pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
+<payoffs_by_limits_log_wide.png, id=296, 522.5121pt x 398.9304pt>
+File: payoffs_by_limits_log_wide.png Graphic file (type png)
+<use payoffs_by_limits_log_wide.png>
+Package pdftex.def Info: payoffs_by_limits_log_wide.png  used on input line 672.
+(pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 689--689
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 689--689
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 704--704
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 704--704
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+[21] [22 <./payoffs_by_limits.png> <./payoffs_by_limits_wide.png> <./payoffs_by_limits_log.png> <./payoffs_by_limits_log_wide.png>]
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 718--718
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 718--718
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+[23] (./writeup.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 9D4BD62C10722FEF8B293CDF25041608;4343.
+(rerunfilecheck)             Checksum: F1CB880E6F722A7C1AD0C6660857B914;5355.
  ) 
 Here is how much of TeX's memory you used:
- 22359 strings out of 476025
- 422554 string characters out of 5790017
- 1879388 words of memory out of 5000000
- 42354 multiletter control sequences out of 15000+600000
- 522379 words of font info for 71 fonts, out of 8000000 for 9000
+ 22412 strings out of 476025
+ 423356 string characters out of 5790017
+ 1880388 words of memory out of 5000000
+ 42391 multiletter control sequences out of 15000+600000
+ 523080 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1388b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on writeup.pdf (21 pages, 1402768 bytes).
+ 99i,16n,117p,1388b,1038s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on writeup.pdf (23 pages, 1421388 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
- 267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 299 words of extra memory for PDF output out of 10000 (max. 10000000)
 

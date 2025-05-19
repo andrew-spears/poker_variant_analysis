@@ -6,7 +6,7 @@
 % Define custom theorem environments
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
-
+\newtheorem{lemma}{Lemma}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
@@ -26,13 +26,17 @@ We introduces and analyze Limit Continuous Poker, a variant of Von Neumann's Con
 
 \section{Introduction}
 
+\todo{explain poker, general ideas of bluffing, value betting, etc.}
+
 \subsection{Previous Work}
 
 \subsubsection{Fixed-Bet Continuous Poker (FBCP)}
 
 Continuous Poker (also called Von Neumann Poker, and referred to in this paper as Fixed-Bet Continuous Poker or FBCP) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
 
-The game works as follows: Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes simply scale proportionally.}. They are each dealt a `hand strength' uniformly and independently from the interval $[0, 1]$ (we refer to these hand strengths as $x$ for bettor and $y$ for caller). After seeing their hand strengths, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet by putting a pre-determined amount $B > 0$ into the pot. The caller can now either call by matching the $B$ units in the pot and letting the higher hand win the pot of $1+2B$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
+\begin{definition}[FBCP]
+Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes simply scale proportionally.}. They are each dealt a `hand strength' uniformly and independently from the interval $[0, 1]$ (referred to as $x$ for bettor and $y$ for caller). After seeing $x$, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet by putting a pre-determined amount $B > 0$ into the pot. The caller can now either call by matching the bet of $B$, after which the higher hand wins the pot of $1+2B$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
+\end{definition}
 
 FBCP has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not strictly dominated by any other strategy}. This strategy profile, parametrized by the bet size $B$, is as follows:
 
@@ -50,10 +54,10 @@ The value of FBCP for the bettor is
 
 $$ V_{FB}(B) = \frac{B}{2(1+2B)(2+B)} $$
 
-Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. \todo{value as a function of x and y?}
+Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. 
 
 \subsubsection{No-limit Continuous Poker (NLCP)}
-Another continuous poker variant allows the bettor to choose a bet size $s > 0$ after seeing their hand strength. This variant is called No-Limit Continuous Poker (or Newman Poker after Donald J. Newman, or NLCP in this paper). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph} 
+Another continuous poker variant allows the bettor to choose a bet size $s > 0$ after seeing their hand strength, as opposed to a fixed bet size $B$. This variant is called No-Limit Continuous Poker (or Newman Poker after Donald J. Newman, or NLCP in this paper). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph of the strategies} 
 
 In Nash Equilibrium, the bettor should make large bets with their strongest and weakest hands and smaller bets or checks with their intermediate hands. It turns out that the optimal strategy is most elegantly described by a mapping from bet sizes $s$ to hand strengths $x$ for bluffing and value betting, respectively. The caller simply has a calling threshold $c(s)$ for each possible bet size $s$. The full strategy profile is as follows:
 
@@ -74,24 +78,17 @@ $$ V_{NL} = \frac{1}{14} $$
 for the bettor\footnote{Would be 1/7 for an ante of 1, but the value is halved with an ante of 0.5}.
 
 \section{Limit Continuous Poker (LCP)}
-We now consider a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bets. This variant, called Limit Continuous Poker (or LCP), retains the same structure: two players, the bettor and the caller, are each dealt a hand strength $x$ and $y$, respectively, uniformly and independently from the interval $[0, 1]$. After seeing their hand strengths, the bettor chooses between checking (equivalently, betting $0$ units) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must decide whether to call or fold. In the event of a showdown, the higher hand strength wins.
+We now introduce a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bet sizes. This variant, called Limit Continuous Poker (or LCP), retains similar rules to NLCP: 
 
-% This paper aims to address the following questions:\todo{clean up}
-% \begin{enumerate}
-%     \item What is the Nash equilibrium strategy profile for Limit Continuous Poker?
-%     \item What is the value of the game, and does the bettor still have the upper hand (as in No-limit Continuous Poker)? If so, is there a simple strategic argument for why the bettor must win in expectation?
-%     \item As the bounds $L$ and $U$ change, how does the strategy profile change? Does this reflect observed behavior in real poker games with minimum and maximum bet sizes?
-%     \item As the bounds $L$ and $U$ approach $0$ and $\infty$, respectively, does the strategy profile approach the Nash equilibrium of No-limit FBCP?
-%     \item As the bounds $L$ and $U$ approach some fixed value $s$ from either side, does the strategy profile approach the Nash equilibrium of FBCP with a fixed bet size $s$?
-% \end{enumerate}
+\begin{definition}[LCP]
+Two players, the bettor and the caller, are each dealt uniform, independent hand strengths $x, y \in [0, 1]$. After seeing $x$, the bettor chooses between checking (giving payoff $1$ to the higher hand) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must either call (giving payoff $1+2s$ to the higher hand) or fold (giving payoff $1$ to the bettor).
+\end{definition}
+
 
 \section{Solving LCP}
 
-
-
 \subsection{Nash Equilibrium Structure}
 
-\todo{address admissability}
 % (A strategy is admissible if no other
 % strategy gives a better expected payoﬀ against one strategy of the opponent without giving
 % a worse expected payoﬀ against another strategy of the opponent.)
@@ -114,7 +111,7 @@ Clearly, the caller should always call with better hands and fold with worse han
 
 A value bet is defined as a bet aimed at making weaker hands call (although a value bet expects stronger hands to call as well). A bluff is defined as a bet which never expects a weaker hand to call, but hopes to make at least some stronger hands fold. Knowing the form of the caller's strategy, a value bet of size $s$ must be made with a hand that is stronger than $c(s)$, otherwise no weaker hands will call. A bluff must be made with a hand that is weaker than $c(s)$, otherwise the caller will never fold a stronger hand. We can also guess that in Nash Equilibrium, the bettor's value bets should be larger with stronger hands. This is because $c(s)$ is non-decreasing, so a larger bet restricts the calling range to only very strong hands. A value bet gains value from making weaker hands call, so only the strongest hands should be making large value bets. \todo{what are v and b?}
 
-Another consideration for the form of the bettor's strategy is how to size bluffs. That is, when the bettor has a hand weak enough to bluff, which hands should bluff big and which should bluff small? We argue that the bettor should bluff big with their weakest hands and small with their relatively stronger bluffing hands.\todo{This is kinda a thesis statement, but its not obvious that everything following is aruging it} In Nash Equilibrium, a bluff never expects to be called by a weaker hand, so the only consideration is the fact that larger bluffs are more likely to make the opponent fold. When the bettor picks a bluffing size, they want to maximize expected value assuming the opponent only calls with stronger hands. If the opponent calls, they lose the bet $s$, but if they fold, the bettor wins the pot of $1$:
+Another consideration for the form of the bettor's strategy is how to size bluffs. That is, when the bettor has a hand weak enough to bluff, which hands should bluff big and which should bluff small? We argue that the bettor should bluff big with their weakest hands and small with their relatively stronger bluffing hands.\todo{argue} In Nash Equilibrium, a bluff never expects to be called by a weaker hand, so the only consideration is the fact that larger bluffs are more likely to make the opponent fold. When the bettor picks a bluffing size, they want to maximize expected value assuming the opponent only calls with stronger hands. If the opponent calls, they lose the bet $s$, but if they fold, the bettor wins the pot of $1$:
 
 \[ \mathbb{E}[\text{bluff } s] = \mathbb{P}[\text{fold}] \cdot 1 -\mathbb{P}[\text{call}] \cdot s \]
 
@@ -142,40 +139,60 @@ We can use a similar argument to show that the caller's calling threshold $c(s)$
 
 \subsection{Constraints and Indifference Equations}
 
+The Nash equilibrium strategy profile must satisfy several constraints and indifference conditions, which we will derive and use to solve for the strategy profile. The key conditions are:
+
+\begin{itemize}
+    \item The caller must be indifferent between calling and folding at their calling threshold
+    \item The bettor must be indifferent between checking and betting at their value betting and bluffing thresholds
+    \item The bettor's bet size for a value bet must maximize their expected value
+    \item The bettor's strategy must be continuous in bet size (in the regions where they bet)
+\end{itemize}
+
+These conditions give us the following system of equations:
+
+\begin{align*}
+    \text{Caller Indifference:} & \\
+    & (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0\\
+    & (1-x_5) \cdot (1+U) - x_0 \cdot U = 0\\
+    & |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0\\
+    \text{Bettor Indifference and Optimality:} & \\
+    & -sc'(s) - c(s) + 2 v(s) - 1 = 0\\
+    & c(L) - (1-c(L)) \cdot L = x_3\\
+    & c(s) - (1-c(s)) \cdot s = x_2\\
+    \text{Continuity Constraints:} & \\
+    & b(U) = x_0 \\
+    & b(L) = x_1 \\
+    & v(U) = x_5 \\
+    & v(L) = x_4
+\end{align*}
+
+We will now derive each of these equations in turn.
+
 \subsubsection{Caller Indifference}
 \label{subsec:caller_indifference}
 
 By definition, $c(s)$ is the threshold above which the caller calls and below which they fold. This means that in Nash Equilibrium, the caller must be indifferent between calling and folding with a hand strength of $c(s)$:
 
-\begin{align*}
-    \mathbb{E}[\text{call } c(s)] & = \mathbb{E}[\text{fold } c(s)]\\
-    \mathbb{P}[\text{bluff} | s] \cdot (1+s) - \mathbb{P}[\text{value bet} | s]\cdot s & = 0 
-\end{align*}
+
+  \[  \mathbb{E}[\text{call } c(s)] = \mathbb{E}[\text{fold } c(s)] \]
+  \[  \mathbb{P}[\text{bluff} | s] \cdot (1+s) - \mathbb{P}[\text{value bet} | s]\cdot s = 0 \]
+
 
 We now split into cases based on the value of $s$.
 
-
-\todo{formatting}
-\textbf{Case 1: $s = L$}
-
-The hands the bettor value bets $L$ with are $x \in (x_3, x_4)$, and the hands they bluff with are $x \in (x_1, x_2)$. 
+\textbf{Case 1: $s = L$}. The hands the bettor value bets $L$ with are $x \in (x_3, x_4)$, and the hands they bluff with are $x \in (x_1, x_2)$. 
 
 \begin{equation}{\label{callindiffmin}}
     (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0
 \end{equation}
 
-\textbf{Case 2: $s = U$}
-
-The hands the bettor value bets $U$ with are $x \in (x_5, 1)$, and the hands they bluff with are $x \in (0, x_0)$. 
+\textbf{Case 2: $s = U$}. The hands the bettor value bets $U$ with are $x \in (x_5, 1)$, and the hands they bluff with are $x \in (0, x_0)$. 
 
 \begin{equation}{\label{callindiffmax}}
     (1-x_5) \cdot (1+U) - x_0 \cdot U = 0
 \end{equation}
 
-
-\textbf{Case 3: $L \leq s \leq U$}
-
-In this case, the bettor has exactly one value hand and one bluffing hand, but somewhat paradoxically, they are not equally likely. The probability of a value bet given the size $s$ is related to the inverse derivative of the value function $v(s)$ at $s$, and the same goes for a bluff. This gives us the following relation:
+\textbf{Case 3: $L \leq s \leq U$}. In this case, the bettor has exactly one value hand and one bluffing hand, but somewhat paradoxically, they are not equally likely. The probability of a value bet given the size $s$ is related to the inverse derivative of the value function $v(s)$ at $s$, and the same goes for a bluff. This gives us the following relation:
 
 \[ \frac{\mathbb{P}[\text{value bet} | s]}{\mathbb{P}[\text{bluff} | s]} = \frac{|b'(s)|}{|v'(s)|}\]
 
@@ -214,48 +231,22 @@ Finally, when the bettor has the most marginal bluffing hand at $x=x_2$, they sh
     c(s) - (1-c(s)) \cdot s & = x_2
 \end{align}
 
-
 \subsubsection{Continuity Constraints}
 
-As discussed above, the bettor's strategy is continuous in $s$ and $x$. This means that the endpoints of the functions $v(s)$ and $b(s)$ are constrained as follows:
+As discussed above, the bettor's strategy is continuous in $s$ and $x$ (except when checking). This means that the endpoints of the functions $v(s)$ and $b(s)$ are constrained as follows:
 
 \begin{equation}{\label{continuityconstraints}}
 	 b(U) = x_0, \;\; b(L) = x_1, \;\; v(U) = x_5, \;\; v(L) = x_4
 \end{equation}
 
-\subsubsection{Solving the system}
-We now have a system of equations which we can solve to find the Nash equilibrium strategy profile. The equations are summarized as follows:
+\subsection{Nash Equilibrium Strategy Profile}
 
-\begin{align*}
-    \text{Caller Indifference:} & \\
-    & (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0\\
-    & (1-x_5) \cdot (1+U) - x_0 \cdot U = 0\\
-    & |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0\\
-    \text{Bettor Indifference:} & \\
-    & -sc'(s) - c(s) + 2 v(s) - 1 = 0\\
-    & c(L) - (1-c(L)) \cdot L = x_3\\
-    & c(s) - (1-c(s)) \cdot s = x_2\\
-    \text{Continuity Constraints:} & \\
-    & b(U) = x_0, b(L) = x_1, v(U) = x_5, v(L) = x_4
-\end{align*}
 
-We begin by solving for $c(s)$ in terms of $x_2$ using \ref{bluffindiff}. 
+The full solution process is detailed in Appendix \ref{app:derivation}. Here we present the final solution, which was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. 
 
-\[ c(s) = \frac{x_2 + s}{1+s} \]
-
-We then use $c(s)$ and \ref{valueoptimality} to solve for $v(s)$:
-
-\[ v(s) = \frac{1+4s+2s^2+x_2}{2(1+s)^2} \]
-
-Use $v(s)$ and \ref{callindiff} to solve for $b(s)$, up to a constant of integration which we call $b_0$:
-
-\[ b(s) = b_0 - \frac{(1+3s)(x_2-1)}{6(1+s)^3} \]
-
-If we now substitute the functions $b(s), c(s)$ and $v(s)$ into \ref{callindiffmax}, \ref{callindiffmin}, \ref{valueindiff}, and \ref{continuityconstraints} where possible, we get a system of 7 equations in 7 unknowns: $x_0, x_1, x_2, x_3, x_4, x_5, b_0$. 
-
-\subsubsection{Nash Equilibrium Strategy Profile}
-
-The system was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The entire solution is given below. Refer to section \ref{subsec:nash_equilibrium_structure} for an explanation of how these values fit together to actually form the strategy profile.
+\begin{theorem}[Nash Equilibrium Strategy Profile]
+    \label{thm:nash_equilibrium}
+The unique admissible Nash equilibrium strategy profile for Limit Continuous Poker with minimum bet size $L$ and maximum bet size $U$ is given by:
 
 \begin{align*}
     x_0 &= \frac{3 (L+1)^3 U}{A_4}\\
@@ -270,7 +261,7 @@ The system was solved symbolically using Mathematica and simplified by finding c
     v(s) &= \frac{x_2+2 s^2+4 s+1}{2 (s+1)^2}
 \end{align*}
 
-Where the common subexpressions are:
+where the common subexpressions are:
 
 \begin{align*}
 	A_0 &= U^2+3 U+3 \\
@@ -280,6 +271,9 @@ Where the common subexpressions are:
     A_4 &= 3 A_1 L^2+3 A_1 L+A_1+A_2 L^3 \\
     A_5 &= 3 A_0 L^2 U+3 A_0 L U+A_0 U-L^3
 \end{align*}
+\end{theorem}
+
+Proof given in Appendix \ref{app:derivation}. Refer to section \ref{subsec:nash_equilibrium_structure} for an explanation of how these values fit together to actually form the strategy profile.
 
 This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to NLCP, while the more restricted bet size limits model something closer FBCP with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of NLCP - we will show in section \ref{sec:strategic_convergence} that the strategy profile approaches the Nash equilibrium of NLCP as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of FBCP as $L$ and $U$ approach some fixed value $s$ from either side.
 
@@ -311,245 +305,9 @@ This solution is more interpretable in graphical form. Figure \ref{fig:strategyp
 \end{figure}
 
 
-\section{Game Value}
-\label{sec:game_value}
+\subsection{Payoff Analysis}
 
-We now consider the payoff to the bettor for possible hand combinations $x, y$ and the expected game value from a uniformly random hand combination. In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can visualize the payoff for all hand combinations as a function defined on the unit square $[0, 1]^2$ (see Figure \ref{fig:gamevalue}).  
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{LU_payoffs_0.5_1.5.png}
-    \caption{Payoff to the bettor for all possible hand combinations $(x, y)$ in Limit Continuous Poker for $L=0.5, U=1.5$. The color scale represents the payoff to the bettor.}
-    \label{fig:gamevalue}
-\end{figure}
-
-This gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left).  
-
-The expected game value is the average of the payoff function over all possible hand combinations $(x, y)$, which can be computed as an integral of the payoff over the unit square. Because the bet size is only defined implicitly in terms of the hand strength $x$, this is extremely nontrivial and requires breaking the square into regions based on the strategies and bet size. This method is fully specified in the appendix, but the resulting expression is given below.
-
-\begin{align*}
-    V_{LCP}(L, U) =& \frac{(1 + L)^3(1+U)^3 - ((1+L)^3+L^3(1 + U)^3)}{14(1 + L)^3(1+U)^3 - 2((1+L)^3+L^3(1 + U)^3)}
-\end{align*}
-
-This is a rational function of $L$ and $U$ with a surprisingly simple form.  Importantly, this makes it easy to compute $V_{LCP}(L, U)$ as $L, U$ approach their extreme values, which we use to relate the game value to that of NLCP and FBCP in section \ref{sec:game_value_convergence}. 
-
-Most importantly, it has the following symmetry:
-
-\begin{align*}
-    V_{LCP}(L, U) = V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)
-\end{align*}
-
-This symmetry is easily checked from the definition of $V_{LCP}(L, U)$, but is not at all obvious from the game setup. The implications are discussed in detail in section \ref{sec:game_value_convergence}.
-
-\section{Interpretation}
-The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. It is helpful to think in this context when interpreting the strategies and game value. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as `bet functions’ from hand strengths to bets (with 0 representing a check), and caller strategies as `call functions’ from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
-
-\subsection{Notation}
-
-Let $S_B(x)$ denote the bet function for fixed bet size $B$ in Continuous Poker, which maps hand strenths $x$ to bets (either $0$ for a check of $B$ for a bet). Let $C_B(s)$ denote the call function which maps the set of bets (the singleton set $\{B\}$) to calling thresholds. 
-
-\begin{align}
-	S_B(x) & = \begin{cases}
-    B & x < \frac{B}{(1+2B)(2+B)}\\
-    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)}\\
-    B & x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)}
-\end{cases} \\
-C_B(s) & = \frac{B(3 +2B)}{(1+2B)(2+B)}
-\end{align}
-
-Let $S(x)$ denote the bet function for NLCP, which maps hand strengths $x$ to bet sizes $s > 0$. Let $C(s)$ denote the call function which maps the set of bets (the interval $[0, \infty)$) to calling thresholds. $S(x)$ is harder to define explicitly because the bettor strategy for NLCP is defined by functions $v(s)$ and $b(s)$ which map bet sizes to hand strengths, and $S(x)$ is related to the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. 
-
-Finally, let $S_L^U(x)$ and $C_L^U(s)$ denote the bet and call functions for Limit Continuous Poker, which map hand strengths $x$ to bet sizes $s \in [L, U]$ and bet sizes $s \in [L, U]$ to calling thresholds. Like $S(x)$, $S_L^U(x)$ will be a piecewise function with some parts being defined by the inverse functions $v^{-1}(x)$ and $b^{-1}(x)$. We also adapt this notation to the $x_i$'s in the solution so that $x_i|_a^b$ means $x_i$ with $L=a$ and $U=b$.
-
-To compare the three strategy profiles, we want to know whether the bet and call functions for Limit Continuous Poker approach those of Continuous Poker and NLCP as the limits $L$ and $U$ approach their extreme values.
-
-\subsection{Strategic Convergence}
-\label{sec:strategic_convergence}
-
-\subsubsection{Bettor Strategy Convergence to Continuous Poker}
-We expect that as $L$ and $U$ approach some fixed value $s$, the bet function $S_L^U(x)$ should converge to the bet function $S_B(x)$ for Continuous Poker with a fixed bet size $B$. 
-
-\begin{theorem}
-	 For any $B > 0$, the bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S_B(x)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
-\[
-\lim_{L \to B} \lim_{U \to B} S_L^U(x) = \lim_{U \to B} \lim_{L \to B} S_L^U(x) = S_B(x).
-\]
-\end{theorem}
-
-\begin{customproof}
-We analyze the expressions for the $x_i$'s, each of which is a rational function of $L$ and $U$ (i.e., a ratio of polynomials in $L$ and $U$). Since these functions are well-defined for all positive values of $L$ and $U$, the limit as $L \to s$ and $U \to s$ is well-behaved. By substituting $L = U = B$ for some fixed $B$, we obtain the following:
-
-\begin{align*}
-    x_0|_B^B & = x_1|_B^B = \frac{B}{2 B^3+7 B^2+7 B+2} \\
-    x_2|_B^B & = \frac{B}{(1+2B)(2+B)} \\
-    x_3|_B^B & = \frac{2 B^2+4 B+1}{(1+2B)(2+B)} \\
-    x_4|_B^B & = x_5|_B^B = \frac{2 B^2+5 B+1}{(1+2B)(2+B)} \\
-\end{align*}
-
-$x_0 = x_1$ and $x_4 = x_5$ are expected, since these intervals are where the bettor uses an intermediate bet size, and $L=U=B$ does not allow intermediate bet sizes. This reduces the bet function to 
-
-\begin{align*}
-    \lim_{L \to B} \lim_{U \to B} S_L^U(x) & = \begin{cases}
-    B & x < \frac{B}{(1+2B)(2+B)}\\
-    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}\\
-    B & x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}
-    \end{cases}\\
-    &= S_B(x)
-\end{align*}
-\end{customproof}
-
-\subsubsection{Caller Strategy Convergence to Continuous Poker}
-
-The calling function is easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C_B(s)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$.
-
-\begin{theorem}
-     For any $B > 0$, the call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C_B(s)$ for Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
-\[
-\lim_{L \to B} \lim_{U \to B} C_L^U(s) = \lim_{U \to B} \lim_{L \to B} C_L^U(s) = C_B(s).
-\]
-\end{theorem}
-
-\begin{customproof}
-We already have the value of $x_2|_B^B$, so we can plug this into the expression for the calling threshold:
-\begin{align*}
-    \lim_{L \to B} \lim_{U \to B} C_L^U(s) & = \lim_{L \to B} \lim_{U \to B} \frac{x_2+B}{1+B} \\
-    & = \frac{\frac{B}{(1+2B)(2+B)} + B}{1+B} \\
-    & = \frac{B(3+2B)}{(1+2B)(2+B)} \\
-    & = C_B(s)
-\end{align*}
-\end{customproof}
-
-\subsubsection{Bettor Strategy Convergence to NLCP}
-
-In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_L^U(x)$ should converge to the bet function $S(x)$ for NLCP.
-
-\begin{theorem}
-    The bet function $S_L^U(x)$ for Limit Continuous Poker converges to the bet function $S(x)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
-\[
-\lim_{L \to 0} \lim_{U \to \infty} S_L^U(x) = \lim_{U \to \infty} \lim_{L \to 0} S_L^U(x) = S(x).
-\]
-\end{theorem}
-\begin{customproof}
-We can analyze the expressions for the $x_i$'s as $L$ and $U$ approach $0$ and $\infty$. The limit is well-defined, and we can substitute $L=0$ and $U=\infty$ into the expressions for the $x_i$s.
-\begin{align*}
-    x_0|_0^\infty &= 0 \\
-    x_1|_0^\infty &= x_2|_0^\infty = \frac{1}{7} \\
-    x_3|_0^\infty &= x_4|_0^\infty = \frac{4}{7} \\
-    x_5|_0^\infty &= 1
-\end{align*}
-
-$x_0|_0^\infty = 0$ and $x_5|_0^\infty = 1$ are expected, since these intervals are where the bettor uses a minimum bet size and a maximum bet size, respectively, both of which are impossible. The bettor now bets intermediate values for $x < \frac{1}{7}$ and $x > \frac{4}{7}$, and checks for $\frac{1}{7} < x < \frac{4}{7}$. But how much do they bet? We can take the limits of $v(s)$ and $b(s)$ as $L$ and $U$ approach $0$ and $\infty$:
-
-\begin{align*}
-    \lim_{L \to 0} \lim_{U \to \infty} b(s) &= \frac{3 s+1}{7 (s+1)^3}\\
-    \lim_{L \to 0} \lim_{U \to \infty} v(s) &= 1 - \frac{3}{7 (s+1)^2}
-\end{align*}
-
-To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function for NLCP described in section \todo{ref}.
-
-\end{customproof}
-
-\subsubsection{Caller Strategy Convergence to NLCP}
-
-The calling function is again easier to analyze. We want to show that the calling threshold $C_L^U(s)$ converges to the calling threshold $C(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$.
-\begin{theorem}
-    The call function $C_L^U(s)$ for Limit Continuous Poker converges to the call function $C(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
-\[
-\lim_{L \to 0} \lim_{U \to \infty} C_L^U(s) = \lim_{U \to \infty} \lim_{L \to 0} C_L^U(s) = C(s).
-\]
-\end{theorem}
-\begin{customproof}
-Again, we already have the limiting value of $x_2|_0^\infty$, so we can plug this into the expression for the calling threshold:
-\begin{align*}
-    \lim_{L \to 0} \lim_{U \to \infty} C_L^U(s) & = \lim_{L \to 0} \lim_{U \to \infty} \frac{x_2+s}{1+s}\\
-    & = \frac{\frac{1}{7}+s}{1+s}\\
-    & = 1 - \frac{6}{7(1+s)}\\
-    & = C(s)
-\end{align*}
-\end{customproof}
-
-
-\subsection{Game Value Convergence}
-\label{sec:game_value_convergence}
-
-Recall that FBCP and NLCP have values
-
-\begin{align*}
-    V_{FB}(B) &= \frac{B}{2(1+2B)(2+B)} \\
-    V_{NL} & = \frac{1}{14}
-\end{align*}
-
-The value of LCP is given in section \ref{sec:game_value}. A common theme throughout our previous analysis has been treating Limit Continuous Poker as a generalization between Fixed-Bet and No-Limit. The value of the games follows this theme as well.
-
-To see this visually, we can look at the expected value of the game as a function of the limits $L$ and $U$ in Figure \ref{fig:payoffs_vs_LU_combined}.
-
-\begin{figure}[h!]
-    \begin{adjustwidth}{-1in}{-1in}
-        \centering
-        \begin{minipage}{0.6\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{payoffs_by_limits.png}
-            \caption*{(a) Linear scale}
-        \end{minipage}
-        \hspace{0.05\textwidth}
-        \begin{minipage}{0.6\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{payoffs_by_limits_wide.png}
-            \caption*{(b) Zoomed out linear scale}
-        \end{minipage}
-        \vspace{0.5cm}
-        \begin{minipage}{0.6\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{payoffs_by_limits_log.png}
-            \caption*{(c) Log-log scale}
-        \end{minipage}
-        \hspace{0.05\textwidth}
-        \begin{minipage}{0.6\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{payoffs_by_limits_log_wide.png}
-            \caption*{(d) Zoomed out log-log scale}
-        \end{minipage}
-    \end{adjustwidth}
-    \caption{Game value of Limit Continuous Poker as a function of the limits $L$ and $U$. (a) Linear scale, (b) Zoomed out linear scale, (c) Log-log scale, (d) Zoomed out log-log scale. The restriction $L \leq U$ keeps the plots above the diagonal.}
-    \label{fig:payoffs_vs_LU_combined}
-\end{figure}
-
-Intuitively, more options for the bettor should increase the game's value, and we see that reflected by higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). In fact, we can easily prove that the game value is monotonically increasing in $U$ and decreasing in $L$:
-
-\begin{theorem}
-    The value of Limit Continuous Poker is monotonically increasing in $U$ and decreasing in $L$:
-\[
-    \frac{\partial V_{LCP}(L, U)}{\partial U} \geq 0, \;\; \frac{\partial V_{LCP}(L, U)}{\partial L} \leq 0
-\]
-\end{theorem}
-\begin{customproof}
-    LCP is a zero sum game, so by the minimax theorem, the value of the game is equal to the maximum expected value of the bettor's strategy. 
-\end{customproof}
-
-These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
-
-However, it remains to be proven that the value of Limit Continuous Poker actually converges to the value of FBCP as $L$ and $U$ approach some fixed value $B$.
-
-\begin{theorem}
-    For any $B > 0$, the value of Limit Continuous Poker converges to the value of Fixed-Bet Continuous Poker as $L$ and $U$ approach $B$:
-\[
-\lim_{L \to B} \lim_{U \to B} V_{LCP}(L, U) = \lim_{U \to B} \lim_{L \to B} V_{LCP}(L, U) = V_{FB}(B)
-\]
-\end{theorem}
-
-What happens to the game value as $U$ and $L$ approach extremes $0$ and $\infty$? Zooming out reveals that as $U$ becomes very large compared to the pot of 1, further increasing $U$ has diminishing returns on the game value (in plot (b), horizontal strips near the top edge become indistinguishable). This remains true even on a log-log plot, indicating that even increasing $U$ exponentially does not increase the game value meaningfully. The same can be said as $L$ approaches $0$. This observation leads us to the following theorem:
-
-\begin{theorem}
-    The value of Limit Continuous Poker converges to the value of NLCP as $L$ and $U$ approach $0$ and $\infty$:
-\[
-\lim_{L \to 0} \lim_{U \to \infty} V_{LCP}(L, U) = \lim_{U \to \infty} \lim_{L \to 0} V_{LCP}(L, U) = V_{NL}
-\]
-\end{theorem}
-
-However, this should not be surprising given that NLCP has a finite value. If, as we reasoned above, more options for the bettor monotonically increase the game value, then the game value must be bounded above by the value of NLCP, where the bettor's choice is maximized. Indeed, plot (d) seems to show that the game value approaches a finite supremum ($\approx 0.072\approx 1/14$) even as $L$ and $U$ approach their extremes (top left of the plot).  
-
-This can be broken down further by consider the combinations of hand strengths which result in certain payoffs in Nash equilibrium, as in section \todo{ref}. Figure \ref{fig:payoffs} shows the payoffs as a function of hand strengths $x$ and $y$ for various values of $L, U$. 
-
+In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can better understand the strategy profile by examining payoffs for all hand combinations over the unit square $[0, 1]^2$ (see Figure \ref{fig:payoffs}). For comparison, the first and last plots show the payoffs in Fixed-Bet Continuous Poker with a fixed bet size $B=1$ and No-Limit Continuous Poker, respectively. We will explore the relationship between the three games in more detail in section \ref{sec:strategic_convergence}.
 
 \begin{figure}[h!]
     \begin{adjustwidth}{-1in}{-1in}
@@ -585,36 +343,397 @@ This can be broken down further by consider the combinations of hand strengths w
             \includegraphics[width=\textwidth]{NoLimit_payoffs.png}
         \end{minipage}
     \end{adjustwidth}
-    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$, for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
+    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for fixed bet size $B=1$ (top left), and No-Limit Continuous Poker (bottom right). Intermediate plots show the payoffs for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
     \label{fig:payoffs}
 \end{figure}
 
-We saw earlier how the most extreme payoffs occur when the caller has a strong hand and the bettor has either a very strong or very weak hand. As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+This visualization gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right of any plot), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
 
-It is worth noting that the bettors strongest hands (right edge) actually become less likely to make any profit as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, the inability of the caller to raise makes slowplaying obsolete; with extremely strong hands, forcing a bigger pot outweighs the lower likelihood of getting called.
+\todo{plots} % EV(x) for different hand strengths}
 
-We also observe that as the limits become more lenient, the checking region shrinks. This is because the bettor can make use of small bets for hands that might have otherwise checked. 
+It is worth noting that the bettors strongest hands (right edge) actually seem to become less likely to make any profit as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
 
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{payoff_fixed_bet_heatmap.png}
-%     \caption{Nash equilibrium payoffs for Continuous Poker for all possible hand strength combinations, with fixed bet size $B=1$.}
-%     \label{fig:payoff}
-% \end{figure}
-% \todo{comparison with Limit Continuous Poker for limits close to eachother}
+It may seem unsurprising that strong hangs become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of each hand continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only as long as $x$ is a max-betting hand, after which the expected payoff of that hand decreases in $U$. This is a surprising result, and it is worth exploring in more detail.
+
+\begin{theorem}
+    For any given value-betting hand strength $x>1/2$, in Nash equilibrium, the expected payoff $EV(x)$ is increasing in $U$ if $x$ bets the maximum $U$ and decreasing in $U$ otherwise.
+
+    \begin{align*}
+        \frac{d}{dU} EV(x) > 0 & \text{ if } x > v(U) \\ 
+        \frac{d}{dU} EV(x) < 0 & \text{ if } x_3 < x < v(U) 
+    \end{align*}
+\end{theorem}
+
+Before proving the theorem, we will first walk through some lemmas to explore how all the relevant variables change as we change $U$. Recall the expected payoff of a value-betting hand $x$:
+
+\begin{align*}
+    EV(x) & = \frac{1}{2} c(s) + (x - c(s)) \left(s+\frac{1}{2}\right) + (1-x) \left(-s-\frac{1}{2}\right)
+\end{align*}
+
+Where $s$ is the bet size made by hand strength $x$ in Nash equilibrium. Note that $s$ and $c$ are both dependent on $U$, even though we have not explicitly written this dependence. We first show that if we fix $x$ at any hand strength which bets neither the minimum nor maximum bet size and then increase $U$, the bet size $s$ made by $x$ decreases. The $x$ which make such bets are exactly $x \in [x_3, v(U)]$ and the bet size is given by $s = v^{-1}(x)$, so we get the following lemma:
+
+\begin{lemma}
+    For any fixed $x \in [x_3, v(U)]$, 
+    \[ 
+        \frac{d}{dU} v^{-1}(x) < 0
+    \]
+\end{lemma}
+
+\begin{customproof}
+    Recall that 
+    $$v^{-1}(x) = -\frac{\sqrt{(4 x-4) (2 x_2-2)}}{4 x-4}-1$$
+    Where $x_2$ is a function of $L$ and $U$. Importantly, $v^{-1}(x)$ is only dependent on $U$ through $x_2$, so we can use the chain rule to take the derivative with respect to $U$:
+    \begin{align*}
+        \frac{d}{dU} v^{-1}(x) & = \frac{\partial v^{-1}(x)}{\partial x_2} \frac{\partial x_2}{\partial U}
+    \end{align*}
+
+    The first term is 
+
+    $$ \frac{\partial v^{-1}(x)}{\partial x_2} = -\frac{1}{\sqrt{(4 x-4) (2 x_2-2)}} $$ 
+
+    Which is always negative since $x \in [0, 1]$ and $x_2 \in [0, 1]$.
+
+    The second term is 
+
+    $$\frac{\partial x_2}{\partial U} = \frac{18 (L+1)^6 (U+1)^2}{\left(L^3 \left(6 U^3+18 U^2+18 U+5\right)+3 L^2 \left(7 U^3+21 U^2+21 U+6\right)+3 L \left(7 U^3+21 U^2+21 U+6\right)+7 U^3+21 U^2+21 U+6\right)^2}$$
+
+    Which is always positive since $L \in [0, U]$ and $U \in [0, \infty)$.
+
+    Therefore, the bet size of intermediate bets is decreasing in $U$.
+\end{customproof}
+
+\begin{customproof}
+    We break the proof into two cases:
+
+    \textbf{Case 1 ($x > v(U)$):} In this case, hand $x$ bets the maximum amount $U$. The expected value is:
+    % \begin{align*}
+    %     EV(x) & = \frac{1}{2} c(U) + (x - c(U)) \left(U+\frac{1}{2}\right) + (1-x) \left(-U-\frac{1}{2}\right)
+    % \end{align*}
+    % Taking the derivative with respect to $U$:
+    % \begin{align*}
+    %     \frac{d}{dU} EV(x) & = \frac{1}{2} \frac{d}{dU}c(U) + \left(-\frac{d}{dU}c(U)\right)\left(U+\frac{1}{2}\right) + (x-c(U))(1) + (1-x)(-1) \\
+    %     & = -\frac{d}{dU}c(U)\left(U\right) + 2x - 1 > 0
+    % \end{align*}
+    % The inequality follows since $\frac{d}{dU}c(U) < 0$ and $x > v(U) > \frac{1}{2}$.
+
+    \textbf{Case 2 ($x_3 < x < v(U)$):} In this case, hand $x$ makes a bet $s = v^{-1}(x)$. There are two distinct factors influencing the derivative $\frac{d}{dU} EV(x)$, namely the change in bet size that $x$ makes and the change in calling cutoff which results. Our proof uses the following argument:
+    \begin{itemize}
+        \item Show that bet size for a fixed $x \in [x_3, v(U)]$ is decreasing in $U$
+        \item Show that the calling cutoff for a fixed $x \in [x_3, v(U)]$ is increasing in $U$
+        \item Show that if the previous two claims hold, then the expected payoff is decreasing in $U$ for all $x \in [x_3, v(U)]$
+    \end{itemize}
+    
+    
+
+    
+
+    % Taking the derivative of the expected payoff with respect to $U$:
+    % \begin{align*}
+    %     \frac{d}{dU} EV(x) & = \frac{d}{dU} v^{-1}(x) \left( -\frac{d}{dU} c(v^{-1}(x)) - c(v^{-1}(x)) + 2x - 1 \right)
+    % \end{align*}
+\end{customproof}
+
+We also observe that as the limits become more lenient, the checking region (middle vertical strip) shrinks \todo{formalize this}. There are two reasons for this: the first is that with a lower minimum bet size, the bettor can make use of small bets for hands that might have otherwise checked. The second is that with a higher maximum bet size, the bettor has a larger range of hands which \todo{WHY?}
+
+
+
+
+Having seen and briefly interpreted the strategy profile, we can explore the relationship between LCP and FBCP/NLCP in more detail.
+
+
+\section{Strategic Comparison to Fixed-Bet and No-Limit Continuous Poker}
+The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as `bet functions' from hand strengths to bets (with 0 representing a check), and caller strategies as `call functions' from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
+
+\subsection{Setup and Notation}
+
+To compare the strategy profiles across different variants of Continuous Poker, we introduce the following notation for the strategy functions of the three games:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Symbol} & \textbf{Meaning} \\
+\hline
+$S_{FB}(x, B)$ & Bettor's bet function in FBCP with fixed bet size $B$ \\
+$C_{FB}(s, B)$ & Caller's call function in FBCP with fixed bet size $B$ \\
+$S_{NL}(x)$ & Bettor's bet function in NLCP \\
+$C_{NL}(s)$ & Caller's call function in NLCP \\
+$S_{LCP}(x, L, U)$ & Bettor's bet function in LCP with limits $L$ and $U$ \\
+$C_{LCP}(s, L, U)$ & Caller's call function in LCP with limits $L$ and $U$ \\
+$x_i|_{L,U}$ & Threshold $x_i$ in LCP with limits $L$ and $U$ \\
+\hline
+\end{tabular}
+\caption{Notation for strategy functions across different variants of Continuous Poker}
+\label{tab:notation}
+\end{table}
+
+In FBCP, the bettor can only make a fixed bet size $B$ or check. The bet function $S_{FB}(x, B)$ maps hand strengths to either $0$ (check) or $B$ (bet):
+
+\begin{align}
+	S_{FB}(x, B) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)} \text{ (bluffing range)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (checking range)}\\
+    B & x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (value betting range)}
+\end{cases}
+\end{align}
+
+The caller's strategy is defined by a single threshold $C_{FB}(s, B)$:
+
+\begin{align}
+C_{FB}(s, B) & = \frac{B(3 +2B)}{(1+2B)(2+B)}
+\end{align}
+
+In NLCP, the bettor can choose any positive bet size. The strategy is most naturally described by functions $v_{NL}(s)$ and $b_{NL}(s)$ that map bet sizes to hand strengths:
+
+\begin{align*}
+    v_{NL}(s) &= 1 - \frac{3}{7(s+1)^2} \text{ (value betting function)} \\
+    b_{NL}(s) &= \frac{3s+1}{7(s+1)^3} \text{ (bluffing function)}
+\end{align*}
+
+The bet function $S_{NL}(x)$ is then defined in terms of the inverse functions:
+
+\begin{align*}
+    S_{NL}(x) = \begin{cases}
+        b_{NL}^{-1}(x) & x < \frac{1}{7} \text{ (bluffing range)} \\
+        0 & \frac{1}{7} < x < \frac{4}{7} \text{ (checking range)} \\
+        v_{NL}^{-1}(x) & x > \frac{4}{7} \text{ (value betting range)}
+    \end{cases}
+\end{align*}
+
+The caller's strategy is defined by a continuous function $C_{NL}(s)$:
+
+\begin{align*}
+    C_{NL}(s) = 1 - \frac{6}{7 (s+1)}
+\end{align*}
+
+In LCP, the bettor can choose any bet size between $L$ and $U$. The strategy profile is defined by six thresholds $x_0$ through $x_5$ and functions $v(s)$ and $b(s)$ that map bet sizes to hand strengths. The bet function $S_{LCP}(x, L, U)$ and call function $C_{LCP}(s, L, U)$ are defined in terms of these values, which are given in Theorem \ref{thm:nash_equilibrium}.
+
+\subsection{Strategic Convergence}
+\label{sec:strategic_convergence}
+
+\subsubsection{Bettor Strategy Convergence to Continuous Poker}
+We expect that as $L$ and $U$ approach some fixed value $s$, the bet function $S_{LCP}(x, L, U)$ should converge to the bet function $S_{FB}(x, s)$ for Fixed-Bet Continuous Poker with a fixed bet size $s$. 
+
+\begin{theorem}
+	 For any $B > 0$, the bet function $S_{LCP}(x, L, U)$ for Limit Continuous Poker converges to the bet function $S_{FB}(x, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} S_{LCP}(x, L, U) = \lim_{U \to B} \lim_{L \to B} S_{LCP}(x, L, U) = S_{FB}(x, B).
+\]
+\end{theorem}
+
+\begin{customproof}
+We analyze the expressions for the $x_i$'s, each of which is a rational function\footnote{A ratio of polynomials in $L$ and $U$.} of $L$ and $U$. Since these functions are defined and continuous for all positive values of $L$ and $U$, the limit as $L \to B$ and $U \to B$ can be found by simply substituting $L = U = B$:
+
+\begin{align*}
+    x_0|_{B,B} & = x_1|_{B,B} = \frac{B}{2 B^3+7 B^2+7 B+2} \\
+    x_2|_{B,B} & = \frac{B}{(1+2B)(2+B)} \\
+    x_3|_{B,B} & = \frac{2 B^2+4 B+1}{(1+2B)(2+B)} \\
+    x_4|_{B,B} & = x_5|_{B,B} = \frac{2 B^2+5 B+1}{(1+2B)(2+B)} \\
+\end{align*}
+
+$x_0 = x_1$ and $x_4 = x_5$ are expected, since these intervals are where the bettor uses an intermediate bet size, and $L=U=B$ does not allow intermediate bet sizes. This reduces the bet function to 
+
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} S_{LCP}(x, L, U) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}\\
+    B & x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}
+    \end{cases}\\
+    &= S_{FB}(x, B)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to Continuous Poker}
+
+The calling function is easier to analyze. We want to show that the calling threshold $C_{LCP}(s, L, U)$ converges to the calling threshold $C_{FB}(s, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$.
+
+\begin{theorem}
+     For any $B > 0$, the call function $C_{LCP}(s, L, U)$ for Limit Continuous Poker converges to the call function $C_{FB}(s, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} C_{LCP}(s, L, U) = \lim_{U \to B} \lim_{L \to B} C_{LCP}(s, L, U) = C_{FB}(s, B).
+\]
+\end{theorem}
+
+\begin{customproof}
+We already have the value of $x_2|_{B,B}$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} C_{LCP}(s, L, U) & = \frac{x_2|_{B,B}+s}{1+s} \\
+    & = \frac{\frac{B}{(1+2B)(2+B)} + s}{1+s} \\
+    & = \frac{B(3+2B)}{(1+2B)(2+B)} \\
+    & = C_{FB}(s, B)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Bettor Strategy Convergence to NLCP}
+
+In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_{LCP}(x, L, U)$ should converge to the bet function $S_{NL}(x)$ for NLCP.
+
+\begin{theorem}
+    The bet function $S_{LCP}(x, L, U)$ for Limit Continuous Poker converges to the bet function $S_{NL}(x)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} S_{LCP}(x, L, U) = \lim_{U \to \infty} \lim_{L \to 0} S_{LCP}(x, L, U) = S_{NL}(x).
+\]
+\end{theorem}
+\begin{customproof}
+We can analyze the expressions for the $x_i$'s as $L$ and $U$ approach $0$ and $\infty$. The limit is well-defined, and we can substitute $L=0$ and $U=\infty$ into the expressions for the $x_i$s.
+\begin{align*}
+    x_0|_{0,\infty} &= 0 \\
+    x_1|_{0,\infty} &= x_2|_{0,\infty} = \frac{1}{7} \\
+    x_3|_{0,\infty} &= x_4|_{0,\infty} = \frac{4}{7} \\
+    x_5|_{0,\infty} &= 1
+\end{align*}
+
+$x_0|_{0,\infty} = 0$ and $x_5|_{0,\infty} = 1$ are expected, since these intervals are where the bettor uses a minimum bet size and a maximum bet size, respectively, both of which are impossible. The bettor now bets intermediate values for $x < \frac{1}{7}$ and $x > \frac{4}{7}$, and checks for $\frac{1}{7} < x < \frac{4}{7}$. But how much do they bet? We can take the limits of $v(s)$ and $b(s)$ as $L$ and $U$ approach $0$ and $\infty$:
+
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} b(s) &= \frac{3 s+1}{7 (s+1)^3}\\
+    \lim_{L \to 0} \lim_{U \to \infty} v(s) &= 1 - \frac{3}{7 (s+1)^2}
+\end{align*}
+
+To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function $S_{NL}(x)$ for NLCP.
+
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to NLCP}
+
+The calling function is again easier to analyze. We want to show that the calling threshold $C_{LCP}(s, L, U)$ converges to the calling threshold $C_{NL}(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$.
+\begin{theorem}
+    The call function $C_{LCP}(s, L, U)$ for Limit Continuous Poker converges to the call function $C_{NL}(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} C_{LCP}(s, L, U) = \lim_{U \to \infty} \lim_{L \to 0} C_{LCP}(s, L, U) = C_{NL}(s).
+\]
+\end{theorem}
+\begin{customproof}
+Again, we already have the limiting value of $x_2|_{0,\infty}$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} C_{LCP}(s, L, U) & = \lim_{L \to 0} \lim_{U \to \infty} \frac{x_2+s}{1+s}\\
+    & = \frac{\frac{1}{7}+s}{1+s}\\
+    & = 1 - \frac{6}{7(1+s)}\\
+    & = C_{NL}(s)
+\end{align*}
+\end{customproof}
+
+We have now shown that the bettor and caller strategies for LCP converge to those of FBCP and NLCP as the limits $L$ and $U$ approach their extreme values. In the next section, we explore the value of LCP in more detail, and in particular how it relates to that of FBCP and NLCP.
+
+\section{Game Value}
+\label{sec:game_value}
+
+LCP is a zero-sum game, so the value of the game can be found by the minimax theorem. Specifically, it is the maximum expected payoff that the bettor can gain when the caller plays optimally, and the minimum expected payoff that the caller can lose when the bettor plays optimally.
+
+Since we have already found optimal strategies for both players, we can compute the value of the game as the average of the payoff in Nash equilibrium over all possible hand combinations $(x, y)$. This reduces to an integral of the payoff over the unit square, like we saw in Figure \ref{fig:payoffs}. Because the bet size is only defined implicitly in terms of the hand strength $x$, this is extremely nontrivial and requires breaking the square into regions based on the strategies and bet size. This method is fully specified in Appendix \ref{sec:value_computation}, but the resulting expression is given below.
+
+\[
+    V_{LCP}(L, U) = \frac{(1 + L)^3(1+U)^3 - ((1+L)^3+L^3(1 + U)^3)}{14(1 + L)^3(1+U)^3 - 2((1+L)^3+L^3(1 + U)^3)}
+\]
+
+This is a rational function of $L$ and $U$ with a surprisingly simple form.  Importantly, this makes it easy to compute $V_{LCP}(L, U)$ as $L, U$ approach their extreme values, which we use to relate the game value to that of NLCP and FBCP in the next section. 
+
+Most interestingly, the value of LCP has the following symmetry:
+
+\begin{align*}
+    V_{LCP}(L, U) = V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)
+\end{align*}
+
+This symmetry is easily checked from the definition of $V_{LCP}(L, U)$, but is not at all obvious from the game setup.
+
+In the following sections, we investigate the properties and behavior of $V_{LCP}(L, U)$ in more detail. These include monotonicity, convergence to NLCP and FBCP, and the symmetry property.
 
 
 
 
 
+\subsection{Value Monotonicity}
 
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{payoff_heatmap_with_regions_labeled.png}
-%     \caption{Nash equilibrium payoffs for NLCP for all possible hand strength combinations.}
-%     \label{fig:no-limit-payoff}
-% \end{figure}
-% \todo{comapre with limit FBCP for lenient limits}
+Intuitively, more options for the bettor should increase the game's value. To see this visually, we can plot the value of LCP as a function of the limits $L$ and $U$ for a range of values, as in Figure \ref{fig:payoffs_vs_LU_combined}.
+
+\begin{figure}[h!]
+    \begin{adjustwidth}{-1in}{-1in}
+        \centering
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoffs_by_limits.png}
+            \caption*{(a) Linear scale}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoffs_by_limits_wide.png}
+            \caption*{(b) Zoomed out linear scale}
+        \end{minipage}
+        \vspace{0.5cm}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoffs_by_limits_log.png}
+            \caption*{(c) Log-log scale}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{payoffs_by_limits_log_wide.png}
+            \caption*{(d) Zoomed out log-log scale}
+        \end{minipage}
+    \end{adjustwidth}
+    \caption{Game value of Limit Continuous Poker as a function of the limits $L$ and $U$. (a) Linear scale, (b) Zoomed out linear scale, (c) Log-log scale, (d) Zoomed out log-log scale. The restriction $L \leq U$ keeps the plots above the diagonal.}
+    \label{fig:payoffs_vs_LU_combined}
+\end{figure}
+
+Notice the higher value for more lenient limits (top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}) and lower value for more strict limits (moving down/right). We can easily prove this formally:
+
+\begin{theorem}
+    The value of Limit Continuous Poker is monotonically increasing in $U$ and decreasing in $L$:
+\[
+    \frac{\partial V_{LCP}(L, U)}{\partial U} \geq 0, \;\; \frac{\partial V_{LCP}(L, U)}{\partial L} \leq 0
+\]
+\end{theorem}
+\begin{customproof}
+    \todo{prove this}
+\end{customproof}
+
+\subsection{Value Convergence}
+
+The main diagonal of the plots in Figure \ref{fig:payoffs_vs_LU_combined} should represent $L=U$, which means the bet size is fixed. Thus, this diagonal should represent the value of FBCP for various values of $B$. We can prove this formally:
+
+\begin{theorem}
+    For any $B > 0$, the value of Limit Continuous Poker converges to the value of Fixed-Bet Continuous Poker as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} V_{LCP}(L, U) = \lim_{U \to B} \lim_{L \to B} V_{LCP}(L, U) = V_{FB}(B)
+\]
+\end{theorem}
+
+\begin{customproof}
+    \todo{prove this}
+\end{customproof}
+
+These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
+
+We can also show that the value of LCP converges to the value of NLCP as $L$ and $U$ approach their extremes, represented by the top left of any plot in Figure \ref{fig:payoffs_vs_LU_combined}.
+
+\begin{theorem}
+    The value of Limit Continuous Poker converges to the value of NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} V_{LCP}(L, U) = \lim_{U \to \infty} \lim_{L \to 0} V_{LCP}(L, U) = V_{NL}
+\]
+\end{theorem}
+\begin{customproof}
+    \todo{prove this}
+\end{customproof}
+
+\subsection{Value Symmetry}
+
+Looking again at the log-log plots in Figure \ref{fig:payoffs_vs_LU_combined}, we see the symmetry property of $V_{LCP}(L, U)$ represented by symmetry about the reverse diagonal (the line $\log(L) = -\log(U)$). 
+
+This symmetry can be interpreted in terms of how changing the limits affects the game to the bettor. We discussed earlier how the bettor benefits from increasing $U$ or from decreasing $L$, but it was unclear exactly how these benefits related quantitatively. The symmetry property tells us that the benefit from increasing $U$ is exactly equivalent to that of decreasing $L$ in a reciprocal manner, centered exactly around the pot size of $1$. Similarly, the loss in value from decreasing $U$ is equivalent to the loss from increasing $L$ in a reciprocal manner.
+
+For example, suppose you are given the choice between playing LCP as the bettor with limits $L=1/2$ and $U=5$ or $L=1/5$ and $U=2$. You know you can play optimally, but it is unclear which game favors you. The symmetry property tells us that the value of the game is the same in both cases, so you should be indifferent between the two.
+
+
+\appendix
+\section{Derivation of Nash Equilibrium Strategy Profile}
+\label{app:derivation}
+
+
+\section{Computation of Game Value}
+\label{app:value_computation}
 
 
 
