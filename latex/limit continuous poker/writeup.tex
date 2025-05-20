@@ -353,10 +353,15 @@ This visualization gives insight into exactly how the bettor is gaining value fr
 
 It is worth noting that the bettors strongest hands (right edge) actually seem to become less likely to make any profit as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
 
+\subsection{Effect of Increasing $U$}
+
+\subsubsection{Expected Payoff of Value-Betting Hands}
+
 It may seem unsurprising that strong hangs become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of each hand continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only as long as $x$ is a max-betting hand, after which the expected payoff of that hand decreases in $U$. This is a surprising result, and it is worth exploring in more detail.
 
 \begin{theorem}
-    For any given value-betting hand strength $x>1/2$, in Nash equilibrium, the expected payoff $EV(x)$ is increasing in $U$ if $x$ bets the maximum $U$ and decreasing in $U$ otherwise.
+    \label{thm:payoff_increasing}
+    For any fixed value-betting hand strength $x>1/2$, in Nash equilibrium, the expected payoff $EV(x)$ is increasing in $U$ if $x$ bets the maximum $U$ and decreasing in $U$ otherwise.
 
     \begin{align*}
         \frac{d}{dU} EV(x) > 0 & \text{ if } x > v(U) \\ 
@@ -364,15 +369,32 @@ It may seem unsurprising that strong hangs become less likely to get called as l
     \end{align*}
 \end{theorem}
 
-Before proving the theorem, we will first walk through some lemmas to explore how all the relevant variables change as we change $U$. Recall the expected payoff of a value-betting hand $x$:
+Before proving the theorem, we will walk through some lemmas which explore how all the relevant variables change as we increase $U$, including the bluffing threshold $x_2$, the bet size $v^{-1}(x)$, and the calling cutoff $c(s)$.
 
-\begin{align*}
-    EV(x) & = \frac{1}{2} c(s) + (x - c(s)) \left(s+\frac{1}{2}\right) + (1-x) \left(-s-\frac{1}{2}\right)
-\end{align*}
+\subsubsection{Bluffing Threshold}
 
-Where $s$ is the bet size made by hand strength $x$ in Nash equilibrium. Note that $s$ and $c$ are both dependent on $U$, even though we have not explicitly written this dependence. We first show that if we fix $x$ at any hand strength which bets neither the minimum nor maximum bet size and then increase $U$, the bet size $s$ made by $x$ decreases. The $x$ which make such bets are exactly $x \in [x_3, v(U)]$ and the bet size is given by $s = v^{-1}(x)$, so we get the following lemma:
+We begin by showing that $x_2$, the boundary hand strength between bluffing and checking, is increasing in $U$. This means that for fixed $L$, increasing the upper limit $U$ makes the bettor bluff with more hands. 
 
 \begin{lemma}
+    \label{lem:x2_increasing}
+    For any fixed $L \in [0, U]$,
+    $$ \frac{\partial x_2}{\partial U} > 0 $$
+\end{lemma}
+
+\begin{customproof}
+    Taking the partial derivative of $x_2$ with respect to $U$ in Mathematica and rearranging terms gives:
+    
+    $$\frac{\partial x_2}{\partial U} = \frac{18 (L+1)^6 (U+1)^2}{\left(A_1 + L^3 A_2 + 3 L^2 A_1 + 3 L A_1 \right)^2}$$
+
+    Which is always positive since $L \in [0, U]$, $U \in [0, \infty)$, and $A_1, A_2$ are both positive-coefficient polynomials in $L$ and $U$.   
+\end{customproof}
+
+\subsubsection{Bet Size}
+
+We now show that if we fix $x$ at any intermediate value-betting hand strength (betting neither the minimum nor maximum bet size) and then increase $U$, the bet size $s$ made by $x$ decreases. The intermediate value-betting hands are exactly $x \in [x_3, v(U)]$ and their bet sizes are given by $s = v^{-1}(x)$, so we get the following lemma:
+
+\begin{lemma}
+    \label{lem:v_inverse_decreasing}
     For any fixed $x \in [x_3, v(U)]$, 
     \[ 
         \frac{d}{dU} v^{-1}(x) < 0
@@ -389,39 +411,124 @@ Where $s$ is the bet size made by hand strength $x$ in Nash equilibrium. Note th
 
     The first term is 
 
-    $$ \frac{\partial v^{-1}(x)}{\partial x_2} = -\frac{1}{\sqrt{(4 x-4) (2 x_2-2)}} $$ 
+\begin{align*}
+    \frac{\partial v^{-1}(x)}{\partial x_2} & = - \frac{1}{\sqrt{(4 x-4) (2 x_2-2)}} \\
+    &= - \frac{1}{(v^{-1}(x)+1)(4-4x)}
+\end{align*}
 
-    Which is always negative since $x \in [0, 1]$ and $x_2 \in [0, 1]$.
+    Which is always negative since $x \in [0, 1]$ and $v^{-1}(x) >0 $. We know that the second term is positive by Lemma \ref{lem:x2_increasing}.
 
-    The second term is 
-
-    $$\frac{\partial x_2}{\partial U} = \frac{18 (L+1)^6 (U+1)^2}{\left(L^3 \left(6 U^3+18 U^2+18 U+5\right)+3 L^2 \left(7 U^3+21 U^2+21 U+6\right)+3 L \left(7 U^3+21 U^2+21 U+6\right)+7 U^3+21 U^2+21 U+6\right)^2}$$
-
-    Which is always positive since $L \in [0, U]$ and $U \in [0, \infty)$.
-
-    Therefore, the bet size of intermediate bets is decreasing in $U$.
+    Therefore, the product of the two terms is always negative, so the bet size of intermediate bets is decreasing in $U$.
 \end{customproof}
 
+\subsubsection{Calling Cutoff}
+
+We now turn our attention to how the calling cutoff $c(s)$ varies with $U$. Recall that $c(s)$ is defined as the minimum hand strength $y$ which should call a bet of size $s$ and is given in Nash equilibrium by:
+
+$$c(s) = \frac{x_2 + s}{s+1}$$
+
+We are specifically interested in how $c(v^{-1}(x))$ varies with $U$ for $x \in [x_3, v(U)]$, since this represents how the calling cutoff changes both directly from a strategic change, as well as indirectly due to the lower bet size $s$. It turns out that the calling cutoff is increasing in $U$ for all $x \in [x_3, v(U)]$. This is surprising because we just showed that the bet size $s$ is decreasing in $U$, and we expect smaller bets to be called more often. For reasons we will see later, this effect is overpowered by a strategic shift for the caller, who calls less often for all bet sizes as $U$ increases. 
+
+\begin{lemma}
+    \label{lem:c_increasing}
+    For any fixed $x \in [x_3, v(U)]$, 
+    \[ 
+        \frac{d}{dU} c(v^{-1}(x)) > 0
+    \]
+\end{lemma}
+
 \begin{customproof}
+    As mentioned above, $c(s)$ is dependent on $U$ in two distinct ways -  directly through $x_2$, which can be interpreted as the caller changing strategy as the game changes - but also indirectly in response to how the bet size $s = v^{-1}(x)$ is dependent on $U$. We use the multivariate chain rule to express $\frac{d}{dU} c(v^{-1}(x))$ in terms of these two dependencies:
+    \begin{align*}
+        \frac{d}{dU} c(v^{-1}(x)) & = \frac{\partial c(s)}{\partial s} \frac{d v^{-1}(x)}{d U} + \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U}
+    \end{align*}
+    
+    The two partial derivatives of $c(s)$ are:
+
+    $$ \frac{\partial c(s)}{\partial s} = \frac{1-x_2}{(s+1)^2} \; \; \; \text{and} \; \; \; \frac{\partial c(s)}{\partial x_2} = \frac{1}{s+1} $$
+
+    Substituting $s = v^{-1}(x)$, we can further simplify the first term:
+
+    \begin{align*}
+        \frac{\partial c(s)}{\partial s} \bigg|_{s=v^{-1}(x)} & = \frac{1-x_2}{(v^{-1}(x)+1)^2} \\
+        & = 2-2x
+    \end{align*}
+
+    And as we showed in the proof of Lemma \ref{lem:x2_increasing}, $\frac{d v^{-1}(x)}{d U}$ is given by:
+
+    $$ \frac{d v^{-1}(x)}{d U} = \frac{-1}{(v^{-1}(x)+1)(4-4x)} \frac{\partial x_2}{\partial U} $$
+
+    Substituting all of these with $s = v^{-1}(x)$:
+
+    \begin{align*}
+        \frac{d}{dU} c(v^{-1}(x)) & = 
+        \left(2-2x\right) 
+        \left(\frac{-1}{(v^{-1}(x)+1)(4-4x)}\right) 
+        \left(\frac{\partial x_2}{\partial U}\right) 
+        + \left(\frac{1}{v^{-1}(x)+1}\right) 
+        \left(\frac{\partial x_2}{\partial U}\right)\\
+        & = \left( \frac{1}{v^{-1}(x)+1} \right) 
+        \left( \frac{\partial x_2}{\partial U} \right)
+        \left( -\frac{2-2x}{4-4x} + 1\right) \\
+        & = \left( \frac{1}{v^{-1}(x)+1} \right) 
+        \left( \frac{\partial x_2}{\partial U} \right)
+        \left( \frac{1}{2} \right) \\
+    \end{align*}
+
+    The first term is positive since $v^{-1}(x) > 0$ and the second term is positive by Lemma \ref{lem:x2_increasing}. Therefore, the product of the two terms is positive, so the calling cutoff is increasing in $U$ for all $x \in [x_3, v(U)]$.
+
+\end{customproof}
+
+\subsubsection{Proof of Theorem \ref{thm:payoff_increasing}}
+
+Having these tools, we can now finally return to the proof of Theorem \ref{thm:payoff_increasing}.
+
+\begin{customproof}
+    Recall the expected payoff of a value-betting hand $x$:
+
+    \begin{align*}
+        EV(x) & = \frac{1}{2} c(s) + (x - c(s)) \left(s+\frac{1}{2}\right) + (1-x) \left(-s-\frac{1}{2}\right)
+    \end{align*}
+
     We break the proof into two cases:
 
     \textbf{Case 1 ($x > v(U)$):} In this case, hand $x$ bets the maximum amount $U$. The expected value is:
-    % \begin{align*}
-    %     EV(x) & = \frac{1}{2} c(U) + (x - c(U)) \left(U+\frac{1}{2}\right) + (1-x) \left(-U-\frac{1}{2}\right)
-    % \end{align*}
-    % Taking the derivative with respect to $U$:
-    % \begin{align*}
-    %     \frac{d}{dU} EV(x) & = \frac{1}{2} \frac{d}{dU}c(U) + \left(-\frac{d}{dU}c(U)\right)\left(U+\frac{1}{2}\right) + (x-c(U))(1) + (1-x)(-1) \\
-    %     & = -\frac{d}{dU}c(U)\left(U\right) + 2x - 1 > 0
-    % \end{align*}
-    % The inequality follows since $\frac{d}{dU}c(U) < 0$ and $x > v(U) > \frac{1}{2}$.
+    
+    $$ EV(x) = \frac{1}{2} c(U) + (x - c(U)) \left(U+\frac{1}{2}\right) + (1-x) \left(-U-\frac{1}{2}\right) $$ 
 
-    \textbf{Case 2 ($x_3 < x < v(U)$):} In this case, hand $x$ makes a bet $s = v^{-1}(x)$. There are two distinct factors influencing the derivative $\frac{d}{dU} EV(x)$, namely the change in bet size that $x$ makes and the change in calling cutoff which results. Our proof uses the following argument:
-    \begin{itemize}
-        \item Show that bet size for a fixed $x \in [x_3, v(U)]$ is decreasing in $U$
-        \item Show that the calling cutoff for a fixed $x \in [x_3, v(U)]$ is increasing in $U$
-        \item Show that if the previous two claims hold, then the expected payoff is decreasing in $U$ for all $x \in [x_3, v(U)]$
-    \end{itemize}
+    \textbf{Case 2 ($x_3 < x < v(U)$):} In this case, hand $x$ makes an intermediate-sized bet $s = v^{-1}(x)$. There are two distinct factors influencing the derivative $\frac{d}{dU} EV(x)$, namely the change in bet size $s = v^{-1}(x)$ and the change in calling cutoff $c(v^{-1}(x))$. By the multivariate chain rule, we can express the derivative as:
+
+    \begin{align*}
+        \frac{d}{dU} EV(x) & = \frac{\partial EV(x)}{\partial s} \frac{d v^{-1}(x)}{d U} + \frac{\partial EV(x)}{\partial c(s)} \frac{d c(v^{-1}(x))}{\partial U}
+    \end{align*}
+
+    The partial derivatives of $EV(x)$ are:
+
+    \begin{align*}
+        \frac{\partial EV(x)}{\partial s} & = 2x - 1 - c(s) \\
+        \frac{\partial EV(x)}{\partial c(s)} & = - s
+    \end{align*}
+
+    The second is clearly negative. We can verify that the first must be positive if we go back to the constraints which gave us the Nash equilibrium. For the bet size $v^{-1}(x)$ to be optimal, we required that 
+
+    $$ -s \frac{\partial c(s)}{\partial s} - c(s) + 2v(s) - 1 = 0$$
+
+    Or equivalently, if we substitute $s= v^{-1}(x)$ and $v(s) = x$ and rearrange:
+
+    $$ 2x -1 -c(v^{-1}(x)) = v^{-1}(x) \frac{\partial c(s)}{\partial s} > 0$$
+
+    Since $\frac{\partial c(s)}{\partial s} = \frac{1-x_2}{(s+1)^2} > 0$, and $s$ is positive by definition.
+
+    We know from Lemma \ref{lem:v_inverse_decreasing} that $\frac{d v^{-1}(x)}{d U} < 0$ and from Lemma \ref{lem:c_increasing} that $\frac{d c(v^{-1}(x))}{\partial U} > 0$.
+
+    Combining everything, we see that both terms in $\frac{d}{dU} EV(x)$ are products of negative and positive, making both terms negative. Therefore, the expected payoff is decreasing in $U$ for all $x \in [x_3, v(U)]$.
+
+    
+
+    
+    
+    
+    
     
     
 
@@ -433,7 +540,6 @@ Where $s$ is the bet size made by hand strength $x$ in Nash equilibrium. Note th
     % \end{align*}
 \end{customproof}
 
-We also observe that as the limits become more lenient, the checking region (middle vertical strip) shrinks \todo{formalize this}. There are two reasons for this: the first is that with a lower minimum bet size, the bettor can make use of small bets for hands that might have otherwise checked. The second is that with a higher maximum bet size, the bettor has a larger range of hands which \todo{WHY?}
 
 
 

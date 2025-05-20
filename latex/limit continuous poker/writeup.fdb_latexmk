@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1747669394 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1747669397 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1747669393 47877 010fd4bea222cd10ddb98712a5458d2d ""
+["pdflatex"] 1747682136 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" "writeup.pdf" "writeup" 1747682139 0
+  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/writeup.tex" 1747682136 52332 35800db511bd62ff7664d1d81895b739 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -39,6 +39,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
@@ -188,9 +189,9 @@
   "payoffs_by_limits_log.png" 1746678079 53048 83a031c805754b2aae146f00ac2d5ae5 ""
   "payoffs_by_limits_log_wide.png" 1746678086 59180 46f9941de85aa0a394665a36b1df0727 ""
   "payoffs_by_limits_wide.png" 1746678072 54388 4209527a72b9e58878d772b44526a5b9 ""
-  "writeup.aux" 1747669397 12111 9cc73a3b218fe18cb0466c7969bc3c8c "pdflatex"
-  "writeup.out" 1747669397 5355 f1cb880e6f722a7c1ad0c6660857b914 "pdflatex"
-  "writeup.tex" 1747669393 47877 010fd4bea222cd10ddb98712a5458d2d ""
+  "writeup.aux" 1747682139 12733 d832ca675086de7e91c75dc011d6f761 "pdflatex"
+  "writeup.out" 1747682139 6392 02f4091a99f50c761b982f5b7b1bfd45 "pdflatex"
+  "writeup.tex" 1747682136 52332 35800db511bd62ff7664d1d81895b739 ""
   (generated)
   "writeup.aux"
   "writeup.log"

@@ -5,6 +5,51 @@ from game_utils.InfoSet import InfoSet
 from game_utils.Strategy import MixedStrategy
 from itertools import permutations
 
+
+def integrate(func, a, b, n=1000):
+    """Numerical integration using the trapezoidal rule."""
+    x = np.linspace(a, b, n)
+    y = np.fromiter((func(i) for i in x), dtype=np.float64, count=n)
+    return np.trapezoid(y, x=x)
+
+def double_integral(f_xy, x_min_of_y, x_max_of_y, y_min, y_max, grid_size=1001):
+    # Integrate f(x,y) over the region defined by x_min_of_y, x_max_of_y, y_min, y_max
+    return integrate(
+        lambda y: integrate(f_xy, x_min_of_y(y), x_max_of_y(y), n=grid_size),
+        y_min, y_max, n=grid_size
+    )
+
+def compute_area(x_min_of_y, x_max_of_y, y_min, y_max, grid_size=1001):
+    # Compute the area of the region defined by x_min_of_y, x_max_of_y, y_min, y_max
+    return integrate(
+        lambda y: integrate(lambda x: 1, x_min_of_y(y), x_max_of_y(y), n=grid_size),
+        y_min, y_max, n=grid_size
+    )
+
+def compute_area_vert(x_min, x_max, y_min_of_x, y_max_of_x, grid_size=1001):
+    # Compute the area of the region defined by x_min, x_max, y_min_of_x, y_max_of_x
+    return integrate(
+        lambda x: integrate(lambda y: 1, y_min_of_x(x), y_max_of_x(x), n=grid_size),
+        x_min, x_max, n=grid_size
+    )
+
+def inverse_integration(f, a, b, n=1000):
+    """
+    INVERSE FUNCTION TRICK
+
+    Returns the result of
+    integrate(f_inv, f(a), f(b))
+
+    by instead computing 
+    -integrate(f, a, b) + bf(b) - af(a)
+    where f_inv is the inverse function of f.
+    """
+    if b > a:
+        return -integrate(f, a, b) + b * f(b) - a * f(a)
+    else:
+        return integrate(f, b, a) + b * f(b) - a * f(a)
+    
+
 def cond_print(s, cond):
     if cond:
         print(s)

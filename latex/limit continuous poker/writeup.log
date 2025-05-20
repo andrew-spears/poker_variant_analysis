@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  19 MAY 2025 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  19 MAY 2025 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -800,174 +800,158 @@ Overfull \hbox (7.62749pt too wide) detected at line 262
  []
 
 [9] [10]
-<limit_continuous_0_10.png, id=206, 503.7219pt x 395.3169pt>
+<limit_continuous_0_10.png, id=230, 503.7219pt x 395.3169pt>
 File: limit_continuous_0_10.png Graphic file (type png)
 <use limit_continuous_0_10.png>
 Package pdftex.def Info: limit_continuous_0_10.png  used on input line 285.
 (pdftex.def)             Requested size: 234.00238pt x 183.63948pt.
-<limit_continuous_0.1_2.png, id=208, 507.3354pt x 395.3169pt>
+<limit_continuous_0.1_2.png, id=232, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.1_2.png Graphic file (type png)
 <use limit_continuous_0.1_2.png>
 Package pdftex.def Info: limit_continuous_0.1_2.png  used on input line 290.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.3_1.5.png, id=209, 507.3354pt x 395.3169pt>
+<limit_continuous_0.3_1.5.png, id=233, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.3_1.5.png Graphic file (type png)
 <use limit_continuous_0.3_1.5.png>
 Package pdftex.def Info: limit_continuous_0.3_1.5.png  used on input line 295.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<limit_continuous_0.5_1.png, id=210, 507.3354pt x 395.3169pt>
+<limit_continuous_0.5_1.png, id=234, 507.3354pt x 395.3169pt>
 File: limit_continuous_0.5_1.png Graphic file (type png)
 <use limit_continuous_0.5_1.png>
 Package pdftex.def Info: limit_continuous_0.5_1.png  used on input line 300.
 (pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
  [11 <./limit_continuous_0_10.png> <./limit_continuous_0.1_2.png> <./limit_continuous_0.3_1.5.png> <./limit_continuous_0.5_1.png>]
-<FixedBet_payoffs.png, id=221, 505.89pt x 505.89pt>
+<FixedBet_payoffs.png, id=245, 505.89pt x 505.89pt>
 File: FixedBet_payoffs.png Graphic file (type png)
 <use FixedBet_payoffs.png>
 Package pdftex.def Info: FixedBet_payoffs.png  used on input line 318.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
-<LU_payoffs_0.9_1.1.png, id=222, 578.16pt x 578.16pt>
+<LU_payoffs_0.9_1.1.png, id=246, 578.16pt x 578.16pt>
 File: LU_payoffs_0.9_1.1.png Graphic file (type png)
 <use LU_payoffs_0.9_1.1.png>
 Package pdftex.def Info: LU_payoffs_0.9_1.1.png  used on input line 323.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.5_1.5.png, id=223, 578.16pt x 578.16pt>
+<LU_payoffs_0.5_1.5.png, id=247, 578.16pt x 578.16pt>
 File: LU_payoffs_0.5_1.5.png Graphic file (type png)
 <use LU_payoffs_0.5_1.5.png>
 Package pdftex.def Info: LU_payoffs_0.5_1.5.png  used on input line 328.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.3_2.png, id=224, 578.16pt x 578.16pt>
+<LU_payoffs_0.3_2.png, id=248, 578.16pt x 578.16pt>
 File: LU_payoffs_0.3_2.png Graphic file (type png)
 <use LU_payoffs_0.3_2.png>
 Package pdftex.def Info: LU_payoffs_0.3_2.png  used on input line 333.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<LU_payoffs_0.1_5.png, id=225, 578.16pt x 578.16pt>
+<LU_payoffs_0.1_5.png, id=249, 578.16pt x 578.16pt>
 File: LU_payoffs_0.1_5.png Graphic file (type png)
 <use LU_payoffs_0.1_5.png>
 Package pdftex.def Info: LU_payoffs_0.1_5.png  used on input line 338.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<NoLimit_payoffs.png, id=226, 505.89pt x 505.89pt>
+<NoLimit_payoffs.png, id=250, 505.89pt x 505.89pt>
 File: NoLimit_payoffs.png Graphic file (type png)
 <use NoLimit_payoffs.png>
 Package pdftex.def Info: NoLimit_payoffs.png  used on input line 343.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
- [12 <./FixedBet_payoffs.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.5_1.5.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./NoLimit_payoffs.png>] [13]
-Overfull \hbox (248.3083pt too wide) detected at line 398
-[] \OT1/cmr/m/n/12 = []
+ [12 <./FixedBet_payoffs.png> <./LU_payoffs_0.9_1.1.png> <./LU_payoffs_0.5_1.5.png> <./LU_payoffs_0.3_2.png> <./LU_payoffs_0.1_5.png> <./NoLimit_payoffs.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 356.
+
+[13] [14] [15]
+Overfull \hbox (29.20589pt too wide) detected at line 476
+[]
  []
 
-[14]
-Overfull \hbox (20.93982pt too wide) in paragraph at lines 436--436
-[][][]\OT1/cmr/m/n/12 formalize 
- []
-
-
-Overfull \hbox (20.93982pt too wide) in paragraph at lines 436--436
-[][][]\OT1/cmr/m/n/12 formalize 
- []
-
-
-Overfull \hbox (9.50383pt too wide) in paragraph at lines 436--436
-[][][]\OT1/cmr/m/n/12 WHY?[]  
- []
-
-
-Overfull \hbox (9.50383pt too wide) in paragraph at lines 436--436
-[][][]\OT1/cmr/m/n/12 WHY?[]  
- []
-
-
-Overfull \hbox (2.44783pt too wide) in paragraph at lines 444--444
+[16]
+Overfull \hbox (2.44783pt too wide) in paragraph at lines 550--550
 []\OT1/cmr/bx/n/17.28 Strategic Com-par-i-son to Fixed-Bet and No-
  []
 
-
-Overfull \hbox (0.90984pt too wide) in paragraph at lines 449--450
+[17]
+Overfull \hbox (0.90984pt too wide) in paragraph at lines 555--556
 \OT1/cmr/m/n/12 To com-pare the strat-egy pro-files across dif-fer-ent vari-ants of Con-tin-u-ous Poker,
  []
 
+[18] [19] [20] [21] [22]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `sec:value_computation' on page 23 undefined on input line 729.
 
-[15] [16] [17] [18] [19]
-
-LaTeX Warning: Reference `sec:value_computation' on page 20 undefined on input line 623.
-
-[20]
-<payoffs_by_limits.png, id=293, 520.344pt x 395.3169pt>
+<payoffs_by_limits.png, id=334, 520.344pt x 395.3169pt>
 File: payoffs_by_limits.png Graphic file (type png)
 <use payoffs_by_limits.png>
-Package pdftex.def Info: payoffs_by_limits.png  used on input line 654.
+Package pdftex.def Info: payoffs_by_limits.png  used on input line 760.
 (pdftex.def)             Requested size: 234.00238pt x 177.77634pt.
-<payoffs_by_limits_wide.png, id=294, 510.9489pt x 395.3169pt>
+<payoffs_by_limits_wide.png, id=335, 510.9489pt x 395.3169pt>
 File: payoffs_by_limits_wide.png Graphic file (type png)
 <use payoffs_by_limits_wide.png>
-Package pdftex.def Info: payoffs_by_limits_wide.png  used on input line 660.
+Package pdftex.def Info: payoffs_by_limits_wide.png  used on input line 766.
 (pdftex.def)             Requested size: 234.00238pt x 181.0457pt.
-<payoffs_by_limits_log.png, id=295, 522.5121pt x 398.9304pt>
+<payoffs_by_limits_log.png, id=336, 522.5121pt x 398.9304pt>
 File: payoffs_by_limits_log.png Graphic file (type png)
 <use payoffs_by_limits_log.png>
-Package pdftex.def Info: payoffs_by_limits_log.png  used on input line 666.
+Package pdftex.def Info: payoffs_by_limits_log.png  used on input line 772.
 (pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
-<payoffs_by_limits_log_wide.png, id=296, 522.5121pt x 398.9304pt>
+<payoffs_by_limits_log_wide.png, id=337, 522.5121pt x 398.9304pt>
 File: payoffs_by_limits_log_wide.png Graphic file (type png)
 <use payoffs_by_limits_log_wide.png>
-Package pdftex.def Info: payoffs_by_limits_log_wide.png  used on input line 672.
+Package pdftex.def Info: payoffs_by_limits_log_wide.png  used on input line 778.
 (pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 689--689
+[23]
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 795--795
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
 
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 689--689
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 795--795
+[][][]\OT1/cmr/m/n/12 prove 
+ []
+
+[24 <./payoffs_by_limits.png> <./payoffs_by_limits_wide.png> <./payoffs_by_limits_log.png> <./payoffs_by_limits_log_wide.png>]
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 810--810
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
 
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 704--704
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 810--810
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
 
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 704--704
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-[21] [22 <./payoffs_by_limits.png> <./payoffs_by_limits_wide.png> <./payoffs_by_limits_log.png> <./payoffs_by_limits_log_wide.png>]
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 718--718
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 824--824
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
 
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 718--718
+Overfull \hbox (2.00946pt too wide) in paragraph at lines 824--824
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
-[23] (./writeup.aux)
+[25] [26] (./writeup.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: F1CB880E6F722A7C1AD0C6660857B914;5355.
+(rerunfilecheck)             Checksum: 02F4091A99F50C761B982F5B7B1BFD45;6392.
  ) 
 Here is how much of TeX's memory you used:
- 22412 strings out of 476025
- 423356 string characters out of 5790017
- 1880388 words of memory out of 5000000
- 42391 multiletter control sequences out of 15000+600000
+ 22415 strings out of 476025
+ 423319 string characters out of 5790017
+ 1877388 words of memory out of 5000000
+ 42385 multiletter control sequences out of 15000+600000
  523080 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,117p,1388b,1038s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on writeup.pdf (23 pages, 1421388 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on writeup.pdf (26 pages, 1439306 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 299 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 471 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
