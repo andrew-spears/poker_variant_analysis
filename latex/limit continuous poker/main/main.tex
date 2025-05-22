@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref, todonotes, changepage, caption}
+\usepackage{subfiles}
+
+% Define custom theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% Define custom proof environment
+\newenvironment{customproof}[1][Proof]{\noindent\textbf{#1.} }{\hfill$\square$\vspace{1em}}
+
+\title{Limit Continuous Poker: A Variant of Continuous Poker with Limited Bet Sizes}
+\author{Andrew Spears}
+\date{\today}
+
+\begin{document}
+\maketitle
+\subfile{../sections/abstract/abstract}
+\subfile{../sections/introduction/introduction}
+\subfile{../sections/lcp/lcp}
+\subfile{../sections/solving_lcp/solving_lcp}
+\subfile{../sections/strategic_comparison/strategic_comparison}
+\subfile{../sections/game_value/game_value}
+
+\appendix
+\section{Derivation of Nash Equilibrium Strategy Profile}
+\label{app:derivation}
+
+
+\section{Computation of Game Value}
+\label{app:value_computation}
+
+
+
+\end{document}

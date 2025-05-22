@@ -1,0 +1,55 @@
+\documentclass[../../main/main.tex]{subfiles}
+\begin{document}
+\section{Introduction}
+
+\todo{explain poker, general ideas of bluffing, value betting, etc.}
+
+\subsection{Previous Work}
+
+\subsubsection{Fixed-Bet Continuous Poker (FBCP)}
+
+Continuous Poker (also called Von Neumann Poker, and referred to in this paper as Fixed-Bet Continuous Poker or FBCP) is a simplified model of poker. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
+
+\begin{definition}[FBCP]
+Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes simply scale proportionally.}. They are each dealt a `hand strength' uniformly and independently from the interval $[0, 1]$ (referred to as $x$ for bettor and $y$ for caller). After seeing $x$, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet by putting a pre-determined amount $B > 0$ into the pot. The caller can now either call by matching the bet of $B$, after which the higher hand wins the pot of $1+2B$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
+\end{definition}
+
+FBCP has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not strictly dominated by any other strategy}. This strategy profile, parametrized by the bet size $B$, is as follows:
+
+The bettor bets with hands $x$ such that either 
+
+$$x > \frac{1 + 4s + 2B^2}{(1+2B)(2+B)} \text{ or } x < \frac{B}{(1+2B)(2+B)}$$
+
+We call the higher interval the value betting range and the lower interval the bluffing range. The caller calls with hands $y$ such that
+
+$$ y > \frac{B(3 +2B)}{(1+2B)(2+B)} $$
+
+The non-uniqueness of this Nash Equilibrium is due to the fact that given the bettor's strategy, the caller can achieve the same expected payoff with any calling threshold between the value betting range and the bluffing range. However, any calling strategy other than this one incentivizes the bettor to deviate from the Nash Equilibrium strategy and leads to a lower payoff for the caller. 
+
+The value of FBCP for the bettor is 
+
+$$ V_{FB}(B) = \frac{B}{2(1+2B)(2+B)} $$
+
+Which is positive and maximized at $B = 1$, when the bet size is exactly the pot size. 
+
+\subsubsection{No-limit Continuous Poker (NLCP)}
+Another continuous poker variant allows the bettor to choose a bet size $s > 0$ after seeing their hand strength, as opposed to a fixed bet size $B$. This variant is called No-Limit Continuous Poker (or Newman Poker after Donald J. Newman, or NLCP in this paper). The Nash equilibrium strategy profile for this variant is discussed and solved in \textit{The Mathematics of Poker} by Bill Chen and Jerrod Ankenman (see page 154 \todo{citation}).\todo{generate a graph of the strategies} 
+
+In Nash Equilibrium, the bettor should make large bets with their strongest and weakest hands and smaller bets or checks with their intermediate hands. It turns out that the optimal strategy is most elegantly described by a mapping from bet sizes $s$ to hand strengths $x$ for bluffing and value betting, respectively. The caller simply has a calling threshold $c(s)$ for each possible bet size $s$. The full strategy profile is as follows:
+
+The bettor bets $s$ with hands $x$ such that either
+
+$$ x = \frac{3 s+1}{7 (s+1)^3} \text{ or } x = 1 - \frac{3}{7 (s+1)^2} $$
+
+Where the first condition represents bluffing hands and the second value betting hands. After seeing a bet of size $s$, the caller should call with hands $y$ such that
+
+$$ y > 1 - \frac{6}{7 (s+1)} $$
+
+Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each bet size. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still an optimal strategy. This concept appears again and is explained more thoroughly in section \ref{subsec:nash_equilibrium_structure}.
+
+The value of NLCP is
+
+$$ V_{NL} = \frac{1}{14} $$
+
+for the bettor\footnote{Would be 1/7 for an ante of 1, but the value is halved with an ante of 0.5}.
+\end{document}

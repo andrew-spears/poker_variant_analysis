@@ -1,0 +1,176 @@
+\documentclass[../../main/main.tex]{subfiles}
+\begin{document}
+\section{Strategic Comparison to Fixed-Bet and No-Limit Continuous Poker}
+The most natural way to think of Limit Continuous Poker is as a generalization between Fixed-Bet and No-Limit Continuous Poker, on a spectrum from strict to lenient bet sizing. In this light, we begin by asking whether the Nash equilibrium strategies approach those of NLCP and FCP as the limits $L$ and $U$ approach their extreme cases. To make this more explicit, we model the bettor strategies for all three games as `bet functions' from hand strengths to bets (with 0 representing a check), and caller strategies as `call functions' from bet sizes to minimum calling thresholds. We also introduce notation to reference all three strategy profiles more efficiently.
+
+\subsection{Setup and Notation}
+
+To compare the strategy profiles across different variants of Continuous Poker, we introduce the following notation for the strategy functions of the three games:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Symbol} & \textbf{Meaning} \\
+\hline
+$S_{FB}(x, B)$ & Bettor's bet function in FBCP with fixed bet size $B$ \\
+$C_{FB}(s, B)$ & Caller's call function in FBCP with fixed bet size $B$ \\
+$S_{NL}(x)$ & Bettor's bet function in NLCP \\
+$C_{NL}(s)$ & Caller's call function in NLCP \\
+$S_{LCP}(x, L, U)$ & Bettor's bet function in LCP with limits $L$ and $U$ \\
+$C_{LCP}(s, L, U)$ & Caller's call function in LCP with limits $L$ and $U$ \\
+$x_i|_{L,U}$ & Threshold $x_i$ in LCP with limits $L$ and $U$ \\
+\hline
+\end{tabular}
+\caption{Notation for strategy functions across different variants of Continuous Poker}
+\label{tab:notation}
+\end{table}
+
+In FBCP, the bettor can only make a fixed bet size $B$ or check. The bet function $S_{FB}(x, B)$ maps hand strengths to either $0$ (check) or $B$ (bet):
+
+\begin{align}
+	S_{FB}(x, B) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)} \text{ (bluffing range)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (checking range)}\\
+    B & x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (value betting range)}
+\end{cases}
+\end{align}
+
+The caller's strategy is defined by a single threshold $C_{FB}(s, B)$:
+
+\begin{align}
+C_{FB}(s, B) & = \frac{B(3 +2B)}{(1+2B)(2+B)}
+\end{align}
+
+In NLCP, the bettor can choose any positive bet size. The strategy is most naturally described by functions $v_{NL}(s)$ and $b_{NL}(s)$ that map bet sizes to hand strengths:
+
+\begin{align*}
+    v_{NL}(s) &= 1 - \frac{3}{7(s+1)^2} \text{ (value betting function)} \\
+    b_{NL}(s) &= \frac{3s+1}{7(s+1)^3} \text{ (bluffing function)}
+\end{align*}
+
+The bet function $S_{NL}(x)$ is then defined in terms of the inverse functions:
+
+\begin{align*}
+    S_{NL}(x) = \begin{cases}
+        b_{NL}^{-1}(x) & x < \frac{1}{7} \text{ (bluffing range)} \\
+        0 & \frac{1}{7} < x < \frac{4}{7} \text{ (checking range)} \\
+        v_{NL}^{-1}(x) & x > \frac{4}{7} \text{ (value betting range)}
+    \end{cases}
+\end{align*}
+
+The caller's strategy is defined by a continuous function $C_{NL}(s)$:
+
+\begin{align*}
+    C_{NL}(s) = 1 - \frac{6}{7 (s+1)}
+\end{align*}
+
+In LCP, the bettor can choose any bet size between $L$ and $U$. The strategy profile is defined by six thresholds $x_0$ through $x_5$ and functions $v(s)$ and $b(s)$ that map bet sizes to hand strengths. The bet function $S_{LCP}(x, L, U)$ and call function $C_{LCP}(s, L, U)$ are defined in terms of these values, which are given in Theorem \ref{thm:nash_equilibrium}.
+
+\subsection{Strategic Convergence}
+\label{sec:strategic_convergence}
+
+\subsubsection{Bettor Strategy Convergence to Continuous Poker}
+We expect that as $L$ and $U$ approach some fixed value $s$, the bet function $S_{LCP}(x, L, U)$ should converge to the bet function $S_{FB}(x, s)$ for Fixed-Bet Continuous Poker with a fixed bet size $s$. 
+
+\begin{theorem}
+	 For any $B > 0$, the bet function $S_{LCP}(x, L, U)$ for Limit Continuous Poker converges to the bet function $S_{FB}(x, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} S_{LCP}(x, L, U) = \lim_{U \to B} \lim_{L \to B} S_{LCP}(x, L, U) = S_{FB}(x, B).
+\]
+\end{theorem}
+
+\begin{customproof}
+We analyze the expressions for the $x_i$'s, each of which is a rational function\footnote{A ratio of polynomials in $L$ and $U$.} of $L$ and $U$. Since these functions are defined and continuous for all positive values of $L$ and $U$, the limit as $L \to B$ and $U \to B$ can be found by simply substituting $L = U = B$:
+
+\begin{align*}
+    x_0|_{B,B} & = x_1|_{B,B} = \frac{B}{2 B^3+7 B^2+7 B+2} \\
+    x_2|_{B,B} & = \frac{B}{(1+2B)(2+B)} \\
+    x_3|_{B,B} & = \frac{2 B^2+4 B+1}{(1+2B)(2+B)} \\
+    x_4|_{B,B} & = x_5|_{B,B} = \frac{2 B^2+5 B+1}{(1+2B)(2+B)} \\
+\end{align*}
+
+$x_0 = x_1$ and $x_4 = x_5$ are expected, since these intervals are where the bettor uses an intermediate bet size, and $L=U=B$ does not allow intermediate bet sizes. This reduces the bet function to 
+
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} S_{LCP}(x, L, U) & = \begin{cases}
+    B & x < \frac{B}{(1+2B)(2+B)}\\
+    0 & \frac{B}{(1+2B)(2+B)} > x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}\\
+    B & x > \frac{2 B^2+4 B+1}{(1+2B)(2+B)}
+    \end{cases}\\
+    &= S_{FB}(x, B)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to Continuous Poker}
+
+The calling function is easier to analyze. We want to show that the calling threshold $C_{LCP}(s, L, U)$ converges to the calling threshold $C_{FB}(s, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$.
+
+\begin{theorem}
+     For any $B > 0$, the call function $C_{LCP}(s, L, U)$ for Limit Continuous Poker converges to the call function $C_{FB}(s, B)$ for Fixed-Bet Continuous Poker with a fixed bet size $B$ as $L$ and $U$ approach $B$:
+\[
+\lim_{L \to B} \lim_{U \to B} C_{LCP}(s, L, U) = \lim_{U \to B} \lim_{L \to B} C_{LCP}(s, L, U) = C_{FB}(s, B).
+\]
+\end{theorem}
+
+\begin{customproof}
+We already have the value of $x_2|_{B,B}$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to B} \lim_{U \to B} C_{LCP}(s, L, U) & = \frac{x_2|_{B,B}+s}{1+s} \\
+    & = \frac{\frac{B}{(1+2B)(2+B)} + s}{1+s} \\
+    & = \frac{B(3+2B)}{(1+2B)(2+B)} \\
+    & = C_{FB}(s, B)
+\end{align*}
+\end{customproof}
+
+\subsubsection{Bettor Strategy Convergence to NLCP}
+
+In a similar fashion, we expect that as $L$ and $U$ approach $0$ and $\infty$, the bet function $S_{LCP}(x, L, U)$ should converge to the bet function $S_{NL}(x)$ for NLCP.
+
+\begin{theorem}
+    The bet function $S_{LCP}(x, L, U)$ for Limit Continuous Poker converges to the bet function $S_{NL}(x)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} S_{LCP}(x, L, U) = \lim_{U \to \infty} \lim_{L \to 0} S_{LCP}(x, L, U) = S_{NL}(x).
+\]
+\end{theorem}
+\begin{customproof}
+We can analyze the expressions for the $x_i$'s as $L$ and $U$ approach $0$ and $\infty$. The limit is well-defined, and we can substitute $L=0$ and $U=\infty$ into the expressions for the $x_i$s.
+\begin{align*}
+    x_0|_{0,\infty} &= 0 \\
+    x_1|_{0,\infty} &= x_2|_{0,\infty} = \frac{1}{7} \\
+    x_3|_{0,\infty} &= x_4|_{0,\infty} = \frac{4}{7} \\
+    x_5|_{0,\infty} &= 1
+\end{align*}
+
+$x_0|_{0,\infty} = 0$ and $x_5|_{0,\infty} = 1$ are expected, since these intervals are where the bettor uses a minimum bet size and a maximum bet size, respectively, both of which are impossible. The bettor now bets intermediate values for $x < \frac{1}{7}$ and $x > \frac{4}{7}$, and checks for $\frac{1}{7} < x < \frac{4}{7}$. But how much do they bet? We can take the limits of $v(s)$ and $b(s)$ as $L$ and $U$ approach $0$ and $\infty$:
+
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} b(s) &= \frac{3 s+1}{7 (s+1)^3}\\
+    \lim_{L \to 0} \lim_{U \to \infty} v(s) &= 1 - \frac{3}{7 (s+1)^2}
+\end{align*}
+
+To summarize, the bettor bets $s$ with hands $x < \frac{1}{7}$ such that $x = b(s)$ or hands $x > \frac{4}{7}$ such that $x = v(s)$. This is exactly the same as the bet function $S_{NL}(x)$ for NLCP.
+
+\end{customproof}
+
+\subsubsection{Caller Strategy Convergence to NLCP}
+
+The calling function is again easier to analyze. We want to show that the calling threshold $C_{LCP}(s, L, U)$ converges to the calling threshold $C_{NL}(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$.
+\begin{theorem}
+    The call function $C_{LCP}(s, L, U)$ for Limit Continuous Poker converges to the call function $C_{NL}(s)$ for NLCP as $L$ and $U$ approach $0$ and $\infty$:
+\[
+\lim_{L \to 0} \lim_{U \to \infty} C_{LCP}(s, L, U) = \lim_{U \to \infty} \lim_{L \to 0} C_{LCP}(s, L, U) = C_{NL}(s).
+\]
+\end{theorem}
+\begin{customproof}
+Again, we already have the limiting value of $x_2|_{0,\infty}$, so we can plug this into the expression for the calling threshold:
+\begin{align*}
+    \lim_{L \to 0} \lim_{U \to \infty} C_{LCP}(s, L, U) & = \lim_{L \to 0} \lim_{U \to \infty} \frac{x_2+s}{1+s}\\
+    & = \frac{\frac{1}{7}+s}{1+s}\\
+    & = 1 - \frac{6}{7(1+s)}\\
+    & = C_{NL}(s)
+\end{align*}
+\end{customproof}
+
+We have now shown that the bettor and caller strategies for LCP converge to those of FBCP and NLCP as the limits $L$ and $U$ approach their extreme values. In the next section, we explore the value of LCP in more detail, and in particular how it relates to that of FBCP and NLCP.
+\end{document}
