@@ -50,6 +50,9 @@ We attempt to answer the following questions:
 
 TODO:
 
+- Introduction:
+- Game value:
+  -
 - b0 is just x0 with some scaling factor!!!
 - PROVE THEOREM: c(v_inv(x)) is increasing in U for all x> vth and forall U
 

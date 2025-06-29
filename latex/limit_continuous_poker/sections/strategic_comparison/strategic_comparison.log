@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  21 JUN 2025 19:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  21 JUN 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex
-(/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex
+**/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.tex
+(/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
 Preamble taken from file `../../main/main.tex'
 (/usr/local/texlive/2023/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
-) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -494,8 +494,8 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count315
 \l__pdf_internal_box=\box64
-) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux)
-\openout1 = `nash_equilibrium.aux'.
+) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.aux)
+\openout1 = `strategic_comparison.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -535,9 +535,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 2.
- (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.out) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.out)
+ (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.out) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.out)
 \@outlinefile=\write4
-\openout4 = `nash_equilibrium.out'.
+\openout4 = `strategic_comparison.out'.
 
 
 
@@ -546,75 +546,48 @@ Package todonotes Warning: The length marginparwidth is less than 2cm and will m
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-LaTeX Warning: Reference `app:derivation' on page 1 undefined on input line 6.
+Overfull \hbox (2.44783pt too wide) in paragraph at lines 3--3
+[]\OT1/cmr/bx/n/17.28 Strategic Com-par-i-son to Fixed-Bet and No-
+ []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (7.62749pt too wide) detected at line 23
-[]
+Overfull \hbox (0.90984pt too wide) in paragraph at lines 8--9
+\OT1/cmr/m/n/12 To com-pare the strat-egy pro-files across dif-fer-ent vari-ants of Con-tin-u-ous Poker,
  []
 
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `app:derivation' on page 2 undefined on input line 37.
+LaTeX Warning: Reference `thm:nash_equilibrium' on page 2 undefined on input line 68.
 
-
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 2 undefined on input line 37.
-
-
-LaTeX Warning: Reference `sec:strategic_convergence' on page 2 undefined on input line 39.
-
-<images/LCP_profile_0_10.png, id=24, 570.933pt x 426.393pt>
-File: images/LCP_profile_0_10.png Graphic file (type png)
-<use images/LCP_profile_0_10.png>
-Package pdftex.def Info: images/LCP_profile_0_10.png  used on input line 46.
-(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
-<images/LCP_profile_0.1_2.png, id=26, 570.933pt x 426.393pt>
-File: images/LCP_profile_0.1_2.png Graphic file (type png)
-<use images/LCP_profile_0.1_2.png>
-Package pdftex.def Info: images/LCP_profile_0.1_2.png  used on input line 51.
-(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
-<images/LCP_profile_0.3_1.5.png, id=27, 570.933pt x 426.393pt>
-File: images/LCP_profile_0.3_1.5.png Graphic file (type png)
-<use images/LCP_profile_0.3_1.5.png>
-Package pdftex.def Info: images/LCP_profile_0.3_1.5.png  used on input line 56.
-(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
-<images/LCP_profile_0.5_1.png, id=28, 570.933pt x 426.393pt>
-File: images/LCP_profile_0.5_1.png Graphic file (type png)
-<use images/LCP_profile_0.5_1.png>
-Package pdftex.def Info: images/LCP_profile_0.5_1.png  used on input line 61.
-(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2] [3 </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png>] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux)
+[2] [3] [4] [5] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `nash_equilibrium.out' has not changed.
-(rerunfilecheck)             Checksum: 421236C5266417208E5D7FF329C8802A;217.
+Package rerunfilecheck Info: File `strategic_comparison.out' has not changed.
+(rerunfilecheck)             Checksum: 746253BAB6EE7CE461792CEF7108504C;1839.
  ) 
 Here is how much of TeX's memory you used:
- 22081 strings out of 476025
- 418512 string characters out of 5790017
+ 22076 strings out of 476025
+ 418075 string characters out of 5790017
  1867388 words of memory out of 5000000
- 42148 multiletter control sequences out of 15000+600000
- 518893 words of font info for 56 fonts, out of 8000000 for 9000
+ 42135 multiletter control sequences out of 15000+600000
+ 520496 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,11n,134p,955b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf (3 pages, 219272 bytes).
+ 119i,16n,134p,860b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.pdf (5 pages, 165224 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

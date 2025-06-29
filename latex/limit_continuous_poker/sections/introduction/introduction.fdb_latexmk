@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1747869745 "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.pdf" "introduction" 1747869745 0
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/../../main/main.tex" 1747869682 51727 e8b0315a5abcc8dd0c856ff5e6d31a0c ""
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.aux" 1747869745 1824 1e68f8bac4742de90351237da6072089 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.out" 1747869745 717 b32bce1e8f714a8f0bbfc2b862ec1e6c "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.tex" 1747869744 4443 4fad8530370552eb996f4c374986ab2c ""
+["pdflatex"] 1750546966 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1750546966 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex" 1748104014 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux" 1750546966 2168 9e5d0facb9eed755ef5f1281e53b53ce "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out" 1750546966 847 aee83fe4f24ec9efbfb5053700c6d1cd "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" 1750546966 7309 3b4adbe179e8445bce3851dc372d2020 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -169,8 +169,8 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691721644 7883453 931beaebd4c2b18a72bbf4631c6fd0a3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   (generated)
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.aux"
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.log"
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.out"
-  "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.pdf"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.log"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf"
   (rewritten before read)

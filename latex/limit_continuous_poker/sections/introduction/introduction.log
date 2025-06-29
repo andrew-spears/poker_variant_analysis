@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  21 MAY 2025 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  21 JUN 2025 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.tex"
-(/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.tex
+**/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex
+(/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
 Preamble taken from file `../../main/main.tex'
 (/usr/local/texlive/2023/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
-) (/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -494,7 +494,7 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count315
 \l__pdf_internal_box=\box64
-) (/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.aux)
+) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux)
 \openout1 = `introduction.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -535,7 +535,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 2.
- (/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.out) (/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.out)
+ (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out) (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out)
 \@outlinefile=\write4
 \openout4 = `introduction.out'.
 
@@ -586,86 +586,97 @@ Overfull \hbox (0.70392pt too wide) in paragraph at lines 5--5
 \OT1/cmr/m/n/12 value 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 36--36
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 29--29
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 36--36
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 29--29
+[][][]\OT1/cmr/m/n/12 citation[]  
+ []
+
+[2]
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 48--48
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 36--36
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 48--48
+[][][]\OT1/cmr/m/n/12 citation[]  
+ []
+
+
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 48--48
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 36--36
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 48--48
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 36--36
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 48--48
 \OT1/cmr/m/n/12 strate- 
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 36--36
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 48--48
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 36--36
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 48--48
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 36--36
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 48--48
 \OT1/cmr/m/n/12 strate- 
  []
 
 
-LaTeX Warning: Marginpar on page 2 moved.
+LaTeX Warning: Marginpar on page 3 moved.
 
 
-Overfull \hbox (5.34035pt too wide) in paragraph at lines 38--39
+Overfull \hbox (5.34035pt too wide) in paragraph at lines 50--51
 []\OT1/cmr/m/n/12 In Nash Equi-lib-rium, the bet-tor should make large bets with their strongest
  []
 
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 2 undefined on input line 48.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 60.
 
-[2] [3] (/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.aux)
+[3] [4] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `introduction.out' has not changed.
-(rerunfilecheck)             Checksum: B32BCE1E8F714A8F0BBFC2B862EC1E6C;717.
+(rerunfilecheck)             Checksum: AEE83FE4F24EC9EFBFB5053700C6D1CD;847.
  ) 
 Here is how much of TeX's memory you used:
- 22181 strings out of 476025
- 420352 string characters out of 5790017
- 1867388 words of memory out of 5000000
- 42246 multiletter control sequences out of 15000+600000
+ 22193 strings out of 476025
+ 420579 string characters out of 5790017
+ 1866388 words of memory out of 5000000
+ 42255 multiletter control sequences out of 15000+600000
  520496 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,9n,134p,961b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,9n,134p,1234b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "/Users/andrewspears/poker_analysis/latex/limit continuous poker/sections/introduction/introduction.pdf" (3 pages, 112805 bytes).
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf (4 pages, 118839 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
