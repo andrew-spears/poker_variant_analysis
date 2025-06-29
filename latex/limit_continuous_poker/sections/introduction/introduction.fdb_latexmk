@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1750546966 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1750546966 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex" 1748104014 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux" 1750546966 2168 9e5d0facb9eed755ef5f1281e53b53ce "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out" 1750546966 847 aee83fe4f24ec9efbfb5053700c6d1cd "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" 1750546966 7309 3b4adbe179e8445bce3851dc372d2020 ""
+["pdflatex"] 1751232870 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1751232871 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex" 1751232847 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux" 1751232871 1893 fc7d012ebe803aff3e4321490e151a8f "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out" 1751232871 847 aee83fe4f24ec9efbfb5053700c6d1cd "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" 1751232869 7240 2e5d870c01060f5ef114da5da03f18ab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""

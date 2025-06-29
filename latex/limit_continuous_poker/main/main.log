@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  24 MAY 2025 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  29 JUN 2025 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,245 +549,150 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (../sections/abstract/abstract.tex) (../sections/introduction/introduction.tex
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 5.
+) (../sections/abstract/abstract.tex) (../sections/introduction/introduction.tex [1
 
-Overfull \hbox (11.14825pt too wide) in paragraph at lines 5--5
-[][][]\OT1/cmr/m/n/12 explain 
- []
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 28.
 
-
-Overfull \hbox (5.92609pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 poker, 
- []
-
-
-Overfull \hbox (1.35669pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 bluff- 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (11.14825pt too wide) in paragraph at lines 5--5
-[][][]\OT1/cmr/m/n/12 explain 
- []
-
-
-Overfull \hbox (5.92609pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 poker, 
- []
-
-
-Overfull \hbox (1.35669pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 bluff- 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 value 
- []
-
-[1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 36--36
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 28--28
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 36--36
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 28--28
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 36--36
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 47--47
+[][][]\OT1/cmr/m/n/12 citation[]  
+ []
+
+
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 47--47
+[][][]\OT1/cmr/m/n/12 citation[]  
+ []
+
+
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 36--36
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 36--36
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 strate- 
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 36--36
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 36--36
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 36--36
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 strate- 
  []
 
-[2]
+[3]
 
-LaTeX Warning: Marginpar on page 3 moved.
+LaTeX Warning: Marginpar on page 4 moved.
 
 
-Overfull \hbox (5.34035pt too wide) in paragraph at lines 38--39
+Overfull \hbox (5.34035pt too wide) in paragraph at lines 49--50
 []\OT1/cmr/m/n/12 In Nash Equi-lib-rium, the bet-tor should make large bets with their strongest
  []
 
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 48.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 4 undefined on input line 59.
 
-) (../sections/lcp/lcp.tex [3]) (../sections/solving_lcp/solving_lcp.tex
-Overfull \hbox (1.80841pt too wide) in paragraph at lines 12--13
-[][]\OT1/cmr/bx/n/12 Theorem 4.1. []\OT1/cmr/m/it/12 LCP has a unique admissible-strategy Nash equi-lib-rium, which
- []
-
-[4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (41.30627pt too wide) in paragraph at lines 65--65
-[][][]\OT1/cmr/m/n/12 admissiblity?[]  
- []
-
-
-Overfull \hbox (41.30627pt too wide) in paragraph at lines 65--65
-[][][]\OT1/cmr/m/n/12 admissiblity?[]  
- []
-
-[5]
-Overfull \hbox (16.04404pt too wide) in paragraph at lines 68--68
-[][][]\OT1/cmr/m/n/12 diagram 
- []
-
-
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 68--68
-\OT1/cmr/m/n/12 strat- 
- []
-
-
-Overfull \hbox (16.04404pt too wide) in paragraph at lines 68--68
-[][][]\OT1/cmr/m/n/12 diagram 
- []
-
-
-Overfull \hbox (2.40112pt too wide) in paragraph at lines 68--68
-\OT1/cmr/m/n/12 strat- 
- []
-
-
-LaTeX Warning: Marginpar on page 6 moved.
-
-
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 tween 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 para- 
- []
-
-
-Overfull \hbox (8.27606pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 graphs[]  
- []
-
-
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 tween 
- []
-
-
-Overfull \hbox (1.0303pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 para- 
- []
-
-
-Overfull \hbox (8.27606pt too wide) in paragraph at lines 70--70
-\OT1/cmr/m/n/12 graphs[]  
- []
-
-
-LaTeX Warning: Marginpar on page 6 moved.
-
-[6] [7]
-Overfull \hbox (25.28026pt too wide) detected at line 144
-[]
- []
-
-[8]) (../sections/nash_equilibrium/nash_equilibrium.tex
+) (../sections/lcp/lcp.tex [4]) (../sections/solving_lcp/solving_lcp.tex [5]) (../sections/nash_equilibrium/nash_equilibrium.tex [6]
 Overfull \hbox (7.62749pt too wide) detected at line 23
 []
  []
 
-[9]
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 10 undefined on input line 37.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 7 undefined on input line 37.
 
-[10]
-<../sections/nash_equilibrium//images/limit_continuous_0_10.png, id=242, 503.7219pt x 395.3169pt>
-File: ../sections/nash_equilibrium//images/limit_continuous_0_10.png Graphic file (type png)
-<use ../sections/nash_equilibrium//images/limit_continuous_0_10.png>
-Package pdftex.def Info: ../sections/nash_equilibrium//images/limit_continuous_0_10.png  used on input line 46.
-(pdftex.def)             Requested size: 234.00238pt x 183.63948pt.
-<../sections/nash_equilibrium//images/limit_continuous_0.1_2.png, id=244, 507.3354pt x 395.3169pt>
-File: ../sections/nash_equilibrium//images/limit_continuous_0.1_2.png Graphic file (type png)
-<use ../sections/nash_equilibrium//images/limit_continuous_0.1_2.png>
-Package pdftex.def Info: ../sections/nash_equilibrium//images/limit_continuous_0.1_2.png  used on input line 51.
-(pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<../sections/nash_equilibrium//images/limit_continuous_0.3_1.5.png, id=245, 507.3354pt x 395.3169pt>
-File: ../sections/nash_equilibrium//images/limit_continuous_0.3_1.5.png Graphic file (type png)
-<use ../sections/nash_equilibrium//images/limit_continuous_0.3_1.5.png>
-Package pdftex.def Info: ../sections/nash_equilibrium//images/limit_continuous_0.3_1.5.png  used on input line 56.
-(pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-<../sections/nash_equilibrium//images/limit_continuous_0.5_1.png, id=246, 507.3354pt x 395.3169pt>
-File: ../sections/nash_equilibrium//images/limit_continuous_0.5_1.png Graphic file (type png)
-<use ../sections/nash_equilibrium//images/limit_continuous_0.5_1.png>
-Package pdftex.def Info: ../sections/nash_equilibrium//images/limit_continuous_0.5_1.png  used on input line 61.
-(pdftex.def)             Requested size: 234.00238pt x 182.33656pt.
-) (../sections/payoff_analysis/payoff_analysis.tex [11 <../sections/nash_equilibrium//images/limit_continuous_0_10.png> <../sections/nash_equilibrium//images/limit_continuous_0.1_2.png> <../sections/nash_equilibrium//images/limit_continuous_0.3_1.5.png> <../sections/nash_equilibrium//images/limit_continuous_0.5_1.png>]
-<../sections/payoff_analysis//images/FixedBet_payoffs.png, id=257, 505.89pt x 505.89pt>
+[7]
+<../sections/nash_equilibrium//images/LCP_profile_0_10.png, id=209, 570.933pt x 426.393pt>
+File: ../sections/nash_equilibrium//images/LCP_profile_0_10.png Graphic file (type png)
+<use ../sections/nash_equilibrium//images/LCP_profile_0_10.png>
+Package pdftex.def Info: ../sections/nash_equilibrium//images/LCP_profile_0_10.png  used on input line 46.
+(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
+<../sections/nash_equilibrium//images/LCP_profile_0.1_2.png, id=211, 570.933pt x 426.393pt>
+File: ../sections/nash_equilibrium//images/LCP_profile_0.1_2.png Graphic file (type png)
+<use ../sections/nash_equilibrium//images/LCP_profile_0.1_2.png>
+Package pdftex.def Info: ../sections/nash_equilibrium//images/LCP_profile_0.1_2.png  used on input line 51.
+(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
+<../sections/nash_equilibrium//images/LCP_profile_0.3_1.5.png, id=212, 570.933pt x 426.393pt>
+File: ../sections/nash_equilibrium//images/LCP_profile_0.3_1.5.png Graphic file (type png)
+<use ../sections/nash_equilibrium//images/LCP_profile_0.3_1.5.png>
+Package pdftex.def Info: ../sections/nash_equilibrium//images/LCP_profile_0.3_1.5.png  used on input line 56.
+(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
+<../sections/nash_equilibrium//images/LCP_profile_0.5_1.png, id=213, 570.933pt x 426.393pt>
+File: ../sections/nash_equilibrium//images/LCP_profile_0.5_1.png Graphic file (type png)
+<use ../sections/nash_equilibrium//images/LCP_profile_0.5_1.png>
+Package pdftex.def Info: ../sections/nash_equilibrium//images/LCP_profile_0.5_1.png  used on input line 61.
+(pdftex.def)             Requested size: 234.00238pt x 174.7637pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (../sections/payoff_analysis/payoff_analysis.tex
+<../sections/payoff_analysis//images/FixedBet_payoffs.png, id=216, 505.89pt x 505.89pt>
 File: ../sections/payoff_analysis//images/FixedBet_payoffs.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/FixedBet_payoffs.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/FixedBet_payoffs.png  used on input line 13.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
-<../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png, id=258, 578.16pt x 578.16pt>
+<../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png, id=217, 578.16pt x 578.16pt>
 File: ../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png  used on input line 18.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png, id=259, 578.16pt x 578.16pt>
+<../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png, id=218, 578.16pt x 578.16pt>
 File: ../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png  used on input line 23.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<../sections/payoff_analysis//images/LU_payoffs_0.3_2.png, id=260, 578.16pt x 578.16pt>
+<../sections/payoff_analysis//images/LU_payoffs_0.3_2.png, id=219, 578.16pt x 578.16pt>
 File: ../sections/payoff_analysis//images/LU_payoffs_0.3_2.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/LU_payoffs_0.3_2.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/LU_payoffs_0.3_2.png  used on input line 28.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<../sections/payoff_analysis//images/LU_payoffs_0.1_5.png, id=261, 578.16pt x 578.16pt>
+<../sections/payoff_analysis//images/LU_payoffs_0.1_5.png, id=220, 578.16pt x 578.16pt>
 File: ../sections/payoff_analysis//images/LU_payoffs_0.1_5.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/LU_payoffs_0.1_5.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/LU_payoffs_0.1_5.png  used on input line 33.
 (pdftex.def)             Requested size: 155.99762pt x 155.9906pt.
-<../sections/payoff_analysis//images/NoLimit_payoffs.png, id=262, 505.89pt x 505.89pt>
+<../sections/payoff_analysis//images/NoLimit_payoffs.png, id=221, 505.89pt x 505.89pt>
 File: ../sections/payoff_analysis//images/NoLimit_payoffs.png Graphic file (type png)
 <use ../sections/payoff_analysis//images/NoLimit_payoffs.png>
 Package pdftex.def Info: ../sections/payoff_analysis//images/NoLimit_payoffs.png  used on input line 38.
 (pdftex.def)             Requested size: 155.99762pt x 155.9983pt.
- [12 <../sections/payoff_analysis//images/FixedBet_payoffs.png> <../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png> <../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png> <../sections/payoff_analysis//images/LU_payoffs_0.3_2.png> <../sections/payoff_analysis//images/LU_payoffs_0.1_5.png> <../sections/payoff_analysis//images/NoLimit_payoffs.png>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Overfull \hbox (3.72173pt too wide) detected at line 67
 [][][]\OML/cmm/m/it/12 EV\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []
  []
 
-[13]) (../sections/parameter_analysis/parameter_analysis.tex [14]
+[8] [9 <../sections/nash_equilibrium//images/LCP_profile_0_10.png> <../sections/nash_equilibrium//images/LCP_profile_0.1_2.png> <../sections/nash_equilibrium//images/LCP_profile_0.3_1.5.png> <../sections/nash_equilibrium//images/LCP_profile_0.5_1.png>] [10 <../sections/payoff_analysis//images/FixedBet_payoffs.png> <../sections/payoff_analysis//images/LU_payoffs_0.9_1.1.png> <../sections/payoff_analysis//images/LU_payoffs_0.5_1.5.png> <../sections/payoff_analysis//images/LU_payoffs_0.3_2.png> <../sections/payoff_analysis//images/LU_payoffs_0.1_5.png> <../sections/payoff_analysis//images/NoLimit_payoffs.png>]
+
+LaTeX Warning: Reference `valueoptimality' on page 11 undefined on input line 107.
+
+) (../sections/parameter_analysis/parameter_analysis.tex [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 6.
@@ -796,41 +701,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 6.
 
-[15] [16] [17]
+[12] [13] [14]
 Overfull \hbox (29.20589pt too wide) detected at line 127
 []
  []
 
-[18] [19]) (../sections/strategic_comparison/strategic_comparison.tex
+[15]
+
+LaTeX Warning: Reference `valueoptimality' on page 16 undefined on input line 159.
+
+[16]) (../sections/strategic_comparison/strategic_comparison.tex
 Overfull \hbox (2.44783pt too wide) in paragraph at lines 3--3
 []\OT1/cmr/bx/n/17.28 Strategic Com-par-i-son to Fixed-Bet and No-
  []
 
-[20]
+[17]
 Overfull \hbox (0.90984pt too wide) in paragraph at lines 8--9
 \OT1/cmr/m/n/12 To com-pare the strat-egy pro-files across dif-fer-ent vari-ants of Con-tin-u-ous Poker,
  []
 
-[21] [22] [23] [24]) (../sections/game_value/game_value.tex [25]
+[18] [19] [20] [21]) (../sections/game_value/game_value.tex [22]
 
-LaTeX Warning: Reference `sec:value_computation' on page 26 undefined on input line 8.
+LaTeX Warning: Reference `sec:value_computation' on page 23 undefined on input line 8.
 
-<../sections/game_value//images/payoffs_by_limits.png, id=365, 520.344pt x 395.3169pt>
+<../sections/game_value//images/payoffs_by_limits.png, id=330, 520.344pt x 395.3169pt>
 File: ../sections/game_value//images/payoffs_by_limits.png Graphic file (type png)
 <use ../sections/game_value//images/payoffs_by_limits.png>
 Package pdftex.def Info: ../sections/game_value//images/payoffs_by_limits.png  used on input line 39.
 (pdftex.def)             Requested size: 234.00238pt x 177.77634pt.
-<../sections/game_value//images/payoffs_by_limits_wide.png, id=366, 510.9489pt x 395.3169pt>
+<../sections/game_value//images/payoffs_by_limits_wide.png, id=331, 510.9489pt x 395.3169pt>
 File: ../sections/game_value//images/payoffs_by_limits_wide.png Graphic file (type png)
 <use ../sections/game_value//images/payoffs_by_limits_wide.png>
 Package pdftex.def Info: ../sections/game_value//images/payoffs_by_limits_wide.png  used on input line 45.
 (pdftex.def)             Requested size: 234.00238pt x 181.0457pt.
-<../sections/game_value//images/payoffs_by_limits_log.png, id=367, 522.5121pt x 398.9304pt>
+<../sections/game_value//images/payoffs_by_limits_log.png, id=332, 522.5121pt x 398.9304pt>
 File: ../sections/game_value//images/payoffs_by_limits_log.png Graphic file (type png)
 <use ../sections/game_value//images/payoffs_by_limits_log.png>
 Package pdftex.def Info: ../sections/game_value//images/payoffs_by_limits_log.png  used on input line 51.
 (pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
-<../sections/game_value//images/payoffs_by_limits_log_wide.png, id=368, 522.5121pt x 398.9304pt>
+<../sections/game_value//images/payoffs_by_limits_log_wide.png, id=333, 522.5121pt x 398.9304pt>
 File: ../sections/game_value//images/payoffs_by_limits_log_wide.png Graphic file (type png)
 <use ../sections/game_value//images/payoffs_by_limits_log_wide.png>
 Package pdftex.def Info: ../sections/game_value//images/payoffs_by_limits_log_wide.png  used on input line 57.
@@ -838,7 +747,7 @@ Package pdftex.def Info: ../sections/game_value//images/payoffs_by_limits_log_wi
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26]
+[23]
 Overfull \hbox (2.00946pt too wide) in paragraph at lines 74--74
 [][][]\OT1/cmr/m/n/12 prove 
  []
@@ -848,7 +757,7 @@ Overfull \hbox (2.00946pt too wide) in paragraph at lines 74--74
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
-[27 <../sections/game_value//images/payoffs_by_limits.png> <../sections/game_value//images/payoffs_by_limits_wide.png> <../sections/game_value//images/payoffs_by_limits_log.png> <../sections/game_value//images/payoffs_by_limits_log_wide.png>]
+[24 <../sections/game_value//images/payoffs_by_limits.png> <../sections/game_value//images/payoffs_by_limits_wide.png> <../sections/game_value//images/payoffs_by_limits_log.png> <../sections/game_value//images/payoffs_by_limits_log_wide.png>]
 Overfull \hbox (2.00946pt too wide) in paragraph at lines 89--89
 [][][]\OT1/cmr/m/n/12 prove 
  []
@@ -868,26 +777,26 @@ Overfull \hbox (2.00946pt too wide) in paragraph at lines 103--103
 [][][]\OT1/cmr/m/n/12 prove 
  []
 
-) [28] [29] (./main.aux)
+) [25] [26] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C6999EC8E1A28B4EF30FA1910C0E2F1A;6779.
+(rerunfilecheck)             Checksum: 832BB4D4392C5FAE7A03452D221E1BE4;6215.
  ) 
 Here is how much of TeX's memory you used:
- 22604 strings out of 476025
- 432080 string characters out of 5790017
- 1873388 words of memory out of 5000000
- 42502 multiletter control sequences out of 15000+600000
- 523080 words of font info for 73 fonts, out of 8000000 for 9000
+ 22548 strings out of 476025
+ 430850 string characters out of 5790017
+ 1869388 words of memory out of 5000000
+ 42463 multiletter control sequences out of 15000+600000
+ 522743 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,117p,978b,1105s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (29 pages, 1447203 bytes).
+ 99i,16n,117p,1257b,1105s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (26 pages, 1424648 bytes).
 PDF statistics:
- 505 PDF objects out of 1000 (max. 8388607)
- 405 compressed objects within 5 object streams
- 120 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 458 PDF objects out of 1000 (max. 8388607)
+ 366 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

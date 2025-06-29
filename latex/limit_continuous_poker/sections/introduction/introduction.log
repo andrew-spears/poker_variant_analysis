@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  21 JUN 2025 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  29 JUN 2025 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -545,104 +545,65 @@ Package todonotes Warning: The length marginparwidth is less than 2cm and will m
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 5.
-
-Overfull \hbox (11.14825pt too wide) in paragraph at lines 5--5
-[][][]\OT1/cmr/m/n/12 explain 
- []
-
-
-Overfull \hbox (5.92609pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 poker, 
- []
-
-
-Overfull \hbox (1.35669pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 bluff- 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 value 
- []
-
-
-Overfull \hbox (11.14825pt too wide) in paragraph at lines 5--5
-[][][]\OT1/cmr/m/n/12 explain 
- []
-
-
-Overfull \hbox (5.92609pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 poker, 
- []
-
-
-Overfull \hbox (1.35669pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 bluff- 
- []
-
-
-Overfull \hbox (0.70392pt too wide) in paragraph at lines 5--5
-\OT1/cmr/m/n/12 value 
- []
-
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 29--29
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 28.
+
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 28--28
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 29--29
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 28--28
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 [2]
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 48--48
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (13.43295pt too wide) in paragraph at lines 48--48
+Overfull \hbox (13.43295pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 citation[]  
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 48--48
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 48--48
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 48--48
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 strate- 
  []
 
 
-Overfull \hbox (17.34958pt too wide) in paragraph at lines 48--48
+Overfull \hbox (17.34958pt too wide) in paragraph at lines 47--47
 [][][]\OT1/cmr/m/n/12 generate 
  []
 
 
-Overfull \hbox (3.64139pt too wide) in paragraph at lines 48--48
+Overfull \hbox (3.64139pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 graph 
  []
 
 
-Overfull \hbox (7.62329pt too wide) in paragraph at lines 48--48
+Overfull \hbox (7.62329pt too wide) in paragraph at lines 47--47
 \OT1/cmr/m/n/12 strate- 
  []
 
@@ -650,12 +611,12 @@ Overfull \hbox (7.62329pt too wide) in paragraph at lines 48--48
 LaTeX Warning: Marginpar on page 3 moved.
 
 
-Overfull \hbox (5.34035pt too wide) in paragraph at lines 50--51
+Overfull \hbox (5.34035pt too wide) in paragraph at lines 49--50
 []\OT1/cmr/m/n/12 In Nash Equi-lib-rium, the bet-tor should make large bets with their strongest
  []
 
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 60.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 59.
 
 [3] [4] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux)
 
@@ -665,18 +626,18 @@ Package rerunfilecheck Info: File `introduction.out' has not changed.
 (rerunfilecheck)             Checksum: AEE83FE4F24EC9EFBFB5053700C6D1CD;847.
  ) 
 Here is how much of TeX's memory you used:
- 22193 strings out of 476025
- 420579 string characters out of 5790017
- 1866388 words of memory out of 5000000
- 42255 multiletter control sequences out of 15000+600000
+ 22184 strings out of 476025
+ 420384 string characters out of 5790017
+ 1864388 words of memory out of 5000000
+ 42247 multiletter control sequences out of 15000+600000
  520496 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,9n,134p,1234b,974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,9n,134p,1234b,961s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf (4 pages, 118839 bytes).
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf (4 pages, 118431 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
+ 107 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
