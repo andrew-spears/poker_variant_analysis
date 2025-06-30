@@ -1,0 +1,30 @@
+# LaTeX auxiliary files
+*.aux
+*.latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Optional: ignore generated PDFs (remove if you want to track them)
+# *.pdf
