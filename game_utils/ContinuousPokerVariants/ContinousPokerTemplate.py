@@ -5,23 +5,23 @@ from matplotlib.colors import TwoSlopeNorm
 # TEMPLATE CLASS
 class ContinuousPokerTemplate:
     @staticmethod
-    def value_size(game_params, x):
+    def value_size(x, **kwargs):
         raise NotImplementedError("value_size method must be implemented in subclasses")
     
     @staticmethod
-    def bluff_size(game_params, x):
+    def bluff_size(x, **kwargs):
         raise NotImplementedError("bluff_size method must be implemented in subclasses")
 
     @staticmethod
-    def call_threshold(game_params, s):
+    def call_threshold(s, **kwargs):
         raise NotImplementedError("call_threshold method must be implemented in subclasses")
     
     @staticmethod
-    def bluff_threshold(game_params):
+    def bluff_threshold(**kwargs):
         raise NotImplementedError("bluff_threshold method must be implemented in subclasses")
     
     @staticmethod
-    def value_threshold(game_params):
+    def value_threshold(**kwargs):
         raise NotImplementedError("value_threshold method must be implemented in subclasses")
     
     @staticmethod
@@ -60,16 +60,16 @@ class ContinuousPokerTemplate:
             raise ValueError(f"Unknown outcome: {outcome}")
 
     @classmethod
-    def payoff_outcome(cls, game_params, x, y):
-        if x < cls.bluff_threshold(game_params): # bluff
-            s = cls.bluff_size(game_params, x)
-            if y > cls.call_threshold(game_params, s):
+    def payoff_outcome(cls, x, y, **kwargs):
+        if x < cls.bluff_threshold(**kwargs): # bluff
+            s = cls.bluff_size(x, **kwargs)
+            if y > cls.call_threshold(s, **kwargs):
                 outcome = "Bluff_Called"
             else:
                 outcome = "Bluff_Fold"
-        elif x > cls.value_threshold(game_params): # value bet
-            s = cls.value_size(game_params, x)
-            if y < cls.call_threshold(game_params, s):
+        elif x > cls.value_threshold(**kwargs): # value bet
+            s = cls.value_size(x, **kwargs)
+            if y < cls.call_threshold(s, **kwargs):
                 outcome = "Value_Fold"
             elif y > x:
                 outcome = "Value_Loses"
@@ -84,7 +84,7 @@ class ContinuousPokerTemplate:
         return cls.outcome_to_payoff(outcome, s), outcome
             
     @classmethod
-    def expected_payoff(cls, game_params, grid_size=1001):
+    def expected_payoff(cls, grid_size=1001, **kwargs):
         # numerically integrate the payoff(x, y) function over the grid [0,1] x [0,1]
         xs = np.linspace(0, 1, grid_size)
         ys = np.linspace(0, 1, grid_size)
@@ -92,7 +92,7 @@ class ContinuousPokerTemplate:
         for i in range(grid_size):
             for j in range(grid_size):
                 try:
-                    val, _ = cls.payoff_outcome(game_params, xs[i], ys[j])
+                    val, _ = cls.payoff_outcome(xs[i], ys[j], **kwargs)
                     payoff_data[i, j] = val if np.isfinite(val) else np.nan
                 except:
                     payoff_data[i, j] = np.nan
@@ -100,7 +100,7 @@ class ContinuousPokerTemplate:
         return average_payoff
     
     @classmethod
-    def total_payoff_for_outcome(cls, game_params, outcome, grid_size=1001):
+    def total_payoff_for_outcome(cls, outcome, grid_size=1001, **kwargs):
         # numerically integrate the payoff(x, y) function over the grid [0,1] x [0,1], only where the outcome is outcome
         xs = np.linspace(0, 1, grid_size)
         ys = np.linspace(0, 1, grid_size)
@@ -108,7 +108,7 @@ class ContinuousPokerTemplate:
         for i in range(grid_size):
             for j in range(grid_size):
                 try:
-                    val, oc = cls.payoff_outcome(game_params, xs[i], ys[j])
+                    val, oc = cls.payoff_outcome(xs[i], ys[j], **kwargs)
                     if oc == outcome:
                         payoff_data[i, j] = val if np.isfinite(val) else np.nan
                     else:
@@ -119,16 +119,16 @@ class ContinuousPokerTemplate:
         return total_payoff
 
     @classmethod
-    def generate_strategy_plot(cls, game_params, s_lim=None, grid_size=1001, save_path=None, title="Strategy Profile"):
+    def generate_strategy_plot(cls, s_lim=None, grid_size=1001, save_path=None, title=None, **kwargs):
         # find bluff and value sizes for each x
         X = np.linspace(0, 1, grid_size)
         bet_sizes = np.empty(grid_size)
         call_thresholds = np.empty(grid_size)
         for i, x in enumerate(X):
-            if x < cls.bluff_threshold(game_params):
-                s = cls.bluff_size(game_params, x)
-            elif x > cls.value_threshold(game_params):
-                s = cls.value_size(game_params, x)
+            if x < cls.bluff_threshold(**kwargs):
+                s = cls.bluff_size(x, **kwargs)
+            elif x > cls.value_threshold(**kwargs):
+                s = cls.value_size(x, **kwargs)
             else:
                 s = 0
             bet_sizes[i] = s
@@ -151,15 +151,12 @@ class ContinuousPokerTemplate:
         adjusted_X = np.array(adjusted_X)
         adjusted_bet_sizes = np.array(adjusted_bet_sizes)
 
-        if s_lim is None:
-            s_lim = np.max(adjusted_bet_sizes) * 1.1
-
         # find call thresholds for each s
         s_min = np.min(adjusted_bet_sizes[adjusted_bet_sizes > 0])
         s_max = np.max(adjusted_bet_sizes[adjusted_bet_sizes != np.inf])
         S = np.linspace(s_min, s_max, grid_size)
         for i, s in enumerate(S):
-            call_thresholds[i] = cls.call_threshold(game_params, s)
+            call_thresholds[i] = cls.call_threshold(s, **kwargs)
 
         # plot
         fig, ax = plt.subplots(figsize=(8, 6))
@@ -177,8 +174,18 @@ class ContinuousPokerTemplate:
             ax.fill_betweenx(S, call_thresholds, np.ones_like(S), color="blue", alpha=0.3, label="Call Region")
 
         # ---- Labels, Legend, and Title ----
+        if s_lim is None:
+            s_lim = np.max(adjusted_bet_sizes) * 1.1
+        ax.set_xlim(-0.05, 1.05)
+        ax.set_ylim(-0.05, s_lim + 0.05)
         ax.set_xlabel("Hand Strength", fontsize=12)
         ax.set_ylabel("Bet Size", fontsize=12)
+
+        if title is None:
+            title = f"{cls.__name__} Strategy Profile"
+            if kwargs:
+                kwargs_str = ", ".join([f"{k}={v}" for k, v in kwargs.items()])
+                title += f" with {kwargs_str}"
         ax.set_title(title, fontsize=14)
         ax.legend(fontsize=10)
         ax.grid(True)
@@ -191,7 +198,7 @@ class ContinuousPokerTemplate:
 
 
     @classmethod
-    def generate_payoff_plot(cls, game_params, grid_size=1001, save_path=None, title="Payoffs by Hand Strength"):
+    def generate_payoff_plot(cls, grid_size=1001, save_path=None, title="Payoffs by Hand Strength", **kwargs):
         # ---- Parameters ----
         xs = np.linspace(0, 1, grid_size)
         ys = np.linspace(0, 1, grid_size)
@@ -204,7 +211,7 @@ class ContinuousPokerTemplate:
         for i in range(grid_size):
             for j in range(grid_size):
                 try:
-                    val, outcome = cls.payoff_outcome(game_params, xs[i], ys[j])
+                    val, outcome = cls.payoff_outcome(xs[i], ys[j], **kwargs)
                     payoff_data[i, j] = val if np.isfinite(val) else np.nan
                     outcome_type[i, j] = outcome
                 except:

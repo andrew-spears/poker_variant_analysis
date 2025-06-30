@@ -249,20 +249,24 @@ class LCP_utils:
 
 class LCP(ContinuousPokerTemplate):
     @staticmethod
-    def call_threshold(game_params, s):
+    def call_threshold(s, **kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         x2 = LCP_utils.compute_x2(game_params)
         return (x2+s)/(1+s)
     
     @staticmethod
-    def bluff_threshold(game_params):
+    def bluff_threshold(**kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         return LCP_utils.compute_x2(game_params)
     
     @staticmethod
-    def value_threshold(game_params):
+    def value_threshold(**kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         return LCP_utils.compute_x3(game_params)
     
     @staticmethod
-    def bluff_size(game_params, x):
+    def bluff_size(x, **kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         L = game_params['L']
         U = game_params['U']
         x0 = LCP_utils.compute_x0(game_params)
@@ -277,7 +281,8 @@ class LCP(ContinuousPokerTemplate):
             return L
         
     @staticmethod
-    def value_size(game_params, x):
+    def value_size(x, **kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         L = game_params['L']
         U = game_params['U']
         x2 = LCP_utils.compute_x2(game_params)
@@ -291,13 +296,14 @@ class LCP(ContinuousPokerTemplate):
             return U
         
     @staticmethod
-    def expected_payoff_x(game_params, x):
+    def expected_payoff_x(x, **kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         L, U = game_params['L'], game_params['U']
         x2 = LCP_utils.compute_x2(game_params)
         x3 = LCP_utils.compute_x3(game_params)
         v = lambda s : LCP_utils.v_of_s(s, x2)
         v_inv = lambda x : LCP_utils.inverse_v(x, x2)
-        c = lambda s : LCP.call_threshold(game_params, s)
+        c = lambda s : LCP.call_threshold(s, **kwargs)
         if x <= x2: # all bluffs
             return x2 - 1/2
         elif x <= x3: # all checks
@@ -313,12 +319,13 @@ class LCP(ContinuousPokerTemplate):
         
         
     @classmethod
-    def expected_payoff_symbolic(cls, game_params):
+    def expected_payoff_symbolic(cls, **kwargs):
         '''
         Compute the expected payoff using a reduced formula of just L and U.
         Much faster than the numerical integration.
         Formula found using mathematica.
         '''
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
         L, U = game_params['L'], game_params['U']
         A = U*(3+U*(3+U))
         numerator = A * (1+L)**3 - L**3 * (A+1)
@@ -329,14 +336,15 @@ class LCP(ContinuousPokerTemplate):
         return numerator / denominator
         
     @classmethod
-    def get_regions(cls, game_params):
-        bth = cls.bluff_threshold(game_params)
-        vth = cls.value_threshold(game_params)
+    def get_regions(cls, **kwargs):
+        game_params = {'L': kwargs['L'], 'U': kwargs['U']}
+        bth = cls.bluff_threshold(**kwargs)
+        vth = cls.value_threshold(**kwargs)
         x2 = LCP_utils.compute_x2(game_params)
         b0 = LCP_utils.compute_b0(game_params)
         b = lambda s : LCP_utils.b_of_s(s, b0, x2)
         v = lambda s : LCP_utils.v_of_s(s, x2)
-        c = lambda s : LCP.call_threshold(game_params, s)
+        c = lambda s : cls.call_threshold(s, **kwargs)
         c_inv = lambda y : LCP_utils.inverse_c(y, x2)
         U = game_params['U']
         L = game_params['L']
@@ -562,12 +570,12 @@ class LCP(ContinuousPokerTemplate):
         return regions
 
     @classmethod
-    def expected_payoff_by_region(cls, game_params, grid_size=1001):
+    def expected_payoff_by_region(cls, grid_size=1001, **kwargs):
         '''
         Compute the integral over the square by regions to avoid ever solving for v_inv and b_inv.
         Not any faster than the numerical integration, but proof of concept for a symbolic integration.
         '''
-        regions = cls.get_regions(game_params)
+        regions = cls.get_regions(**kwargs)
 
         total_payoff = 0
         for i, r in regions.items():

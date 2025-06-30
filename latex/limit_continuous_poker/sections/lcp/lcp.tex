@@ -1,10 +1,14 @@
 \documentclass[../../main/main.tex]{subfiles}
 \begin{document}
 \section{Limit Continuous Poker (LCP)}
-We now introduce a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bet sizes. This variant, called Limit Continuous Poker (or LCP), retains similar rules to NLCP: 
+We now introduce a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bet sizes. We call this variant  Limit Continuous Poker (or LCP).
 
 \begin{definition}[LCP]
 Two players, the bettor and the caller, are each dealt uniform, independent hand strengths $x, y \in [0, 1]$. After seeing $x$, the bettor chooses between checking (giving payoff $1$ to the higher hand) or betting an amount $s \in [L, U]$. If the bettor bets, the caller must either call (giving payoff $1+2s$ to the higher hand) or fold (giving payoff $1$ to the bettor).
 \end{definition}
+
+The motivation for studying this variant is twofold. First, it is a more realistic variant of poker, where bets are not fixed but are also not unbounded. In most real variants of poker, bet sizes are constrained by the stack sizes of the players and by a minimum bet size. Analytically solving LCP can give insight into the effect of bet size constraints on more complex variants of poker. Strong poker players have intuition about how bet size constraints affect strategy, but concepts but rigorously proving this intuition is often impossible given the combinatorial complexity of the game. Second, LCP can be seen as a generalization of FBCP and NLCP. Studying LCP can help us understand the relationship between these two and answer questions about why they produce the strategies they do.
+
+We now solve for and describe the Nash equilibrium strategy profile for LCP.
 
 \end{document}
