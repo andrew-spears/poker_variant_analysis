@@ -28,3 +28,20 @@ Thumbs.db
 
 # Optional: ignore generated PDFs (remove if you want to track them)
 # *.pdf
+game_utils/ContinuousPokerVariants/__pycache__/NLCP.cpython-311.pyc
+game_utils/ContinuousPokerVariants/__pycache__/ContinousPokerTemplate.cpython-311.pyc
+game_utils/ContinuousPokerVariants/__pycache__/FBCP.cpython-311.pyc
+game_utils/ContinuousPokerVariants/__pycache__/LCP.cpython-311.pyc
+game_utils/ContinuousPokerVariants/__pycache__/NLCP.cpython-311.pyc
+latex/limit_continuous_poker/main/main.aux
+latex/limit_continuous_poker/main/main.fdb_latexmk
+latex/limit_continuous_poker/main/main.fls
+latex/limit_continuous_poker/main/main.log
+latex/limit_continuous_poker/main/main.synctex.gz
+latex/limit_continuous_poker/sections/introduction/introduction.aux
+latex/limit_continuous_poker/sections/introduction/introduction.fdb_latexmk
+latex/limit_continuous_poker/sections/introduction/introduction.fls
+latex/limit_continuous_poker/sections/introduction/introduction.log
+latex/limit_continuous_poker/sections/introduction/introduction.synctex.gz
+latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.fdb_latexmk
+latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.log
