@@ -85,7 +85,7 @@ Each variant implements:
 
 ## Usage Examples
 
-See [this notebook](../notebooks/limit_continuous_poker/visualization.ipynb) for example usage of generating diagrams of equilibria.
+See [this notebook](../notebooks/limit_continuous_poker/visualizations.ipynb) for example usage of generating diagrams of equilibria.
 
 ### Basic Game Implementation
 ```python
