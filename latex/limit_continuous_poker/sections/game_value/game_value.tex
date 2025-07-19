@@ -24,9 +24,6 @@ This symmetry is easily checked from the definition of $V_{LCP}(L, U)$, but is n
 In the following sections, we investigate the properties and behavior of $V_{LCP}(L, U)$ in more detail. These include monotonicity, convergence to NLCP and FBCP, and the symmetry property.
 
 
-
-
-
 \subsection{Value Monotonicity}
 
 Intuitively, more options for the bettor should increase the game's value. To see this visually, we can plot the value of LCP as a function of the limits $L$ and $U$ for a range of values, as in Figure \ref{fig:payoffs_vs_LU_combined}.
@@ -71,7 +68,13 @@ Notice the higher value for more lenient limits (top left of any plot in Figure 
 \]
 \end{theorem}
 \begin{customproof}
-    \todo{prove this}
+    Expanding the derivatives and simplifying, we get:
+    \begin{align*}
+        \frac{\partial V_{LCP}(L, U)}{\partial L} & = -\frac{9 L^2 (L+1)^2 (U+1)^6}{A_4^2} \leq 0 \\
+        \frac{\partial V_{LCP}(L, U)}{\partial U} & = \frac{9 (L+1)^6 (U+1)^2}{A_4^2} \geq 0
+    \end{align*}
+
+    Since $A_4 > 0$ for all $L, U$.
 \end{customproof}
 
 \subsection{Value Convergence}
@@ -86,7 +89,9 @@ The main diagonal of the plots in Figure \ref{fig:payoffs_vs_LU_combined} should
 \end{theorem}
 
 \begin{customproof}
-    \todo{prove this}
+    $V_{LCP}(L, U)$ is a rational function of $L$ and $U$, and no part of the expression is undefined for $L = U = B$. We can simply plug in and simplify to get
+    $$ \frac{B}{2(1+2B)(2+B)} $$
+    Which is exactly $V_{FB}(B)$.
 \end{customproof}
 
 These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
@@ -100,7 +105,9 @@ We can also show that the value of LCP converges to the value of NLCP as $L$ and
 \]
 \end{theorem}
 \begin{customproof}
-    \todo{prove this}
+    We can simply plug in $L=0$ to get
+    $$\frac{(U+1)^3-1}{14 (U+1)^3-2}$$
+    Taking the limit as $U \to \infty$ gives $\frac{1}{14} = V_{NL}$.
 \end{customproof}
 
 \subsection{Value Symmetry}

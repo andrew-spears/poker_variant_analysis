@@ -47,15 +47,14 @@ This visualization gives insight into exactly how the bettor is gaining value fr
 \subsection{Expected Value of Bettor's Hand Strengths}
 \label{bettor_ev}
 
-\todo{plots} % EV(x) for different hand strengths}
-
-In addition to considering payoffs for a specific bettor-caller hand combination, we can also consider the expected value of given hand for the bettor, not knowing the hand of the caller. Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium.
+In addition to considering payoffs for a specific bettor-caller hand combination, we can also consider the expected value of given hand for the bettor, not knowing the hand of the caller. 
 
 % x(2L + 1) - L(c[L] + 1) - 1/2 min value bet
 % x(2U + 1) - U(c[U] + 1) - 1/2 max value bet
 % x(2vinv[x] + 1) - vinv[x](c[vinv[x]] + 1) - 1/2 intermediate value bet
 \begin{theorem}
     \label{thm:ev_bettor}
+    Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium.
     \begin{equation}
         EV(x) = \begin{cases}
             x_2-\frac{1}{2} & \text{if } x \leq x_2 \\
@@ -80,6 +79,15 @@ In addition to considering payoffs for a specific bettor-caller hand combination
     
     The last three cases come from substituting $L, v^{-1}(x), U$ for $s$ in the expression above and simplifying.
 \end{customproof}
+
+See figure \ref{fig:ev_x} for a visualization of this result.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/ExpectedPayoffs.png}
+    \caption{Expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium.}
+    \label{fig:ev_x}
+\end{figure}
 
 We can quickly verify that the bettor's expected value is increasing in $x$. This must be the case, since with any given hand strength, the bettor can always choose to imitate the Nash equilibrium strategy of a weaker hand, so the stronger hand must be at least as good in expectation.
 
@@ -108,4 +116,6 @@ We can quickly verify that the bettor's expected value is increasing in $x$. Thi
 \end{customproof}
 
 It is worth noting that the bettors strongest hands (right edge) actually seem to become less likely to make any profit more than the ante as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
+
+We continue this analysis in the next section by considering how changing $U$ and $L$ affect various features of this equilibrium.
 \end{document}

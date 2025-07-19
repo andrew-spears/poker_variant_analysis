@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  22 MAY 2025 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 JUL 2025 12:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -562,61 +562,29 @@ LaTeX Warning: Reference `sec:value_computation' on page 1 undefined on input li
 <images/payoffs_by_limits.png, id=24, 520.344pt x 395.3169pt>
 File: images/payoffs_by_limits.png Graphic file (type png)
 <use images/payoffs_by_limits.png>
-Package pdftex.def Info: images/payoffs_by_limits.png  used on input line 39.
+Package pdftex.def Info: images/payoffs_by_limits.png  used on input line 36.
 (pdftex.def)             Requested size: 234.00238pt x 177.77634pt.
 <images/payoffs_by_limits_wide.png, id=26, 510.9489pt x 395.3169pt>
 File: images/payoffs_by_limits_wide.png Graphic file (type png)
 <use images/payoffs_by_limits_wide.png>
-Package pdftex.def Info: images/payoffs_by_limits_wide.png  used on input line 45.
+Package pdftex.def Info: images/payoffs_by_limits_wide.png  used on input line 42.
 (pdftex.def)             Requested size: 234.00238pt x 181.0457pt.
 <images/payoffs_by_limits_log.png, id=27, 522.5121pt x 398.9304pt>
 File: images/payoffs_by_limits_log.png Graphic file (type png)
 <use images/payoffs_by_limits_log.png>
-Package pdftex.def Info: images/payoffs_by_limits_log.png  used on input line 51.
+Package pdftex.def Info: images/payoffs_by_limits_log.png  used on input line 48.
 (pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
 <images/payoffs_by_limits_log_wide.png, id=28, 522.5121pt x 398.9304pt>
 File: images/payoffs_by_limits_log_wide.png Graphic file (type png)
 <use images/payoffs_by_limits_log_wide.png>
-Package pdftex.def Info: images/payoffs_by_limits_log_wide.png  used on input line 57.
+Package pdftex.def Info: images/payoffs_by_limits_log_wide.png  used on input line 54.
 (pdftex.def)             Requested size: 234.00238pt x 178.65872pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 74.
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 74--74
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 74--74
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-[2 </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_wide.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log_wide.png>]
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 89--89
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 89--89
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 103--103
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-
-Overfull \hbox (2.00946pt too wide) in paragraph at lines 103--103
-[][][]\OT1/cmr/m/n/12 prove 
- []
-
-[3] [4] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.aux)
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_wide.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log.png> </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log_wide.png>] [3] [4] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -624,18 +592,18 @@ Package rerunfilecheck Info: File `game_value.out' has not changed.
 (rerunfilecheck)             Checksum: 37C78CCADAC12B57CC1534B8FBADFEB8;521.
  ) 
 Here is how much of TeX's memory you used:
- 22212 strings out of 476025
- 421377 string characters out of 5790017
+ 22086 strings out of 476025
+ 418494 string characters out of 5790017
  1865388 words of memory out of 5000000
- 42272 multiletter control sequences out of 15000+600000
+ 42149 multiletter control sequences out of 15000+600000
  518797 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,9n,134p,786b,990s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,9n,134p,786b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.pdf (4 pages, 280353 bytes).
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.pdf (4 pages, 282084 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

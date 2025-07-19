@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1748028508 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.pdf" "parameter_analysis" 1748028509 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/../../main/main.tex" 1748028380 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.aux" 1748028509 1736 6eb1a450f5c1cbc8e1b25bb22853526c "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.out" 1748028509 1167 35117ec27bf72c8f31b4201ca8a3bf54 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.tex" 1748028508 11491 37654541d4228b77362cc0c34ec9bf25 ""
+["pdflatex"] 1751819275 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.pdf" "parameter_analysis" 1751819276 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/../../main/main.tex" 1751814087 1329 cac34b419679b734f84d25465d2a7e5b ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png" 1751818912 67738 2b2ea7ab2ab23d45f3c33b61db01d5d6 ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.aux" 1751819276 2584 6cfcbee654329eacc543ece4c65d0e4d "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.out" 1751819276 1167 35117ec27bf72c8f31b4201ca8a3bf54 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.tex" 1751819275 11545 71102c7373d506773c9f7fbcd0500cbb ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""

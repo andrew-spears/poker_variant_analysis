@@ -7,9 +7,16 @@
 
 \subsubsection{Expected Payoff of Value-Betting Hands}
 
-It may seem unsurprising that strong hangs become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of each hand continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only for large enough $x$ or small enough $U$, after which it decreases. This feels counterintuitive; increasing $U$ only gives the bettor more options, so how is it possible that the expected payoff of a wide range of their hands decreases? And which hands are gaining expected payoff to offset this? This is a surprising result, and it is worth exploring in more detail.
+It may seem unsurprising that strong hangs become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of a specific hand strength in the unique admissible Nash equilibrium continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only for up to a certain threshold, after which it decreases (see Figure \ref{fig:ev_x_vs_U}). This feels counterintuitive; increasing $U$ only gives the bettor more options, so how is it possible that the expected payoff of individual hands decreases? And which hands are gaining expected payoff to offset this? This is a surprising result, and it is worth exploring in more detail.
 
-Recall from section \ref{bettor_ev} that $EV(x)$ denotes the expected payoff of a value-betting hand $x$ in the unique admissible Nash equilibrium.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/ev_vs_U.png}
+    \caption{Expected value of a value-betting hand $x$ versus the upper limit $U$ in Nash equilibrium. Notice that each curve is increasing in $U$ up to some maximum, after which it decreases.Recall that $EV(x)$ denotes the expected payoff of a value-betting hand $x$ in the unique admissible Nash equilibrium.}
+    \label{fig:ev_x_vs_U}
+\end{figure}
+
+
 
 \begin{theorem}
     \label{thm:payoff_increasing}
@@ -28,7 +35,7 @@ We begin by showing that $x_2$, the boundary hand strength between bluffing and 
 
 \begin{lemma}
     \label{lem:x2_increasing}
-    For any fixed $L, U$,
+    For any $L, U$,
     $$ \frac{\partial x_2}{\partial U} > 0 $$
 \end{lemma}
 
@@ -143,27 +150,23 @@ Having these tools, we can now finally return to the proof of Theorem \ref{thm:p
 
     We break the proof into two cases:
 
-    \textbf{Case 1 ($x > v(U)$):} In this case, hand $x$ bets the maximum amount $U$. The expected value is:
-    
-    $$ EV(x) = \frac{1}{2} c(U) + (x - c(U)) \left(U+\frac{1}{2}\right) + (1-x) \left(-U-\frac{1}{2}\right) $$ 
-
-    and the derivative is:
+    \textbf{Case 1 ($x > v(U)$):} In this case, hand $x$ bets the maximum amount $U$. Recall that $c(s)$ is implicitly a function of $s$ and $x_2$, which is itself a function of $U$. Using the multivariate chain rule, the derivative at $s=U$ is:
 
     \begin{align*}
-        \frac{d}{dU} EV(x) & = \frac{\partial EV(x)}{\partial s} \bigg|_{s=U} + \frac{\partial EV(x)}{\partial c(s)} \left( \frac{\partial c(s)}{\partial s}\bigg|_{s=U} + \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U} \right) \\
-        & = \left( \frac{\partial EV(x)}{\partial s} + \frac{\partial EV(x)}{\partial c(s)} \frac{\partial c(s)}{\partial s}\right)\bigg|_{s=U}   +  \left( \frac{\partial EV(x)}{\partial c(s)} \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U} \right) \\
-        & = \frac{dEV(x)}{ds}\bigg|_{s=U}   +  \left( \frac{\partial EV(x)}{\partial c(s)} \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U} \right) \\
-        & = \frac{dEV(x)}{ds}\bigg|_{s=U}  - \frac{U}{1+U} \cdot \frac{\partial x_2} {\partial U}
+        \frac{d}{dU} EV(x) & = \frac{\partial EV(x)}{\partial s} \bigg|_{s=U} + \frac{\partial EV(x)}{\partial c(s)} \left( \frac{\partial c(s)}{\partial s} + \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U} \right) \bigg|_{s=U} \\
+        & = \left( \frac{\partial EV(x)}{\partial s} + \frac{\partial EV(x)}{\partial c(s)} \frac{\partial c(s)}{\partial s}\right)\bigg|_{s=U}   +  \left( \frac{\partial EV(x)}{\partial c(s)} \frac{\partial c(s)}{\partial x_2} \frac{\partial x_2}{\partial U} \right) \bigg|_{s=U}
     \end{align*} 
 
-    We want to know exactly when the above expression is positive. $\frac{\partial x_2}{\partial U}$ is always positive by Lemma \ref{lem:x2_increasing}, and is independent of $x$. At $x = v(U)$, we know that $\frac{dEV(x)}{ds} = 0$ from \ref{valueoptimality}, so at $x = v(U)$, the entire expression is negative and $EV(x)$ is decreasing in $U$. What about for larger $x$? We can expand the expression further. The partial derivatives of $EV(x)$ are:
+    We want to know exactly when the above expression is positive. The partial derivatives to plug in are:
 
     \begin{align*}
         \frac{\partial EV(x)}{\partial s} & = 2x - 1 - c(s) \\
-        \frac{\partial EV(x)}{\partial c(s)} & = - s
+        \frac{\partial EV(x)}{\partial c(s)} & = - s \\ 
+        \frac{\partial c(s)}{\partial s} & = \frac{1-x_2}{(s+1)^2} \\
+        \frac{\partial c(s)}{\partial x_2} & = \frac{1}{s+1} \\
     \end{align*}
 
-    Plugging these in and rearranging terms, we can say that $EV(x)$ is increasing in $U$ if 
+    We can leave $\frac{\partial x_2}{\partial U}$ as a free variable for now, since it is always positive by Lemma \ref{lem:x2_increasing}, and is independent of $x$. Plugging these in and rearranging terms, we can say that $EV(x)$ is increasing in $U$ if 
 
     \begin{align*}
         x & > \frac{1}{2(1+U)} \left( U \frac{\partial x_2}{\partial U} + \frac{U^2 + x_2(1 + 2U)}{1+U} \right)

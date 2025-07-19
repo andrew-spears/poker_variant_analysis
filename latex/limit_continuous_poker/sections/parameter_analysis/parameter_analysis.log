@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  23 MAY 2025 15:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 JUL 2025 12:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,40 +561,40 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 6.
 
-
-LaTeX Warning: Reference `bettor_ev' on page 1 undefined on input line 12.
-
+<images/ev_vs_U.png, id=36, 510.2262pt x 328.8285pt>
+File: images/ev_vs_U.png Graphic file (type png)
+<use images/ev_vs_U.png>
+Package pdftex.def Info: images/ev_vs_U.png  used on input line 14.
+(pdftex.def)             Requested size: 390.0pt x 251.34726pt.
 [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (29.20589pt too wide) detected at line 127
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png>] [2] [3]
+Overfull \hbox (29.20589pt too wide) detected at line 134
 []
  []
 
-[3] [4]
-
-LaTeX Warning: Reference `valueoptimality' on page 5 undefined on input line 159.
+[4]
+Overfull \hbox (0.24382pt too wide) detected at line 158
+[]
+ []
 
 [5] [6] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `parameter_analysis.out' has not changed.
 (rerunfilecheck)             Checksum: 35117EC27BF72C8F31B4201CA8A3BF54;1167.
  ) 
 Here is how much of TeX's memory you used:
- 22070 strings out of 476025
- 417945 string characters out of 5790017
- 1866388 words of memory out of 5000000
- 42134 multiletter control sequences out of 15000+600000
+ 22085 strings out of 476025
+ 418219 string characters out of 5790017
+ 1865388 words of memory out of 5000000
+ 42145 multiletter control sequences out of 15000+600000
  521098 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,13n,134p,849b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,12n,134p,917b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.pdf (6 pages, 148980 bytes).
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.pdf (6 pages, 203871 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

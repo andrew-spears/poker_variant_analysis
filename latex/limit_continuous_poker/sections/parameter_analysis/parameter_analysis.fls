@@ -903,6 +903,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
+INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
+INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
+INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
+INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.aux

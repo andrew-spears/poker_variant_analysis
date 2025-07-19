@@ -5,9 +5,9 @@
 
 The full solution process is detailed in Appendix \ref{app:derivation}. Here we present the final solution, which was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. 
 
-\begin{theorem}[Nash Equilibrium Strategy Profile]
+\begin{theorem}[LCP Nash Equilibrium]
     \label{thm:nash_equilibrium}
-The unique admissible Nash equilibrium strategy profile for Limit Continuous Poker with minimum bet size $L$ and maximum bet size $U$ is given by:
+LCP has a unique Nash equilibrium strategy profile in which the bettor's strategy is monotone-admissible (up to measure zero sets of hands for each player). This strategy profile is given by:
 
 \begin{align*}
     x_0 &= \frac{3 (L+1)^3 U}{A_4}\\
@@ -34,7 +34,7 @@ where the common subexpressions are:
 \end{align*}
 \end{theorem}
 
-Proof given in Appendix \ref{app:derivation}. Refer to section \ref{subsec:nash_equilibrium_structure} for an explanation of how these values fit together to actually form the strategy profile.
+Refer back to section \ref{subsec:nash_equilibrium_structure} for an explanation of how these values fit together to actually form the strategy profile.
 
 This solution is more interpretable in graphical form. Figure \ref{fig:strategyprofile} shows the strategy profile for various values of $L$ and $U$ ranging from very lenient ($L=0, U=10$) to very restricted ($L=0.5, U=1$). The more lenient bet size limits model something closer to NLCP, while the more restricted bet size limits model something closer FBCP with a fixed bet size. Indeed, we see that the strategy profile of for $L=0, U=10$ looks qualitatively similar to the strategy profile of NLCP - we will show in section \ref{sec:strategic_convergence} that the strategy profile approaches the Nash equilibrium of NLCP as $L$ and $U$ approach $0$ and $\infty$, respectively, and that the strategy profile approaches the Nash equilibrium of FBCP as $L$ and $U$ approach some fixed value $s$ from either side.
 

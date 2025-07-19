@@ -1,15 +1,16 @@
 # Fdb version 4
-["pdflatex"] 1748028808 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.pdf" "payoff_analysis" 1748028811 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/../../main/main.tex" 1748028380 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
+["pdflatex"] 1751774720 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.pdf" "payoff_analysis" 1751774722 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/../../main/main.tex" 1751243135 1329 cac34b419679b734f84d25465d2a7e5b ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png" 1751774185 42114 f2fbfb53586fb523403645ec9e5e4f52 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/FixedBet_payoffs.png" 1745984260 151327 b980ada8a8943f9d86c277b8c86256ee ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/LU_payoffs_0.1_5.png" 1746055082 176608 9b38ca2f72a789159ce446acb9ee38f3 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/LU_payoffs_0.3_2.png" 1746055085 171246 85e372ba979de85a89605e6b58e50dc6 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/LU_payoffs_0.5_1.5.png" 1746055088 166572 98e924da1ea79bf58b986ed06c7641c2 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/LU_payoffs_0.9_1.1.png" 1746055089 158039 11113bf88e9d40f3991ff0b54860bd0f ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/images/NoLimit_payoffs.png" 1745984185 169703 6ac038980ee2746580431bd07ae96a06 ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.aux" 1748028810 2226 d25acb4e5316daabbd9e8cef3d7b5e38 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.out" 1748028810 398 9c125abc2d6bdfaac06678d7b3e36ba9 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.tex" 1748028808 7989 99245ddb16f6c6aa748686d3c6441216 ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.aux" 1751774722 2363 1cc5cca5e7c9d13601ae4b51569b10f5 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.out" 1751774722 398 9c125abc2d6bdfaac06678d7b3e36ba9 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.tex" 1751774720 8373 de6fef70e8077fccf74030ebd720f7f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""

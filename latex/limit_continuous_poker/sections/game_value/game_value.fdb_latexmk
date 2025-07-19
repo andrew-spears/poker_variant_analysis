@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1747937953 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1747937954 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/../../main/main.tex" 1747937756 1107 9c95ac9e881e6bf9049c005f66440b70 ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.aux" 1747937954 2491 22c486370ce5621775af6bf996f71d88 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.out" 1747937954 521 37c78ccadac12b57cc1534b8fbadfeb8 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.tex" 1747937952 6492 fee255d67ae2ec3b38941d37c2d7459c ""
+["pdflatex"] 1751821053 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1751821054 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/../../main/main.tex" 1751814087 1329 cac34b419679b734f84d25465d2a7e5b ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.aux" 1751821054 1827 93c3f89d718312085def1c37adcf40d4 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.out" 1751821054 521 37c78ccadac12b57cc1534b8fbadfeb8 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/game_value.tex" 1751821053 7121 2f4af7d6fed4484b4161e707c0a21cb8 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits.png" 1746678059 59653 13c946944d627b1566ed594fc138ccba ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log.png" 1746678079 53048 83a031c805754b2aae146f00ac2d5ae5 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log_wide.png" 1746678086 59180 46f9941de85aa0a394665a36b1df0727 ""

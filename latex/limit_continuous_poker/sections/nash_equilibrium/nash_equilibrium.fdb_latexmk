@@ -1,13 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1750547742 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf" "nash_equilibrium" 1750547743 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/../../main/main.tex" 1748104014 1277 f9f3733dc6cd29faa3e6b122fab94dbe ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png" 1750547630 46463 8f9bf9c915573fe569c4238c6736dc7c ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png" 1750547645 39953 431ae66cea2e423ca4f7958f13fe345b ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png" 1750547655 32446 08de00db1ad8faf57fd85d65972ef24d ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png" 1750547612 42222 74ee96bb0adf53a12dc9d8ae965abf20 ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux" 1750547743 1744 25809dcbc7cb102f52c6194f0fa28ad1 "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.out" 1750547743 217 421236c5266417208e5d7ff329c8802a "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex" 1750547741 3928 ca632575189d03e80195084e5014f1a8 ""
+["pdflatex"] 1751773754 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf" "nash_equilibrium" 1751773755 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/../../main/main.tex" 1751243135 1329 cac34b419679b734f84d25465d2a7e5b ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png" 1751251764 43707 2131530ab48fec5c070dd91d55b40c87 ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png" 1751251781 42560 da2d4a35acd07e1ffeaca4b01e070e33 ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png" 1751251795 34187 aa2db592a5408433fc32774b7143815e ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png" 1751251728 44285 11b2c34fccf271e643e0c151cf6bc82c ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux" 1751773755 1731 b7a581c2c2759fe4e5912ad064da1f67 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.out" 1751773755 217 421236c5266417208e5d7ff329c8802a "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex" 1751773754 3919 53f6e4482d232271333067b4dfd16e69 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
