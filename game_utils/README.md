@@ -4,7 +4,7 @@ A scalable and generalizable library for implementing and analyzing extensive-fo
 
 ## Overview
 
-This library provides a comprehensive framework for:
+This library provides a basic framework for:
 - **Game Representation**: Abstract base classes for extensive-form games
 - **Strategy Management**: Pure and mixed strategy implementations
 - **Equilibrium Computation**: CFR (Counterfactual Regret Minimization) and linear programming solvers
@@ -30,12 +30,6 @@ class MyGame(ZeroSumGame):
     # - is_terminal(): Check if game is over
     # - _do_get_p1_payoff(): Return payoff for player 1
 ```
-
-**Key Features:**
-- Automatic normal-form conversion
-- Expected payoff computation (exact and approximate)
-- Pure strategy enumeration
-- Random game state generation
 
 ### 2. Strategy Management (`Strategy.py`)
 
@@ -89,34 +83,6 @@ Each variant implements:
 - Expected payoff computation
 - Strategy visualization
 
-### 5. Utility Functions (`utils.py`)
-
-**Numerical Integration:**
-```python
-from game_utils.utils import integrate, double_integral
-```
-
-**Visualization:**
-```python
-from game_utils.utils import heatmap, binaryStrategyHeatmap
-```
-
-**Strategy Analysis:**
-```python
-from game_utils.utils import normalize, binaryStrategyArr
-```
-
-## Example Games
-
-### Kuhn Poker (`kuhn.py`)
-Three-card poker game with perfect information sets.
-
-### Rock-Paper-Scissors (`RPS.py`)
-Simple normal-form game implementation.
-
-### Progressive Kuhn (`progressiveKuhn.py`)
-Multi-round Kuhn poker variant.
-
 ## Usage Examples
 
 ### Basic Game Implementation
@@ -144,80 +110,6 @@ class SimpleGame(ZeroSumGame):
         pass
 ```
 
-### CFR Training
-```python
-from game_utils.CFR import CFRSolver
-
-# Train CFR solver
-solver = CFRSolver(MyGame)
-solver.train(10000)
-
-# Get learned strategies
-p1_strategy = solver.get_strategy(0)
-p2_strategy = solver.get_strategy(1)
-
-# Visualize strategies
-from game_utils.utils import binaryStrategyHeatmap
-binaryStrategyHeatmap(p1_strategy, title="Player 1 Strategy")
-```
-
-### Continuous Game Analysis
-```python
-from game_utils.ContinuousPokerVariants import LCP
-
-# Analyze limit continuous poker
-expected_payoff = LCP.expected_payoff(grid_size=1001)
-LCP.generate_strategy_plot(save_path="strategy.png")
-```
-
-## Key Features
-
-### Scalability
-- **Modular Design**: Each component is independent and reusable
-- **Abstract Interfaces**: Easy to implement new game types
-- **Efficient Algorithms**: Optimized CFR and LP implementations
-- **Memory Efficient**: Lazy evaluation and streaming for large games
-
-### Generalizability
-- **Game-Agnostic**: Framework works for any extensive-form game
-- **Player Types**: Support for games with multiple player types
-- **Information Sets**: Flexible information set representation
-- **Continuous Games**: Specialized support for continuous action spaces
-
-### Analysis Capabilities
-- **Equilibrium Computation**: Both exact (LP) and approximate (CFR) methods
-- **Strategy Visualization**: Heatmaps and strategy profiles
-- **Payoff Analysis**: Expected value computation and analysis
-- **Numerical Integration**: Tools for continuous game analysis
-
-## Dependencies
-
-- **NumPy**: Numerical computations
-- **Matplotlib**: Visualization
-- **SciPy**: Linear programming optimization
-
-## Installation
-
-```bash
-pip install numpy matplotlib scipy
-```
-
-## Contributing
-
-The library is designed for extensibility. To add a new game:
-
-1. Inherit from `ZeroSumGame`
-2. Implement required abstract methods
-3. Add any game-specific analysis tools
-4. Consider adding visualization functions
-
-## Research Applications
-
-This library has been used for:
-- Poker game analysis and strategy computation
-- Continuous game equilibrium analysis
-- Algorithmic game theory research
-- Educational demonstrations of game theory concepts
 
 ## License
 
