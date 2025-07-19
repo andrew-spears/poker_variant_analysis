@@ -85,6 +85,8 @@ Each variant implements:
 
 ## Usage Examples
 
+See [notebooks/limit_continuous_poker/visualization.ipynb](this notebook) for example usage of generating diagrams of equilibria.
+
 ### Basic Game Implementation
 ```python
 from game_utils.ZeroSumGame import ZeroSumGame
