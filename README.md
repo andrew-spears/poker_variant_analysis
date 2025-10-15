@@ -1,16 +1,67 @@
+# Poker Variant Analysis
+
 Analysis of poker variants and simple hands, using analytical tools and numerical algorithms.
 
-Work in progress paper on Limit Continuous Poker:
-https://github.com/tirantfox/poker_variant_analysis/blob/main/latex/limit_continuous_poker/main/main.pdf
+## Limit Continuous Poker: Key Results
 
-Analysis of a limit variant of von neumann poker:
-https://github.com/tirantfox/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_limit_continuous.ipynb
+This repository contains research on **Limit Continuous Poker (LCP)**, a game-theoretic model that bridges two classical poker variants by imposing lower and upper bounds (L and U) on bet sizes. Our analysis reveals surprising mathematical structure and strategic insights about optimal betting and bluffing.
 
-No-limit continuous poker desmos widget:
-https://www.desmos.com/calculator/palhen19nj
+### Main Contributions
 
-Limit continuous poker desmos widget:
-https://www.desmos.com/calculator/riicxq0xso
+**1. Nash Equilibrium Strategy Profile**
+
+We derive the unique admissible Nash equilibrium where:
+
+- The **bettor** partitions hands into three regions: bluffing with weak hands [0, x₂], checking with medium hands [x₂, x₃], and value betting with strong hands [x₃, 1]
+- Bet sizes vary continuously within bluffing and value ranges (weaker bluffs use larger bets!)
+- The **caller** responds with a bet-size-dependent calling threshold that perfectly balances pot odds
+
+![LCP Strategy Profile](latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png)
+
+**2. Closed-Form Game Value with Remarkable Symmetry**
+
+The expected payoff for the bettor has a surprisingly elegant formula:
+
+```
+V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³)
+```
+
+where r = L/(1+L) (minimum pot odds) and t = 1/(1+U) (pot fraction at max bet).
+
+**Key discovery:** The value function exhibits perfect symmetry V(r,t) = V(t,r), meaning that swapping minimum and maximum bet constraints in a specific reciprocal way (V(L,U) = V(1/U, 1/L)) yields identical game values. This reveals a deep duality between the caller's incentive to call and the bettor's betting freedom.
+
+![Game Value Heatmaps](latex/limit_continuous_poker/sections/game_value/images/game_value_plots.png)
+
+**3. Counterintuitive Strategic Effects**
+
+Increasing the maximum bet size U doesn't uniformly benefit all hands:
+
+- **Strong hands** gain from making larger value bets
+- **Intermediate hands** can actually _lose_ value because the caller becomes more conservative across all bet sizes
+- Each hand strength x has a critical threshold U' above which EV(x) decreases
+
+This illustrates the complex strategic interdependencies in equilibrium play—more options can sometimes hurt!
+
+![Expected Payoffs by Hand Strength](latex/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png)
+
+**4. Convergence to Classical Variants**
+
+LCP smoothly interpolates between:
+
+- **Fixed-Bet Continuous Poker (FBCP):** As L → B and U → B, strategies converge to von Neumann's solution
+- **No-Limit Continuous Poker (NLCP):** As L → 0 and U → ∞, strategies converge to the solution by Chen & Ankenman
+
+This validates LCP as a genuine unified framework encompassing both classical models.
+
+### Resources
+
+- **Paper (PDF):** [latex/limit_continuous_poker/main/main.pdf](latex/limit_continuous_poker/main/main.pdf)
+- **Numerical Analysis:** [notebooks/limit_continuous_poker/solve_limit_continuous.ipynb](notebooks/limit_continuous_poker/solve_limit_continuous.ipynb)
+- **Interactive Widgets:**
+  - [No-limit continuous poker (Desmos)](https://www.desmos.com/calculator/palhen19nj)
+  - [Limit continuous poker (Desmos)](https://www.desmos.com/calculator/riicxq0xso)
+
+---
 
 ### Von Neumann Poker
 
@@ -51,8 +102,7 @@ We attempt to answer the following questions:
 TODO:
 
 - Introduction:
-- Game value:
-  -
+- ## Game value:
 - b0 is just x0 with some scaling factor!!!
 - PROVE THEOREM: c(v_inv(x)) is increasing in U for all x> vth and forall U
 
