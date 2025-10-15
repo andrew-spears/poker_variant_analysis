@@ -1,6 +1,6 @@
 # Poker Variant Analysis
 
-Analysis of poker variants and simple hands, using analytical tools and numerical algorithms.
+Focuses on Limit Continuous Poker, a simple poker variant which is analytically solvable but which complex reveals principles of poker strategy including bluffing, value betting, ranges, and pricely how bet size limits affect optimal play.
 
 ## Background: Von Neumann Poker
 
