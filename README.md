@@ -48,7 +48,7 @@ We derive the unique admissible Nash equilibrium where:
 
 The expected payoff for the bettor has a surprisingly elegant formula:
 
-\[ V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³) \]
+$$ V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³) $$
 
 where $r = L/(1+L)$ (minimum pot odds) and $t = 1/(1+U)$ (pot fraction at max bet).
 
