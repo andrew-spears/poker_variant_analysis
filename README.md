@@ -46,7 +46,7 @@ We derive the unique admissible Nash equilibrium where:
 
 **2. Closed-Form Game Value with Remarkable Symmetry**
 
-The expected payoff for the bettor has a surprisingly elegant formula:
+The expected payoff for the bettor under optimal play has a surprisingly elegant formula:
 
 $$ V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³) $$
 
@@ -61,10 +61,10 @@ where $r = L/(1+L)$ (minimum pot odds) and $t = 1/(1+U)$ (pot fraction at max be
 Increasing the maximum bet size U doesn't uniformly benefit all hands:
 
 - **Strong hands** gain from making larger value bets
-- **Intermediate hands** can actually _lose_ value because the caller becomes more conservative across all bet sizes
-- Each hand strength x has a critical threshold U' above which EV(x) decreases
+- **Intermediate hands** can actually _lose_ value because the caller becomes more conservative across all bet sizes, even though the bettor stands to gain for all hand strengths on average
+- As we increase U indefinitely, each value-betting hand strength x has a critical threshold U' above which the expected value of this hand under optimal play decreases
 
-This illustrates the complex strategic interdependencies in equilibrium play—more options can sometimes hurt!
+This illustrates the complex strategic interdependencies in equilibrium play — making the game more preferable for the bettor can actually decrease their payoff in certain situations, even if it increases it in expectation
 
 ![Expected Payoffs by Hand Strength](latex/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png)
 
