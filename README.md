@@ -70,9 +70,9 @@ This illustrates the complex strategic interdependencies in equilibrium play —
 
 **4. Convergence to Classical Variants**
 
-LCP smoothly interpolates between:
+LCP smoothly interpolates between two previously solved poker variants:
 
-- **Fixed-Bet Continuous Poker (FBCP):** As $L → B$ and $U → B$, strategies converge to von Neumann's solution
+- **Fixed-Bet Continuous Poker (FBCP):** As $L → B$ and $U → B$, strategies converge to Von Neumann's solution
 - **No-Limit Continuous Poker (NLCP):** As $L → 0$ and $U → ∞$, strategies converge to the solution by Chen & Ankenman
 
 This validates LCP as a genuine unified framework encompassing both classical models.
