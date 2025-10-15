@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1751252651 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1751252651 0
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex" 1751243135 1329 cac34b419679b734f84d25465d2a7e5b ""
+["pdflatex"] 1755040232 "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1755040232 0
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/../../main/main.tex" 1755034528 1475 2b417b33f71989dc992647c62509d1c5 ""
   "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png" 1751251593 46499 0470cdf89d3ac88beef2ce9ac3243ed9 ""
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux" 1751252651 1569 bf843a7ba90852bfc706c330fdf1b26b "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out" 1751252651 847 aee83fe4f24ec9efbfb5053700c6d1cd "pdflatex"
-  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" 1751252650 8128 529fbf5aed8b20fccb70c74c0f0cdeea ""
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux" 1755040232 1562 94ffcd628e855b79eef792d08061c4d7 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.out" 1755040232 809 e267d3fc8303e8c155538eb027dd6334 "pdflatex"
+  "/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.tex" 1755040231 10228 92c3bf39621a50bc58ee62dd2ec5afd1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -26,7 +26,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
@@ -35,7 +34,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""

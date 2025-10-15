@@ -1,56 +1,39 @@
 \documentclass[../../main/main.tex]{subfiles}
 \begin{document}
-\section{Solving LCP}
+\section{Solving for Nash Equilibrium}
+\label{sec:solving_lcp}
 
-Before diving into a solution for the Nash equilibrium of LCP, we first address the uniqueness of such a solution. LCP has an infinite class of Nash equilibria, differentiated only by how the bettor sizes their bluffing hands. In this section, we define a way to distinguish between these equilibria. This involves two steps: first, defining a class of \textit{monotone} calling strategies which are, in some sense, more reasonable than non-monotone strategies; and second, restricting the bettor's strategy to be admissible (not weakly dominated) against these calling strategies. This turns out to be enough to uniquely determine the Nash equilibrium.
+In this section, we develop the methodology for computing the Nash equilibrium of LCP. Our approach proceeds in three stages: (1) establishing the concept of \textit{monotone calling strategies} and using admissibility to select among multiple equilibria, (2) characterizing the structure that any Nash equilibrium must satisfy, and (3) deriving a system of equations whose solution yields the equilibrium strategy profile. The complete derivation and verification that our solution constitutes a Nash equilibrium is provided in Appendix \ref{app:nash_equilibrium}.
+
+\subsection{Uniqueness and Equilibrium Selection}
+
+Like FBCP, LCP has an infinite class of Nash equilibria, differentiated primarily by how the bettor sizes their bluffs. We resolve this non-uniqueness by imposing two natural refinements: first, we restrict the caller to \textit{monotone} strategies which are more robust and less exploitable; second, we require the bettor's strategy to be admissible (not weakly dominated) against all such monotone calling strategies. These refinements uniquely determine the equilibrium we analyze.
 
 \subsection{Monotone Strategies}
+\label{subsec:monotone_strategies}
 
 \begin{definition}[Monotone Calling Strategy]
-    A calling strategy is \textit{monotone} if it satisfies two conditions:
+    A \textit{monotone} calling strategy is a pure strategy which satisfies two conditions:
     \begin{enumerate}
         \item For any bet size $s$ and any two hand strengths $y_1 < y_2$, if the caller calls a bet of size $s$ with $y_1$, they must also call with $y_2$.
         \item For any hand strength $y$ and any two bet sizes $s_1 < s_2$, if the caller calls a bet of size $s_2$ with $y$, they must also call a bet of size $s_1$ with $y$.
     \end{enumerate}
 \end{definition}
 
-This should sound intuitive. Clearly, calling with a stronger hand is weakly better than calling with a weaker hand. Violating the first condition (in a non-negligible way) is actually weakly dominated - not only is a monotone strategy weakly better against all opponents, but there exists an opponent against which the non-monotone strategy is strictly better. We prove this in lemma \ref{lem:monotone_dominated}.
+This should sound intuitive. Clearly, calling with a stronger hand is weakly better than calling with a weaker hand. Restricting to pure strategies can be explained similarly - it is better to always call with a stronger hand and always fold a weaker one than to mix between the two.
 
-\begin{lemma}
-    \label{lem:monotone_dominated}
-    If a calling strategy violates the first monotonicity condition for a nonzero-measure set of hands for any bet size $s$, it is weakly dominated. Specifically, if there exists $s$ and sets $A, B \subseteq [0, 1]$ such that:
-    \begin{enumerate}
-        \item The caller calls $s$ with hands in $A$
-        \item The caller folds $s$ with hands in $B$
-        \item $\sup A \leq \inf B$
-        \item $A$ and $B$ have positive measure
-    \end{enumerate}
-    then the strategy is weakly dominated.
-\end{lemma}
-\begin{proof}
-    Let $\sigma_C$ be the non-monotone strategy described above. Since $A$ and $B$ are nonzero-measure, there exist subsets $A' \subseteq A$ and $B' \subseteq B$ such that:
-    \begin{enumerate}
-        \item $A'$ and $B'$ have positive measure
-        \item $|A'| = |B'|$
-    \end{enumerate}
-    Let $\sigma_C'$ be the strategy which switches the actions for $A'$ and $B'$, i.e. calls with $B'$ and folds with $A'$ (and behaves equivalently for all other bet sizes). Against a bet of size $s$, whenever $y \in B'$ and $x \in A'$, $\sigma_C$ folds while $\sigma_C'$ calls and wins. Similarly, whenever $y \in A'$ and $x \in B'$, $\sigma_C$ calls and loses while $\sigma_C'$ folds. For all other cases, $\sigma_C$ and $\sigma_C'$ behave identically. This means that $\sigma_C'$ is weakly better than $\sigma_C$ against every betting strategy. Now consider a betting strategy which always bets $s$. Against this strategy, both cases above occur with positive probability, so $\sigma_C'$ is strictly better than $\sigma_C$. Thus, $\sigma_C$ is weakly dominated.
-\end{proof}
+Violating the first condition (in a non-negligible way) is actually weakly dominated - not only is a monotone strategy weakly better against all opponents, but there exists an opponent against which the non-monotone strategy is strictly better (see Appendix \ref{sec:monotone_proofs} for proof).
 
-The second condition for a monotone calling strategy - that the caller must be more willing to call smaller bets - is more subtle. From a poker player's perspective, it aligns with intuition about pot odds - a larger bet is more risky, so it should require a stronger hand to call. 
-However, violating this condition is not dominated - in fact, it is common in real poker. Often, a larger bet is perceived as a bluff while a smaller bet is perceived as a value bet. Whether or not it is optimal, a caller might call more aggressively against large bets based on this perception.
-To motivate this condition from more fundamental game-theoretic principles, we consider how it affects the bettor's response. If the caller violates this condition by calling less aggressively against smaller bets, then the bettor gets away with taking smaller risks for higher returns. Because of this, a monotone calling strategy is less exploitable. Imposing this condition on the caller restricts the betting strategies in a way that gives us a unique Nash equilibrium.
+The second condition for a monotone calling strategy - that the caller must be more willing to call smaller bets - is more subtle. From a poker player's perspective, it aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not dominated, it leads to exploitable calling strategies. If the caller calls less aggressively against smaller bets, the bettor can take smaller risks for higher returns. A monotone calling strategy is therefore less exploitable, and imposing this condition yields a unique Nash equilibrium.
 
 \begin{definition}[Monotone-Admissible Strategy]
-    A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. More explicitly, $\sigma_B$ is monotone-admissible if there does not exist a betting strategy $\sigma_B'$ such that both of the following hold:
-    \begin{enumerate}
-        \item $\pi_B(\sigma_B',\sigma_C) \geq \pi_B(\sigma_B,\sigma_C)$ for all monotone calling strategies $\sigma_C$
-        \item $\pi_B(\sigma_B',\sigma_C) > \pi_B(\sigma_B,\sigma_C)$ for at least one monotone calling strategy $\sigma_C$
-    \end{enumerate}
+    A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. That is, there does not exist a betting strategy $\sigma_B'$ that performs at least as well against all monotone calling strategies and strictly better against at least one.
 \end{definition}
 
-This is useful in distinguishing bettor strategies which differ only in how they bluff. We will see that the hand strength of a bluff is irrelevant if the caller plays optimally because the caller will never call with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, then the bettor's bluffing hand strength becomes important. If the caller becomes too loose, i.e. calling too often with weak hands, then the bettor ends up winning some pots ``accidentally" if they make their smallest bluffs with their strongest bluffing hands. This is where monotone-admissibility differentiates between equilibria.
+This definition distinguishes bettor strategies that differ only in how they bluff. The hand strength of a bluff is irrelevant when the caller plays optimally, since the caller never calls with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, the bettor's bluffing hand strength matters. Monotone-admissibility selects the equilibrium where the bettor bluffs larger with weaker hands and smaller with stronger hands, which is optimal against all monotone deviations. See Appendix \ref{sec:monotone_proofs} for detailed analysis.
 
 \subsection{Nash Equilibrium Structure}
+\label{subsec:nash_equilibrium_structure}
 
 We will now describe the structure of the Nash equilibrium in terms of constants $x_i$ and functions $c(s)$, $b(s)$, and $v(s)$. These turn out to be fully determined by the parameters $L$ and $U$, but for now they are unknown. Notice that both players use pure strategies, like in NLCP: the bettor maps hand strengths directly to bet sizes, and the caller maps hand strengths and bet sizes to actions with no mixing.
 
@@ -103,9 +86,12 @@ We will now describe the structure of the Nash equilibrium in terms of constants
 %     \todo{admissiblity?}
 % \end{customproof}
 
-See figure \ref{fig:strategyprofile} for visual representations of the strategy profile. 
+See figure \ref{fig:strategyprofile} for visual representations of the strategy profile.
 
 \subsection{Constraints and Indifference Equations}
+\label{subsec:constraints}
+
+Having established the qualitative structure of the Nash equilibrium, we now derive the quantitative relationships that the strategy profile must satisfy. These constraints arise from two fundamental equilibrium conditions: players must be indifferent among actions they mix over (or, in our case, use with positive probability), and players must optimize when choosing among available actions. The resulting system of differential and algebraic equations will uniquely determine all threshold values $x_0, \ldots, x_5$ and the functions $b(s)$, $v(s)$, and $c(s)$.
 
 The Nash equilibrium strategy profile must satisfy several constraints and indifference conditions, which we will derive and use to solve for the strategy profile. The key conditions are:
 
@@ -116,25 +102,31 @@ The Nash equilibrium strategy profile must satisfy several constraints and indif
     \item The bettor's strategy must be continuous in bet size (in the regions where they bet)
 \end{itemize}
 
-These conditions give us the following system of equations:
+These conditions give us the following system of equations: \label{eq:nash_equilibrium_system}
 
-\begin{align*}
-    \text{Caller Indifference:} & \\
-    & (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0\\
-    & (1-x_5) \cdot (1+U) - x_0 \cdot U = 0\\
-    & |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0\\
-    \text{Bettor Indifference and Optimality:} & \\
-    & -sc'(s) - c(s) + 2 v(s) - 1 = 0\\
-    & c(L) - (1-c(L)) \cdot L = x_3\\
-    & c(s) - (1-c(s)) \cdot s = x_2\\
-    \text{Continuity Constraints:} & \\
+\textbf{Caller Indifference:}
+\begin{align}
+    & (x_2-x_1) \cdot (1+L) - (x_4-x_3) \cdot L = 0 \\
+    & x_0 \cdot (1+U) - (1-x_5) \cdot U = 0\\
+    & |b'(s)| \cdot (1 + s) - |v'(s)| \cdot s = 0
+\end{align}
+
+\textbf{Bettor Indifference and Optimality:}
+\begin{align}
+    & -sc'(s) - c(s) + 2 v(s) - 1 = 0 \label{eq:valueoptimality}\\
+    & (x_3-c(L)) \cdot (1+L) - (1-x_3) \cdot (L) + c(L) = x_3 \label{eq:valueindiff}\\ 
+    & c(s) - (1-c(s)) \cdot s = x_2 \label{eq:bluffindiff}
+\end{align}
+
+\textbf{Continuity Constraints:}
+\begin{align}
     & b(U) = x_0 \\
     & b(L) = x_1 \\
     & v(U) = x_5 \\
-    & v(L) = x_4
-\end{align*}
+    & v(L) = x_4.
+\end{align}
 
-We will now derive each of these equations in turn.
+We will now derive each of these equations in turn. Note that for this analysis, it is simpler to pretend that payoffs exclude the initial ante of 0.5, since this is a sunk cost to both players and we only care about relative payoffs between actions.
 
 \subsubsection{Caller Indifference}
 \label{subsec:caller_indifference}
@@ -143,61 +135,71 @@ By definition, $c(s)$ is the threshold above which the caller calls and below wh
 
 
   \[  \mathbb{E}[\text{call } c(s)] = \mathbb{E}[\text{fold } c(s)] \]
-  \[  \mathbb{P}[\text{bluff} | s] \cdot (1+s) - \mathbb{P}[\text{value bet} | s]\cdot s = 0 \]
-
+  \[  \mathbb{P}[\text{bluff} | s] \cdot (1+s) - \mathbb{P}[\text{value bet} | s]\cdot s = 0. \]
 
 We now split into cases based on the value of $s$.
 
 \textbf{Case 1: $s = L$}. The hands the bettor value bets $L$ with are $x \in (x_3, x_4)$, and the hands they bluff with are $x \in (x_1, x_2)$. 
 
 \begin{equation}{\label{callindiffmin}}
-    (x_4-x_3) \cdot (1+L) - (x_2-x_1) \cdot L = 0
+    (x_2-x_1) \cdot (1+L) - (x_4-x_3) \cdot L = 0.
 \end{equation}
+
+Here, we are implicitly multiplying both sides by the common denominator of $(x_4-x_3) + (x_2-x_1)$.
 
 \textbf{Case 2: $s = U$}. The hands the bettor value bets $U$ with are $x \in (x_5, 1)$, and the hands they bluff with are $x \in (0, x_0)$. 
 
 \begin{equation}{\label{callindiffmax}}
-    (1-x_5) \cdot (1+U) - x_0 \cdot U = 0
+    (1-x_5) \cdot (1+U) - x_0 \cdot U = 0,
 \end{equation}
+
+again, implicitly multiplying both sides by the common denominator of $(1-x_5) + x_0$.
 
 \textbf{Case 3: $L \leq s \leq U$}. In this case, the bettor has exactly one value hand and one bluffing hand, but somewhat paradoxically, they are not equally likely. The probability of a value bet given the size $s$ is related to the inverse derivative of the value function $v(s)$ at $s$, and the same goes for a bluff. This gives us the following relation:
 
 \[ \frac{\mathbb{P}[\text{value bet} | s]}{\mathbb{P}[\text{bluff} | s]} = \frac{|b'(s)|}{|v'(s)|}\]
 
-An intuitive interpretation of this is that for any small neighborhood around the bet size $s$, the bettor has more hands which use a bet size in the neighborhood if $v(s)$ does not change rapidly around $s$, that is, if $|v'(s)|$ is small. The same goes for bluffing hands, and as we limit the neighborhood to a single point, the ratio of the two probabilities approaches the ratio of the derivatives. Plugging this into the indifference equation, we get:
+An intuitive interpretation of this is that for any small neighborhood around the bet size $s$, the bettor has more hands which use a bet size in the neighborhood if $v(s)$ does not change rapidly around $s$, that is, if $|v'(s)|$ is small. The same goes for bluffing hands, and as we limit the neighborhood to a single point, the ratio of the two probabilities approaches the ratio of the derivatives. We know that these are the only two possible bettor actions for such a bet size, so
+
+\[ \mathbb{P}[\text{value bet} | s] = \frac{|b'(s)|}{|b'(s)| + |v'(s)|} \]
+\[ \mathbb{P}[\text{bluff} | s] = \frac{|v'(s)|}{|b'(s)| + |v'(s)|} \]
+
+Plugging this into the indifference equation and dividing out the common denominator, we get:
 
 \begin{equation}{\label{callindiff}}
-    |b'(s)| \cdot (1 + s) + |v'(s)| \cdot s = 0
+    |b'(s)| \cdot (1 + s) - |v'(s)| \cdot s = 0.
 \end{equation}
+
+
 
 \subsubsection{Bettor Indifference and Optimality}
 
 When the bettor makes a value bet, they are attempting to maximize the expected value of the bet. We can write the expected value of a value bet as:
 
 \begin{align*}
-    \mathbb{E}[\text{value bet } s | x] & = \mathbb{P}[\text{call with worse}] \cdot (1+s) - \mathbb{P}[\text{call with better}] \cdot s + \mathbb{P}[\text{fold}] \cdot 1 \\
-    & = (x-c(s)) \cdot (1+s) - (1-x) \cdot (s) + c(s)\\
+    \mathbb{E}[\text{value bet } s | x] & = \mathbb{P}[\text{call w ith worse}] \cdot (1+s) - \mathbb{P}[\text{call with better}] \cdot s + \mathbb{P}[\text{fold}] \cdot 1 \\
+    & = (x-c(s)) \cdot (1+s) - (1-x) \cdot (s) + c(s).
 \end{align*}
 
 To maximize this, we take the derivative with respect to $s$ and set it equal to zero. Crucially, we are treating $c(s)$ as a function of $s$ and using the chain rule, since changing the bet size $s$ will also change the calling threshold $c(s)$. We want this optimality condition to hold for the bettor's Nash equilibrium strategy, so we set $x=v(s)$. This gives us:
 
 \begin{align}{\label{valueoptimality}}
     \nonumber \frac{d}{ds} \mathbb{E}[\text{value bet } s | x=v(s)] & = 0 \\
-    -sc'(s) - c(s) + 2 v(s) - 1 & = 0
+    -sc'(s) - c(s) + 2 v(s) - 1 & = 0.
 \end{align}
 
 Additionally, when the bettor has the most marginal value betting hand at $x=x_3$, they should be indifferent between a minimum value bet and a check: 
 
 \begin{align}{\label{valueindiff}}
     \nonumber \mathbb{E}[\text{value bet } L | x=x_3] & = \mathbb{E}[\text{check} | x=x_3]\\ 
-    (x_3-c(L)) \cdot (1+L) - (1-x_3) \cdot (L) + c(L) & = x_3
+    (x_3-c(L)) \cdot (1+L) - (1-x_3) \cdot (L) + c(L) & = x_3.
 \end{align}
 
 Finally, when the bettor has the most marginal bluffing hand at $x=x_2$, they should be indifferent between a minimum bluff and a check. However, as we discussed earlier, the bettor should be indifferent among all bluffing sizes, so the bettor should actually be indifferent between checking and making any bluffing size $s$ at $x=x_2$. This gives us:
 
 \begin{align}{\label{bluffindiff}}
     \nonumber \mathbb{E}[\text{bluff } s | x=x_2] & = \mathbb{E}[\text{check} | x=x_2]\\ 
-    c(s) - (1-c(s)) \cdot s & = x_2
+    c(s) - (1-c(s)) \cdot s & = x_2.
 \end{align}
 
 \subsubsection{Continuity Constraints}
@@ -205,7 +207,7 @@ Finally, when the bettor has the most marginal bluffing hand at $x=x_2$, they sh
 As discussed above, the bettor's strategy is continuous in $s$ and $x$ (except when checking). This means that the endpoints of the functions $v(s)$ and $b(s)$ are constrained as follows:
 
 \begin{equation}{\label{continuityconstraints}}
-	 b(U) = x_0, \;\; b(L) = x_1, \;\; v(U) = x_5, \;\; v(L) = x_4
+	 b(U) = x_0, \;\; b(L) = x_1, \;\; v(U) = x_5, \;\; v(L) = x_4.
 \end{equation}
 
 \end{document}

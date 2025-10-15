@@ -1,8 +1,38 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{graphicx}
+\usepackage{graphicx, geometry}
 \usepackage{hyperref, todonotes, changepage, caption}
 \usepackage{subfiles}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[breakable]{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{upquote}
+
+% Define colors for code cells (for Jupyter notebook appendix)
+\definecolor{cellbackground}{HTML}{F7F7F7}
+\definecolor{cellborder}{HTML}{CFCFCF}
+\definecolor{incolor}{HTML}{303F9F}
+\definecolor{outcolor}{HTML}{D84315}
+
+% Define commands for Jupyter notebook code formatting
+\newcommand{\prompt}[4]{\textcolor{#2}{[#3]:}}
+\newcommand{\boxspacing}{\hspace{0.5em}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Define Pygments syntax highlighting commands
+\newcommand{\PY}[2]{#2}
+\newcommand{\PYZsq}{\textquotesingle}
+\newcommand{\PYZus}{\char`\_}
+\newcommand{\PYZob}{\{}
+\newcommand{\PYZcb}{\}}
+\newcommand{\PYZbs}{\char`\\}
+\newcommand{\PYZdq}{"}
+\newcommand{\PYZsh}{\#}
+\newcommand{\PYZlt}{<}
+\newcommand{\PYZgt}{>}
+\newcommand{\PYZhy}{-}
+
 
 % Define custom theorem environments
 \theoremstyle{plain}
@@ -21,24 +51,28 @@
 \begin{document}
 \maketitle
 \subfile{../sections/abstract/abstract}
+
+\tableofcontents
+\newpage
+
 \subfile{../sections/introduction/introduction}
+\subfile{../sections/preliminaries/preliminaries}
 \subfile{../sections/lcp/lcp}
 \subfile{../sections/solving_lcp/solving_lcp}
 \subfile{../sections/nash_equilibrium/nash_equilibrium}
-\subfile{../sections/payoff_analysis/payoff_analysis}
-\subfile{../sections/parameter_analysis/parameter_analysis}
-\subfile{../sections/strategic_comparison/strategic_comparison}
 \subfile{../sections/game_value/game_value}
+\subfile{../sections/strategic_comparison/strategic_comparison}
+\subfile{../sections/summary_analysis/summary_analysis}
+\subfile{../sections/conclusion/conclusion}
 
 \appendix
-\section{Derivation of Nash Equilibrium Strategy Profile}
-\label{app:derivation}
-Note: This was done in mathematica - is it worth writing out every step?
+\subfile{../sections/appendix_monotone/appendix_monotone}
+\subfile{../sections/appendix_nash_equilibrium/appendix_nash_equilibrium}
+\subfile{../sections/appendix_sympy/appendix_sympy}
+% \subfile{../sections/appendix_game_value/appendix_game_value}
+\subfile{../sections/appendix_parameter_analysis/appendix_parameter_analysis}
+\subfile{../sections/appendix_payoff_analysis/appendix_payoff_analysis}
 
-
-\section{Computation of Game Value}
-\label{app:value_computation}
-Note: This was done in mathematica - is it worth writing out every step?
 
 \bibliographystyle{plain}
 \bibliography{references} 

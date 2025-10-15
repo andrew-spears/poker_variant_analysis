@@ -1,48 +1,56 @@
 \documentclass[../../main/main.tex]{subfiles}
+\usepackage{geometry}
+% \usepackage[margin=2cm, left=1.5cm, right=1.5cm]{geometry}
+
 \begin{document}
 \section{Payoff Analysis}
 
 In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can better understand the strategy profile by examining payoffs for all hand combinations over the unit square $[0, 1]^2$ (see Figure \ref{fig:payoffs}). For comparison, the first and last plots show the payoffs in Fixed-Bet Continuous Poker with a fixed bet size $B=1$ and No-Limit Continuous Poker, respectively. We will explore the relationship between the three games in more detail in section \ref{sec:strategic_convergence}.
 
-\begin{figure}[h!]
-    \begin{adjustwidth}{-1in}{-1in}
-        % \vspace{-3cm} % Move the figure up into the top margin
+This visualization gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right of any plot), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+
+
+\clearpage
+\newgeometry{top=0in,left=0.5in,right=0.5in,bottom=0.5in}
+\begin{figure}[p]
+    \begin{adjustwidth}{-1.25in}{-1.25in}
         \centering
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/FixedBet_payoffs.png}
+            \includegraphics[width=\textwidth]{images/payoffs_1_1.png}
         \end{minipage}
-        \hspace{0.02\textwidth}
+        \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/LU_payoffs_0.9_1.1.png}
+            \includegraphics[width=\textwidth]{images/payoffs_0.9_1.1.png}
         \end{minipage}
-        \hspace{0.02\textwidth}
+        \vspace{0.4cm}\\
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/LU_payoffs_0.5_1.5.png}
+            \includegraphics[width=\textwidth]{images/payoffs_0.5_1.5.png}
         \end{minipage}
-        \vspace{-0.5cm}\\ % Reduced vertical space
+        \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/LU_payoffs_0.3_2.png}
+            \includegraphics[width=\textwidth]{images/payoffs_0.3_2.png}
         \end{minipage}
-        \hspace{0.02\textwidth}
+        \vspace{0.4cm}\\
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/LU_payoffs_0.1_5.png}
+            \includegraphics[width=\textwidth]{images/payoffs_0.1_5.png}
         \end{minipage}
-        \hspace{0.02\textwidth}
+        \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/NoLimit_payoffs.png}
+            \includegraphics[width=\textwidth]{images/payoffs_0_inf.png}
         \end{minipage}
     \end{adjustwidth}
     \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for fixed bet size $B=1$ (top left), and No-Limit Continuous Poker (bottom right). Intermediate plots show the payoffs for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
     \label{fig:payoffs}
 \end{figure}
 
-This visualization gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right of any plot), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+\restoregeometry
+
 
 \subsection{Expected Value of Bettor's Hand Strengths}
 \label{bettor_ev}
@@ -54,14 +62,14 @@ In addition to considering payoffs for a specific bettor-caller hand combination
 % x(2vinv[x] + 1) - vinv[x](c[vinv[x]] + 1) - 1/2 intermediate value bet
 \begin{theorem}
     \label{thm:ev_bettor}
-    Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium.
+    Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium:
     \begin{equation}
         EV(x) = \begin{cases}
             x_2-\frac{1}{2} & \text{if } x \leq x_2 \\
             x-\frac{1}{2} & \text{if } x_2 < x \le x_3 \\
             x(2L + 1) - L(c(L) + 1) - \frac{1}{2} & \text{if } x_3 < x < v(L) \\
             x(2v^{-1}(x) + 1) - v^{-1}(x)(c(v^{-1}(x)) + 1) - \frac{1}{2} & \text{if } v(L) \leq x \leq v(U) \\
-            x(2U + 1) - U(c(U) + 1) - \frac{1}{2} & \text{if } x > v(U)
+            x(2U + 1) - U(c(U) + 1) - \frac{1}{2} & \text{if } x > v(U).
         \end{cases}
     \end{equation}
 \end{theorem}
@@ -93,9 +101,7 @@ We can quickly verify that the bettor's expected value is increasing in $x$. Thi
 
 \begin{theorem}
     \label{thm:ev_increasing}
-    For any fixed $L, U$, the bettor's expected value $EV(x)$ is increasing in $x$:
-
-    $$ \frac{d}{dx} EV(x) > 0 $$
+    For any fixed $L, U$, the bettor's expected value $EV(x)$ is increasing in $x$.
 \end{theorem}
 
 \begin{customproof}

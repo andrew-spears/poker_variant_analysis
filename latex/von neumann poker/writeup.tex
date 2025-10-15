@@ -101,7 +101,7 @@ This has a nice interpretation involving pot odds. The caller is indifferent exa
 
 \[ \int_{0}^{x} b(t) dt = \frac{1}{4} \int_{0}^{1} b(t)dt \]
 
-Which can be interpreted as saying that our chance of winning the pot is equal to the pot odds of 1/4. Any higher, and we have a hand better than the pot odds, so we call. Any lower, and we have a hand worse than the pot odds, so we fold. 
+which can be interpreted as saying that our chance of winning the pot is equal to the pot odds of 1/4. Any higher, and we have a hand better than the pot odds, so we call. Any lower, and we have a hand worse than the pot odds, so we fold. 
 
 \section{BNE}
 
@@ -139,7 +139,7 @@ For $x < \alpha$, we know that $c(x) = 0$:
     &= 2 - 2x - 3 \int_{0}^{1} c(t) dt
 \end{align*}
 
-Which is strictly decreasing in $x$. When this is positive, the bettor should bet, so $b(x)=1$, but when it becomes negative, the bettor should check, so $b(x)$ looks like a step function from 1 down to 0 (or potentially just constant 1 or 0). However, $\alpha$ was defined as the minimum value such that $b(x)=0$ on $[\alpha, \beta]$. This means that $b(x)$ cannot take the value 0 for any part of $[0, \alpha)$, and therefore $I_b \cap [0, \alpha) = \emptyset$ and $b(x) = 1$ on $[0, \alpha)$.\\ 
+which is strictly decreasing in $x$. When this is positive, the bettor should bet, so $b(x)=1$, but when it becomes negative, the bettor should check, so $b(x)$ looks like a step function from 1 down to 0 (or potentially just constant 1 or 0). However, $\alpha$ was defined as the minimum value such that $b(x)=0$ on $[\alpha, \beta]$. This means that $b(x)$ cannot take the value 0 for any part of $[0, \alpha)$, and therefore $I_b \cap [0, \alpha) = \emptyset$ and $b(x) = 1$ on $[0, \alpha)$.\\ 
 
 For $x > \beta$, we know that $c(x) = 1$:
 
@@ -204,7 +204,7 @@ Some more manipulation this gives us
     \int_{0}^{1} c(t)dt & = \frac{3}{5} & \int_{\alpha}^{\beta} c(t)dt & = \frac{3}{10} \\
 \end{align*}
 
-Which gives us the exact final form of $b(x)$. $c(x)$ is constrained outside $[\alpha, \beta]$, but can be any function with average value $1/2$ on this interval (see Figure \ref{BNE}).
+which gives us the exact final form of $b(x)$. $c(x)$ is constrained outside $[\alpha, \beta]$, but can be any function with average value $1/2$ on this interval (see Figure \ref{BNE}).
 
 \begin{figure}[h]
     \begin{center}

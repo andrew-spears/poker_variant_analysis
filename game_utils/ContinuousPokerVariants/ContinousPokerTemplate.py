@@ -26,7 +26,7 @@ class ContinuousPokerTemplate:
     
     @staticmethod
     def lose_showdown_payoff(s_integral, area):
-            return -s_integral - 0.5* area
+        return -s_integral - 0.5* area
         
     @staticmethod
     def win_showdown_payoff(s_integral, area):

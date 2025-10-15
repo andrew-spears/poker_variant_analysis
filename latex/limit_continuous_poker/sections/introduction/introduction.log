@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  29 JUN 2025 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  12 AUG 2025 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,57 +548,60 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Citation `ferguson2003borel' on page 2 undefined on input line 28.
+LaTeX Warning: Citation `ferguson2003borel' on page 2 undefined on input line 30.
 
 [2]
 
-LaTeX Warning: Citation `chen2006mathematics' on page 3 undefined on input line 47.
+LaTeX Warning: Reference `subsec:monotone_strategies' on page 3 undefined on input line 42.
 
 
-Overfull \hbox (5.34035pt too wide) in paragraph at lines 49--50
+LaTeX Warning: Citation `chen2006mathematics' on page 3 undefined on input line 51.
+
+[3]
+Overfull \hbox (5.34035pt too wide) in paragraph at lines 53--54
 []\OT1/cmr/m/n/12 In Nash Equi-lib-rium, the bet-tor should make large bets with their strongest
  []
 
-<images/NLCP_strategy_profile.png, id=50, 570.933pt x 426.393pt>
+<images/NLCP_strategy_profile.png, id=54, 570.933pt x 426.393pt>
 File: images/NLCP_strategy_profile.png Graphic file (type png)
 <use images/NLCP_strategy_profile.png>
-Package pdftex.def Info: images/NLCP_strategy_profile.png  used on input line 63.
+Package pdftex.def Info: images/NLCP_strategy_profile.png  used on input line 67.
 (pdftex.def)             Requested size: 312.00119pt x 233.02043pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 68.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 4 undefined on input line 72.
 
-[3] [4 </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png>] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux)
+[4] [5 </Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png>] (/Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `introduction.out' has not changed.
-(rerunfilecheck)             Checksum: AEE83FE4F24EC9EFBFB5053700C6D1CD;847.
+(rerunfilecheck)             Checksum: E267D3FC8303E8C155538EB027DD6334;809.
  ) 
 Here is how much of TeX's memory you used:
  22079 strings out of 476025
- 417987 string characters out of 5790017
+ 418000 string characters out of 5790017
  1861388 words of memory out of 5000000
  42139 multiletter control sequences out of 15000+600000
- 520496 words of font info for 64 fonts, out of 8000000 for 9000
+ 520149 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,8n,134p,1234b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf (4 pages, 159151 bytes).
+ 119i,8n,134p,1107b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on /Users/andrewspears/poker_analysis/latex/limit_continuous_poker/sections/introduction/introduction.pdf (5 pages, 149438 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 18 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
