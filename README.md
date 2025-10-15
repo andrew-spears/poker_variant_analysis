@@ -48,13 +48,11 @@ We derive the unique admissible Nash equilibrium where:
 
 The expected payoff for the bettor has a surprisingly elegant formula:
 
-```
-V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³)
-```
+\[ V(r,t) = (1 - r³ - t³) / (14 - 2r³ - 2t³) \]
 
-where r = L/(1+L) (minimum pot odds) and t = 1/(1+U) (pot fraction at max bet).
+where $r = L/(1+L)$ (minimum pot odds) and $t = 1/(1+U)$ (pot fraction at max bet).
 
-**Key discovery:** The value function exhibits perfect symmetry V(r,t) = V(t,r), meaning that swapping minimum and maximum bet constraints in a specific reciprocal way (V(L,U) = V(1/U, 1/L)) yields identical game values. This reveals a deep duality between the caller's incentive to call and the bettor's betting freedom.
+**Key discovery:** The value function exhibits perfect symmetry $V(r,t) = V(t,r)$, meaning that swapping minimum and maximum bet constraints in a specific reciprocal way $(V(L,U) = V(1/U, 1/L))$ yields identical game values. This reveals a deep duality between the caller's incentive to call and the bettor's betting freedom.
 
 ![Game Value Heatmaps](latex/limit_continuous_poker/sections/game_value/images/game_value_plots.png)
 
@@ -74,8 +72,8 @@ This illustrates the complex strategic interdependencies in equilibrium play—m
 
 LCP smoothly interpolates between:
 
-- **Fixed-Bet Continuous Poker (FBCP):** As L → B and U → B, strategies converge to von Neumann's solution
-- **No-Limit Continuous Poker (NLCP):** As L → 0 and U → ∞, strategies converge to the solution by Chen & Ankenman
+- **Fixed-Bet Continuous Poker (FBCP):** As $L → B$ and $U → B$, strategies converge to von Neumann's solution
+- **No-Limit Continuous Poker (NLCP):** As $L → 0$ and $U → ∞$, strategies converge to the solution by Chen & Ankenman
 
 This validates LCP as a genuine unified framework encompassing both classical models.
 
