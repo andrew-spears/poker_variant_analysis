@@ -1,6 +1,6 @@
 # Poker Variant Analysis
 
-Focuses on Limit Continuous Poker, a simple poker variant which is analytically solvable but which complex reveals principles of poker strategy including bluffing, value betting, ranges, and pricely how bet size limits affect optimal play.
+This repository contains research on **Limit Continuous Poker (LCP)**, a game-theoretic model that bridges two classical poker variants by imposing lower and upper bounds (L and U) on bet sizes. Our analysis reveals surprising mathematical structure and strategic insights about optimal betting and bluffing.
 
 ## Background: Von Neumann Poker
 
@@ -30,9 +30,7 @@ To fully describe the rules:
 - A single 'half-street' of betting: the bettor chooses between checking and betting a fixed amount $s \in [L, U]$; if a bet is made, the caller either calls or folds.
 - In showdown, the higher hand strength wins.
 
-## Limit Continuous Poker: Key Results
-
-This repository contains research on **Limit Continuous Poker (LCP)**, a game-theoretic model that bridges two classical poker variants by imposing lower and upper bounds (L and U) on bet sizes. Our analysis reveals surprising mathematical structure and strategic insights about optimal betting and bluffing.
+## Results
 
 ### Main Contributions
 
