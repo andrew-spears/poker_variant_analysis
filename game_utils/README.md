@@ -5,6 +5,7 @@ A scalable and generalizable library for implementing and analyzing extensive-fo
 ## Overview
 
 This library provides a basic framework for:
+
 - **Game Representation**: Abstract base classes for extensive-form games
 - **Strategy Management**: Pure and mixed strategy implementations
 - **Equilibrium Computation**: CFR (Counterfactual Regret Minimization) and linear programming solvers
@@ -49,6 +50,7 @@ action = mixed_strat.sample(info_set)
 ### 3. Equilibrium Solvers
 
 #### CFR Solver (`CFR.py`)
+
 Counterfactual Regret Minimization for approximate Nash equilibrium computation:
 
 ```python
@@ -60,6 +62,7 @@ strategy = solver.get_strategy(player=0)
 ```
 
 #### Linear Programming (`LP.py`)
+
 Exact Nash equilibrium computation for normal-form games:
 
 ```python
@@ -73,11 +76,12 @@ strategy, game_value = solve_normal_zero_sum(payoff_matrix, player=0)
 Specialized implementations for continuous poker games:
 
 - **LCP.py**: Limit Continuous Poker
-- **NLCP.py**: No-Limit Continuous Poker  
+- **NLCP.py**: No-Limit Continuous Poker
 - **FBCP.py**: Fixed Bet Continuous Poker
 - **ContinuousPokerTemplate.py**: Base class for continuous poker variants
 
 Each variant implements:
+
 - Bet sizing functions
 - Call thresholds
 - Expected payoff computation
@@ -88,6 +92,7 @@ Each variant implements:
 See [this notebook](../notebooks/limit_continuous_poker/visualizations.ipynb) for example usage of generating diagrams of equilibria.
 
 ### Basic Game Implementation
+
 ```python
 from game_utils.ZeroSumGame import ZeroSumGame
 from game_utils.InfoSet import InfoSet
@@ -96,22 +101,21 @@ class SimpleGame(ZeroSumGame):
     @classmethod
     def type_combos(cls):
         return [(None, None, None)]  # Single type game
-    
+
     @classmethod
     def all_info_sets(cls, player):
         return [InfoSet.empty()]  # Single info set
-    
+
     def current_player(self):
         return len(self.history) % 2
-    
+
     def is_terminal(self):
         return len(self.history) >= 2
-    
+
     def _do_get_p1_payoff(self):
         # Implement payoff logic
         pass
 ```
-
 
 ## License
 
