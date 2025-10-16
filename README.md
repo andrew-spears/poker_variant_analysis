@@ -1,6 +1,18 @@
 # Poker Variant Analysis
 
+A monorepo for game theory research on poker variants, featuring a reusable game theory toolkit and academic papers.
+
 This repository contains research on **Limit Continuous Poker (LCP)**, a game-theoretic model that bridges two classical poker variants by imposing lower and upper bounds (L and U) on bet sizes. Our analysis reveals surprising mathematical structure and strategic insights about optimal betting and bluffing.
+
+## Repository Structure
+
+This monorepo is organized into three main sections:
+
+- **📦 [packages/](packages/)** - Reusable game theory toolkit (`game_utils` package)
+- **📄 [papers/](papers/)** - Research papers with LaTeX source files
+- **📓 [notebooks/](notebooks/)** - Jupyter notebooks for analysis and visualization
+
+See individual README files in each directory for details.
 
 ## Background: Von Neumann Poker
 
@@ -42,7 +54,7 @@ We derive the unique admissible Nash equilibrium where:
 - Bet sizes vary continuously within bluffing and value ranges (weaker bluffs use larger bets!)
 - The **caller** responds with a bet-size-dependent calling threshold that perfectly balances pot odds
 
-![LCP Strategy Profile](latex/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png)
+![LCP Strategy Profile](papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png)
 
 **2. Closed-Form Game Value with Remarkable Symmetry**
 
@@ -54,7 +66,7 @@ where $r = L/(1+L)$ (minimum pot odds) and $t = 1/(1+U)$ (pot fraction at max be
 
 **Key discovery:** The value function exhibits perfect symmetry $V(r,t) = V(t,r)$, meaning that swapping minimum and maximum bet constraints in a specific reciprocal way $(V(L,U) = V(1/U, 1/L))$ yields identical game values. This reveals a deep duality between the caller's incentive to call and the bettor's betting freedom.
 
-![Game Value Heatmaps](latex/limit_continuous_poker/sections/game_value/images/game_value_plots.png)
+![Game Value Heatmaps](papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png)
 
 **3. Counterintuitive Strategic Effects**
 
@@ -66,7 +78,7 @@ Increasing the maximum bet size U doesn't uniformly benefit all hands:
 
 This illustrates the complex strategic interdependencies in equilibrium play—more options can sometimes hurt!
 
-![Expected Payoffs by Hand Strength](latex/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png)
+![Expected Payoffs by Hand Strength](papers/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png)
 
 **4. Convergence to Classical Variants**
 
@@ -79,10 +91,45 @@ This validates LCP as a genuine unified framework encompassing both classical mo
 
 ### Resources
 
-- **Paper (PDF):** [latex/limit_continuous_poker/main/main.pdf](latex/limit_continuous_poker/main/main.pdf)
-- **Numerical Analysis:** [notebooks/limit_continuous_poker/solve_limit_continuous.ipynb](notebooks/limit_continuous_poker/solve_limit_continuous.ipynb)
+- **Paper (PDF):** [papers/limit_continuous_poker/main/main.pdf](papers/limit_continuous_poker/main/main.pdf)
+- **Numerical Analysis:** [notebooks/limit_continuous_poker/](notebooks/limit_continuous_poker/)
 - **Interactive Widgets:**
   - [No-limit continuous poker (Desmos)](https://www.desmos.com/calculator/palhen19nj)
   - [Limit continuous poker (Desmos)](https://www.desmos.com/calculator/riicxq0xso)
+
+---
+
+## Getting Started
+
+**Install the game theory toolkit:**
+```bash
+pip install -e .
+```
+
+**Use in Python:**
+```python
+from game_utils.ContinuousPokerVariants.LCP import LCP
+
+# Generate strategy profile visualization
+LCP.generate_strategy_plot(L=0.3, U=1.5, save_path="strategy.png")
+
+# Compute game value
+value = LCP.expected_payoff(L=0.3, U=1.5)
+print(f"Game value: {value}")
+```
+
+**Run notebooks:**
+```bash
+jupyter notebook
+```
+
+**Build the paper:**
+```bash
+cd papers/limit_continuous_poker/main
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+```
 
 ---

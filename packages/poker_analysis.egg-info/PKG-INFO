@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: poker-analysis
+Version: 0.1
+Summary: Game theory toolkit for poker variant analysis
+Author: Andrew Spears
+Requires-Python: >=3.8
