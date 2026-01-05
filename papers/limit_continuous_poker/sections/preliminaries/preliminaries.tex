@@ -8,18 +8,20 @@ This section establishes the notation and conventions used throughout the paper.
 
 All continuous poker variants studied in this paper are \textit{two-player zero-sum games}. The \textit{value} of such a game is the expected payoff to the first player (the bettor) when both players adopt Nash equilibrium strategies. Since the game is zero-sum, the caller's expected payoff is the negative of this value. A positive value indicates an advantage for the bettor.
 
-We seek Nash equilibria where both players use \textit{pure strategies} (deterministic mappings from information to actions). As is standard in continuous games, we treat sets of measure zero as negligible---for instance, the action taken at an exact threshold value is irrelevant since it occurs with probability zero.
+We seek Nash equilibria where both players use \textit{pure strategies} (deterministic mappings from information to actions). As is standard in continuous games, we treat sets of measure zero as negligible---for instance, the action taken at an exact threshold hand strength is irrelevant if that hand strength occurs with probability zero.
 
 \subsection{Conventions}
 
-\textbf{Ante and Pot Size:} Each player contributes an ante of 0.5 units, creating an initial pot of 1 unit. All bet sizes are measured in units relative to this pot. This convention (ante = 0.5 rather than ante = 1) simplifies payoff calculations.
+\begin{itemize}
+    \item \textbf{Ante and Pot Size:} Each player contributes an ante of 0.5 units, creating an initial pot of 1 unit. All bet sizes are measured in units relative to this pot. This convention (ante = 0.5 rather than ante = 1) simplifies payoff calculations.
+    
+    \item \textbf{Payoffs:} Payoffs represent the net gain or loss including the initial ante. A check results in the winner receiving the pot of 1 minus their ante of 0.5, for a net payoff of 0.5. When a bet of size $s$ is called, the winner receives $1 + 2s$ (pot plus both contributions) minus their ante of 0.5 and their contributed bet of $s$, for a net payoff of $0.5 + s$.
 
-\textbf{Payoffs:} Payoffs represent the net gain or loss relative to the initial ante. A check results in the winner receiving the pot of 1 minus their ante of 0.5, for a net payoff of $\pm 0.5$. When a bet of size $s$ is called, the winner receives $1 + 2s$ (pot plus both contributions) minus their ante of 0.5, for a net payoff of $\pm(0.5 + s)$.
+    \item \textbf{Inequalities and Measure Zero:} When we write, for example, ``the caller calls with hands $y \geq c(s)$," the choice of $\geq$ versus $>$ is immaterial because the set $\{y : y = c(s)\}$ has measure zero. We use closed intervals $[a,b]$ and open intervals $(a,b)$ interchangeably when the boundary points have probability zero. Note that this is more subtle when considering bet sizes, because the bettor can choose to make specific bet sizes with nonnegligible probability.
 
-\textbf{Inequalities and Measure Zero:} When we write, for example, "the caller calls with hands $y \geq c(s)$," the choice of $\geq$ versus $>$ is immaterial because the set $\{y : y = c(s)\}$ has measure zero. We use closed intervals $[a,b]$ and open intervals $(a,b)$ interchangeably when the boundary points have probability zero.
+    \item \textbf{Monotone Strategies:} A calling strategy is \textit{monotone} if (1) stronger hands are more likely to call than weaker hands for any fixed bet size, and (2) smaller bets are more likely to be called than larger bets for any fixed hand strength. This concept is formalized in Section \ref{subsec:monotone_strategies}.
 
-\textbf{Monotone Strategies:} A calling strategy is \textit{monotone} if (1) stronger hands are more likely to call for any fixed bet size, and (2) smaller bets are more likely to be called for any fixed hand strength. This concept is formalized in Section 3.
-
-\textbf{Admissibility:} A strategy is \textit{admissible} if it is not weakly dominated by any other strategy. Among multiple Nash equilibria, we focus on those where the bettor's strategy is admissible against all monotone calling strategies (Section 3).
+    \item \textbf{Admissibility:} A strategy is \textit{admissible} if it is not weakly dominated by any other strategy.
+\end{itemize}
 
 \end{document}

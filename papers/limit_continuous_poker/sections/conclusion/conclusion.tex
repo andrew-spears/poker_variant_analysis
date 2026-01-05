@@ -8,7 +8,7 @@ We have introduced and analyzed Limit Continuous Poker (LCP), a parametric famil
 
 Our analysis has yielded several main contributions:
 
-\textbf{Nash Equilibrium Characterization:} We derived the unique admissible Nash equilibrium for LCP, providing closed-form expressions for all strategic components. The equilibrium exhibits a elegant structure where the bettor partitions hands into bluffing, checking, and value betting regions, with bet sizes varying continuously within the bluffing and value betting ranges. The caller responds with a calling threshold that depends on bet size, creating a delicate balance where both players are indifferent among their equilibrium actions.
+\textbf{Nash Equilibrium Characterization:} We first described concepts of monotonicity and monotone-admissibility to characterize a notion of optimality, then derived the unique Nash equilibrium of LCP satisfying this condition. In this Nash equilibrium, the bettor partitions hands into bluffing, checking, and value betting regions, with bet sizes varying continuously within the bluffing and value betting ranges. The caller responds with a calling threshold as a function of bet size.
 
 \textbf{Game Value Formula:} We computed the value of LCP as a rational function of the betting limits, obtaining the surprisingly compact expression
 \[
@@ -26,7 +26,7 @@ The theoretical results for LCP offer several insights relevant to practical pok
 
 \textbf{Bet Sizing and Stack Depth:} In real poker, effective stack sizes create implicit upper bounds on bet sizes, analogous to our parameter $U$. Our analysis suggests that deeper stacks (higher $U$) create more strategic complexity and favor skilled players who can exploit the additional betting options. The symmetry property $V(L,U) = V(1/U, 1/L)$ suggests a duality between raising minimum bet requirements and constraining maximum bets.
 
-\textbf{Bluffing Frequency and Bet Size:} The equilibrium strategy confirms poker wisdom that bluffing frequency should be calibrated to bet size---larger bluffs require fewer bluffing combinations to remain balanced. Moreover, the monotone-admissible equilibrium prescribes bluffing larger with weaker hands and smaller with stronger bluffs, which aligns with the practical consideration that stronger bluffs have showdown value.
+\textbf{Bluffing Frequency and Bet Size:} The equilibrium strategy confirms poker wisdom that bluffing frequency should be calibrated to value betting. It shows that wider bet size limits should incentivize a wider range of bluff to balance possible value bets, as opposed to always bluffing big to scare off the opponent or always bluffing small to minimize risk. This formal description might inform bluffing frequencies and sizes for a variety of stack sizes in heads-up games.
 
 \textbf{Calling Thresholds and Pot Odds:} The calling function $c(s)$ embodies the pot odds principle: the caller must be offered better odds (a larger pot relative to the cost of calling) to justify calling with weaker hands. The equilibrium precisely balances the bettor's bluffing and value betting frequencies against these pot odds.
 
@@ -50,18 +50,16 @@ Despite these limitations, the tractability of LCP enables rigorous analysis tha
 
 Several natural extensions of this work could deepen our understanding of bet sizing in poker:
 
-\textbf{Multiple Betting Rounds:} Extending LCP to multiple streets with information revelation between rounds would capture dynamic aspects of poker strategy. How do bet size limits in early rounds affect optimal play in later rounds?
+\textbf{Multiple Betting Rounds:} Extending LCP to multiple streets with information revelation between rounds would capture dynamic aspects of poker strategy. One could study how bet size limits in early rounds affect optimal play in later rounds.
 
 \textbf{Asymmetric Limits:} Our model assumes both players face the same ante and pot size. Investigating games where players have different effective stack sizes (asymmetric $U$ values) could model scenarios common in tournament poker.
 
-\textbf{Non-Uniform Hand Distributions:} Relaxing the uniform distribution assumption to model more realistic hand strength distributions could test the robustness of our results. Do the qualitative features of the equilibrium persist?
+\textbf{Non-Uniform Hand Distributions:} Relaxing the uniform distribution assumption to model more realistic hand strength distributions could test the robustness of our results.
 
 \textbf{Discrete Approximations:} Real poker involves discrete bet sizing increments (e.g., betting in whole chips or minimum raise increments). Studying discrete approximations to LCP could bridge the gap between our continuous model and practical applications.
 
 \textbf{Computational Tools:} The closed-form solutions for LCP could be used to validate numerical solvers for more complex poker variants. The smooth parameter dependence makes LCP an ideal test bed for computational game theory algorithms.
 
 \textbf{Multi-Player Extensions:} While our analysis focuses on two-player games, extending to three or more players would introduce new strategic considerations such as collusion, side pots, and positional dynamics.
-
-The analytical tractability of Limit Continuous Poker makes it a valuable model system for exploring fundamental questions about betting, bluffing, and strategic bet sizing. We hope this work inspires further research into the rich interplay between game structure and optimal strategy in poker and related competitive decision-making environments.
 
 \end{document}

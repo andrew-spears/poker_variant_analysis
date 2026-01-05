@@ -7,12 +7,13 @@ In this section, we develop the methodology for computing the Nash equilibrium o
 
 \subsection{Uniqueness and Equilibrium Selection}
 
-Like FBCP, LCP has an infinite class of Nash equilibria, differentiated primarily by how the bettor sizes their bluffs. We resolve this non-uniqueness by imposing two natural refinements: first, we restrict the caller to \textit{monotone} strategies which are more robust and less exploitable; second, we require the bettor's strategy to be admissible (not weakly dominated) against all such monotone calling strategies. These refinements uniquely determine the equilibrium we analyze.
+Like NLCP, LCP has an infinite class of Nash equilibria, differentiated by how the caller distributes hands AND by how the bettor sizes their bluffs. We resolve this non-uniqueness by imposing two natural refinements: first, we restrict the caller to \textit{monotone} strategies; second, we require the bettor's strategy to be admissible against all such monotone calling strategies. These refinements uniquely determine the equilibrium we analyze.
 
 \subsection{Monotone Strategies}
 \label{subsec:monotone_strategies}
 
 \begin{definition}[Monotone Calling Strategy]
+    \label{def:monotone_calling}
     A \textit{monotone} calling strategy is a pure strategy which satisfies two conditions:
     \begin{enumerate}
         \item For any bet size $s$ and any two hand strengths $y_1 < y_2$, if the caller calls a bet of size $s$ with $y_1$, they must also call with $y_2$.
@@ -20,30 +21,30 @@ Like FBCP, LCP has an infinite class of Nash equilibria, differentiated primaril
     \end{enumerate}
 \end{definition}
 
-This should sound intuitive. Clearly, calling with a stronger hand is weakly better than calling with a weaker hand. Restricting to pure strategies can be explained similarly - it is better to always call with a stronger hand and always fold a weaker one than to mix between the two.
+This should sound intuitive. Clearly, calling with a stronger hand is weakly better than calling with a weaker hand. Restricting to pure strategies can be explained similarly---it is better to always call with a stronger hand and always fold a weaker one than to mix between the two.
 
-Violating the first condition (in a non-negligible way) is actually weakly dominated - not only is a monotone strategy weakly better against all opponents, but there exists an opponent against which the non-monotone strategy is strictly better (see Appendix \ref{sec:monotone_proofs} for proof).
+Violating the first condition (in a non-negligible way) is actually weakly dominated: not only is a monotone strategy weakly better against all opponents, but there exists an opponent against which the monotone strategy is strictly better (see Appendix \ref{app:monotone_proofs} for proof).
 
-The second condition for a monotone calling strategy - that the caller must be more willing to call smaller bets - is more subtle. From a poker player's perspective, it aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not dominated, it leads to exploitable calling strategies. If the caller calls less aggressively against smaller bets, the bettor can take smaller risks for higher returns. A monotone calling strategy is therefore less exploitable, and imposing this condition yields a unique Nash equilibrium.
+The second condition for a monotone calling strategy---that the caller must be more willing to call smaller bets---is more subtle. From a poker player's perspective, it aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not dominated, it leads to exploitable calling strategies. If the caller calls less aggressively against smaller bets, the bettor can take smaller risks for higher returns. A monotone calling strategy is therefore less exploitable, and imposing this condition yields a unique Nash equilibrium.
 
 \begin{definition}[Monotone-Admissible Strategy]
     A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. That is, there does not exist a betting strategy $\sigma_B'$ that performs at least as well against all monotone calling strategies and strictly better against at least one.
 \end{definition}
 
-This definition distinguishes bettor strategies that differ only in how they bluff. The hand strength of a bluff is irrelevant when the caller plays optimally, since the caller never calls with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, the bettor's bluffing hand strength matters. Monotone-admissibility selects the equilibrium where the bettor bluffs larger with weaker hands and smaller with stronger hands, which is optimal against all monotone deviations. See Appendix \ref{sec:monotone_proofs} for detailed analysis.
+This definition is necessary because variable bet sizes complicate bluffing strategy. In NLCP and LCP, the hand strength of a bluff is actually irrelevant when the caller plays optimally, since the caller never calls with a hand that will lose to a bluff. However, if the caller deviates to a suboptimal but still monotone strategy, the bettor's bluffing hand strength becomes important. Monotone-admissibility selects the equilibrium where the bettor bluffs larger with weaker hands and smaller with stronger hands, which is optimal against all monotone deviations. For proof that this refinement actually selects a unique equilibrium, see Appendix \ref{app:monotone_proofs}.
 
 \subsection{Nash Equilibrium Structure}
 \label{subsec:nash_equilibrium_structure}
 
-We will now describe the structure of the Nash equilibrium in terms of constants $x_i$ and functions $c(s)$, $b(s)$, and $v(s)$. These turn out to be fully determined by the parameters $L$ and $U$, but for now they are unknown. Notice that both players use pure strategies, like in NLCP: the bettor maps hand strengths directly to bet sizes, and the caller maps hand strengths and bet sizes to actions with no mixing.
+We will now describe the structure of the Nash equilibrium in terms of constants $x_i$ and functions $c(s)$, $b(s)$, and $v(s)$. These turn out to be fully determined by the parameters $L$ and $U$, but for now they are unknown. Notice that both players use pure strategies, like in NLCP: the bettor maps hand strengths directly to bet sizes, and the caller maps hand strengths and bet sizes to actions with no mixing. The structure of the equilibrium is as follows:
 
     \begin{enumerate}
         \item The caller has a calling threshold $c(s)$ that is continuous in $s$, including at endpoints $L$ and $U$. They call with hands $y \geq c(s)$ and fold with hands $y < c(s)$\footnote{The action taken at the threshold is irrelevant, since it occurs with probability zero.}.
         \item The bettor partitions $[0,1]$ into three regions: bluffing $x \in [0,x_2]$, checking $x \in [x_2,x_3]$, and value betting $x \in [x_3,1]$.
-        \item Within the bluffing region, the bettor's partitions into a max-betting region $x \in [x_0,x_1]$, an intermediate region $x \in [x_1,x_2]$, and a min-betting region $x \in [x_2,x_3]$.
-        \item Within the intermediate bluffing region, the bettor bets according to a continuous, decreasing function $s=b^{-1}(x)$ with endpoints $b^{-1}(x_0)=U$ and $b^{-1}(x_3)=L$.
+        \item Within the bluffing region, the bettor partitions hands into a max-betting region $x \in [0,x_0]$, an intermediate region $x \in [x_0,x_1]$, and a min-betting region $x \in [x_1,x_2]$.
+        \item Within the intermediate bluffing region $[x_0,x_1]$, the bettor bets according to a continuous, decreasing function $s=b^{-1}(x)$ with endpoints $b^{-1}(x_0)=U$ and $b^{-1}(x_1)=L$.
         \item Within the value betting region, the bettor partitions into a min-betting region $x \in [x_3,x_4]$, an intermediate region $x \in [x_4,x_5]$, and a max-betting region $x \in [x_5,1]$.
-        \item Within the intermediate value betting region, the bettor bets according to a continuous, increasing function $s=v^{-1}(x)$ with endpoints $v^{-1}(x_3)=L$ and $v^{-1}(x_5)=U$.
+        \item Within the intermediate value betting region, the bettor bets according to a continuous, increasing function $s=v^{-1}(x)$ with endpoints $v^{-1}(x_4)=L$ and $v^{-1}(x_5)=U$.
     \end{enumerate}
 
 
@@ -93,7 +94,7 @@ See figure \ref{fig:strategyprofile} for visual representations of the strategy 
 
 Having established the qualitative structure of the Nash equilibrium, we now derive the quantitative relationships that the strategy profile must satisfy. These constraints arise from two fundamental equilibrium conditions: players must be indifferent among actions they mix over (or, in our case, use with positive probability), and players must optimize when choosing among available actions. The resulting system of differential and algebraic equations will uniquely determine all threshold values $x_0, \ldots, x_5$ and the functions $b(s)$, $v(s)$, and $c(s)$.
 
-The Nash equilibrium strategy profile must satisfy several constraints and indifference conditions, which we will derive and use to solve for the strategy profile. The key conditions are:
+The key conditions are:
 
 \begin{itemize}
     \item The caller must be indifferent between calling and folding at their calling threshold
@@ -177,7 +178,7 @@ Plugging this into the indifference equation and dividing out the common denomin
 When the bettor makes a value bet, they are attempting to maximize the expected value of the bet. We can write the expected value of a value bet as:
 
 \begin{align*}
-    \mathbb{E}[\text{value bet } s | x] & = \mathbb{P}[\text{call w ith worse}] \cdot (1+s) - \mathbb{P}[\text{call with better}] \cdot s + \mathbb{P}[\text{fold}] \cdot 1 \\
+    \mathbb{E}[\text{value bet } s | x] & = \mathbb{P}[\text{call with worse}] \cdot (1+s) - \mathbb{P}[\text{call with better}] \cdot s + \mathbb{P}[\text{fold}] \cdot 1 \\
     & = (x-c(s)) \cdot (1+s) - (1-x) \cdot (s) + c(s).
 \end{align*}
 
@@ -203,11 +204,13 @@ Finally, when the bettor has the most marginal bluffing hand at $x=x_2$, they sh
 \end{align}
 
 \subsubsection{Continuity Constraints}
+As discussed above, the bettor's strategy $s(x)$ should be continuous in $x$. Intuitively, this is because the payoff as a function of hand strength and bet size turns out to be smooth in both inputs in equilibrium. This means that for very similar hand strengths, the optimal bet sizes are also very similar, so a discontinuity cannot be optimal. This is proven more formally in Appendix \ref{sec:monotone_proofs}. 
 
-As discussed above, the bettor's strategy is continuous in $s$ and $x$ (except when checking). This means that the endpoints of the functions $v(s)$ and $b(s)$ are constrained as follows:
+This gives us the following constraints at the endpoints:
 
 \begin{equation}{\label{continuityconstraints}}
 	 b(U) = x_0, \;\; b(L) = x_1, \;\; v(U) = x_5, \;\; v(L) = x_4.
 \end{equation}
+
 
 \end{document}

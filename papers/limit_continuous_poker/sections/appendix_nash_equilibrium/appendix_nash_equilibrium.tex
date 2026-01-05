@@ -3,10 +3,12 @@
 \section{Appendix: Proof of Nash Equilibrium}
 \label{app:nash_equilibrium}
 
+We now show formally that the strategy profile described in Section \ref{sec:nash_equilibrium} is truly a Nash Equilibrium.
+
 \begin{customproof}
     To show that this is a Nash equilibrium, we need to show that no player can improve their payoff by unilaterally deviating from the strategy profile.
     
-    In the proof, we assume that all of the constraints outlined in the previous section are satisfied. The solution was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Mathematica and simplified by finding common subexpressions $A_0, A_1, A_2, A_3, A_4, A_5$. The full Mathematica script is available in Appendix \ref{app:ma}.
+    In the proof, we assume that all of the constraints outlined in the previous section are satisfied. The solution was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Sympy. The full python script is available \href{https://github.com/andrew-spears/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_sympy_final.pdf}{on GitHub}.
 
     \begin{enumerate}
         \item \textbf{Caller's Deviation:}

@@ -1,14 +1,15 @@
 \documentclass[../../main/main.tex]{subfiles}
 \usepackage{geometry}
-% \usepackage[margin=2cm, left=1.5cm, right=1.5cm]{geometry}
 
 \begin{document}
-\section{Payoff Analysis}
+\section{Parameter and Payoff Analysis}
+\label{sec:payoff_analysis}
 
-In Nash Equilibrium, a given hand combination $(x, y)$ uniquely determines the bettor's payoff, since both players play pure strategies. We can better understand the strategy profile by examining payoffs for all hand combinations over the unit square $[0, 1]^2$ (see Figure \ref{fig:payoffs}). For comparison, the first and last plots show the payoffs in Fixed-Bet Continuous Poker with a fixed bet size $B=1$ and No-Limit Continuous Poker, respectively. We will explore the relationship between the three games in more detail in section \ref{sec:strategic_convergence}.
+Having established the Nash equilibrium (Section \ref{app:nash_equilibrium}), analyzed the game value (Section \ref{sec:game_value}), and proved convergence to FBCP and NLCP (Section \ref{sec:strategic_comparison}), we now explore in greater detail how the parameters $L$ and $U$ affect player strategies and payoffs. This section summarizes key insights and presents visualizations that illuminate the strategic dynamics of LCP. Complete technical proofs are provided in Appendices \ref{sec:parameter_analysis} and \ref{sec:payoff_analysis_proofs}.
 
-This visualization gives insight into exactly how the bettor is gaining value from the game. In line with experience of real poker, the biggest wins and losses occur when both hands are strong (top right of any plot), with the stronger of the two hands winning a large pot. However, we also see large payoffs when a very weak bettor bluffs big and gets called by a strong caller (top left). As the limits become more lenient, these cases become more extreme but also less likely, since making and calling maximum bets become more risky for both players. 
+\subsection{Visualizing Payoffs in Equilibrium}
 
+In Nash equilibrium, each hand combination $(x, y)$ uniquely determines the bettor's payoff. Figure \ref{fig:payoffs} shows how these payoffs vary across the unit square for different values of $L$ and $U$, from strict limits ($L=U=1$) to lenient limits ($L=0, U \to \infty$).
 
 \clearpage
 \newgeometry{top=0in,left=0.5in,right=0.5in,bottom=0.5in}
@@ -17,111 +18,124 @@ This visualization gives insight into exactly how the bettor is gaining value fr
         \centering
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_1_1.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_1_1.png}
         \end{minipage}
         \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_0.9_1.1.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_0.9_1.1.png}
         \end{minipage}
         \vspace{0.4cm}\\
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_0.5_1.5.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_0.5_1.5.png}
         \end{minipage}
         \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_0.3_2.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_0.3_2.png}
         \end{minipage}
         \vspace{0.4cm}\\
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_0.1_5.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_0.1_5.png}
         \end{minipage}
         \hspace{0.05\textwidth}
         \begin{minipage}{0.4\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{images/payoffs_0_inf.png}
+            \includegraphics[width=\textwidth]{../payoff_analysis/images/payoffs_0_inf.png}
         \end{minipage}
     \end{adjustwidth}
-    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for fixed bet size $B=1$ (top left), and No-Limit Continuous Poker (bottom right). Intermediate plots show the payoffs for different values of $L$ and $U$ ranging from strict (fixed bet size $B=1$) to lenient (No limits). Regions are labeled according to the outcome of the game in Nash equilibrium.}
+    \caption{Bettor payoffs in Nash equilibrium as a function of hand strengths $x, y$ for fixed bet size $B=1$ (top left), and No-Limit Continuous Poker (bottom right). Intermediate plots show the payoffs for different values of $L$ and $U$ between the two extremes. Regions are labeled according to the outcome of the game in Nash equilibrium.}
     \label{fig:payoffs}
 \end{figure}
 
 \restoregeometry
 
+The visualization reveals that the biggest wins and losses occur when both hands are strong (top right), consistent with real poker intuition. Large payoffs also occur when a very weak bettor bluffs big and gets called by a strong caller (top left). As limits become more lenient, these extreme outcomes become more pronounced but also less likely, since making and calling maximum bets become riskier for both players.
 
-\subsection{Expected Value of Bettor's Hand Strengths}
-\label{bettor_ev}
+It is worth noting that the bettor's strongest hands (right edge) actually become less likely to make any profit (more than the ante) as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called.
 
-In addition to considering payoffs for a specific bettor-caller hand combination, we can also consider the expected value of given hand for the bettor, not knowing the hand of the caller. 
+In more complicated poker variants, it is common to ``slowplay" strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
 
-% x(2L + 1) - L(c[L] + 1) - 1/2 min value bet
-% x(2U + 1) - U(c[U] + 1) - 1/2 max value bet
-% x(2vinv[x] + 1) - vinv[x](c[vinv[x]] + 1) - 1/2 intermediate value bet
-\begin{theorem}
-    \label{thm:ev_bettor}
-    Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium:
-    \begin{equation}
-        EV(x) = \begin{cases}
-            x_2-\frac{1}{2} & \text{if } x \leq x_2 \\
-            x-\frac{1}{2} & \text{if } x_2 < x \le x_3 \\
-            x(2L + 1) - L(c(L) + 1) - \frac{1}{2} & \text{if } x_3 < x < v(L) \\
-            x(2v^{-1}(x) + 1) - v^{-1}(x)(c(v^{-1}(x)) + 1) - \frac{1}{2} & \text{if } v(L) \leq x \leq v(U) \\
-            x(2U + 1) - U(c(U) + 1) - \frac{1}{2} & \text{if } x > v(U).
-        \end{cases}
-    \end{equation}
-\end{theorem}
+This strategic pattern demonstrates a fundamental tension in poker: extracting maximum value from strong hands requires finding the optimal balance between bet size (which determines pot size when called) and calling frequency (which decreases as bet size increases). In LCP, the strongest hands resolve this tension by accepting a lower calling frequency in exchange for winning much larger pots.
 
-\begin{customproof}
-    For bluffing hands $x \leq x_2$, we can use a simple argument to show that the hand strength $x$ is actually irrelevant. The bettor never gets called by worse hands, so either the caller folds or calls with the best hand. In either case, the bettor's payoff has no dependence on $x$, so the payoff must be the same for all $x \leq x_2$ (otherwise, a the lower-payoff hands would imitate the strategy of the higher-payoff hands). We know that at $x=x_2$, the bettor is indifferent between bluffing and checking, so the payoff must be $x_2-\frac{1}{2}$ for all $x \leq x_2$.
 
-    For checking hands $x_2 \leq x \leq x_3$, the bettor wins only the ante exactly when they have the best hand, which happens with probability $x$. The value of the ante is $\frac{1}{2}$, so the bettor's expected value is $x-\frac{1}{2}$.
+\subsection{Expected Value by Hand Strength}
 
-    For any value betting hand, the bettor has three case to consider: the caller folds, the callers calls with a worse hand, or the caller calls with the best hand. We simply sum the expected value of each of these cases.
+Beyond specific hand matchups, we can analyze the expected value $EV(x)$ of a bettor hand $x$ averaged over all possible caller hands. This function characterizes how profitable each hand is in equilibrium (intuitively, how happy the bettor should be to see each specific hand).
 
-    \begin{align*}
-        EV(x) & = \frac{1}{2} c(s) + (x - c(s)) \left(s+\frac{1}{2}\right) + (1-x) \left(-s-\frac{1}{2}\right)
-    \end{align*}
-    
-    The last three cases come from substituting $L, v^{-1}(x), U$ for $s$ in the expression above and simplifying.
-\end{customproof}
+We can calculate $EV(x)$ analytically by combining previous results:
 
-See figure \ref{fig:ev_x} for a visualization of this result.
+\begin{equation}
+    \label{ev_x}
+    EV(x) = \begin{cases}
+        x_2-\frac{1}{2} & \text{if } x \leq x_2 \\
+        x-\frac{1}{2} & \text{if } x_2 < x \le x_3 \\
+        x(2L + 1) - L(c(L) + 1) - \frac{1}{2} & \text{if } x_3 < x < v(L) \\
+        x(2v^{-1}(x) + 1) - v^{-1}(x)(c(v^{-1}(x)) + 1) - \frac{1}{2} & \text{if } v(L) \leq x \leq v(U) \\
+        x(2U + 1) - U(c(U) + 1) - \frac{1}{2} & \text{if } x > v(U).
+    \end{cases}
+\end{equation}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/ExpectedPayoffs.png}
-    \caption{Expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium.}
+    \includegraphics[width=\textwidth]{../payoff_analysis/images/ExpectedPayoffs.png}
+    \caption{Expected value of bettor hand strength $x$ under optimal play in LCP.}
     \label{fig:ev_x}
 \end{figure}
 
-We can quickly verify that the bettor's expected value is increasing in $x$. This must be the case, since with any given hand strength, the bettor can always choose to imitate the Nash equilibrium strategy of a weaker hand, so the stronger hand must be at least as good in expectation.
+This function is much easier to view graphically (Figure \ref{fig:ev_x}). Observations:
+\begin{itemize}
+    \item The function $EV(x)$ is increasing in $x$ (Appendix \ref{sec:payoff_analysis}, Theorem \ref{thm:ev_increasing}).
+    \item All bluffing hands ($x \leq x_2$) achieve the same expected value $x_2 - 1/2$, regardless of hand strength. This is because the caller will never call with a losing hand, so a bluff either induces a fold or loses the hand. If a bluffing action had lower EV, the bettor would simply not take this action, so all bluffing hands must have equal EV in equilibrium.
+    \item Checking hands ($x_2 < x \leq x_3$) have EV equal to $x-1/2$. Notice the slope of 1  from the pot being exactly 1 unit.
+    \item Value betting hands ($x > x_3$) earn more steeply increasing returns as hand strength increases. This is because the pot is increasing in size as the bettor makes larger bets with stronger hands, so a marginal increase in hand strength becomes increasingly more profitable.
+\end{itemize}
+
+\subsection{Effect of Increasing the Upper Limit $U$}
+
+A counterintuitive result emerges when examining how individual hand values change as we increase $U$: for strong hands, the expected value \emph{decreases} beyond a certain threshold of $U$ (see Figure \ref{fig:ev_x_vs_U}). This occurs despite the bettor having strictly more strategic options.
+
+Notice that this result is not contradictory to the previous section. There are three distinct statements being made:
+
+\begin{itemize}
+    \item For any fixed parameters $L, U$, stronger hands have higher expected value (Figure \ref{fig:ev_x} and Theorem \ref{thm:ev_increasing}). This must be true because the bettor could always play as though they had the weaker hand.
+    \item Averaged across all hand strengths $x \in [0, 1]$, increasing $U$ or decreasing $L$ increases the bettors' overall expected value. This must be true because the bettor could artificially restrict their bet sizes to a narrower range.
+    \item For a fixed hand strength $x$, increasing $U$ can \emph{decrease} the expected value of that specific hand (Figure \ref{fig:ev_x_vs_U}). This is the counterintuitive result being discussed here.
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{../sections/payoff_analysis/images/ev_vs_U.png}
+    \caption{Expected value of a value-betting hand $x$ versus the upper limit $U$ under optimal play. Each curve increases in $U$ up to some peak, after which it decreases, indicating that more flexibility decreases the expected value of that specific hand.}
+    \label{fig:ev_x_vs_U}
+\end{figure}
+
+The explanation lies in strategic interdependence: as $U$ increases, the bettor can make larger bets with their strongest hands, which forces the caller to become more conservative across \emph{all} bet sizes. This defensive adjustment by the caller harms the expected value of intermediate-strength hands, even though they're betting less. Only the very strongest hands (above a threshold greater than $v(U)$) benefit from the increased flexibility, and the threshold for `strongest' only increases further as we increase $U$.
+
+We can state this formally:
 
 \begin{theorem}
-    \label{thm:ev_increasing}
-    For any fixed $L, U$, the bettor's expected value $EV(x)$ is increasing in $x$.
+    \label{thm:payoff_increasing}
+    For any any $0 < L \leq U$ and any value-betting hand strength $x > x_3$, the derivative $\frac{d}{dU} EV(x) < 0$ if
+
+    $$x < \max\left(v(U), \frac{1}{2(1+U)} \left( U \frac{\partial x_2}{\partial U} + \frac{U^2 + x_2(1 + 2U)}{1+U} \right) \right),$$
+
+    and $\frac{d}{dU} EV(x) > 0$ otherwise.
 \end{theorem}
 
-\begin{customproof}
-    It is clear from inspection that any checking EV is higher than that of a bluff and that the checking EV is increasing in $x$. We also know that at $x=x_3$, the bettor is indifferent between checking and betting, so the EV of checking and betting must be equal at this point. Therefore, we only need to show that within the checking and value betting regions, the EV is increasing in $x$. This is obvious for checking hands. For value betting hands, we can take the derivative of the expression for $EV(x)$ with respect to $x$ and show that it is always positive. We consider the max and min betting hands first:
-    
-    \begin{align*}
-        s = U \implies \frac{d}{dx} EV(x) & = 2U + 1 > 0  \\
-        s = L \implies \frac{d}{dx} EV(x) & = 2L + 1 > 0 
-    \end{align*}
-    
-    For intermediate value betting hands, we can use the chain rule to show that the EV is increasing in $x$:
-    
-    \begin{align*}
-        \frac{d}{dx} EV(x) & = \frac{\partial EV(x)}{\partial x} + \frac{dEV(x)}{ds} \frac{d s}{d x} \\
-    \end{align*}
+This is equivalent to the statement above. The expression on the right is the threshold on $x$ below which the expected value is decreasing in $U$. This results relies on several others, which are stated below:
 
-    From the value optimality condition \ref{valueoptimality}, we know that $\frac{dEV(x)}{ds} = 0$ (otherwise, the bettor could gain value by varying the bet size). Clearly, $\frac{\partial EV(x)}{\partial x} > 0$.  Therefore, the derivative is positive, and the EV is increasing in $x$ for all value betting hands.
-\end{customproof}
+\begin{lemma}[Monotonicity in $U$]\label{thm:monotonicity-U}
+    For fixed $L$ and $x \in [x_3, v(U)]$, as $U$ increases:
+    \begin{enumerate}
+        \item The bluffing threshold $x_2$ increases (more hands bluff).
+        \item The bet size $v^{-1}(x)$ decreases.
+        \item The calling cutoff for the chosen bet size $c(v^{-1}(x))$ increases despite smaller bets.
+    \end{enumerate}
+\end{lemma}
 
-It is worth noting that the bettors strongest hands (right edge) actually seem to become less likely to make any profit more than the ante as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called. In more complicated poker variants, it is common to `slowplay' strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
+A complete analysis and proof can be found in Appendix \ref{sec:parameter_analysis}. The crucial takeaway is that varying bet size limits has complex effects on optimal strategies and payoffs, and these effects are not always intuitive.
 
-We continue this analysis in the next section by considering how changing $U$ and $L$ affect various features of this equilibrium.
 \end{document}
