@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  3 JAN 2026 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 FEB 2026 12:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -653,10 +653,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 2.
-(/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out) (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out)
 \@outlinefile=\write5
 \openout5 = `game_value.out'.
-
 
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 2.
@@ -668,12 +666,8 @@ Package caption Info: End \AtBeginDocument code.
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 \c@lstlisting=\count340
-
-
-LaTeX Warning: Reference `sec:nash_equilibrium' on page 1 undefined on input line 6.
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
@@ -683,48 +677,133 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Reference `fig:payoffs' on page 1 undefined on input line 21.
 
+
+LaTeX Warning: Reference `sec:value_computation' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Reference `fig:game_value_rt' on page 1 undefined on input line 35.
+
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (5.70114pt too wide) in paragraph at lines 40--41
+Overfull \hbox (5.70114pt too wide) in paragraph at lines 37--38
 []\OT1/cmr/m/n/12 In terms of the orig-i-nal pa-ram-e-ters, the sym-me-try $\OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 L; U\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 =U; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 =L\OT1/cmr/m/n/12 )$
  []
 
-<images/game_value_plots.png, id=40, 950.3505pt x 427.8384pt>
+<images/game_value_plots.png, id=23, 950.3505pt x 427.8384pt>
 File: images/game_value_plots.png Graphic file (type png)
 <use images/game_value_plots.png>
-Package pdftex.def Info: images/game_value_plots.png  used on input line 44.
+Package pdftex.def Info: images/game_value_plots.png  used on input line 41.
 (pdftex.def)             Requested size: 460.08159pt x 207.12273pt.
 
-Overfull \hbox (41.82791pt too wide) in paragraph at lines 44--45
+Overfull \hbox (41.82791pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
 [2 </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png>]
-Overfull \hbox (10.33955pt too wide) in paragraph at lines 62--63
+Overfull \hbox (10.33955pt too wide) in paragraph at lines 59--60
 []\OT1/cmr/m/n/12 In the fol-low-ing sec-tions, we in-ves-ti-gate the prop-er-ties and be-hav-ior of $\OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 L; U\OT1/cmr/m/n/12 )$
  []
 
-[3] [4] [5] (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux)
+
+LaTeX Warning: Reference `fig:game_value_fig' on page 3 undefined on input line 64.
+
+[3]
+
+LaTeX Warning: Reference `sec:strategic_convergence' on page 4 undefined on input line 93.
+
+
+/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex:95: LaTeX Error: Environment remark undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \begin{remark}
+                   [Value Convergence to FBCP]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `fig:game_value_fig' on page 4 undefined on input line 96.
+
+
+/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex:97: LaTeX Error: \begin{document} ended by \end{remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 \end{remark}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (4.73901pt too wide) in paragraph at lines 95--98
+[]\OT1/cmr/m/n/12 [Value Con-ver-gence to FBCP] For any $\OML/cmm/m/it/12 B > \OT1/cmr/m/n/12 0$, $[][] \OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 L; U\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) =
+ []
+
+
+/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex:99: LaTeX Error: Environment remark undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 \begin{remark}
+                   [Value Convergence to NLCP]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `fig:game_value_fig' on page 4 undefined on input line 100.
+
+
+/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex:101: LaTeX Error: \begin{document} ended by \end{remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \end{remark}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[4] (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `game_value.out' has not changed.
-(rerunfilecheck)             Checksum: 305F2D1801A1A739A9E0912AB05AB787;638.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `game_value.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `game_value.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  305F2D1801A1A739A9E0912AB05AB787;638.
  ) 
 Here is how much of TeX's memory you used:
- 26997 strings out of 476025
- 517632 string characters out of 5790017
+ 26985 strings out of 476025
+ 517166 string characters out of 5790017
  1864388 words of memory out of 5000000
- 47006 multiletter control sequences out of 15000+600000
+ 47001 multiletter control sequences out of 15000+600000
  518797 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,9n,134p,978b,515s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,10n,134p,978b,515s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf (5 pages, 189798 bytes).
+Output written on /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf (4 pages, 186793 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 50 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -571,6 +571,29 @@ class LCP(ContinuousPokerTemplate):
         return regions
 
     @classmethod
+    def generate_strategy_plot(cls, s_lim=None, grid_size=1001, save_path=None, title=None, show=True, **kwargs):
+        import matplotlib.pyplot as plt
+
+        # Call parent method to generate the base plot (don't show yet)
+        fig, ax = super().generate_strategy_plot(s_lim=s_lim, grid_size=grid_size, save_path=None, title=title, show=False, **kwargs)
+
+        # Add horizontal lines at L and U with labels on the plot
+        L, U = kwargs.get('L'), kwargs.get('U')
+        if L is not None:
+            ax.axhline(y=L, color='gray', linestyle=':', linewidth=1.5)
+            ax.text(0, L, f'L={L}', va='bottom', ha='left', fontsize=12, color='black')
+        if U is not None:
+            ax.axhline(y=U, color='gray', linestyle=':', linewidth=1.5)
+            ax.text(0, U, f'U={U}', va='bottom', ha='left', fontsize=12, color='black')
+
+        if save_path:
+            plt.savefig(save_path, dpi=300)
+        if show:
+            plt.show()
+
+        return fig, ax
+
+    @classmethod
     def expected_payoff_by_region(cls, grid_size=1001, **kwargs):
         '''
         Compute the integral over the square by regions to avoid ever solving for v_inv and b_inv.

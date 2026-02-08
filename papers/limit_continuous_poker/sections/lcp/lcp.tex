@@ -1,31 +1,30 @@
 \documentclass[../../main/main.tex]{subfiles}
 \begin{document}
 \section{Limit Continuous Poker (LCP)}
-\label{sec:lcp}
+We now introduce a variant where the bettor may choose a bet size $s$ after seeing their hand strength, but where $s$ is bounded by an upper limit $U$ and a lower limit $L$, referred to as the maximum and minimum bet sizes. We call this variant  Limit Continuous Poker (or LCP).
 
-Limit Continuous Poker (LCP) is an extension of NLCP with the additional constraint of limiting bet sizes to a range. Just like NLCP, both players are dealt random hand strengths between 0 and 1. The bettor acts first, choosing either to check or to make a bet from an allowed range of sizes. If a bet is made, the caller must decide whether to call the bet or fold. 
+In Limit Continuous Poker, two players compete in a simplified poker game where each receives a hand strength represented by a real number between 0 and 1. The bettor acts first, choosing either to check (pass) or to make a bet of some size within the allowed range. If a bet is made, the caller must decide whether to call the bet or fold. The game rewards the player with the stronger hand, with the size of the bet affecting the magnitude of the payoff.
 
 \begin{definition}[LCP]
-A two-player zero-sum game where:
+A two-player zero-sum game parameterized by $L, U$ satisfying $0 \leq L \leq U$ with gameplay defined by:
 \begin{itemize}
-    \item The bettor and caller are each dealt independent hand strengths $X, Y \sim \text{Uniform}[0,1]$
+    \item The bettor and caller are each dealt independent hand strengths $X, Y \sim \text{Uniform}[0,1]$\footnote{Uniform without loss of generality, since the quantile transform can take any distribution to uniform and only orders of hand strengths are relevant.}
     \item The bettor observes their hand strength $x$ and chooses an action from $\mathcal{A}_1 = \{\text{0}\} \cup [L, U]$ (a bet of 0 is a check)
     \item If the bettor chooses an action from $[L, U]$ (a bet), then the caller observes the bettor's action along with their own hand strength $y$ and chooses from $\mathcal{A}_2 = \{\text{call}, \text{fold}\}$ 
     \item Payoffs are determined as follows:
     \begin{itemize}
-        \item If the bettor checks: payoff is $0.5$ to the player with higher hand strength (the pot of 1, minus the initial ante of 0.5)
-        \item If the bettor bets $s \in [L, U]$ and the caller calls: payoff is $0.5 + s$ (the pot of $1+2s$ minus the initial ante of 0.5 and the bettor's contribution of $s$) to the player with higher hand strength
-        \item If the bettor bets $s \in [L, U]$ and the caller folds: payoff is $0.5$ to the bettor
+        \item If the bettor checks: payoff is $0.5$ to the player with higher hand strength (the other player's ante)
+        \item If the bettor bets $s \in [L, U]$ and the caller calls: payoff is $0.5 + s$ to the player with higher hand strength (the other player's bet/call and ante)
+        \item If the bettor bets $s \in [L, U]$ and the caller folds: payoff is $0.5$ (the caller's ante) to the bettor
     \end{itemize}
+    The losing player's payoff is always the negative of the winning player's payoff, making it a zero-sum game.
 \end{itemize}
 
-We can describe a strategy for the bettor as a measurable function $\sigma_1: [0,1] \to \mathcal{A}_1$ mapping hand strengths to actions. A strategy for the caller is a measurable function $\sigma_2: [L, U] \times [0, 1] \to \mathcal{A}_2$ mapping bet sizes and hand strengths to caller responses.
+A strategy for the bettor is a measurable function $\sigma_1: [0,1] \to \mathcal{A}_1$ mapping hand strengths to actions. A strategy for the caller is a measurable function $\sigma_2: [L, U] \times [0, 1] \to \mathcal{A}_2$ mapping bettor actions and caller hand strengths to caller responses.
 \end{definition}
 
-The motivation for studying this variant is twofold. First, it is a more realistic variant than NLCP or FBCP, where bets are not fixed but are also not unbounded. In most real variants of poker, bet sizes are constrained by the stack sizes of the players and by a minimum bet size. Strong poker players have intuition about how bet size constraints affect strategy, but rigorously proving this intuition is often impossible given the combinatorial complexity of the game. 
+The motivation for studying this variant is twofold. First, it is a more realistic variant of poker, where bets are not fixed but are also not unbounded. In most real variants of poker, bet sizes are constrained by the stack sizes of the players and by a minimum bet size. Analytically solving LCP can give insight into the effect of bet size constraints on more complex variants of poker. Strong poker players have intuition about how bet size constraints affect strategy, but rigorously proving this intuition is often impossible given the combinatorial complexity of the game. Second, LCP can be seen as a generalization of FBCP and NLCP; specifically, as $L \to 0$ and $U \to \infty$, LCP approaches NLCP, and as $L \to B$ and $U \to B$ for some fixed value $B$, LCP approaches FBCP. Studying LCP can help us understand the relationship between these two and answer questions about why they produce the strategies they do (see Section \ref{sec:strategic_convergence} for formal convergence results).
 
-Second, LCP can be seen as a generalization of FBCP and NLCP; specifically, as $L \to 0$ and $U \to \infty$, LCP approaches NLCP, and as $L \to B$ and $U \to B$ for some fixed value $B$, LCP approaches FBCP. Studying LCP can help us understand the relationship between these two and answer questions about why they produce the strategies they do (see Section \ref{sec:strategic_convergence} for formal convergence results).
-
-In the next section, we develop the methodology for solving LCP and describing optimal strategies. Section \ref{subsec:nash_equilibrium_structure} will describe the structure of this equilibrium, and the complete closed-form solution is presented in Section \ref{sec:nash_equilibrium}.
+In the next section, we develop the methodology for solving LCP and identifying its unique admissible Nash equilibrium. Section \ref{subsec:nash_equilibrium_structure} will describe the structure of this equilibrium, and the complete closed-form solution is presented in Section 4.
 
 \end{document}

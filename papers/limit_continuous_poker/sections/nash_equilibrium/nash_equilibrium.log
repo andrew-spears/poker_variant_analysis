@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  3 JAN 2026 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 FEB 2026 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,58 +670,68 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 \c@lstlisting=\count340
 
 
-LaTeX Warning: Reference `sec:solving_lcp' on page 1 undefined on input line 6.
+LaTeX Warning: Reference `sec:solving_lcp' on page 1 undefined on input line 5.
 
 
-LaTeX Warning: Reference `subsec:constraints' on page 1 undefined on input line 6.
+LaTeX Warning: Reference `subsec:constraints' on page 1 undefined on input line 5.
 
-
-LaTeX Warning: Reference `app:nash_equilibrium' on page 1 undefined on input line 6.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 1 undefined on input line 28.
-
-
-LaTeX Warning: Reference `app:nash_equilibrium' on page 1 undefined on input line 28.
-
-[1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `sec:strategic_convergence' on page 2 undefined on input line 30.
-
-<images/LCP_profile_0_10.png, id=29, 570.933pt x 426.393pt>
+<images/LCP_profile_0_10.png, id=12, 566.5968pt x 421.3341pt>
 File: images/LCP_profile_0_10.png Graphic file (type png)
 <use images/LCP_profile_0_10.png>
-Package pdftex.def Info: images/LCP_profile_0_10.png  used on input line 37.
-(pdftex.def)             Requested size: 250.95476pt x 187.4248pt.
-<images/LCP_profile_0.1_2.png, id=31, 570.933pt x 426.393pt>
+Package pdftex.def Info: images/LCP_profile_0_10.png  used on input line 21.
+(pdftex.def)             Requested size: 250.95476pt x 186.61551pt.
+<images/LCP_profile_0.1_2.png, id=14, 566.5968pt x 421.3341pt>
 File: images/LCP_profile_0.1_2.png Graphic file (type png)
 <use images/LCP_profile_0.1_2.png>
-Package pdftex.def Info: images/LCP_profile_0.1_2.png  used on input line 42.
-(pdftex.def)             Requested size: 250.95476pt x 187.4248pt.
-<images/LCP_profile_0.3_1.5.png, id=32, 570.933pt x 426.393pt>
+Package pdftex.def Info: images/LCP_profile_0.1_2.png  used on input line 26.
+(pdftex.def)             Requested size: 250.95476pt x 186.61551pt.
+<images/LCP_profile_0.3_1.5.png, id=15, 566.5968pt x 421.3341pt>
 File: images/LCP_profile_0.3_1.5.png Graphic file (type png)
 <use images/LCP_profile_0.3_1.5.png>
-Package pdftex.def Info: images/LCP_profile_0.3_1.5.png  used on input line 47.
-(pdftex.def)             Requested size: 250.95476pt x 187.4248pt.
-<images/LCP_profile_0.5_1.png, id=33, 570.933pt x 426.393pt>
+Package pdftex.def Info: images/LCP_profile_0.3_1.5.png  used on input line 31.
+(pdftex.def)             Requested size: 250.95476pt x 186.61551pt.
+<images/LCP_profile_0.5_1.png, id=16, 566.5968pt x 421.3341pt>
 File: images/LCP_profile_0.5_1.png Graphic file (type png)
 <use images/LCP_profile_0.5_1.png>
-Package pdftex.def Info: images/LCP_profile_0.5_1.png  used on input line 52.
-(pdftex.def)             Requested size: 250.95476pt x 187.4248pt.
+Package pdftex.def Info: images/LCP_profile_0.5_1.png  used on input line 36.
+(pdftex.def)             Requested size: 250.95476pt x 186.61551pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2] [3 </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png>] (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux)
+
+LaTeX Warning: Reference `subsec:constraints' on page 1 undefined on input line 43.
+
+
+LaTeX Warning: Reference `app:ma' on page 1 undefined on input line 43.
+
+
+LaTeX Warning: Reference `sec:solving_lcp' on page 1 undefined on input line 47.
+
+[1
+
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \vbox (215.44092pt too high) has occurred while \output is active []
+
+ [2 </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png> </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png>]
+
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 91.
+
+
+LaTeX Warning: Reference `app:nash_equilibrium' on page 3 undefined on input line 91.
+
+
+LaTeX Warning: Reference `sec:strategic_convergence' on page 3 undefined on input line 93.
+
+[3] (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -729,18 +739,18 @@ Package rerunfilecheck Info: File `nash_equilibrium.out' has not changed.
 (rerunfilecheck)             Checksum: 421236C5266417208E5D7FF329C8802A;217.
  ) 
 Here is how much of TeX's memory you used:
- 27017 strings out of 476025
- 518526 string characters out of 5790017
- 1869388 words of memory out of 5000000
- 47028 multiletter control sequences out of 15000+600000
- 519891 words of font info for 62 fonts, out of 8000000 for 9000
+ 27015 strings out of 476025
+ 518508 string characters out of 5790017
+ 1864388 words of memory out of 5000000
+ 47026 multiletter control sequences out of 15000+600000
+ 518888 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,10n,134p,957b,457s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf (3 pages, 253444 bytes).
+ 119i,10n,134p,587b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf (3 pages, 258267 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

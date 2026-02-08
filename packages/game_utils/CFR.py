@@ -1,6 +1,7 @@
 import numpy as np
 import random
 import sys, os
+import time
 from game_utils.utils import normalize
 # import seaborn as sns
 import matplotlib.pyplot as plt
@@ -95,13 +96,37 @@ class CFRSolver:
 
         return strategy_value
 
-    def train(self, iterations):
+    def train(self, iterations, verbose=True):
         """ Run CFR for the specified number of iterations. initialize_game_func should return a new game state. """
-        for _ in range(iterations):
+        start_time = time.time()
+
+        for i in range(iterations):
+            iter_start = time.time()
+
             for player in [0, 1]:
                 state = self.game_class.random()
                 reach_probs = np.ones(2)
                 self._cfr_update(player, state, reach_probs)
+
+            if verbose and (i + 1) % max(1, iterations // 10) == 0:
+                iter_time = time.time() - iter_start
+                elapsed = time.time() - start_time
+                iters_per_sec = (i + 1) / elapsed
+                remaining_iters = iterations - (i + 1)
+                eta_secs = remaining_iters / iters_per_sec if iters_per_sec > 0 else 0
+
+                print(f"  Iteration {i + 1:6d}/{iterations}: "
+                      f"elapsed: {elapsed:7.2f}s, "
+                      f"rate: {iters_per_sec:6.1f} it/s, "
+                      f"ETA: {eta_secs:7.2f}s")
+
+        total_time = time.time() - start_time
+        final_rate = iterations / total_time
+
+        if verbose:
+            print(f"\nTraining complete!")
+            print(f"  Total time: {total_time:.2f}s")
+            print(f"  Average rate: {final_rate:.1f} iterations/s")
 
     def get_strategy(self, player):
         """ Return the learned strategy for the given player as a MixedStrategy object."""

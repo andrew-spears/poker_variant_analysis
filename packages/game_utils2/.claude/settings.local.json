@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/andrewspears/poker_analysis/packages/game_utils/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

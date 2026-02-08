@@ -991,18 +991,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-OUTPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
-INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
 OUTPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out
+OUTPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
@@ -1015,7 +1005,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -1043,6 +1032,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png
 INPUT /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png

@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1767486965 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1767486965 0
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/../../main/main.tex" 1767486596 2649 70dc84208083472ba16202065a4170ad ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux" 1767486965 2065 a5403f0b2d8002aa5aa36e0c36c78644 "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out" 1767486965 638 305f2d1801a1a739a9e0912ab05ab787 "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" 1767486964 10402 72b7580088d05082f0ed63aad303ef69 ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png" 1760306723 71378 4a646f45a36ab838affe4b7f453f4fd9 ""
+["pdflatex"] 1770398844 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1770398845 2
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/../../main/main.tex" 1770398845 2550 9674780cca15de6e0940b36c1fd125c8 ""
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux" 1770398845 2065 cc037035e65834f631a4f0dab915ae3d "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out" 1770398845 638 305f2d1801a1a739a9e0912ab05ab787 "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" 1770398844 9516 84e9321f6bdfc30832c820c3c37c5003 ""
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png" 1770398662 64036 0c1a4341c6134184120e15e9e6b62755 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""

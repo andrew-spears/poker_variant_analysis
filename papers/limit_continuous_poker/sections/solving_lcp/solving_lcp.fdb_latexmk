@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1767572810 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.tex" "solving_lcp.pdf" "solving_lcp" 1767572811 0
-  "../../main/main.tex" 1767572809 2649 70dc84208083472ba16202065a4170ad ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.tex" 1767485831 16732 9ca14f8bfa353cf774c43b8d4b7ff340 ""
+["pdflatex"] 1770407439 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.pdf" "solving_lcp" 1770407440 0
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/../../main/main.tex" 1770406817 2619 431cafe92c839ec8a4f3c46ae6415936 ""
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.aux" 1770407440 3045 aa29e6f1d0e0d5e94e0b6a4e1af7b7d4 "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.out" 1770407440 1633 8137fc1f1bab8fc8bffb2cf8d68746e8 "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.tex" 1770407439 16451 d874982198859ae8851912cd35a9d1c3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -129,6 +131,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/changepage/changepage.sty" 1256071977 4523 a9044e2dc40e764dac60d2acda7ae919 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
@@ -187,12 +190,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1691721674 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691721644 7883453 931beaebd4c2b18a72bbf4631c6fd0a3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "solving_lcp.aux" 1767572811 3132 71b4f3e32112a2aa4e0292c4b7fa85f3 "pdflatex"
-  "solving_lcp.out" 1767572811 1633 8137fc1f1bab8fc8bffb2cf8d68746e8 "pdflatex"
-  "solving_lcp.tex" 1767485831 16732 9ca14f8bfa353cf774c43b8d4b7ff340 ""
   (generated)
-  "solving_lcp.aux"
-  "solving_lcp.log"
-  "solving_lcp.out"
-  "solving_lcp.pdf"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.aux"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.log"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.out"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.pdf"
   (rewritten before read)

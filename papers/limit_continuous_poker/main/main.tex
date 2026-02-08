@@ -8,6 +8,8 @@
 \usepackage[breakable]{tcolorbox}
 \usepackage{fancyvrb}
 \usepackage{upquote}
+\usepackage{enumitem}
+\newtheorem*{remark}{Remark}
 
 % Define colors for code cells (for Jupyter notebook appendix)
 \definecolor{cellbackground}{HTML}{F7F7F7}
@@ -43,7 +45,6 @@
 
 % Define custom proof environment
 \newenvironment{customproof}[1][Proof]{\noindent\textbf{#1.} }{\hfill$\square$\vspace{1em}}
-\newenvironment{proofsketch}[1][Proof Sketch]{\noindent\textbf{#1.} }{\hfill$\square$\vspace{1em}}
 
 \title{Limit Continuous Poker: A Variant of Continuous Poker with Limited Bet Sizes}
 \author{Andrew Spears}
@@ -63,12 +64,15 @@
 \subfile{../sections/nash_equilibrium/nash_equilibrium}
 \subfile{../sections/game_value/game_value}
 \subfile{../sections/strategic_comparison/strategic_comparison}
-\subfile{../sections/payoff_analysis/payoff_analysis}
+\subfile{../sections/payoff_parameter_analysis/payoff_parameter_analysis}
 \subfile{../sections/conclusion/conclusion}
 
 \appendix
 \subfile{../sections/appendix_monotone/appendix_monotone}
 \subfile{../sections/appendix_nash_equilibrium/appendix_nash_equilibrium}
+\subfile{../sections/appendix_sympy/appendix_sympy}
+% \subfile{../sections/appendix_game_value/appendix_game_value}
+\subfile{../sections/appendix_parameter_analysis/appendix_parameter_analysis}
 \subfile{../sections/appendix_payoff_analysis/appendix_payoff_analysis}
 
 

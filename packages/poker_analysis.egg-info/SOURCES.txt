@@ -5,16 +5,13 @@ setup.py
 __pycache__/kuhn.cpython-311.pyc
 __pycache__/progressive_kuhn_utils.cpython-311.pyc
 __pycache__/utils.cpython-311.pyc
-misc/96oExample.py
-misc/four_card_progressive_kuhn.py
-misc/progressive_kuhn_analytic.py
 notebooks/.DS_Store
+notebooks/README.md
 notebooks/RPS.ipynb
 notebooks/four_card_progressive_kuhn_analysis.ipynb
 notebooks/headsup_pushfold.ipynb
 notebooks/kuhnAnalysis.ipynb
 notebooks/progressiveKuhnAnalysis.ipynb
-notebooks/res2_verification_code.py
 notebooks/vonneumann.ipynb
 notebooks/limit_continuous_poker/.DS_Store
 notebooks/limit_continuous_poker/numerical_analysis.ipynb
@@ -24,12 +21,171 @@ notebooks/limit_continuous_poker/solve_sympy_final.ipynb
 notebooks/limit_continuous_poker/solve_sympy_final.pdf
 notebooks/limit_continuous_poker/solve_wolfram.ipynb
 notebooks/limit_continuous_poker/visualizations.ipynb
-notebooks/limit_continuous_poker/solve_sympy_final_files/solve_sympy_final_23_0.png
+packages/README.md
+packages/game_utils/CFR.py
+packages/game_utils/InfoSet.py
+packages/game_utils/LP.py
+packages/game_utils/README.md
+packages/game_utils/RPS.py
+packages/game_utils/Strategy.py
+packages/game_utils/ZeroSumGame.py
+packages/game_utils/kuhn.py
+packages/game_utils/progressiveKuhn.py
+packages/game_utils/utils.py
+packages/game_utils/ContinuousPokerVariants/ContinousPokerTemplate.py
+packages/game_utils/ContinuousPokerVariants/ContinuousPokerUtils.py
+packages/game_utils/ContinuousPokerVariants/FBCP.py
+packages/game_utils/ContinuousPokerVariants/LCP.py
+packages/game_utils/ContinuousPokerVariants/LCP_symbolic.py
+packages/game_utils/ContinuousPokerVariants/NLCP.py
+packages/game_utils/ContinuousPokerVariants/__pycache__/ContinousPokerTemplate.cpython-311.pyc
+packages/game_utils/ContinuousPokerVariants/__pycache__/FBCP.cpython-311.pyc
+packages/game_utils/ContinuousPokerVariants/__pycache__/LCP.cpython-311.pyc
+packages/game_utils/ContinuousPokerVariants/__pycache__/NLCP.cpython-311.pyc
+packages/game_utils/__pycache__/AbstractGameState.cpython-311.pyc
+packages/game_utils/__pycache__/CFR.cpython-311.pyc
+packages/game_utils/__pycache__/InfoSet.cpython-311.pyc
+packages/game_utils/__pycache__/LCP.cpython-311.pyc
+packages/game_utils/__pycache__/LP.cpython-311.pyc
+packages/game_utils/__pycache__/RPS.cpython-311.pyc
+packages/game_utils/__pycache__/Strategy.cpython-311.pyc
+packages/game_utils/__pycache__/ZeroSumGame.cpython-311.pyc
+packages/game_utils/__pycache__/__init__.cpython-311.pyc
+packages/game_utils/__pycache__/kuhn.cpython-311.pyc
+packages/game_utils/__pycache__/linProg.cpython-311.pyc
+packages/game_utils/__pycache__/progressiveKuhn.cpython-311.pyc
+packages/game_utils/__pycache__/utils.cpython-311.pyc
+packages/game_utils/__pycache__/visualization.cpython-311.pyc
 packages/poker_analysis.egg-info/PKG-INFO
 packages/poker_analysis.egg-info/SOURCES.txt
 packages/poker_analysis.egg-info/dependency_links.txt
 packages/poker_analysis.egg-info/requires.txt
 packages/poker_analysis.egg-info/top_level.txt
+papers/limit_continuous_poker/.DS_Store
+papers/limit_continuous_poker/main/main.aux
+papers/limit_continuous_poker/main/main.fdb_latexmk
+papers/limit_continuous_poker/main/main.fls
+papers/limit_continuous_poker/main/main.log
+papers/limit_continuous_poker/main/main.out
+papers/limit_continuous_poker/main/main.pdf
+papers/limit_continuous_poker/main/main.synctex.gz
+papers/limit_continuous_poker/main/main.tex
+papers/limit_continuous_poker/main/references.bib
+papers/limit_continuous_poker/sections/abstract/abstract.aux
+papers/limit_continuous_poker/sections/abstract/abstract.fdb_latexmk
+papers/limit_continuous_poker/sections/abstract/abstract.fls
+papers/limit_continuous_poker/sections/abstract/abstract.log
+papers/limit_continuous_poker/sections/abstract/abstract.out
+papers/limit_continuous_poker/sections/abstract/abstract.pdf
+papers/limit_continuous_poker/sections/abstract/abstract.synctex.gz
+papers/limit_continuous_poker/sections/abstract/abstract.tex
+papers/limit_continuous_poker/sections/appendix_game_value/appendix_game_value.tex
+papers/limit_continuous_poker/sections/appendix_monotone/appendix_monotone.tex
+papers/limit_continuous_poker/sections/appendix_nash_equilibrium/appendix_nash_equilibrium.pdf
+papers/limit_continuous_poker/sections/appendix_nash_equilibrium/appendix_nash_equilibrium.tex
+papers/limit_continuous_poker/sections/appendix_parameter_analysis/appendix_parameter_analysis.tex
+papers/limit_continuous_poker/sections/appendix_payoff_analysis/appendix_payoff_analysis.tex
+papers/limit_continuous_poker/sections/appendix_sympy/appendix_sympy.pdf
+papers/limit_continuous_poker/sections/appendix_sympy/appendix_sympy.tex
+papers/limit_continuous_poker/sections/conclusion/conclusion.tex
+papers/limit_continuous_poker/sections/game_value/game_value.aux
+papers/limit_continuous_poker/sections/game_value/game_value.fdb_latexmk
+papers/limit_continuous_poker/sections/game_value/game_value.fls
+papers/limit_continuous_poker/sections/game_value/game_value.log
+papers/limit_continuous_poker/sections/game_value/game_value.out
+papers/limit_continuous_poker/sections/game_value/game_value.pdf
+papers/limit_continuous_poker/sections/game_value/game_value.synctex.gz
+papers/limit_continuous_poker/sections/game_value/game_value.tex
+papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png
+papers/limit_continuous_poker/sections/game_value/images/game_value_rt.png
+papers/limit_continuous_poker/sections/game_value/images/payoffs_by_limits.png
+papers/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log.png
+papers/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_log_wide.png
+papers/limit_continuous_poker/sections/game_value/images/payoffs_by_limits_wide.png
+papers/limit_continuous_poker/sections/introduction/introduction.aux
+papers/limit_continuous_poker/sections/introduction/introduction.fdb_latexmk
+papers/limit_continuous_poker/sections/introduction/introduction.fls
+papers/limit_continuous_poker/sections/introduction/introduction.log
+papers/limit_continuous_poker/sections/introduction/introduction.out
+papers/limit_continuous_poker/sections/introduction/introduction.pdf
+papers/limit_continuous_poker/sections/introduction/introduction.synctex.gz
+papers/limit_continuous_poker/sections/introduction/introduction.tex
+papers/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png
+papers/limit_continuous_poker/sections/lcp/lcp.pdf
+papers/limit_continuous_poker/sections/lcp/lcp.tex
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.aux
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.fdb_latexmk
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.fls
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.log
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.out
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.pdf
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.synctex.gz
+papers/limit_continuous_poker/sections/nash_equilibrium/nash_equilibrium.tex
+papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.1_2.png
+papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.3_1.5.png
+papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0.5_1.png
+papers/limit_continuous_poker/sections/nash_equilibrium/images/LCP_profile_0_10.png
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.aux
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.fdb_latexmk
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.fls
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.log
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.out
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.pdf
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.synctex.gz
+papers/limit_continuous_poker/sections/parameter_analysis/parameter_analysis.tex
+papers/limit_continuous_poker/sections/parameter_analysis/images/ev_vs_U.png
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.aux
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.fdb_latexmk
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.fls
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.log
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.out
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.pdf
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.synctex.gz
+papers/limit_continuous_poker/sections/payoff_analysis/payoff_analysis.tex
+papers/limit_continuous_poker/sections/payoff_analysis/images/ExpectedPayoffs.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_0.1_5.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_0.3_2.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_0.5_1.5.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_0.9_1.1.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_0_inf.png
+papers/limit_continuous_poker/sections/payoff_analysis/images/payoffs_1_1.png
+papers/limit_continuous_poker/sections/preliminaries/preliminaries.pdf
+papers/limit_continuous_poker/sections/preliminaries/preliminaries.tex
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.aux
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.fdb_latexmk
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.fls
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.log
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.out
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.pdf
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.synctex.gz
+papers/limit_continuous_poker/sections/solving_lcp/solving_lcp.tex
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.aux
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.fdb_latexmk
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.fls
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.log
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.out
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.pdf
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.synctex.gz
+papers/limit_continuous_poker/sections/strategic_comparison/strategic_comparison.tex
+papers/limit_continuous_poker/sections/summary_analysis/summary_analysis.tex
+papers/other_latex/normal form linprog/.DS_Store
+papers/other_latex/normal form linprog/linprog.aux
+papers/other_latex/normal form linprog/linprog.fdb_latexmk
+papers/other_latex/normal form linprog/linprog.fls
+papers/other_latex/normal form linprog/linprog.log
+papers/other_latex/normal form linprog/linprog.out
+papers/other_latex/normal form linprog/linprog.pdf
+papers/other_latex/normal form linprog/linprog.synctex.gz
+papers/other_latex/normal form linprog/linprog.tex
+papers/other_latex/von neumann poker/.DS_Store
+papers/other_latex/von neumann poker/writeup.aux
+papers/other_latex/von neumann poker/writeup.fdb_latexmk
+papers/other_latex/von neumann poker/writeup.fls
+papers/other_latex/von neumann poker/writeup.log
+papers/other_latex/von neumann poker/writeup.out
+papers/other_latex/von neumann poker/writeup.pdf
+papers/other_latex/von neumann poker/writeup.synctex.gz
+papers/other_latex/von neumann poker/writeup.tex
 poker_analysis.egg-info/PKG-INFO
 poker_analysis.egg-info/SOURCES.txt
 poker_analysis.egg-info/dependency_links.txt

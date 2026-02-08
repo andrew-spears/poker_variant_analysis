@@ -3,7 +3,7 @@
 \section{Game Value}
 \label{sec:game_value}
 
-Having characterized the Nash equilibrium strategy profile in Section \ref{sec:nash_equilibrium}, we now turn to analyzing the expected payoff when both players employ these optimal strategies. In zero-sum games like Limit Continuous Poker, the concept of game value is fundamental. The game value represents the expected payoff that the first player (bettor) can guarantee when both players play optimally. Since this is a zero-sum game, the caller's expected payoff is simply the negative of this value. This value serves as a measure of how favorable the game is to the bettor under the given betting limits $L$ and $U$.
+Having established that the strategy profile in Section \ref{sec:nash_equilibrium} constitutes a Nash equilibrium (verified in Appendix \ref{app:nash_equilibrium}), the game has a well-defined value: the expected payoff when both players employ these strategies. In two-player zero-sum games, the existence of a Nash equilibrium implies the existence of a unique game value---all Nash equilibria yield the same payoff to each player. Since LCP is zero-sum, the caller's expected payoff is simply the negative of this value. This value measures how favorable the game is to the bettor under the given betting limits $L$ and $U$.
 
 \begin{theorem}
     \label{thm:game_value}
@@ -17,25 +17,22 @@ Having characterized the Nash equilibrium strategy profile in Section \ref{sec:n
     \]
 \end{theorem}
 
-\begin{proofsketch}
-    Since LCP is a zero-sum game, all Nash equilibria yield the same payoff. We have explicitly constructed optimal strategies for both players, so the value of the game is the expected payoff of these strategies, averaged over all hand pairs $(x, y)$. This reduces to an integral of the payoff over the unit square, like we saw in Figure \ref{fig:payoffs}. 
+\begin{customproof}
+    Since LCP is a zero-sum game, all Nash equilibria yield the same payoff. We have explicitly constructed optimal strategies for both players, so the value of the game is the expected payoff of these strategies, averaged over all hand pairs $(x, y)$. This reduces to an integral of the payoff over the unit square (see Figure \ref{fig:payoffs} in Section 7). 
     
-    The computation is extremely nontrivial because the bet size is only defined implicitly in terms of the hand strength $x$. The proof requires breaking the unit square into regions based on the strategies and bet sizes, then computing the expected value as a weighted sum of payoffs over these regions. The full details can be found in Sympy code \href{https://github.com/andrew-spears/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_sympy_final.pdf}{on GitHub}.
-\end{proofsketch}
+    The computation is extremely nontrivial because the bet size is only defined implicitly in terms of the hand strength $x$. The proof requires breaking the unit square into regions based on the strategies and bet sizes, then computing the expected value as a weighted sum of payoffs over these regions. The full technical details are provided in Appendix \ref{sec:value_computation}.
+\end{customproof}
 
 This is a rational function of $L$ and $U$ with a surprisingly simple form. The change of variables to $r$ and $t$ reveals an even more elegant structure, along with the following symmetry property:
 
-\[
-    V_{LCP}(L, U) = V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)
-\]
-or equivalently,
-\[ 
-    V(r, t) = V(t, r)
-\]
+\begin{align*}
+    V_{LCP}(L, U) &= V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)\\
+    \text{or equivalently, } V(r, t) &= V(t, r)
+\end{align*}
 
 The symmetry becomes immediately apparent in the $(r,t)$ formulation: the numerator $1 - r^3 - t^3$ and denominator $14 - 2r^3 - 2t^3$ are both symmetric in $r$ and $t$. This is not at all obvious from the game setup in terms of $L$ and $U$.
 
-Figure \ref{fig:game_value_fig} shows the game value as a function of $L$ and $U$ on log-log scale as well as a function of $r$ and $t$, making the symmetry $V(r,t) = V(t,r)$ visually apparent as a reflection across the diagonal. The plot also clearly illustrates the interpretations discussed above: the left edge ($r=0$, corresponding to $L=0$) represents the case where minimum bets are negligible, while the bottom edge ($t=0$, corresponding to $U \to \infty$) represents the case where maximum bets become arbitrarily large. The diagonal ($r+t=1$, or equivalently $L=U$) represents the boundary where the game reduces to fixed-bet continuous poker.
+Figure \ref{fig:game_value_fig} shows the game value as a function of $r$ and $t$, making the symmetry $V(r,t) = V(t,r)$ visually apparent as a reflection across the diagonal. The plot also clearly illustrates the interpretations discussed above: the left edge ($r=0$, corresponding to $L=0$) represents the case where minimum bets are negligible, while the bottom edge ($t=0$, corresponding to $U \to \infty$) represents the case where maximum bets become arbitrarily large. The diagonal ($r+t=1$, or equivalently $L=U$) represents the boundary where the game reduces to fixed-bet continuous poker.
 
 In terms of the original parameters, the symmetry $V_{LCP}(L, U) = V_{LCP}(1/U, 1/L)$ tells us that the benefit from increasing $U$ is exactly equivalent to that of decreasing $L$ in a reciprocal manner, centered around the pot size of $1$. For example, suppose you are given the choice between playing LCP as the bettor with limits $L=1/2$ and $U=5$ or $L=1/5$ and $U=2$. You know you can play optimally, but it is unclear which game favors you. The symmetry property tells us that the value of the game is the same in both cases, so you should be indifferent between the two.
 
@@ -93,35 +90,14 @@ Intuitively, more options for the bettor should increase the game's value. Notic
 
 \subsection{Value Convergence}
 
-The main diagonal of the plots in Figure \ref{fig:game_value_fig} should represent $L=U$, which means the bet size is fixed. Thus, this diagonal should represent the value of FBCP for various values of $B$. We can prove this formally:
+Consistent with the strategic convergence results in Section \ref{sec:strategic_convergence}, the game value also converges to FBCP and NLCP at the appropriate limits. Since $V_{LCP}(L,U)$ is a rational function, these limits follow by direct substitution.
 
-\begin{theorem}
-    For any $B > 0$, the value of Limit Continuous Poker converges to the value of Fixed-Bet Continuous Poker as $L$ and $U$ approach $B$:
-\[
-\lim_{L \to B} \lim_{U \to B} V_{LCP}(L, U) = \lim_{U \to B} \lim_{L \to B} V_{LCP}(L, U) = V_{FB}(B)
-\]
-\end{theorem}
+\begin{remark}[Value Convergence to FBCP]
+For any $B > 0$, $\lim_{L,U \to B} V_{LCP}(L, U) = V_{FB}(B) = \frac{B}{2(1+2B)(2+B)}$. This corresponds to the main diagonal of Figure \ref{fig:game_value_fig}. Note that the maximum on this diagonal occurs at $B=1$, consistent with the known result that a pot-sized bet maximizes the bettor's advantage in FBCP.
+\end{remark}
 
-\begin{customproof}
-    $V_{LCP}(L, U)$ is a rational function of $L$ and $U$, and no part of the expression is undefined for $L = U = B$. We can simply plug in and simplify to get
-    $$ \frac{B}{2(1+2B)(2+B)}, $$
-    which is exactly $V_{FB}(B)$.
-\end{customproof}
-
-These plots also align with the known result that a fixed pot-size bet of $B=1$ maximizes the expected value for the bettor in FBCP, as seen by the fact that $(1, 1)$ achieves the maximum value on the diagonal. 
-
-We can also show that the value of LCP converges to the value of NLCP as $L$ and $U$ approach their extremes, represented by the top left of any plot in Figure \ref{fig:game_value_fig}.
-
-\begin{theorem}
-    The value of Limit Continuous Poker converges to the value of NLCP as $L$ and $U$ approach $0$ and $\infty$:
-\[
-\lim_{L \to 0} \lim_{U \to \infty} V_{LCP}(L, U) = \lim_{U \to \infty} \lim_{L \to 0} V_{LCP}(L, U) = V_{NL}
-\]
-\end{theorem}
-\begin{customproof}
-    We can simply plug in $L=0$ to get
-    $$\frac{(U+1)^3-1}{14 (U+1)^3-2}.$$
-    Taking the limit as $U \to \infty$ gives $\frac{1}{14} = V_{NL}$.
-\end{customproof}
+\begin{remark}[Value Convergence to NLCP]
+$\lim_{L \to 0, U \to \infty} V_{LCP}(L, U) = V_{NL} = \frac{1}{14}$. This corresponds to the top-left corner of the $(L,U)$ plot in Figure \ref{fig:game_value_fig}, or equivalently the origin of the $(r,t)$ plot.
+\end{remark}
 
 \end{document}

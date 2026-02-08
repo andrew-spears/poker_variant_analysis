@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1767475574 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1767475575 0
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/../../main/main.tex" 1767475456 2550 9674780cca15de6e0940b36c1fd125c8 ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png" 1751251593 46499 0470cdf89d3ac88beef2ce9ac3243ed9 ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux" 1767475575 1680 29b77e695f802f1908924db7863a2199 "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out" 1767475575 938 56f789478e5e012dec3c83eb44fb8240 "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex" 1767475574 10565 75ef5d36603a49edbeaee8a3a255e605 ""
+["pdflatex"] 1770405939 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.pdf" "introduction" 1770405940 0
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/../../main/main.tex" 1770401756 2597 eac840679c3cdfafdc2a910a1ffad0ac ""
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png" 1768509023 46499 0470cdf89d3ac88beef2ce9ac3243ed9 ""
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux" 1770405940 2479 25d4c02bb95f11cb18af61ed3c8ed327 "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out" 1770405940 1030 36a6b281e5ccf5ffd96d04ca0e32282c "pdflatex"
+  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex" 1770405938 13420 eed67e219a1a80aec88a7f5e954ddb85 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -35,7 +35,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""

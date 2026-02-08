@@ -119,7 +119,7 @@ class ContinuousPokerTemplate:
         return total_payoff
 
     @classmethod
-    def generate_strategy_plot(cls, s_lim=None, grid_size=1001, save_path=None, title=None, **kwargs):
+    def generate_strategy_plot(cls, s_lim=None, grid_size=1001, save_path=None, title=None, show=True, **kwargs):
         # find bluff and value sizes for each x
         X = np.linspace(0, 1, grid_size)
         bet_sizes = np.empty(grid_size)
@@ -168,7 +168,7 @@ class ContinuousPokerTemplate:
         if s_min == s_max:
             # point instead of line
             ax.plot(call_thresholds, S, label="Call Threshold", color="blue", marker="o", markersize=5)
-            ax.plot([call_thresholds[0], 1], [S[0], S[0]], color="blue", linestyle="--", alpha=0.3, linewidth=2, label="Call Region") 
+            ax.plot([call_thresholds[0], 1], [S[0], S[0]], color="blue", linestyle="--", alpha=0.3, linewidth=2, label="Call Region")
         else:
             ax.plot(call_thresholds, S, label="Call Threshold", color="darkblue", linestyle="--", linewidth=2)
             ax.fill_betweenx(S, call_thresholds, np.ones_like(S), color="blue", alpha=0.3, label="Call Region")
@@ -194,7 +194,10 @@ class ContinuousPokerTemplate:
         plt.tight_layout()
         if save_path:
             plt.savefig(save_path, dpi=300)
-        plt.show()
+        if show:
+            plt.show()
+
+        return fig, ax
 
 
     @classmethod

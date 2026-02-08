@@ -1,16 +1,16 @@
 \documentclass[../../main/main.tex]{subfiles}
 \begin{document}
 
-\section{Monotone and Continuous Strategy Proofs}
-\label{app:monotone_proofs}
+\section{Monotone Strategy Proofs}
+\label{sec:monotone_proofs}
 
-This appendix provides the detailed proofs regarding monotone calling strategies, monotone-admissible and continuous betting strategies, and their relationship to the uniqueness of the Nash equilibrium in LCP.
+This appendix provides the detailed proofs regarding monotone calling strategies and their relationship to the uniqueness of the Nash equilibrium in LCP.
 
 \subsection{Monotone Strategies and Weak Dominance}
 
 \begin{lemma}
     \label{lem:monotone_dominated}
-    If a calling strategy violates the first monotonicity condition (see \ref{subsec:monotone_strategies}) for a nonzero-measure set of hands for any bet size $s$, it is weakly dominated. Specifically, if there exists $s$ and measurable sets $A, B \subseteq [0, 1]$ such that:
+    If a calling strategy violates the first monotonicity condition for a nonzero-measure set of hands for any bet size $s$, it is weakly dominated. Specifically, if there exists $s$ and measurable sets $A, B \subseteq [0, 1]$ such that:
     \begin{enumerate}
         \item The caller calls $s$ with hands in $A$
         \item The caller folds $s$ with hands in $B$
@@ -88,67 +88,24 @@ This appendix provides the detailed proofs regarding monotone calling strategies
     To show that $\sigma_C$ is strictly dominated, consider a betting strategy which always bets $s$. Against this strategy, both scenarios above occur with positive probability (since $A'$ and $B'$ have positive measure), so $\sigma_C'$ is strictly better than $\sigma_C$. Thus, $\sigma_C$ is weakly dominated.
 \end{proof}
 
-We now show that the restriction to monotone-admissible betting strategies implies a natural ordering of bluff sizes.
+\subsection{Monotone-Admissibility and Uniqueness}
 
-\begin{lemma}
-\label{lem:bluff_monotonicity}
-If a betting strategy $\sigma_B$ is monotone-admissible, then for any two bluffing hands $x < x'$ with corresponding bet sizes $s$ and $s'$ respectively, we must have $s' \geq s$.
-\end{lemma}
+The second monotonicity condition - that the caller must be more willing to call smaller bets - cannot be derived from dominance arguments alone. However, it plays a crucial role in selecting among the infinite class of Nash equilibria that differ only in how the bettor sizes their bluffs.
 
-\begin{proof}
-Suppose for contradiction that there exist bluffing hands $x < x'$ with bet sizes $s > s'$. We will show that $\sigma_B$ is not monotone-admissible by constructing a strategy $\sigma_B'$ that weakly dominates $\sigma_B$ against all monotone calling strategies.
+\textbf{Motivation:} From a poker player's perspective, this condition aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not strictly dominated (and indeed occurs in real poker when players perceive larger bets as bluffs), it leads to exploitable calling strategies.
 
-Define $\sigma_B'$ to be identical to $\sigma_B$ except that it bets $s'$ with hand $x$ instead of $s$.
+If the caller violates this condition by calling less aggressively against smaller bets, the bettor can exploit this by taking smaller risks for higher returns. A monotone calling strategy is therefore less exploitable. Imposing this condition restricts the strategy space in a way that yields a unique Nash equilibrium.
 
-Let $\sigma_C$ be an arbitrary monotone calling strategy, and let $c(s)$ denote the calling threshold for bet size $s$ under $\sigma_C$. By Definition~\ref{def:monotone_calling} (condition 2), monotonicity implies
-\[
-c(s') \leq c(s).
-\]
+\begin{definition}[Monotone-Admissible Strategy]
+    A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. More explicitly, $\sigma_B$ is monotone-admissible if there does not exist a betting strategy $\sigma_B'$ such that both of the following hold:
+    \begin{enumerate}
+        \item $\pi_B(\sigma_B',\sigma_C) \geq \pi_B(\sigma_B,\sigma_C)$ for all monotone calling strategies $\sigma_C$
+        \item $\pi_B(\sigma_B',\sigma_C) > \pi_B(\sigma_B,\sigma_C)$ for at least one monotone calling strategy $\sigma_C$
+    \end{enumerate}
+\end{definition}
 
-We compare the expected payoffs of betting $s$ versus $s'$ with hand $x$ against $\sigma_C$.
+\textbf{Application to LCP:} This definition is particularly useful in distinguishing bettor strategies which differ only in how they bluff. The hand strength of a bluff is irrelevant when the caller plays optimally, since the caller will never call with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, then the bettor's bluffing hand strength becomes important.
 
-\textbf{Case 1:} $x' < c(s')$.
-
-Since $c(s') \leq c(s)$, we have $x < x' < c(s') \leq c(s)$. Thus the caller never calls with a hand weaker than $x$ or $x'$ under either bet size. Both bets succeed as pure bluffs with probability $P(Y < c(\cdot))$, winning the pot of size $1$. Since $s' < s$, betting $s'$ risks less to win the same amount, so
-\[
-\mathbb{E}[\text{payoff of } s' \mid x] > \mathbb{E}[\text{payoff of } s \mid x].
-\]
-
-\textbf{Case 2:} $x' \geq c(s')$.
-
-When betting $s'$ with hand $x$, the bettor wins at showdown against any caller hand $y \in [c(s'), x']$, an event with positive probability. When betting $s$ with hand $x$, since $c(s) \geq c(s') > x$, the bettor never wins at showdown (as $x < c(s)$ implies all calling hands beat $x$). Therefore,
-\[
-\mathbb{E}[\text{payoff of } s' \mid x] > \mathbb{E}[\text{payoff of } s \mid x].
-\]
-
-In both cases, $\sigma_B'$ achieves strictly higher expected payoff than $\sigma_B$ against $\sigma_C$. Since this holds for all monotone calling strategies $\sigma_C$, strategy $\sigma_B$ is not monotone-admissible, contradicting our assumption.
-\end{proof}
-
-
-\subsection{Continuity}
-
-We stated in section \ref{sec:solving_lcp} that the betting strategy should be continuous except at the bluffing and value-betting thresholds.
-Here we provide a formal justification for this requirement.
-
-Consider the bettor's expected value function for a value hand $x$:
-\begin{equation}
-    EV(s, x) = (x - c(s))(1 + s) - (1 - x)s + c(s)
-\end{equation}
-
-which is continuous in both $s$ and $x$. For a fixed value-betting hand strength $x$, the bettor chooses an optimal bet size $s^*(x)$ such that:
-
-\begin{equation}
-    s^*(x) = \arg\max_{s \in [L, U]} EV(s, x)
-\end{equation}
-
-Assuming $EV(s, x)$ is strictly concave in $s$ (which follows if $c(s)$ is sufficiently smooth and monotone increasing), the maximizer $s^*(x)$ is unique. By the Theorem of the Maximum \cite{stokey1989recursive}, since $EV(s, x)$ is continuous and the set of possible bet sizes $S$ is compact, the optimal strategy $s^*(x)$ is a continuous function of $x$. 
-
-If $s(x)$ were discontinuous at some $x_0$, it would imply that $EV(s, x)$ possesses multiple global maxima at $x_0$, or that the $EV$ function itself is not concave, allowing the optimal bet size to ``jump" between distant peaks.
-
-For the bluffing range, continuity is a consequence of the equilibrium balancing requirement. To maintain the caller's indifference at every $s \in [L, U]$, there must exist a corresponding bluffing hand strength such that the ratio of bluffs to value hands satisfies the Nash condition.
-
-As previously established, the bluffing strategy $b^{-1}(x)$ is strictly decreasing in $x$ as a consequence of being monotone-admissible. Since every $s \in [L, U]$ must be represented in the bluffing range to balance the value bets, the image of $b^{-1}(x)$ is the interval $[L, U]$. 
-
-By the Intermediate Value Theorem for Monotone Functions (the property that a monotonic function is continuous if and only if its image is an interval), $b^{-1}(x)$ must be continuous.
+Specifically, if the caller becomes too loose (calling too often with weak hands), then the bettor wins some pots "accidentally" when they make their smallest bluffs with their strongest bluffing hands. This is where monotone-admissibility differentiates between equilibria: the unique monotone-admissible equilibrium has the bettor bluffing larger with weaker hands and bluffing smaller with stronger hands, which is optimal against all monotone deviations by the caller.
 
 \end{document}
