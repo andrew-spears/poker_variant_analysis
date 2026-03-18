@@ -3,7 +3,7 @@
 \section{Game Value}
 \label{sec:game_value}
 
-Having established that the strategy profile in Section \ref{sec:nash_equilibrium} constitutes a Nash equilibrium (verified in Appendix \ref{app:nash_equilibrium}), the game has a well-defined value: the expected payoff when both players employ these strategies. In two-player zero-sum games, the existence of a Nash equilibrium implies the existence of a unique game value---all Nash equilibria yield the same payoff to each player. Since LCP is zero-sum, the caller's expected payoff is simply the negative of this value. This value measures how favorable the game is to the bettor under the given betting limits $L$ and $U$.
+Having established that the strategy profile in Section \ref{sec:nash_equilibrium} constitutes a Nash equilibrium (verified in Appendix \ref{app:nash_equilibrium}), the game has a well-defined value: the expected payoff when both players employ these strategies. In two-player zero-sum games, the existence of a Nash equilibrium implies the existence of a unique game value, since all Nash equilibria yield the same expected payoff to each player. This value measures how favorable the game is to the bettor under the given betting limits $L$ and $U$.
 
 \begin{theorem}
     \label{thm:game_value}
@@ -13,26 +13,24 @@ Having established that the strategy profile in Section \ref{sec:nash_equilibriu
     \]
     Equivalently, using the change of variables $r = L/(1+L)$ and $t = 1/(1+U)$, this can be written more compactly as:
     \[
-        V(r, t) = \frac{1 - r^3 - t^3}{14 - 2r^3 - 2t^3}
+        V(r, t) = \frac{1 - (r^3 + t^3)}{14 - 2(r^3 + t^3)}
     \]
 \end{theorem}
 
-\begin{customproof}
-    Since LCP is a zero-sum game, all Nash equilibria yield the same payoff. We have explicitly constructed optimal strategies for both players, so the value of the game is the expected payoff of these strategies, averaged over all hand pairs $(x, y)$. This reduces to an integral of the payoff over the unit square (see Figure \ref{fig:payoffs} in Section 7). 
-    
-    The computation is extremely nontrivial because the bet size is only defined implicitly in terms of the hand strength $x$. The proof requires breaking the unit square into regions based on the strategies and bet sizes, then computing the expected value as a weighted sum of payoffs over these regions. The full technical details are provided in Appendix \ref{sec:value_computation}.
-\end{customproof}
+Proving this is straightforward in principle but computationally intensive. The value of the game is the expected payoff of these strategies, averaged over all hand pairs $(x, y)$. This reduces to an integral over the unit square (see Figure \ref{fig:payoffs} in Section 7). 
 
-This is a rational function of $L$ and $U$ with a surprisingly simple form. The change of variables to $r$ and $t$ reveals an even more elegant structure, along with the following symmetry property:
+This integral is nontrivial because we are integrating a function over many piecewise regions, and because the bet size is only defined implicitly in terms of the hand strength $x$. The computation requires breaking the unit square into regions based on the strategies and bet sizes, then computing the expected value as a weighted sum of payoffs over these regions. This was again done symbolically using SymPy (see Appendix \ref{app:sympy}), yielding the closed-form expression above.
+
+Given this computational complexity, the formula itself is surprisingly simple. The change of variables to $r$ and $t$ reveals an even more elegant structure, along with the following symmetry property:
 
 \begin{align*}
     V_{LCP}(L, U) &= V_{LCP}\left(\frac{1}{U}, \frac{1}{L}\right)\\
     \text{or equivalently, } V(r, t) &= V(t, r)
 \end{align*}
 
-The symmetry becomes immediately apparent in the $(r,t)$ formulation: the numerator $1 - r^3 - t^3$ and denominator $14 - 2r^3 - 2t^3$ are both symmetric in $r$ and $t$. This is not at all obvious from the game setup in terms of $L$ and $U$.
+The symmetry becomes immediately apparent in the $(r,t)$ formulation: the formula could be parameterized by the unified quantity $r^3 + t^3$. This is not at all obvious from the game setup in terms of $L$ and $U$, even in hindsight.
 
-Figure \ref{fig:game_value_fig} shows the game value as a function of $r$ and $t$, making the symmetry $V(r,t) = V(t,r)$ visually apparent as a reflection across the diagonal. The plot also clearly illustrates the interpretations discussed above: the left edge ($r=0$, corresponding to $L=0$) represents the case where minimum bets are negligible, while the bottom edge ($t=0$, corresponding to $U \to \infty$) represents the case where maximum bets become arbitrarily large. The diagonal ($r+t=1$, or equivalently $L=U$) represents the boundary where the game reduces to fixed-bet continuous poker.
+Figure \ref{fig:game_value_fig} shows the game value as a function of $L, U$ and $r, t$, making the symmetry $V(r,t) = V(t,r)$ visually apparent as a reflection across the diagonal. The diagonal of the left plot ($r+t=1$, or equivalently $L=U$) represents the boundary where the game reduces to fixed-bet continuous poker.
 
 In terms of the original parameters, the symmetry $V_{LCP}(L, U) = V_{LCP}(1/U, 1/L)$ tells us that the benefit from increasing $U$ is exactly equivalent to that of decreasing $L$ in a reciprocal manner, centered around the pot size of $1$. For example, suppose you are given the choice between playing LCP as the bettor with limits $L=1/2$ and $U=5$ or $L=1/5$ and $U=2$. You know you can play optimally, but it is unclear which game favors you. The symmetry property tells us that the value of the game is the same in both cases, so you should be indifferent between the two.
 
@@ -53,8 +51,8 @@ When the bettor makes a minimum bet of size $L$, the pot grows from 1 to $1+L$. 
 \textbf{The parameter $t = 1/(1+U)$ as pot fraction at maximum bet:}
 When the bettor makes a maximum bet of size $U$, the pot grows from 1 to $1+U$. The parameter $t = 1/(1+U)$ represents the original pot as a fraction of the total pot after a maximum bet. Equivalently, $1-t = U/(1+U)$ represents the pot odds the caller receives when facing a maximum bet. A small value of $t$ (close to 0) indicates that $U$ is very large relative to the pot, allowing the bettor to make very aggressive bets. As $U \to \infty$, we have $t \to 0$, meaning the maximum bet becomes arbitrarily large. As $U \to 0$, we have $t \to 1$, meaning the maximum bet becomes negligible.
 
-\textbf{The duality revealed by the symmetry:}
-The parameter $r$ fundamentally controls the \emph{caller's incentive to call} with marginal hands: higher $r$ means the minimum bet offers worse pot odds, discouraging calls. The parameter $t$ fundamentally controls the \emph{bettor's ability to apply pressure}: lower $t$ means the maximum bet can be much larger relative to the pot, allowing more aggressive play. The symmetry $V(r,t) = V(t,r)$ reveals a deep duality in the game: swapping the ``minimum calling incentive'' (measured by $r$) with the ``maximum betting freedom'' (measured inversely by $t$) produces games with identical value. This is remarkable because $r$ is primarily about the caller's decisions (pot odds when facing small bets) while $t$ is primarily about the bettor's decisions (how large they can bet), yet these two forces are perfectly balanced in determining the game's value.
+\textbf{Duality:}
+The parameter $r$ fundamentally controls the \emph{caller's incentive to call} with marginal hands: higher $r$ means the minimum bet offers worse pot odds, discouraging calls. The parameter $t$ fundamentally controls the \emph{bettor's ability to apply pressure}: lower $t$ means the maximum bet can be much larger relative to the pot, allowing more aggressive play. The symmetry $V(r,t) = V(t,r)$ reveals a deep duality in the game: swapping the ``minimum calling incentive'' (measured by $r$) with the ``ability to apply pressure'' (measured inversely by $t$) produces games with identical value. This is remarkable because $r$ is primarily about the caller's decisions (pot odds when facing small bets) while $t$ is primarily about the bettor's decisions (how large they can bet), yet these two forces are perfectly balanced in determining the game's value.
 
 In the following sections, we investigate the properties and behavior of $V_{LCP}(L, U)$ in more detail. These include monotonicity, convergence to NLCP and FBCP, and the symmetry property.
 
@@ -93,11 +91,17 @@ Intuitively, more options for the bettor should increase the game's value. Notic
 Consistent with the strategic convergence results in Section \ref{sec:strategic_convergence}, the game value also converges to FBCP and NLCP at the appropriate limits. Since $V_{LCP}(L,U)$ is a rational function, these limits follow by direct substitution.
 
 \begin{remark}[Value Convergence to FBCP]
-For any $B > 0$, $\lim_{L,U \to B} V_{LCP}(L, U) = V_{FB}(B) = \frac{B}{2(1+2B)(2+B)}$. This corresponds to the main diagonal of Figure \ref{fig:game_value_fig}. Note that the maximum on this diagonal occurs at $B=1$, consistent with the known result that a pot-sized bet maximizes the bettor's advantage in FBCP.
+For any $B > 0$, 
+
+\[ \lim_{L,U \to B} V_{LCP}(L, U) = V_{FB}(B) = \frac{B}{2(1+2B)(2+B)} \].
+
+This corresponds to the main diagonal of Figure \ref{fig:game_value_fig}. Note that the maximum on this diagonal occurs at $B=1$, consistent with the known result that a pot-sized bet maximizes the bettor's advantage in FBCP.
 \end{remark}
 
 \begin{remark}[Value Convergence to NLCP]
-$\lim_{L \to 0, U \to \infty} V_{LCP}(L, U) = V_{NL} = \frac{1}{14}$. This corresponds to the top-left corner of the $(L,U)$ plot in Figure \ref{fig:game_value_fig}, or equivalently the origin of the $(r,t)$ plot.
+\[ \lim_{L \to 0, U \to \infty} V_{LCP}(L, U) = V_{NL} = \frac{1}{14} \]. 
+
+This corresponds to the top-left corner of the $(L,U)$ plot in Figure \ref{fig:game_value_fig}, or equivalently the origin of the $(r,t)$ plot.
 \end{remark}
 
 \end{document}

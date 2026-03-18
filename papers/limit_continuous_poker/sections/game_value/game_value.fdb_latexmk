@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1770398844 "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1770398845 2
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/../../main/main.tex" 1770398845 2550 9674780cca15de6e0940b36c1fd125c8 ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux" 1770398845 2065 cc037035e65834f631a4f0dab915ae3d "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out" 1770398845 638 305f2d1801a1a739a9e0912ab05ab787 "pdflatex"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" 1770398844 9516 84e9321f6bdfc30832c820c3c37c5003 ""
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png" 1770398662 64036 0c1a4341c6134184120e15e9e6b62755 ""
+["pdflatex"] 1773859064 "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf" "game_value" 1773859065 0
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/../../main/main.tex" 1773859054 2619 431cafe92c839ec8a4f3c46ae6415936 ""
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux" 1773859065 2065 be4792ad628fc5251428d6baad15a9b9 "pdflatex"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out" 1773859065 638 305f2d1801a1a739a9e0912ab05ab787 "pdflatex"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.tex" 1773859064 9152 d8f0c0c1195818ad8d733bc02a5a620d ""
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/images/game_value_plots.png" 1770398662 64036 0c1a4341c6134184120e15e9e6b62755 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -127,6 +127,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/changepage/changepage.sty" 1256071977 4523 a9044e2dc40e764dac60d2acda7ae919 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
@@ -186,8 +187,8 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1691721644 7883453 931beaebd4c2b18a72bbf4631c6fd0a3 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   (generated)
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.log"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out"
-  "/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.aux"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.log"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.out"
+  "/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/game_value/game_value.pdf"
   (rewritten before read)

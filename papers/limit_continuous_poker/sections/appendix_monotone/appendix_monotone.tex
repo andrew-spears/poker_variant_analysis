@@ -4,7 +4,7 @@
 \section{Monotone Strategy Proofs}
 \label{sec:monotone_proofs}
 
-This appendix provides the detailed proofs regarding monotone calling strategies and their relationship to the uniqueness of the Nash equilibrium in LCP.
+This appendix provides the detailed proofs regarding monotone calling strategies and their role in equilibrium selection in LCP.
 
 \subsection{Monotone Strategies and Weak Dominance}
 
@@ -49,11 +49,11 @@ This appendix provides the detailed proofs regarding monotone calling strategies
             \node[above] at (0.6, 0.2) {$A$};
             \node at (0.6, 0) {\textbf{call}};
 
-            % Set B (folding hands) - red
             \fill[red!40] (1.2, -0.1) rectangle (1.5, 0.1);
             \draw[thick] (1.2, -0.15) -- (1.2, 0.15);
             \draw[thick] (1.5, -0.15) -- (1.5, 0.15);
             \node[above] at (1.35, 0.2) {$B$};
+            % Set B (folding hands) - red
             \node at (1.35, 0) {\textbf{fold}};
 
             % Set A' (subset of A) - darker blue
@@ -73,7 +73,7 @@ This appendix provides the detailed proofs regarding monotone calling strategies
         \label{fig:strategy_improvement}
     \end{figure}
 
-    The existence of such subsets follows from a fundamental property of nonatomic measures: since the uniform distribution on $[0,1]$ is nonatomic (no single point has positive probability), for any two measurable sets with positive measure, we can always find measurable subsets of equal measure\cite{Sierpinski1922}. This property allows us to construct the strategy improvement described below.
+    The existence of such subsets follows from a fundamental property of nonatomic measures: since the uniform distribution on $[0,1]$ is nonatomic (no single point has positive probability), for any two measurable sets with positive measure, we can always find measurable subsets of equal measure \cite{Sierpinski1922}. This property allows us to construct the strategy improvement described below.
 
     Let $\sigma_C'$ be the strategy which switches the actions for $A'$ and $B'$, i.e. calls with $B'$ and folds with $A'$ (and behaves identically for all other bet sizes). We now analyze how this change affects the caller's performance against any betting strategy.
 
@@ -88,24 +88,24 @@ This appendix provides the detailed proofs regarding monotone calling strategies
     To show that $\sigma_C$ is strictly dominated, consider a betting strategy which always bets $s$. Against this strategy, both scenarios above occur with positive probability (since $A'$ and $B'$ have positive measure), so $\sigma_C'$ is strictly better than $\sigma_C$. Thus, $\sigma_C$ is weakly dominated.
 \end{proof}
 
-\subsection{Monotone-Admissibility and Uniqueness}
+% \subsection{Monotone-Admissibility and Equilibrium Selection}
 
-The second monotonicity condition - that the caller must be more willing to call smaller bets - cannot be derived from dominance arguments alone. However, it plays a crucial role in selecting among the infinite class of Nash equilibria that differ only in how the bettor sizes their bluffs.
+% The second monotonicity condition - that the caller must be more willing to call smaller bets - cannot be derived from dominance arguments alone. However, it plays a crucial role in selecting among the infinite class of Nash equilibria that differ only in how the bettor sizes their bluffs.
 
-\textbf{Motivation:} From a poker player's perspective, this condition aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not strictly dominated (and indeed occurs in real poker when players perceive larger bets as bluffs), it leads to exploitable calling strategies.
+% \textbf{Motivation:} From a poker player's perspective, this condition aligns with intuition about pot odds: a larger bet is riskier and should require a stronger hand to call. While violating this condition is not strictly dominated (and indeed occurs in real poker when players perceive larger bets as bluffs), it leads to exploitable calling strategies.
 
-If the caller violates this condition by calling less aggressively against smaller bets, the bettor can exploit this by taking smaller risks for higher returns. A monotone calling strategy is therefore less exploitable. Imposing this condition restricts the strategy space in a way that yields a unique Nash equilibrium.
+% If the caller violates this condition by calling less aggressively against smaller bets, the bettor can exploit this by taking smaller risks for higher returns. A monotone calling strategy is therefore less exploitable. Imposing this condition restricts the strategy space in a way that selects a Nash equilibrium with desirable properties.
 
-\begin{definition}[Monotone-Admissible Strategy]
-    A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. More explicitly, $\sigma_B$ is monotone-admissible if there does not exist a betting strategy $\sigma_B'$ such that both of the following hold:
-    \begin{enumerate}
-        \item $\pi_B(\sigma_B',\sigma_C) \geq \pi_B(\sigma_B,\sigma_C)$ for all monotone calling strategies $\sigma_C$
-        \item $\pi_B(\sigma_B',\sigma_C) > \pi_B(\sigma_B,\sigma_C)$ for at least one monotone calling strategy $\sigma_C$
-    \end{enumerate}
-\end{definition}
+% \begin{definition}[Monotone-Admissible Strategy]
+%     A betting strategy $\sigma_B$ is \textit{monotone-admissible} if it is admissible in LCP against the set of monotone calling strategies. More explicitly, $\sigma_B$ is monotone-admissible if there does not exist a betting strategy $\sigma_B'$ such that both of the following hold:
+%     \begin{enumerate}
+%         \item $\pi_B(\sigma_B',\sigma_C) \geq \pi_B(\sigma_B,\sigma_C)$ for all monotone calling strategies $\sigma_C$
+%         \item $\pi_B(\sigma_B',\sigma_C) > \pi_B(\sigma_B,\sigma_C)$ for at least one monotone calling strategy $\sigma_C$
+%     \end{enumerate}
+% \end{definition}
 
-\textbf{Application to LCP:} This definition is particularly useful in distinguishing bettor strategies which differ only in how they bluff. The hand strength of a bluff is irrelevant when the caller plays optimally, since the caller will never call with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, then the bettor's bluffing hand strength becomes important.
+% \textbf{Application to LCP:} This definition is particularly useful in distinguishing bettor strategies which differ only in how they bluff. The hand strength of a bluff is irrelevant when the caller plays optimally, since the caller will never call with a hand weaker than any bluff. However, if the caller deviates to a suboptimal but still monotone strategy, then the bettor's bluffing hand strength becomes important.
 
-Specifically, if the caller becomes too loose (calling too often with weak hands), then the bettor wins some pots "accidentally" when they make their smallest bluffs with their strongest bluffing hands. This is where monotone-admissibility differentiates between equilibria: the unique monotone-admissible equilibrium has the bettor bluffing larger with weaker hands and bluffing smaller with stronger hands, which is optimal against all monotone deviations by the caller.
+% Specifically, if the caller becomes too loose (calling too often with weak hands), then the bettor wins some pots "accidentally" when they make their smallest bluffs with their strongest bluffing hands. This is where monotone-admissibility differentiates between equilibria: the equilibrium we construct has the bettor bluffing larger with weaker hands and bluffing smaller with stronger hands, which is optimal against all monotone deviations by the caller.
 
 \end{document}

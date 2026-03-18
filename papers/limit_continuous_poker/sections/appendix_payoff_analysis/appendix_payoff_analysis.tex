@@ -4,7 +4,7 @@
 \section{Payoff Analysis: Complete Proofs}
 \label{sec:payoff_analysis}
 
-This appendix provides detailed proofs regarding the expected payoffs and values of different hand strengths in the Nash equilibrium of Limit Continuous Poker.
+This appendix provides detailed proofs regarding the expected payoffs and values of different hand strengths in the constructed Nash equilibrium.
 
 \subsection{Expected Value of Bettor's Hand Strengths}
 
@@ -12,7 +12,7 @@ In addition to considering payoffs for a specific bettor-caller hand combination
 
 \begin{theorem}
     \label{thm:ev_bettor}
-    Let $EV(x)$ denote the expected value of a value-betting hand $x$ in the unique admissible Nash equilibrium:
+    Let $EV(x)$ denote the expected value of a hand $x$ in our constructed Nash equilibrium:
     \begin{equation}
         EV(x) = \begin{cases}
             x_2-\frac{1}{2} & \text{if } x \leq x_2 \\
@@ -68,8 +68,8 @@ We can quickly verify that the bettor's expected value is increasing in $x$. Thi
 
 It is worth noting that the bettor's strongest hands (right edge) actually seem to become less likely to make any profit more than the ante as limits increase. These strongest hands make very large bets, which force all but the strongest hands to fold, but win huge pots when they do get called.
 
-In more complicated poker variants, it is common to "slowplay" strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
+In more complicated poker variants, it is common to ``slowplay" strong hands by checking or making small bets to induce bluffs from the opponent. In LCP, there is only one betting round and the caller is not allowed to raise, both of which make slowplaying obsolete. With extremely strong hands, the benefit of winning a large pot when betting big outweighs the lower likelihood of getting called.
 
-This strategic pattern demonstrates a fundamental tension in poker: extracting maximum value from strong hands requires finding the optimal balance between bet size (which determines pot size when called) and calling frequency (which decreases as bet size increases). In LCP's Nash equilibrium, the strongest hands resolve this tension by accepting a lower calling frequency in exchange for winning much larger pots.
+This strategic pattern demonstrates a fundamental tension in poker: extracting maximum value from strong hands requires finding the optimal balance between bet size (which determines pot size when called) and calling frequency (which decreases as bet size increases). In our constructed Nash equilibrium, the strongest hands resolve this tension by accepting a lower calling frequency in exchange for winning much larger pots.
 
 \end{document}

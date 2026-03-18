@@ -1,7 +1,7 @@
 # Appendix: Monotone Strategy Proofs
 
 ## Purpose
-Rigorous proofs about monotone calling strategies and their role in equilibrium uniqueness.
+Rigorous proofs about monotone calling strategies and their role in equilibrium selection.
 
 ## Key Content
 
@@ -21,11 +21,11 @@ Key citation: Sierpinski (1922) for nonatomic measure subset existence.
 ### Monotone-Admissibility Discussion
 Second monotonicity condition (call smaller bets more) not dominated but prevents exploitation:
 - If caller violates, bettor takes smaller risks for higher returns
-- Monotone-admissibility selects unique equilibrium
+- Monotone-admissibility selects equilibrium with desirable properties
 
 ### Application to LCP
 Bluff hand strength irrelevant against optimal caller, but matters against monotone deviations.
-Unique monotone-admissible equilibrium: bluff larger with weaker hands.
+Constructed equilibrium: bluff larger with weaker hands.
 
 ## Figures
 - TikZ diagram showing sets A, B and subsets A', B' for strategy improvement

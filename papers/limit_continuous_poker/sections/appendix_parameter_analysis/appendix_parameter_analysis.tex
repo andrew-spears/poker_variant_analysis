@@ -10,16 +10,7 @@ This appendix provides detailed proofs of how the upper limit $U$ and lower limi
 
 \subsubsection{Expected Payoff of Value-Betting Hands}
 
-It may seem unsurprising that strong hands become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of a specific hand strength in the unique admissible Nash equilibrium continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only up to a certain threshold, after which it decreases (see Figure \ref{fig:ev_x_vs_U_appendix}). This feels counterintuitive; increasing $U$ only gives the bettor more options, so how is it possible that the expected payoff of individual hands decreases? And which hands are gaining expected payoff to offset this? This is a surprising result, and it is worth exploring in more detail.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{../payoff_parameter_analysis/images/ev_vs_U.png}
-    \caption{Expected value of a value-betting hand $x$ versus the upper limit $U$ in Nash equilibrium. Notice that each curve is increasing in $U$ up to some maximum, after which it decreases. Recall that $EV(x)$ denotes the expected payoff of a value-betting hand $x$ in the unique admissible Nash equilibrium.}
-    \label{fig:ev_x_vs_U_appendix}
-\end{figure}
-
-
+It may seem unsurprising that strong hands become less likely to get called as limits increase, but what about the actual expected payoff of these hands? Does the expected value of a specific hand strength in Nash equilibrium continue increasing as we increase $U$? The answer is no. In fact, for any fixed hand strength $x$, the expected payoff of that hand increases in $U$ only up to a certain threshold, after which it decreases (see Figure \ref{fig:ev_x_vs_U}). This feels counterintuitive; increasing $U$ only gives the bettor more options, so how is it possible that the expected payoff of individual hands decreases? And which hands are gaining expected payoff to offset this? This is a surprising result, and it is worth exploring in more detail.
 
 \begin{theorem}
     \label{thm:payoff_increasing}
@@ -30,7 +21,7 @@ It may seem unsurprising that strong hands become less likely to get called as l
     and $\frac{d}{dU} EV(x) > 0$ otherwise.
 \end{theorem}
 
-To parse this in English: if we fix the bettor's hand strength $x$, the expected payoff to the bettor in the unique admissible Nash equilibrium is decreasing in $U$ if $x$ falls below a certain threshold, but increasing in $U$ if $x$ is above this threshold. Specifically, this threshold is greater than the hand strength $v(U)$ which bets the maximum.
+To parse this in English: if we fix the bettor's hand strength $x$, the expected payoff to the bettor in our constructed Nash equilibrium is decreasing in $U$ if $x$ falls below a certain threshold, but increasing in $U$ if $x$ is above this threshold. Specifically, this threshold is greater than the hand strength $v(U)$ which bets the maximum.
 
 Before proving the theorem, we will walk through some lemmas which explore how all the relevant variables change as we increase $U$, including the bluffing threshold $x_2$, the bet size $v^{-1}(x)$, and the calling cutoff $c(s)$.
 

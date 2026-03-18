@@ -21,8 +21,8 @@ The FBCP strategies are:
     B & x < \frac{B}{(1+2B)(2+B)} \text{ (bluff)}\\
     0 & \frac{B}{(1+2B)(2+B)} < x < \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (check)}\\
     B & x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ (value)}
-\end{cases}, \quad
-C_{FB}(B) = \frac{B(3 +2B)}{(1+2B)(2+B)}.
+\end{cases}\\
+C_{FB}(B) & = \frac{B(3 +2B)}{(1+2B)(2+B)}.
 \end{align*}
 
 The NLCP strategies are:
@@ -31,8 +31,8 @@ The NLCP strategies are:
         b_{NL}^{-1}(x) & x < \frac{1}{7} \text{ (bluff)} \\
         0 & \frac{1}{7} < x < \frac{4}{7} \text{ (check)} \\
         v_{NL}^{-1}(x) & x > \frac{4}{7} \text{ (value)}
-    \end{cases}, \quad
-    C_{NL}(s) = 1 - \frac{6}{7 (s+1)},
+    \end{cases} \\
+    C_{NL}(s) &= 1 - \frac{6}{7 (s+1)},
 \end{align*}
 where $v_{NL}(s) = 1 - \frac{3}{7(s+1)^2}$ and $b_{NL}(s) = \frac{3s+1}{7(s+1)^3}$.
 
@@ -48,9 +48,9 @@ S_{LCP}(x, L, U) \to S_{FB}(x, B), \quad C_{LCP}(s, L, U) \to C_{FB}(s, B).
 \]
 At $L = U = B$, the intermediate bet-size regions collapse ($x_0 = x_1$ and $x_4 = x_5$), leaving only the fixed bet $B$ as an option. The thresholds reduce to:
 \[
-x_2|_{B,B} = \frac{B}{(1+2B)(2+B)}, \quad x_3|_{B,B} = \frac{2B^2+4B+1}{(1+2B)(2+B)},
+x_2 = \frac{B}{(1+2B)(2+B)}, \quad x_3 = \frac{2B^2+4B+1}{(1+2B)(2+B)},
 \]
-which match the FBCP bluff/check and check/value boundaries. The calling threshold $c(s)|_{B,B} = \frac{B(3+2B)}{(1+2B)(2+B)} = C_{FB}(B)$.
+which match the FBCP bluff/check and check/value boundaries.
 \end{remark}
 
 \begin{remark}[Convergence to NLCP]
@@ -69,6 +69,6 @@ b(s) \to \frac{3s+1}{7(s+1)^3}, \quad v(s) \to 1 - \frac{3}{7(s+1)^2},
 which are exactly $b_{NL}(s)$ and $v_{NL}(s)$. The calling threshold converges to $c(s) \to 1 - \frac{6}{7(1+s)} = C_{NL}(s)$.
 \end{remark}
 
-These convergence results confirm that LCP provides a smooth interpolation between the two benchmark models.
+These convergence results confirm that Nash equilibria of LCP smooth interpolate between optimal strategies in the two existing variants.
 
 \end{document}

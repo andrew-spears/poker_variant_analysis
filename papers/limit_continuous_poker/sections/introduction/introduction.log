@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  6 FEB 2026 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.10)  18 MAR 2026 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex
-(/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex
+**/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex
+(/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
 Preamble taken from file `../../main/main.tex'
 (/usr/local/texlive/2023/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
-) (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+) (/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/../../main/main.tex (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -570,15 +570,23 @@ Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
 \FV@OutFile=\write4
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip60
+\enit@outerparindent=\dimen286
+\enit@toks=\toks46
+\enit@inbox=\box78
+\enit@count@id=\count330
+\enitdp@description=\count331
 )
-\c@theorem=\count330
-\c@lemma=\count331
-\c@definition=\count332
+\c@theorem=\count332
+\c@lemma=\count333
+\c@definition=\count334
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
-\l__pdf_internal_box=\box78
-) (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux)
+\l__color_backend_stack_int=\count335
+\l__pdf_internal_box=\box79
+) (/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux)
 \openout1 = `introduction.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -601,17 +609,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen286
-\scratchbox=\box79
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen287
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count336
+\scratchdimen=\dimen287
+\scratchbox=\box80
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen288
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -653,7 +661,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 2.
-(/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out) (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out)
+(/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out) (/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.out)
 \@outlinefile=\write5
 \openout5 = `introduction.out'.
 
@@ -667,7 +675,7 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-\c@lstlisting=\count340
+\c@lstlisting=\count342
 LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -694,39 +702,68 @@ LaTeX Warning: Citation `bowling2015heads' on page 1 undefined on input line 11.
 
 LaTeX Warning: Citation `ferguson2003borel' on page 2 undefined on input line 21.
 
-
-LaTeX Warning: Reference `subsec:monotone_strategies' on page 2 undefined on input line 42.
-
 [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-LaTeX Warning: Citation `chen2006mathematics' on page 3 undefined on input line 48.
-
-<images/NLCP_strategy_profile.png, id=53, 570.933pt x 426.393pt>
-File: images/NLCP_strategy_profile.png Graphic file (type png)
-<use images/NLCP_strategy_profile.png>
-Package pdftex.def Info: images/NLCP_strategy_profile.png  used on input line 73.
-(pdftex.def)             Requested size: 334.60422pt x 249.90408pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `subsec:monotone_strategies' on page 3 undefined on input line 118.
 
 
-LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 3 undefined on input line 78.
+LaTeX Warning: Citation `chen2006mathematics' on page 3 undefined on input line 124.
 
 [3]
-
-LaTeX Warning: Citation `ferguson2003borel' on page 4 undefined on input line 86.
-
-
-LaTeX Warning: Citation `chen2006mathematics' on page 4 undefined on input line 86.
-
-[4 </Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png>]
-
-LaTeX Warning: Reference `sec:game_value' on page 5 undefined on input line 95.
+<images/NLCP_strategy_profile.png, id=60, 570.933pt x 426.393pt>
+File: images/NLCP_strategy_profile.png Graphic file (type png)
+<use images/NLCP_strategy_profile.png>
+Package pdftex.def Info: images/NLCP_strategy_profile.png  used on input line 149.
+(pdftex.def)             Requested size: 334.60422pt x 249.90408pt.
 
 
-LaTeX Warning: Reference `sec:strategic_convergence' on page 5 undefined on input line 97.
+LaTeX Warning: Reference `subsec:nash_equilibrium_structure' on page 4 undefined on input line 154.
 
-[5] (/Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux)
+[4 </Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/images/NLCP_strategy_profile.png>]
+
+LaTeX Warning: Citation `ferguson2003borel' on page 5 undefined on input line 162.
+
+
+LaTeX Warning: Citation `chen2006mathematics' on page 5 undefined on input line 162.
+
+
+LaTeX Warning: Reference `sec:solving_lcp' on page 5 undefined on input line 169.
+
+
+LaTeX Warning: Reference `sec:nash_equilibrium' on page 5 undefined on input line 169.
+
+
+LaTeX Warning: Reference `sec:game_value' on page 5 undefined on input line 171.
+
+
+LaTeX Warning: Reference `sec:strategic_convergence' on page 5 undefined on input line 173.
+
+[5]
+
+LaTeX Warning: Reference `sec:parameter_analysis' on page 6 undefined on input line 175.
+
+
+LaTeX Warning: Reference `sec:lcp' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:solving_lcp' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:nash_equilibrium' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:game_value' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:strategic_convergence' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:parameter_analysis' on page 6 undefined on input line 180.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 6 undefined on input line 180.
+
+[6] (/Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -734,18 +771,18 @@ Package rerunfilecheck Info: File `introduction.out' has not changed.
 (rerunfilecheck)             Checksum: 36A6B281E5CCF5FFD96D04CA0E32282C;1030.
  ) 
 Here is how much of TeX's memory you used:
- 27014 strings out of 476025
- 517999 string characters out of 5790017
- 1861388 words of memory out of 5000000
- 47017 multiletter control sequences out of 15000+600000
- 520486 words of font info for 64 fonts, out of 8000000 for 9000
+ 27411 strings out of 476025
+ 525306 string characters out of 5790017
+ 1865388 words of memory out of 5000000
+ 47408 multiletter control sequences out of 15000+600000
+ 520786 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,8n,134p,1318b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/andrewspears/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.pdf (5 pages, 152606 bytes).
+ 119i,8n,134p,1322b,787s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /Users/andrewspears/src/poker_analysis/papers/limit_continuous_poker/sections/introduction/introduction.pdf (6 pages, 164327 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

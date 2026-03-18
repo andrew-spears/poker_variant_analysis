@@ -15,7 +15,7 @@ The study of simplified poker models dates back to von Neumann and Morgenstern's
 Continuous Poker (also called Von Neumann Poker, and referred to in this paper as Fixed-Bet Continuous Poker or FBCP) is a simplified model of poker introduced by von Neumann. It is a two-player zero-sum game designed to study strategic decision-making in competitive environments. The game abstracts away many complexities of real poker, focusing instead on the mathematical and strategic aspects of bluffing, betting, and optimal play.
 
 \begin{definition}[FBCP]
-Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes scale proportionally.}. They are each dealt a hand strength between 0 and 1 (referred to as $x$ for bettor and $y$ for caller). After seeing $x$, the bettor can either check - in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends - or they can bet, by putting a pre-determined amount $B$ into the pot. The caller must now either call by matching the bet of $B$ units, after which the higher hand wins the pot of $1+2B$ minus their ante of $0.5$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
+Two players, referred to as the bettor and the caller, each put a 0.5 unit ante into a pot\footnote{An ante of 1 is often used, but since the pot size is the more relevant value, we use an ante of 0.5. All bet sizes scale proportionally.}. They are each dealt a hand strength between 0 and 1 (referred to as $x$ for bettor and $y$ for caller). After seeing $x$, the bettor can either check --- in which case, the higher hand between $x$ and $y$ wins the pot of 1 and the game ends --- or they can bet, by putting a pre-determined amount $B$ into the pot. The caller must now either call by matching the bet of $B$ units, after which the higher hand wins the pot of $1+2B$ minus their ante of $0.5$, or fold, conceding the pot of $1+B$ to the bettor and ending the game.
 \end{definition}
 
 FBCP has many Nash equilibria, but it has a unique one in which the caller plays an admissible strategy\footnote{An admissible strategy is one which is not weakly dominated by any other strategy.}, as shown by Ferguson and Ferguson \cite[p. 2]{ferguson2003borel}. This strategy profile, parametrized by the bet size $B$, is structured as follows:
@@ -27,7 +27,7 @@ FBCP has many Nash equilibria, but it has a unique one in which the caller plays
     \item The caller calls if their hand is stronger than some threshold hand strength
 \end{itemize}
 
-% The bettor bets with hands $x$ such that either 
+% The bettor bets with hands $x$ such that either
 
 % $$x > \frac{1 + 4B + 2B^2}{(1+2B)(2+B)} \text{ or } x < \frac{B}{(1+2B)(2+B)}. $$
 
@@ -37,12 +37,88 @@ FBCP has many Nash equilibria, but it has a unique one in which the caller plays
 
 % Note that uniqueness in this context ignores the strictness of inequalities, since the endpoints of intervals occur with probability 0.
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=4]
+        % Number line
+        \draw[thick] (0,0) -- (3,0);
+
+        % Tick marks at 0 and 1
+        \draw[thick] (0, -0.04) -- (0, 0.04);
+        \draw[thick] (3, -0.04) -- (3, 0.04);
+
+        % Endpoint labels
+        \node[below] at (0, -0.07) {$0$};
+        \node[below] at (3, -0.07) {$1$};
+
+        % Bluff region
+        \fill[red!30] (0, -0.04) rectangle (0.6, 0.04);
+
+        % Check region
+        \fill[gray!20] (0.6, -0.04) rectangle (2.1, 0.04);
+
+        % Value bet region
+        \fill[red!30] (2.1, -0.04) rectangle (3, 0.04);
+
+        % Threshold tick marks
+        \draw[thick] (0.6, -0.04) -- (0.6, 0.04);
+        \draw[thick] (2.1, -0.04) -- (2.1, 0.04);
+
+        % Threshold labels
+        \node[below] at (0.6, -0.07) {$\frac{B}{(1+2B)(2+B)}$};
+        \node[below] at (2.1, -0.07) {$\frac{1+4B+2B^2}{(1+2B)(2+B)}$};
+
+        % Region labels above
+        \node[red!70!black] at (0.3, 0.14) {\small Bluff};
+        \node[gray!70!black] at (1.35, 0.14) {\small Check};
+        \node[red!70!black] at (2.55, 0.14) {\small Value bet};
+
+        % Bettor label
+        \node[left] at (-0.05, 0) {\small Bettor:};
+
+        % --- Caller number line ---
+        \begin{scope}[yshift=-0.5cm]
+            % Number line
+            \draw[thick] (0,0) -- (3,0);
+
+            % Tick marks at 0 and 1
+            \draw[thick] (0, -0.04) -- (0, 0.04);
+            \draw[thick] (3, -0.04) -- (3, 0.04);
+
+            % Endpoint labels
+            \node[below] at (0, -0.07) {$0$};
+            \node[below] at (3, -0.07) {$1$};
+
+            % Fold region
+            \fill[gray!20] (0, -0.04) rectangle (1.35, 0.04);
+
+            % Call region
+            \fill[blue!30] (1.35, -0.04) rectangle (3, 0.04);
+
+            % Threshold tick mark
+            \draw[thick] (1.35, -0.04) -- (1.35, 0.04);
+
+            % Threshold label
+            \node[below] at (1.35, -0.07) {$\frac{B(3+2B)}{(1+2B)(2+B)}$};
+
+            % Region labels above
+            \node[gray!70!black] at (0.675, 0.14) {\small Fold};
+            \node[blue!70!black] at (2.175, 0.14) {\small Call};
+
+            % Caller label
+            \node[left] at (-0.05, 0) {\small Caller:};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Optimal strategies in FBCP. The bettor partitions hand strengths into bluffing, checking, and value betting regions. The caller folds below a threshold and calls above it.}
+    \label{fig:fbcp_strategy}
+\end{figure}
+
 The non-uniqueness of this Nash Equilibrium is due to the fact that given the bettor's strategy, the caller has many optimal responses. The caller must always fold with hands below the bluffing threshold, and must always call with hands above the value betting threshold, but with hands in-between, they are indifferent between calling and folding. This is because with a hand strength in this range, the caller wins if and only if the bettor is bluffing, so their actual hand strength is irrelevant as long as it beats the bluffing threshold. To prevent the betting player from exploiting them, the caller need only call with exactly the right proportion of hands in this range. For example, the caller could take the strategy described above, but swap some calling and folding hands in the range between the bluffing and value betting thresholds. At the bettor's bluffing threshold, they will still be indifferent between bluffing and checking because the same proportion of hands which beat them will still call. Similarly, at the value betting threshold, they still beat all weaker hands, so the order of weaker hands doesn't matter as long as the same proportion is willing to call a bet.
 
 Why is this Nash equilibrium special? We mentioned above that it is admissible, meaning that both players' strategies are not weakly dominated by any other strategy. Importantly, the caller's strategy is not weakly dominated. The same cannot be said for other Nash equilibria like the one described in the previous paragraph because monotonicity (calling with stronger hands and folding with weaker ones) characterizes admissibility in this setup. We explore this theme further in Section \ref{subsec:monotone_strategies}.
 
 % $$ V_{FB}(B) = \frac{B}{2(1+2B)(2+B)}, $$
-FBCP also has a unique value as a function of the bet size $B$. The value of the game for the bettor is positive (advantageous to the bettor) and maximized at $B = 1$, when the bet size is exactly the pot size. It should not be surprising that the value is positive - at worst, the bettor can always check and turn the game into a coin flip, so the bettor will only deviate from this strategy if they have a positive expected value. The fact that $B=1$ exactly maximizes the value is more subtle, but we should expect that some such maximal value of $B$ exists. Forcing the bettor to bet too large relative to the pot would make betting too risky with most hands, and making the bet too small would simply give less profit to the bettor when they win a bet. As we will see later, part of the motivation for studying LCP is to understand this concept more generally.
+FBCP also has a unique value as a function of the bet size $B$. The value of the game for the bettor is positive (advantageous to the bettor) and maximized at $B = 1$, when the bet size is exactly the pot size. It should not be surprising that the value is positive --- at worst, the bettor can always check and turn the game into a coin flip, so the bettor will only deviate from this strategy if they have a positive expected value. The fact that $B=1$ exactly maximizes the value is more subtle, but we should expect that some such maximal value of $B$ exists. Forcing the bettor to bet too large relative to the pot would make betting too risky with most hands, and making the bet too small would simply give less profit to the bettor when they win a bet. As we will see later, part of the motivation for studying LCP is to understand this concept more generally.
 
 \subsubsection{No-Limit Continuous Poker (NLCP)}
 Another continuous poker variant allows the bettor to choose a bet size $s > 0$ after seeing their hand strength, as opposed to a fixed bet size $B$. This variant is called No-Limit Continuous Poker (or Newman Poker after Donald J. Newman, or NLCP in this paper). The Nash equilibrium strategy profile for this variant is discussed and solved by Bill Chen and Jerrod Ankenman \cite[p. 154]{chen2006mathematics}.
@@ -75,7 +151,7 @@ See Figure \ref{fig:nlcp_strategy_profile} for a graphical representation of the
     \label{fig:nlcp_strategy_profile}
 \end{figure}
 
-Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each positive bet size\footnote{Seen visually in Figure \ref{fig:nlcp_strategy_profile} by the fact that a horizontal line above the x-axis intersects the bet function at exactly two points.}. On first inspection, this feels like the bettor is giving away too much information, but it turns out to still be an optimal strategy. This concept appears again and is explained more thoroughly in Section \ref{subsec:nash_equilibrium_structure}.
+Note that the bettor uses all possible bet sizes and has exactly two hand strengths for each positive bet size\footnote{Seen visually in Figure \ref{fig:nlcp_strategy_profile} by the fact that a horizontal line above the x-axis intersects the bet function at exactly two points.}. On first inspection, this feels like the bettor is giving away too much information (seeing their bet size tells the caller that they have one of exactly two possible hands). However, it turns out that this is still be an optimal strategy as long as the two possible hands are `balanced' properly. In fact, the ration of the derivatives of the betting function at these two points turns out to be the crucial factor. This concept appears again and is explained more thoroughly in Section \ref{subsec:nash_equilibrium_structure}.
 
 The value of NLCP is
 
@@ -90,17 +166,17 @@ Ferguson and Ferguson \cite{ferguson2003borel} provided the comprehensive analys
 This paper makes the following contributions:
 
 \begin{itemize}
-    \item \textbf{Nash Equilibrium Solution:} We derive the unique admissible Nash equilibrium for LCP, characterized by six threshold parameters and two continuous bet-sizing functions. We establish the structure of optimal play and provide closed-form expressions for all strategic components (Sections 4--5).
+    \item \textbf{Nash Equilibrium Solution:} We construct a Nash equilibrium for LCP. We establish the structure of optimal play and provide closed-form expressions for all strategic components (Sections \ref{sec:solving_lcp}--\ref{sec:nash_equilibrium}).
 
     \item \textbf{Game Value Analysis:} We compute the value of LCP as a function of the betting limits $L$ and $U$, obtaining a surprisingly elegant rational formula. We prove monotonicity properties and establish a remarkable symmetry: $V_{LCP}(L, U) = V_{LCP}(1/U, 1/L)$ (Section \ref{sec:game_value}).
-
+    
     \item \textbf{Convergence Results:} We prove that LCP strategies and values converge to those of FBCP and NLCP in the appropriate limit cases, establishing LCP as a genuine generalization of both variants (Section \ref{sec:strategic_convergence}).
 
-    \item \textbf{Parameter Sensitivity Analysis:} We analyze how changes in betting limits affect optimal strategies and payoffs, revealing counterintuitive effects where expanding betting options can reduce expected value for certain hand strengths due to strategic adjustments by the opponent (Section 5).
+    \item \textbf{Parameter Sensitivity Analysis:} We analyze how changes in betting limits affect optimal strategies and payoffs, revealing counterintuitive effects where expanding betting options can reduce expected value for certain hand strengths due to strategic adjustments by the opponent (Section \ref{sec:parameter_analysis}).
 \end{itemize}
 
 \subsection{Outline}
 
-The remainder of this paper is organized as follows. Section 2 establishes notation and conventions. Section 3 formally defines LCP. Section 4 develops the methodology for solving for Nash equilibrium, including the concepts of monotone and admissible strategies. Section 5 presents the Nash equilibrium strategy profile with closed-form solutions. Section 6 analyzes the game value, proving monotonicity and symmetry properties. Section 7 establishes convergence to FBCP and NLCP. Section 8 examines how parameters affect strategies and payoffs. Section 9 concludes with a discussion of implications and future work. Detailed proofs are provided in the appendices.
+The remainder of this paper is organized as follows. Section 2 establishes notation and conventions. Section \ref{sec:lcp} formally defines LCP. Section \ref{sec:solving_lcp} develops the methodology for solving for Nash equilibrium, including the concepts of monotone and admissible strategies. Section \ref{sec:nash_equilibrium} presents the Nash equilibrium strategy profile with closed-form solutions. Section \ref{sec:game_value} analyzes the game value, proving monotonicity and symmetry properties. Section \ref{sec:strategic_convergence} establishes convergence to FBCP and NLCP. Section \ref{sec:parameter_analysis} examines how parameters affect strategies and payoffs. Section \ref{sec:conclusion} concludes with a discussion of implications and future work. Detailed proofs are provided in the appendices.
 
 \end{document}

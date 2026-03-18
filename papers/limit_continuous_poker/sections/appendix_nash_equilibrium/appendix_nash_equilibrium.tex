@@ -8,7 +8,7 @@ We now show formally that the strategy profile described in Section \ref{sec:nas
 \begin{customproof}
     To show that this is a Nash equilibrium, we need to show that no player can improve their payoff by unilaterally deviating from the strategy profile.
     
-    In the proof, we assume that all of the constraints outlined in the previous section are satisfied. The solution was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Sympy. The full python script is available \href{https://github.com/andrew-spears/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_sympy_final.pdf}{on GitHub}.
+    In the proof, we assume that all of the constraints outlined in the previous section are satisfied. The solution was obtained by solving for $c(s)$ in terms of $x_2$, then using this to solve for $v(s)$, and finally solving for $b(s)$ up to a constant of integration. The resulting system of 7 equations in 7 unknowns was solved symbolically using Sympy. The full python script is available \href{https://github.com/andrew-spears/poker_variant_analysis/blob/main/notebooks/limit_continuous_poker/solve_sympy_final.ipynb}{on GitHub}.
 
     \begin{enumerate}
         \item \textbf{Caller's Deviation:}
@@ -164,7 +164,7 @@ We now show formally that the strategy profile described in Section \ref{sec:nas
                     \end{align*} 
                     This derivative is clearly an increasing function of $x$, so for $x < v(s)$, the expected value is decreasing in $s$. But since $v$ is an increasing function, $x < v(s)$ is equivalent to $v^{-1}(x) < s$ (essentially, our bet size is too large for the hand strength).
                     
-                    This should make sense - when our bet size is too large for the hand strength, the expected value of that bet is decreasing in the bet size, so smaller bets are more profitable. We can show the same for bets too small: when $x > v(s)$, the expected value is increasing in $s$. This is equivalent to saying that $v^{-1}(x) > s$, or our bet size is too small for the hand strength, so larger bets are more profitable. 
+                    This should make sense --- when our bet size is too large for the hand strength, the expected value of that bet is decreasing in the bet size, so smaller bets are more profitable. We can show the same for bets too small: when $x > v(s)$, the expected value is increasing in $s$. This is equivalent to saying that $v^{-1}(x) > s$, or our bet size is too small for the hand strength, so larger bets are more profitable. 
                     
                     We have shown that the expected value of betting is increasing for $s < v^{-1}(x)$, equal to $0$ at $s = v^{-1}(x)$, and decreasing for $s > v^{-1}(x)$, so the expected value of betting is maximized at $s = v^{-1}(x)$. This means that the bettor cannot improve their payoff by deviating from this bet size. In particular, they cannot benefit by betting the minimum, which in turn proves that they cannot benefit by checking, as we showed above.
                 \item $x_5 \leq x \leq 1$:

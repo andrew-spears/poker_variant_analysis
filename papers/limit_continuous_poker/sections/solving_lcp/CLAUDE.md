@@ -6,7 +6,7 @@ Develops the methodology for computing Nash equilibrium - establishes equilibriu
 ## Key Content
 
 ### Equilibrium Selection
-LCP has infinitely many equilibria. Two refinements select unique solution:
+LCP has infinitely many equilibria. Two refinements select a solution with desirable properties:
 1. Caller uses monotone strategies
 2. Bettor's strategy is monotone-admissible
 

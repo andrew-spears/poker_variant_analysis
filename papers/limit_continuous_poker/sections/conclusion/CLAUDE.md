@@ -6,7 +6,7 @@ Summarizes key results, discusses practical implications, acknowledges limitatio
 ## Key Content
 
 ### Summary of Results
-1. **Nash Equilibrium**: Unique admissible equilibrium with closed-form expressions
+1. **Nash Equilibrium**: Constructed equilibrium with closed-form expressions; establishes unique game value
 2. **Game Value**: V(r,t) = (1-r³-t³)/(14-2r³-2t³) with symmetry V(r,t)=V(t,r)
 3. **Convergence**: Smooth limits to FBCP and NLCP
 4. **Parameter Sensitivity**: Counterintuitive strategic interdependencies
